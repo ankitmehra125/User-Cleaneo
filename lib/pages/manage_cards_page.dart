@@ -340,7 +340,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                         ),
                                       ],
                                       border: Border.all(
-                                        color: selectedCardType == 'Mastercard' ? Colors.green : Colors.transparent,
+                                        color: selectedCardType == 'Mastercard' ? Color(0xff29b2fe) : Colors.transparent,
                                         width: 2,
                                       ),
                                     ),
@@ -372,7 +372,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                         ),
                                       ],
                                       border: Border.all(
-                                        color: selectedCardType == 'Visa' ? Colors.green : Colors.transparent,
+                                        color: selectedCardType == 'Visa' ? Color(0xff29b2fe) : Colors.transparent,
                                         width: 2,
                                       ),
                                     ),
@@ -404,7 +404,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                         ),
                                       ],
                                       border: Border.all(
-                                        color: selectedCardType == 'Amex' ? Colors.green : Colors.transparent,
+                                        color: selectedCardType == 'Amex' ? Color(0xff29b2fe) : Colors.transparent,
                                         width: 2,
                                       ),
                                     ),
