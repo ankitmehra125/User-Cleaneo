@@ -229,7 +229,19 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                               ],
                             ),
                           if (cards.isEmpty)
-                            Text("No cards here"),
+                            Column(
+                              children: [
+                                SizedBox(height: mQuery.size.height*0.21,),
+                                Center(
+                                  child: Text("No Credit/debit \n  cards added ",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.black54
+                                    ),),
+                                ),
+                              ],
+                            )
                         ],
                       ),
                     )
