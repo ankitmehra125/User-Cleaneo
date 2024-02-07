@@ -76,7 +76,7 @@ class _MapPageState extends State<MapPage> {
 
                       SizedBox(height: mQuery.size.height*0.2,),
                       Center(
-                        child: Image.asset("assets/images/location.png",
+                        child: Image.asset("assets/images/location.jpeg",
                           width: mQuery.size.width*0.33,),
                       ),
 
