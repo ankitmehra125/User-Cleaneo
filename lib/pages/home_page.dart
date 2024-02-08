@@ -5,7 +5,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// Import WashPage.dart
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -31,157 +30,168 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            color: const Color(0xfff3fbff),
-            child: Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(top: 32, bottom: 25),
-                  width: double.infinity,
-                  decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(20),
-                          bottomLeft: Radius.circular(20)),
-                      // color: Colors.blue,
-                      image: DecorationImage(
-                        image: AssetImage("assets/images/splash.jpg"),
-                        fit: BoxFit.cover,
-                      )),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 16),
-                        child: Row(
-                          children: [
-                            Builder(
-                              builder: (BuildContext context) {
-                                return IconButton(
-                                  onPressed: () {
-                                    Scaffold.of(context).openDrawer();
-                                  },
-                                  icon: Icon(
-                                    Icons.menu,
-                                    size: 42,
-                                  ),
-                                  color: Colors.white,
-                                );
+      body: Container(
+        color: const Color(0xfff3fbff),
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.only(top: 32, bottom: 25),
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(20),
+                ),
+                image: DecorationImage(
+                  image: AssetImage("assets/images/splash.jpg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 16),
+                    child: Row(
+                      children: [
+                        Builder(
+                          builder: (BuildContext context) {
+                            return IconButton(
+                              onPressed: () {
+                                Scaffold.of(context).openDrawer();
                               },
-                            ),
-                            SvgPicture.asset(
-                              "assets/images/mainlogo.svg",
-                              width: 30,
-                              height: 25,
-                            ),
-                            Expanded(child: SizedBox()),
-                            // Profile Picture
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return MyProfilePage();
-                                    },
-                                  ),
-                                );
-                              },
-                              child: ProfilePicture(
-                                name: "",
-                                radius: 18,
-                                fontsize: 10,
-                                img:
-                                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwKKzV4oKveaDEmBr38LXuMWTho1d1-mjOOcjau6XJ1A&s",
+                              icon: Icon(
+                                Icons.menu,
+                                size: 42,
                               ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 16),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text(
-                              "Welcome back!",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                            Container(
-                              width: mQuery.size.width * 0.06,
-                              height: mQuery.size.height * 0.06,
-                              decoration: const BoxDecoration(
-                                  color: Colors.white,
-                                  shape: BoxShape.circle),
-                              child: Center(
-                                child: Text(
-                                  "$orderNo",
-                                  style: TextStyle(
-                                      color: Colors.cyan,
-                                      fontWeight: FontWeight.w600),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(left: 16, right: 16),
-                        child: Row(
-                          children: [
-                            const Text(
-                              "Shweta",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 22),
-                            ),
-                            Expanded(child: SizedBox()),
-                            const Icon(
-                              Icons.help_outline,
                               color: Colors.white,
-                            ),
-                            SizedBox(width: mQuery.size.width * 0.02),
-                            const Text(
-                              "Ongoing Orders",
-                              style: TextStyle(color: Colors.white, fontSize: 14),
-                            )
-                          ],
+                            );
+                          },
                         ),
-                      ),
-                      SizedBox(height: mQuery.size.height * 0.02),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 16),
-                        height: mQuery.size.height * 0.06,
-                        padding: const EdgeInsets.only(left: 16),
-                        decoration: BoxDecoration(
+                        SvgPicture.asset(
+                          "assets/images/mainlogo.svg",
+                          width: 30,
+                          height: 25,
+                        ),
+                        Expanded(child: SizedBox()),
+                        // Profile Picture
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return MyProfilePage();
+                                },
+                              ),
+                            );
+                          },
+                          child: ProfilePicture(
+                            name: "",
+                            radius: 18,
+                            fontsize: 10,
+                            img:
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwKKzV4oKveaDEmBr38LXuMWTho1d1-mjOOcjau6XJ1A&s",
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          "Welcome back!",
+                          style: TextStyle(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(12)),
-                        child: TextField(
-                          cursorColor: Colors.grey,
-                          controller: searchController,
-                          decoration: InputDecoration(
-                              border: InputBorder.none,
-                              hintText: "Search",
-                              hintStyle: TextStyle(
-                                fontSize: 16,
-                                color: Colors.grey.shade600,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        Container(
+                          width: mQuery.size.width * 0.06,
+                          height: mQuery.size.height * 0.06,
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Center(
+                            child: Text(
+                              "$orderNo",
+                              style: TextStyle(
+                                color: Colors.cyan,
                                 fontWeight: FontWeight.w600,
                               ),
-                              suffixIcon:
-                              const Icon(Icons.search, color: Colors.grey)),
-                        ),
-                      )
-                    ],
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: GridView.builder(
+                  Container(
+                    padding: EdgeInsets.only(left: 16, right: 16),
+                    child: Row(
+                      children: [
+                        const Text(
+                          "Shweta",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22,
+                          ),
+                        ),
+                        Expanded(child: SizedBox()),
+                        const Icon(
+                          Icons.help_outline,
+                          color: Colors.white,
+                        ),
+                        SizedBox(width: mQuery.size.width * 0.02),
+                        const Text(
+                          "Ongoing Orders",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: mQuery.size.height * 0.02),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 16),
+                    height: mQuery.size.height * 0.06,
+                    padding: const EdgeInsets.only(left: 16),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: TextField(
+                      cursorColor: Colors.grey,
+                      controller: searchController,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Search",
+                        hintStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey.shade600,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        suffixIcon: const Icon(Icons.search, color: Colors.grey),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: ListView(
+                children: [
+                  GridView.builder(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, // Set the number of items in each row
+                      crossAxisCount: 2,
                       crossAxisSpacing: 1,
                       mainAxisSpacing: 20,
                     ),
@@ -196,8 +206,7 @@ class _HomePageState extends State<HomePage> {
                         },
                         child: Container(
                           margin: EdgeInsets.symmetric(horizontal: 12),
-                          padding:
-                          EdgeInsets.only(top: mQuery.size.height * 0.046),
+                          padding: EdgeInsets.only(top: mQuery.size.height * 0.046),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(16),
                             color: Colors.white,
@@ -206,7 +215,7 @@ class _HomePageState extends State<HomePage> {
                                 color: Colors.grey.withOpacity(0.5),
                                 spreadRadius: 2,
                                 blurRadius: 10,
-                                offset: Offset(0, 0), // changes the position of the shadow
+                                offset: Offset(0, 0),
                               ),
                             ],
                           ),
@@ -221,7 +230,9 @@ class _HomePageState extends State<HomePage> {
                               Text(
                                 item["text"],
                                 style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.w700),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                ),
                               ),
                             ],
                           ),
@@ -230,11 +241,44 @@ class _HomePageState extends State<HomePage> {
                     },
                     itemCount: gridItems.length,
                   ),
-                ),
-              ],
+                 SizedBox(height: mQuery.size.height*0.032,),
+                 SingleChildScrollView(
+                   scrollDirection: Axis.horizontal,
+                   child: Row(
+                     children: [
+                       Container(
+                         margin: EdgeInsets.only(left: 16),
+                         width: mQuery.size.width*1,
+                         height: mQuery.size.height*0.2,
+                         decoration: BoxDecoration(
+                             borderRadius: BorderRadius.circular(16),
+                             image: DecorationImage(
+                               image: AssetImage("assets/images/superdeal.png"),
+                               fit: BoxFit.fill
+                             )
+                         ),
+                       ),
+                       Container(
+                         margin: EdgeInsets.symmetric(horizontal: 16),
+                         width: mQuery.size.width*1,
+                         height: mQuery.size.height*0.2,
+                         decoration: BoxDecoration(
+                             borderRadius: BorderRadius.circular(16),
+                             image: DecorationImage(
+                                 image: AssetImage("assets/images/amazingdeal.png"),
+                                 fit: BoxFit.fill
+                             )
+                         ),
+                       ),
+                     ],
+                   ),
+                 ),
+                  SizedBox(height: mQuery.size.height*0.06,)
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       drawer: const MyDrawer(),
       bottomNavigationBar: Container(
@@ -254,10 +298,8 @@ class _HomePageState extends State<HomePage> {
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
             BottomNavigationBarItem(icon: Icon(CupertinoIcons.bag), label: ""),
-            BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.bell), label: ""),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.favorite_border), label: ""),
+            BottomNavigationBarItem(icon: Icon(CupertinoIcons.bell), label: ""),
+            BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: ""),
             BottomNavigationBarItem(icon: Icon(Icons.wallet), label: ""),
           ],
         ),

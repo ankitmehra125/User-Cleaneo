@@ -23,10 +23,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // home: HomePage(),
       // home: WelcomePage()
-      // home: SplashScreen(),
+      home: SplashScreen(),
       // home: OTPPage(),
       // home: ManageCardsPage()
-      home: WashPage(),
+      // home: WashPage(),
     );
   }
 }
