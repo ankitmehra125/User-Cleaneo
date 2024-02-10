@@ -433,7 +433,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
           height: mQuery.size.height * 0.86,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.white     ,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(16),
               topRight: Radius.circular(16),
@@ -480,13 +480,13 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                         padding: EdgeInsets.symmetric(horizontal: 16),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(6),
-                          color: Colors.white,
+                          color: Color(0xfff8fcfe),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 0.2,
                               blurRadius: 7,
-                              offset: Offset(0, 0), // changes the position of the shadow
+                              offset: Offset(0, 0),
                             ),
                           ],
                         ),
@@ -525,7 +525,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                       ),
                                       child: Center(
                                         child: Text(
-                                          dates[i], // Display date from the list
+                                          dates[i],
                                           style: TextStyle(
                                             color: selectedContainerIndex == i
                                                 ? Colors.white // Change text color to white if selected
@@ -612,7 +612,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                         padding: EdgeInsets.symmetric(horizontal: 16),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(6),
-                          color: Colors.white,
+                          color: Color(0xfff8fcfe),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),

@@ -269,6 +269,363 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
     }
   }
 
+  // void _openBottomSheet() {
+  //   showModalBottomSheet(
+  //     context: context,
+  //     builder: (BuildContext context) {
+  //       var mQuery = MediaQuery.of(context);
+  //       return StatefulBuilder(
+  //         builder: (BuildContext context, StateSetter setState) {
+  //           return Container(
+  //             width: double.infinity,
+  //             height: mQuery.size.height * 0.53,
+  //             decoration: BoxDecoration(
+  //                 color: Colors.white,
+  //                 borderRadius: BorderRadius.only(
+  //                     topLeft: Radius.circular(16),
+  //                     topRight: Radius.circular(16)
+  //                 )
+  //             ),
+  //             child: SingleChildScrollView(
+  //               child: Column(
+  //                 children: [
+  //                   SizedBox(height: mQuery.size.height * 0.032,),
+  //                   Padding(
+  //                     padding: const EdgeInsets.symmetric(horizontal: 16),
+  //                     child: Row(
+  //                       children: [
+  //                         Text("Add Debit/Credit Card", style: TextStyle(
+  //                             fontSize: 19,
+  //                             fontWeight: FontWeight.w700
+  //                         ),
+  //                         ),
+  //                         Expanded(child: SizedBox()),
+  //                         GestureDetector(
+  //                             onTap: () {
+  //                               Navigator.pop(context); // Close the bottom sheet
+  //                             },
+  //                             child: Icon(Icons.close, color: Colors.black87,)
+  //                         )
+  //                       ],
+  //                     ),
+  //                   ),
+  //                   SizedBox(height: mQuery.size.height * 0.02,),
+  //                   Divider(),
+  //                   SizedBox(height: mQuery.size.height * 0.01,),
+  //                   Padding(
+  //                     padding: EdgeInsets.symmetric(horizontal: 16),
+  //                     child: SingleChildScrollView(
+  //                       child: Column(
+  //                         children: [
+  //                           Row(
+  //                             children: [
+  //                               GestureDetector(
+  //                                 onTap: () {
+  //                                   setState(() {
+  //                                     selectedCardType = 'Mastercard';
+  //                                   });
+  //                                 },
+  //                                 child: Container(
+  //                                   width: mQuery.size.width * 0.15,
+  //                                   height: mQuery.size.height * 0.05,
+  //                                   decoration: BoxDecoration(
+  //                                     color: Colors.white,
+  //                                     borderRadius: BorderRadius.circular(4),
+  //                                     boxShadow: [
+  //                                       BoxShadow(
+  //                                         color: Colors.grey.withOpacity(0.5),
+  //                                         spreadRadius: 0.5,
+  //                                         blurRadius: 1,
+  //                                         offset: Offset(0, 0), // changes the position of the shadow
+  //                                       ),
+  //                                     ],
+  //                                     border: Border.all(
+  //                                       color: selectedCardType == 'Mastercard' ? Color(0xff29b2fe) : Colors.transparent,
+  //                                       width: 2,
+  //                                     ),
+  //                                   ),
+  //                                   child: Center(
+  //                                     child: SvgPicture.asset("assets/images/mastercard.svg",
+  //                                       width: 30, height: 30,),
+  //                                   ),
+  //                                 ),
+  //                               ),
+  //                               SizedBox(width: mQuery.size.width * 0.03,),
+  //                               GestureDetector(
+  //                                 onTap: () {
+  //                                   setState(() {
+  //                                     selectedCardType = 'Visa';
+  //                                   });
+  //                                 },
+  //                                 child: Container(
+  //                                   width: mQuery.size.width * 0.15,
+  //                                   height: mQuery.size.height * 0.05,
+  //                                   decoration: BoxDecoration(
+  //                                     color: Colors.white,
+  //                                     borderRadius: BorderRadius.circular(4),
+  //                                     boxShadow: [
+  //                                       BoxShadow(
+  //                                         color: Colors.grey.withOpacity(0.5),
+  //                                         spreadRadius: 0.5,
+  //                                         blurRadius: 1,
+  //                                         offset: Offset(0, 0), // changes the position of the shadow
+  //                                       ),
+  //                                     ],
+  //                                     border: Border.all(
+  //                                       color: selectedCardType == 'Visa' ? Color(0xff29b2fe) : Colors.transparent,
+  //                                       width: 2,
+  //                                     ),
+  //                                   ),
+  //                                   child: Center(
+  //                                     child: SvgPicture.asset("assets/images/visa_card.svg",
+  //                                       width: 30, height: 30,),
+  //                                   ),
+  //                                 ),
+  //                               ),
+  //                               SizedBox(width: mQuery.size.width * 0.03,),
+  //                               GestureDetector(
+  //                                 onTap: () {
+  //                                   setState(() {
+  //                                     selectedCardType = 'Amex';
+  //                                   });
+  //                                 },
+  //                                 child: Container(
+  //                                   width: mQuery.size.width * 0.15,
+  //                                   height: mQuery.size.height * 0.05,
+  //                                   decoration: BoxDecoration(
+  //                                     color: Colors.white,
+  //                                     borderRadius: BorderRadius.circular(4),
+  //                                     boxShadow: [
+  //                                       BoxShadow(
+  //                                         color: Colors.grey.withOpacity(0.5),
+  //                                         spreadRadius: 0.5,
+  //                                         blurRadius: 1,
+  //                                         offset: Offset(0, 0), // changes the position of the shadow
+  //                                       ),
+  //                                     ],
+  //                                     border: Border.all(
+  //                                       color: selectedCardType == 'Amex' ? Color(0xff29b2fe) : Colors.transparent,
+  //                                       width: 2,
+  //                                     ),
+  //                                   ),
+  //                                   child: Center(
+  //                                     child: SvgPicture.asset("assets/images/amex.svg",
+  //                                       width: 30, height: 30,),
+  //                                   ),
+  //                                 ),
+  //                               ),
+  //                             ],
+  //                           ),
+  //                           SizedBox(height: mQuery.size.height * 0.02,),
+  //                           Container(
+  //                             width: double.infinity,
+  //                             height: mQuery.size.height * 0.06,
+  //                             decoration: BoxDecoration(
+  //                               borderRadius: BorderRadius.circular(6),
+  //                               color: Colors.white,
+  //                               boxShadow: [
+  //                                 BoxShadow(
+  //                                   color: Colors.grey.withOpacity(0.5),
+  //                                   spreadRadius: 2,
+  //                                   blurRadius: 10,
+  //                                   offset: Offset(0, 0),
+  //                                 ),
+  //                               ],
+  //                             ),
+  //                             child: TextField(
+  //                               cursorColor: Colors.grey,
+  //                               controller: cardNoController,
+  //                               decoration: InputDecoration(
+  //                                 focusedBorder: InputBorder.none,
+  //                                 enabledBorder: InputBorder.none,
+  //                                 hintText: "Card Number",
+  //                                 hintStyle: TextStyle(
+  //                                   fontSize: 14,
+  //                                   fontWeight: FontWeight.w600,
+  //                                   color: Color(0xffABAFB1),
+  //                                 ),
+  //                                 contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+  //                               ),
+  //                             ),
+  //                           ),
+  //                           SizedBox(height: mQuery.size.height * 0.02,),
+  //                           Row(
+  //                             children: [
+  //                               Container(
+  //                                 width: mQuery.size.width * 0.43,
+  //                                 height: mQuery.size.height * 0.055,
+  //                                 decoration: BoxDecoration(
+  //                                   borderRadius: BorderRadius.circular(6),
+  //                                   color: Colors.white,
+  //                                   boxShadow: [
+  //                                     BoxShadow(
+  //                                       color: Colors.grey.withOpacity(0.5),
+  //                                       spreadRadius: 2,
+  //                                       blurRadius: 10,
+  //                                       offset: Offset(0, 0),
+  //                                     ),
+  //                                   ],
+  //                                 ),
+  //                                 child: TextField(
+  //                                   cursorColor: Colors.grey,
+  //                                   controller: mmyyController,
+  //                                   decoration: InputDecoration(
+  //                                     focusedBorder: InputBorder.none,
+  //                                     enabledBorder: InputBorder.none,
+  //                                     hintText: "MM/YY",
+  //                                     hintStyle: TextStyle(
+  //                                       fontSize: 14,
+  //                                       fontWeight: FontWeight.w600,
+  //                                       color: Color(0xffABAFB1),
+  //                                     ),
+  //                                     contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+  //                                   ),
+  //                                 ),
+  //                               ),
+  //                               Expanded(child: SizedBox()),
+  //                               Container(
+  //                                 width: mQuery.size.width * 0.43,
+  //                                 height: mQuery.size.height * 0.055,
+  //                                 decoration: BoxDecoration(
+  //                                   borderRadius: BorderRadius.circular(6),
+  //                                   color: Colors.white,
+  //                                   boxShadow: [
+  //                                     BoxShadow(
+  //                                       color: Colors.grey.withOpacity(0.5),
+  //                                       spreadRadius: 2,
+  //                                       blurRadius: 10,
+  //                                       offset: Offset(0, 0),
+  //                                     ),
+  //                                   ],
+  //                                 ),
+  //                                 child: TextField(
+  //                                   cursorColor: Colors.grey,
+  //                                   controller: cvvController,
+  //                                   obscureText: true,
+  //                                   decoration: InputDecoration(
+  //                                     focusedBorder: InputBorder.none,
+  //                                     enabledBorder: InputBorder.none,
+  //                                     hintText: "CVV",
+  //                                     hintStyle: TextStyle(
+  //                                       fontSize: 14,
+  //                                       fontWeight: FontWeight.w600,
+  //                                       color: Color(0xffABAFB1),
+  //                                     ),
+  //                                     contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+  //                                   ),
+  //                                 ),
+  //                               )
+  //                             ],
+  //                           ),
+  //                           SizedBox(height: mQuery.size.height * 0.02,),
+  //                           Container(
+  //                             width: double.infinity,
+  //                             height: mQuery.size.height * 0.06,
+  //                             decoration: BoxDecoration(
+  //                               borderRadius: BorderRadius.circular(6),
+  //                               color: Colors.white,
+  //                               boxShadow: [
+  //                                 BoxShadow(
+  //                                   color: Colors.grey.withOpacity(0.5),
+  //                                   spreadRadius: 2,
+  //                                   blurRadius: 10,
+  //                                   offset: Offset(0, 0),
+  //                                 ),
+  //                               ],
+  //                             ),
+  //                             child: TextField(
+  //                               cursorColor: Colors.grey,
+  //                               controller: nameController,
+  //                               decoration: InputDecoration(
+  //                                 focusedBorder: InputBorder.none,
+  //                                 enabledBorder: InputBorder.none,
+  //                                 hintText: "Name",
+  //                                 hintStyle: TextStyle(
+  //                                   fontSize: 14,
+  //                                   fontWeight: FontWeight.w600,
+  //                                   color: Color(0xffABAFB1),
+  //                                 ),
+  //                                 contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+  //                               ),
+  //                             ),
+  //                           ),
+  //                           SizedBox(height: mQuery.size.height * 0.05,),
+  //                           Row(
+  //                             children: [
+  //                               GestureDetector(
+  //                                 onTap: () {
+  //                                   Navigator.pop(context); // Close the bottom sheet
+  //                                 },
+  //                                 child: Container(
+  //                                   width: mQuery.size.width * 0.43,
+  //                                   height: mQuery.size.height * 0.055,
+  //                                   decoration: BoxDecoration(
+  //                                     borderRadius: BorderRadius.circular(6),
+  //                                     color: Color(0xff004c91),
+  //                                   ),
+  //                                   child: Center(
+  //                                     child: Text("Cancel", style: TextStyle(
+  //                                         color: Colors.white,
+  //                                         fontWeight: FontWeight.w800
+  //                                     ),),
+  //                                   ),
+  //                                 ),
+  //                               ),
+  //                               Expanded(child: SizedBox()),
+  //                               GestureDetector(
+  //                                 onTap: () async {
+  //                                   CardData newCard = CardData(
+  //                                     cardType: selectedCardType,
+  //                                     cardNumber: cardNoController.text,
+  //                                     expiryDate: mmyyController.text,
+  //                                     cvv: cvvController.text,
+  //                                     cardHolderName: nameController.text,
+  //                                   );
+  //
+  //                                   SharedPreferences prefs = await SharedPreferences.getInstance();
+  //                                   cards.add(newCard);
+  //                                   List<String> cardDataList = [];
+  //                                   for (CardData card in cards) {
+  //                                     String cardDataString = "${card.cardType},${card.cardNumber},${card.expiryDate},${card.cvv},${card.cardHolderName}";
+  //                                     cardDataList.add(cardDataString);
+  //                                   }
+  //                                   prefs.setStringList('cards', cardDataList);
+  //
+  //                                   _loadCardData(); // Reload card data
+  //
+  //                                   Navigator.pop(context); // Close the bottom sheet
+  //                                 },
+  //                                 child: Container(
+  //                                   width: mQuery.size.width * 0.43,
+  //                                   height: mQuery.size.height * 0.055,
+  //                                   decoration: BoxDecoration(
+  //                                     borderRadius: BorderRadius.circular(6),
+  //                                     color: Color(0xff29b2fe),
+  //                                   ),
+  //                                   child: Center(
+  //                                     child: Text("Add", style: TextStyle(
+  //                                         color: Colors.white,
+  //                                         fontWeight: FontWeight.w800
+  //                                     ),),
+  //                                   ),
+  //                                 ),
+  //                               )
+  //                             ],
+  //                           ),
+  //                         ],
+  //                       ),
+  //                     ),
+  //                   )
+  //                 ],
+  //               ),
+  //             ),
+  //           );
+  //         },
+  //       );
+  //     },
+  //   );
+  // }
+
   void _openBottomSheet() {
     showModalBottomSheet(
       context: context,
@@ -280,45 +637,52 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
               width: double.infinity,
               height: mQuery.size.height * 0.53,
               decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(16),
-                      topRight: Radius.circular(16)
-                  )
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(16),
+                  topRight: Radius.circular(16),
+                ),
               ),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    SizedBox(height: mQuery.size.height * 0.032,),
+                    SizedBox(height: mQuery.size.height * 0.032),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Row(
                         children: [
-                          Text("Add Debit/Credit Card", style: TextStyle(
+                          Text(
+                            "Add Debit/Credit Card",
+                            style: TextStyle(
                               fontSize: 19,
-                              fontWeight: FontWeight.w700
-                          ),
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
                           Expanded(child: SizedBox()),
                           GestureDetector(
-                              onTap: () {
-                                Navigator.pop(context); // Close the bottom sheet
-                              },
-                              child: Icon(Icons.close, color: Colors.black87,)
+                            onTap: () {
+                              Navigator.pop(context); // Close the bottom sheet
+                            },
+                            child: Icon(
+                              Icons.close,
+                              color: Colors.black87,
+                            ),
                           )
                         ],
                       ),
                     ),
-                    SizedBox(height: mQuery.size.height * 0.02,),
+                    SizedBox(height: mQuery.size.height * 0.02),
                     Divider(),
-                    SizedBox(height: mQuery.size.height * 0.01,),
+                    SizedBox(height: mQuery.size.height * 0.01),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16),
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
+                            // Card selection options
                             Row(
                               children: [
+                                // Mastercard
                                 GestureDetector(
                                   onTap: () {
                                     setState(() {
@@ -336,21 +700,27 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                           color: Colors.grey.withOpacity(0.5),
                                           spreadRadius: 0.5,
                                           blurRadius: 1,
-                                          offset: Offset(0, 0), // changes the position of the shadow
+                                          offset: Offset(0, 0),
                                         ),
                                       ],
                                       border: Border.all(
-                                        color: selectedCardType == 'Mastercard' ? Color(0xff29b2fe) : Colors.transparent,
+                                        color: selectedCardType == 'Mastercard'
+                                            ? Color(0xff29b2fe)
+                                            : Colors.transparent,
                                         width: 2,
                                       ),
                                     ),
                                     child: Center(
-                                      child: SvgPicture.asset("assets/images/mastercard.svg",
-                                        width: 30, height: 30,),
+                                      child: SvgPicture.asset(
+                                        "assets/images/mastercard.svg",
+                                        width: 30,
+                                        height: 30,
+                                      ),
                                     ),
                                   ),
                                 ),
-                                SizedBox(width: mQuery.size.width * 0.03,),
+                                // Visa
+                                SizedBox(width: mQuery.size.width * 0.03),
                                 GestureDetector(
                                   onTap: () {
                                     setState(() {
@@ -368,21 +738,27 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                           color: Colors.grey.withOpacity(0.5),
                                           spreadRadius: 0.5,
                                           blurRadius: 1,
-                                          offset: Offset(0, 0), // changes the position of the shadow
+                                          offset: Offset(0, 0),
                                         ),
                                       ],
                                       border: Border.all(
-                                        color: selectedCardType == 'Visa' ? Color(0xff29b2fe) : Colors.transparent,
+                                        color: selectedCardType == 'Visa'
+                                            ? Color(0xff29b2fe)
+                                            : Colors.transparent,
                                         width: 2,
                                       ),
                                     ),
                                     child: Center(
-                                      child: SvgPicture.asset("assets/images/visa_card.svg",
-                                        width: 30, height: 30,),
+                                      child: SvgPicture.asset(
+                                        "assets/images/visa_card.svg",
+                                        width: 30,
+                                        height: 30,
+                                      ),
                                     ),
                                   ),
                                 ),
-                                SizedBox(width: mQuery.size.width * 0.03,),
+                                // Amex
+                                SizedBox(width: mQuery.size.width * 0.03),
                                 GestureDetector(
                                   onTap: () {
                                     setState(() {
@@ -400,23 +776,29 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                           color: Colors.grey.withOpacity(0.5),
                                           spreadRadius: 0.5,
                                           blurRadius: 1,
-                                          offset: Offset(0, 0), // changes the position of the shadow
+                                          offset: Offset(0, 0),
                                         ),
                                       ],
                                       border: Border.all(
-                                        color: selectedCardType == 'Amex' ? Color(0xff29b2fe) : Colors.transparent,
+                                        color: selectedCardType == 'Amex'
+                                            ? Color(0xff29b2fe)
+                                            : Colors.transparent,
                                         width: 2,
                                       ),
                                     ),
                                     child: Center(
-                                      child: SvgPicture.asset("assets/images/amex.svg",
-                                        width: 30, height: 30,),
+                                      child: SvgPicture.asset(
+                                        "assets/images/amex.svg",
+                                        width: 30,
+                                        height: 30,
+                                      ),
                                     ),
                                   ),
                                 ),
                               ],
                             ),
-                            SizedBox(height: mQuery.size.height * 0.02,),
+                            SizedBox(height: mQuery.size.height * 0.02),
+                            // Card Number TextField
                             Container(
                               width: double.infinity,
                               height: mQuery.size.height * 0.06,
@@ -425,9 +807,9 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                 color: Colors.white,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
+                                    color: Colors.grey.withOpacity(0.3),
                                     spreadRadius: 2,
-                                    blurRadius: 10,
+                                    blurRadius: 4,
                                     offset: Offset(0, 0),
                                   ),
                                 ],
@@ -444,11 +826,13 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                     fontWeight: FontWeight.w600,
                                     color: Color(0xffABAFB1),
                                   ),
-                                  contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                                  contentPadding: EdgeInsets.symmetric(
+                                      vertical: 16, horizontal: 16),
                                 ),
                               ),
                             ),
-                            SizedBox(height: mQuery.size.height * 0.02,),
+                            SizedBox(height: mQuery.size.height * 0.02),
+                            // MM/YY and CVV TextFields
                             Row(
                               children: [
                                 Container(
@@ -459,9 +843,9 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                     color: Colors.white,
                                     boxShadow: [
                                       BoxShadow(
-                                        color: Colors.grey.withOpacity(0.5),
+                                        color: Colors.grey.withOpacity(0.3),
                                         spreadRadius: 2,
-                                        blurRadius: 10,
+                                        blurRadius: 4,
                                         offset: Offset(0, 0),
                                       ),
                                     ],
@@ -478,7 +862,8 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                         fontWeight: FontWeight.w600,
                                         color: Color(0xffABAFB1),
                                       ),
-                                      contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                                      contentPadding: EdgeInsets.symmetric(
+                                          vertical: 16, horizontal: 16),
                                     ),
                                   ),
                                 ),
@@ -491,9 +876,9 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                     color: Colors.white,
                                     boxShadow: [
                                       BoxShadow(
-                                        color: Colors.grey.withOpacity(0.5),
+                                        color: Colors.grey.withOpacity(0.3),
                                         spreadRadius: 2,
-                                        blurRadius: 10,
+                                        blurRadius: 4,
                                         offset: Offset(0, 0),
                                       ),
                                     ],
@@ -511,13 +896,15 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                         fontWeight: FontWeight.w600,
                                         color: Color(0xffABAFB1),
                                       ),
-                                      contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                                      contentPadding: EdgeInsets.symmetric(
+                                          vertical: 16, horizontal: 16),
                                     ),
                                   ),
                                 )
                               ],
                             ),
-                            SizedBox(height: mQuery.size.height * 0.02,),
+                            SizedBox(height: mQuery.size.height * 0.02),
+                            // Name TextField
                             Container(
                               width: double.infinity,
                               height: mQuery.size.height * 0.06,
@@ -526,9 +913,9 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                 color: Colors.white,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
+                                    color: Colors.grey.withOpacity(0.3),
                                     spreadRadius: 2,
-                                    blurRadius: 10,
+                                    blurRadius: 4,
                                     offset: Offset(0, 0),
                                   ),
                                 ],
@@ -545,11 +932,13 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                     fontWeight: FontWeight.w600,
                                     color: Color(0xffABAFB1),
                                   ),
-                                  contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                                  contentPadding: EdgeInsets.symmetric(
+                                      vertical: 16, horizontal: 16),
                                 ),
                               ),
                             ),
-                            SizedBox(height: mQuery.size.height * 0.05,),
+                            SizedBox(height: mQuery.size.height * 0.05),
+                            // Cancel and Add Buttons
                             Row(
                               children: [
                                 GestureDetector(
@@ -564,16 +953,38 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                       color: Color(0xff004c91),
                                     ),
                                     child: Center(
-                                      child: Text("Cancel", style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w800
-                                      ),),
+                                      child: Text(
+                                        "Cancel",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w800),
+                                      ),
                                     ),
                                   ),
                                 ),
                                 Expanded(child: SizedBox()),
                                 GestureDetector(
                                   onTap: () async {
+                                    // Check if any field is empty
+                                    if (selectedCardType!.isEmpty ||
+                                        cardNoController.text.isEmpty ||
+                                        mmyyController.text.isEmpty ||
+                                        cvvController.text.isEmpty ||
+                                        nameController.text.isEmpty) {
+                                      // Show error message
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(SnackBar(
+                                        duration: Duration(seconds: 3),
+                                        backgroundColor: Color(0xffededed),
+                                        content: Text(
+                                            "All fields are required to add a card",style: TextStyle(
+                                          color: Colors.red
+                                        ),),
+                                      ));
+                                      return; // Don't proceed further
+                                    }
+
+                                    // If all fields are filled, proceed to add the card
                                     CardData newCard = CardData(
                                       cardType: selectedCardType,
                                       cardNumber: cardNoController.text,
@@ -582,18 +993,21 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                       cardHolderName: nameController.text,
                                     );
 
-                                    SharedPreferences prefs = await SharedPreferences.getInstance();
+                                    SharedPreferences prefs =
+                                    await SharedPreferences.getInstance();
                                     cards.add(newCard);
                                     List<String> cardDataList = [];
                                     for (CardData card in cards) {
-                                      String cardDataString = "${card.cardType},${card.cardNumber},${card.expiryDate},${card.cvv},${card.cardHolderName}";
+                                      String cardDataString =
+                                          "${card.cardType},${card.cardNumber},${card.expiryDate},${card.cvv},${card.cardHolderName}";
                                       cardDataList.add(cardDataString);
                                     }
                                     prefs.setStringList('cards', cardDataList);
 
                                     _loadCardData(); // Reload card data
 
-                                    Navigator.pop(context); // Close the bottom sheet
+                                    Navigator.pop(
+                                        context); // Close the bottom sheet
                                   },
                                   child: Container(
                                     width: mQuery.size.width * 0.43,
@@ -603,10 +1017,12 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                       color: Color(0xff29b2fe),
                                     ),
                                     child: Center(
-                                      child: Text("Add", style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w800
-                                      ),),
+                                      child: Text(
+                                        "Add",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w800),
+                                      ),
                                     ),
                                   ),
                                 )

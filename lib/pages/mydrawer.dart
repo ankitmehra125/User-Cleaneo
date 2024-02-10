@@ -55,8 +55,8 @@ class _MyDrawerState extends State<MyDrawer> {
                               children: [
                                 SizedBox(height: mQuery.size.height*0.02,),
                                 Text("Shweta Somaiya",style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600
                                 ),),
                                 SizedBox(width: mQuery.size.width*0.22,),
                                 Icon(Icons.edit,color: Colors.cyan,),
@@ -125,7 +125,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Icon(Icons.dashboard,color: Colors.cyan,),
                           title: Text("Dashboard",style: TextStyle(
                               fontWeight: FontWeight.w600,
-                            fontSize: 15
+                              fontSize: 15
                           ),),
                         ),
                       ),
@@ -140,28 +140,28 @@ class _MyDrawerState extends State<MyDrawer> {
                         leading: Icon(Icons.location_on_outlined,color: Colors.cyan,),
                         title: Text("Address Book",style: TextStyle(
                             fontWeight: FontWeight.w600,
-                          fontSize: 15
+                            fontSize: 15
                         ),),
                       ),
                       ListTile(
                         leading: Icon(Icons.notifications_none_sharp,color: Colors.cyan,),
                         title: Text("Notifications",style: TextStyle(
                             fontWeight: FontWeight.w600,
-                          fontSize: 15
+                            fontSize: 15
                         ),),
                       ),
                       ListTile(
                         leading: Icon(Icons.favorite_border,color: Colors.cyan),
                         title: Text("Donate",style: TextStyle(
                             fontWeight: FontWeight.w600,
-                          fontSize: 15
+                            fontSize: 15
                         ),),
                       ),
                       ListTile(
                         leading: Icon(Icons.wallet_travel_rounded,color: Colors.cyan),
                         title: Text("Wallet",style: TextStyle(
                             fontWeight: FontWeight.w600,
-                          fontSize: 15
+                            fontSize: 15
                         ),),
                       ),
                       GestureDetector(
@@ -175,7 +175,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Icon(Icons.credit_card,color: Colors.cyan),
                           title: Text("Manage Cards",style: TextStyle(
                               fontWeight: FontWeight.w600,
-                            fontSize: 15
+                              fontSize: 15
                           ),),
                         ),
                       ),
@@ -183,21 +183,21 @@ class _MyDrawerState extends State<MyDrawer> {
                         leading: Icon(Icons.local_offer,color: Colors.cyan),
                         title: Text("Offers",style: TextStyle(
                             fontWeight: FontWeight.w600,
-                          fontSize: 15
+                            fontSize: 15
                         ),),
                       ),
                       ListTile(
                         leading: Icon(Icons.card_giftcard,color: Colors.cyan),
                         title: Text("Refer and Earn",style: TextStyle(
                             fontWeight: FontWeight.w600,
-                          fontSize: 15
+                            fontSize: 15
                         ),),
                       ),
                       ListTile(
                         leading: Icon(Icons.star_border_outlined,color: Colors.cyan),
                         title: Text("Reviews",style: TextStyle(
                             fontWeight: FontWeight.w600,
-                          fontSize: 15
+                            fontSize: 15
                         ),),
                       ),
                       GestureDetector(
@@ -211,7 +211,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Icon(Icons.help_outline,color: Colors.cyan),
                           title: Text("Help",style: TextStyle(
                               fontWeight: FontWeight.w600,
-                            fontSize: 15
+                              fontSize: 15
                           ),),
                         ),
                       ),
@@ -260,9 +260,9 @@ class _MyDrawerState extends State<MyDrawer> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Text("Sign Out",style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w600
+                                      fontSize: 16,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w600
                                   ),),
                                 ],
                               ),
@@ -278,8 +278,6 @@ class _MyDrawerState extends State<MyDrawer> {
                       ],
                     ),
                   ),
-
-
                 ],
               ),
             )
@@ -289,3 +287,4 @@ class _MyDrawerState extends State<MyDrawer> {
     );
   }
 }
+

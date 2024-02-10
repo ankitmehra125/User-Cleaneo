@@ -282,7 +282,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
             ),
             SizedBox(height: mQuery.size.height*0.033,),
             GestureDetector(
-              onTap: _openBottomSheet, 
+              onTap: _openBottomSheet,
               child: Container(
                 width: double.infinity,
                 height: mQuery.size.height*0.08,
@@ -381,7 +381,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                         padding: EdgeInsets.symmetric(horizontal: 16),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(6),
-                          color: Colors.white,
+                          color: Color(0xfff8fcfe),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
@@ -513,7 +513,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                     padding: EdgeInsets.symmetric(horizontal: 16),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6),
-                      color: Colors.white,
+                        color: Color(0xfff8fcfe),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
