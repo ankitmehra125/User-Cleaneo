@@ -1,6 +1,6 @@
 
 import 'package:cleaneo_user_app/pages/home_page.dart';
-import 'package:cleaneo_user_app/pages/otp_page.dart';
+import 'package:cleaneo_user_app/Auth/otp_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';

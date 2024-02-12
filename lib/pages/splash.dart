@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:cleaneo_user_app/pages/welcome_page.dart';
+import 'package:cleaneo_user_app/Auth/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

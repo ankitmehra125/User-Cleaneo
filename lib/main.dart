@@ -1,8 +1,8 @@
 import 'package:cleaneo_user_app/pages/manage_cards_page.dart';
 import 'package:cleaneo_user_app/pages/myprofile.dart';
-import 'package:cleaneo_user_app/pages/otp_page.dart';
+import 'package:cleaneo_user_app/Auth/otp_page.dart';
 import 'package:cleaneo_user_app/pages/wash_page.dart';
-import 'package:cleaneo_user_app/pages/welcome_page.dart';
+import 'package:cleaneo_user_app/Auth/welcome_page.dart';
 import 'package:cleaneo_user_app/pages/help_page.dart';
 import 'package:cleaneo_user_app/pages/home_page.dart';
 import 'package:cleaneo_user_app/pages/mydrawer.dart';

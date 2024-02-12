@@ -1,5 +1,5 @@
-import 'package:cleaneo_user_app/pages/login_page.dart';
-import 'package:cleaneo_user_app/pages/signup_page.dart';
+import 'package:cleaneo_user_app/Auth/login_page.dart';
+import 'package:cleaneo_user_app/Auth/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
