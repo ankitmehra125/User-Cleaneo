@@ -30,14 +30,14 @@ class _WashPageState extends State<WashPage> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Color(0xff006acb),
-            ),
-            child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Color(0xff006acb),
+              ),
               child: Column(
                 children: [
                   SizedBox(height: mQuery.size.height * 0.034),
@@ -112,53 +112,53 @@ class _WashPageState extends State<WashPage> with SingleTickerProviderStateMixin
                 ],
               ),
             ),
-          ),
-          if (_isDropdownOpen)
-            Positioned(
-              top: mQuery.size.height*0.14,
-              left: mQuery.size.height*0.08,
-              child: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _isDropdownOpen = false;
-                  });
-                },
-                child: Container(
-                  height: mQuery.size.height*0.24,
-                  width: mQuery.size.width*0.48,
-                  padding: EdgeInsets.symmetric(horizontal: 16),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(6),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 0.2,
-                        blurRadius: 7,
-                        offset: Offset(0, 0), // changes the position of the shadow
-                      ),
-                    ],
-                  ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        SizedBox(height: mQuery.size.height*0.001,),
-                        _buildDropdownRow("Wash & Iron", 0),
-                        SizedBox(height: mQuery.size.height*0.001),
-                        _buildDropdownRow("Stream Iron", 1),
-                        SizedBox(height: mQuery.size.height*0.001),
-                        _buildDropdownRow("Dry Clean", 2),
-                        SizedBox(height: mQuery.size.height*0.001),
-                        _buildDropdownRow("Premium", 3),
-                        SizedBox(height: mQuery.size.height*0.001),
-                        _buildDropdownRow("Shoe & Bag Care", 4),
+            if (_isDropdownOpen)
+              Positioned(
+                top: mQuery.size.height*0.14,
+                left: mQuery.size.height*0.08,
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _isDropdownOpen = false;
+                    });
+                  },
+                  child: Container(
+                    height: mQuery.size.height*0.24,
+                    width: mQuery.size.width*0.48,
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(6),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 0.2,
+                          blurRadius: 7,
+                          offset: Offset(0, 0), // changes the position of the shadow
+                        ),
                       ],
+                    ),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          SizedBox(height: mQuery.size.height*0.001,),
+                          _buildDropdownRow("Wash & Iron", 0),
+                          SizedBox(height: mQuery.size.height*0.001),
+                          _buildDropdownRow("Stream Iron", 1),
+                          SizedBox(height: mQuery.size.height*0.001),
+                          _buildDropdownRow("Dry Clean", 2),
+                          SizedBox(height: mQuery.size.height*0.001),
+                          _buildDropdownRow("Premium", 3),
+                          SizedBox(height: mQuery.size.height*0.001),
+                          _buildDropdownRow("Shoe & Bag Care", 4),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-        ],
+          ],
+        ),
       ),
     );
   }

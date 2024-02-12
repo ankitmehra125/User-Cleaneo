@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'home_page.dart';
@@ -13,9 +14,16 @@ class _ByWeightPageState extends State<ByWeightPage> {
   int kg = 0;
   int noCloths = 33;
   bool clothSoftenerSelected = false;
-  bool antigermsSelected = false; // Track if cloth softener is selected
+  bool antigermsSelected = false;
 
-  int selectedContainerIndex = -1; // Track selected container index
+  int selectedContainerIndex = -1;
+  int selectedDateIndex = 0;
+  int selectedTimeIndex = -1;
+
+  int selectedDateIndex2= -1;
+  int selectedTimeIndex2 = -1;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +53,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 0.2,
                     blurRadius: 7,
-                    offset: Offset(0, 0), // changes the position of the shadow
+                    offset: Offset(0, 0),
                   ),
                 ],
               ),
@@ -71,7 +79,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            kg = kg > 0 ? kg - 1 : 0; // Prevent negative value
+                            kg = kg > 0 ? kg - 1 : 0;
                           });
                         },
                         child: Container(
@@ -155,7 +163,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 0,
                               blurRadius: 1,
-                              offset: Offset(0, 0), // changes the position of the shadow
+                              offset: Offset(0, 0),
                             ),
                           ],
                         ),
@@ -193,6 +201,13 @@ class _ByWeightPageState extends State<ByWeightPage> {
                   TextSpan(
                     text: "'SEARCH'",
                     style: TextStyle(color: Color(0xff29b2fe)),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomePage()), // Replace HomePage() with your home page widget
+                        );
+                      },
                   ),
                   TextSpan(
                     text: " on Dashboard",
@@ -218,7 +233,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 0.2,
                     blurRadius: 7,
-                    offset: Offset(0, 0), // changes the position of the shadow
+                    offset: Offset(0, 0),
                   ),
                 ],
               ),
@@ -282,7 +297,10 @@ class _ByWeightPageState extends State<ByWeightPage> {
             ),
             SizedBox(height: mQuery.size.height*0.033,),
             GestureDetector(
-              onTap: _openBottomSheet,
+              onTap: ()
+              {
+                _openBottomSheet(context);
+                },
               child: Container(
                 width: double.infinity,
                 height: mQuery.size.height*0.08,
@@ -323,387 +341,374 @@ class _ByWeightPageState extends State<ByWeightPage> {
     );
   }
 
-  void _openBottomSheet() {
+  void _openBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       builder: (BuildContext context) {
         var mQuery = MediaQuery.of(context);
         List<String> dates = ["25 June", "26 June", "27 June"];
-        return Container(
-          height: mQuery.size.height * 0.86,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(16),
-              topRight: Radius.circular(16),
-            ),
-          ),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: mQuery.size.height * 0.02),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Row(
-                    children: [
-                      Text(
-                        "Schedule Your Order",
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w900),
-                      ),
-                      Expanded(child: SizedBox()),
-                      GestureDetector(
-                        onTap: ()
-                          {
-                            Navigator.pop(context);
-                          },
-                          child: Icon(Icons.close))
-                    ],
-                  ),
+        List<String> times = ["10am - 12pm", "02pm - 04pm", "06pm - 08pm"];
+
+        List<String> dates2 = ["25 June", "28 June", "29 June"];
+        List<String> times2 = ["10am - 12pm", "02pm - 04pm", "06pm - 08pm"];
+
+        int? selectedDateIndex; // Track the selected date index
+
+        return StatefulBuilder(
+          builder: (context, setState) {
+            return Container(
+              height: mQuery.size.height * 0.86,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(16),
+                  topRight: Radius.circular(16),
                 ),
-                SizedBox(height: mQuery.size.height * 0.01),
-                Divider(),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Pickup Slot",
-                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: mQuery.size.height * 0.02),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Schedule Your Order",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w900),
+                          ),
+                          Expanded(child: SizedBox()),
+                          GestureDetector(
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
+                              child: Icon(Icons.close))
+                        ],
                       ),
-                      SizedBox(height: mQuery.size.height * 0.016),
-                      Container(
-                        width: double.infinity,
-                        height: mQuery.size.height * 0.23,
-                        padding: EdgeInsets.symmetric(horizontal: 16),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(6),
-                          color: Color(0xfff8fcfe),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              spreadRadius: 0.2,
-                              blurRadius: 7,
-                              offset: Offset(0, 0), // changes the position of the shadow
-                            ),
-                          ],
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(height: mQuery.size.height * 0.01),
-                            Text(
-                              "SELECT PICKUP DATE",
-                              style: TextStyle(fontSize: 14, color: Colors.black54),
-                            ),
-                            SizedBox(height: mQuery.size.height * 0.01),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                for (int i = 0; i < dates.length; i++)
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        selectedContainerIndex = i;
-                                      });
-                                    },
-                                    child: Container(
-                                      width: mQuery.size.width * 0.2,
-                                      height: mQuery.size.height * 0.048,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(6),
-                                        border: Border.all(
-                                          color: selectedContainerIndex == i
-                                              ? Colors.green // Change color to green if selected
-                                              : Colors.grey,
-                                        ),
-                                        color: selectedContainerIndex == i
-                                            ? Colors.green // Change color to green if selected
-                                            : Colors.white,
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          dates[i], // Display date from the list
-                                          style: TextStyle(
-                                            color: selectedContainerIndex == i
-                                                ? Colors.white // Change text color to white if selected
-                                                : Colors.black,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                              ],
-                            ),
-                            SizedBox(height: mQuery.size.height*0.006,),
-                            Divider(),
-                            SizedBox(height: mQuery.size.height * 0.006),
-                            Text(
-                              "SELECT PICKUP TIME",
-                              style: TextStyle(fontSize: 14, color: Colors.black54),
-                            ),
-                            SizedBox(height: mQuery.size.height * 0.01),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                              Container(
-                              width: mQuery.size.width * 0.25,
-                              height: mQuery.size.height * 0.048,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6),
-                                 border: Border.all(
-                                   color: Colors.grey
-                                 )
-                              ),
-                                child: Center(
-                                  child: Text("10am - 12pm",style: TextStyle(
-                                      fontSize: 13
-                                  ),),
-                                ),
-                            ),
-                                Container(
-                                    width: mQuery.size.width * 0.25,
-                                    height: mQuery.size.height * 0.048,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(6),
-                                        border: Border.all(
-                                          color: Colors.grey
-                                        )
-                                    ),
-                                  child: Center(
-                                    child: Text("02pm - 04pm",style: TextStyle(
-                                      fontSize: 13
-                                    ),),
-                                  ),
-                                ),
-                                Container(
-                                    width: mQuery.size.width * 0.25,
-                                    height: mQuery.size.height * 0.048,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(6),
-                                        border: Border.all(
-                                          color: Colors.grey
-                                        )
-                                    ),
-                                  child: Center(
-                                    child: Text("06pm - 08pm",style: TextStyle(
-                                        fontSize: 13
-                                    ),),
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                      SizedBox(height: mQuery.size.height*0.022,),
-                      Divider(),
-                      SizedBox(height: mQuery.size.height*0.006,),
-                      Text(
-                        "Delivery Slot",
-                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
-                      ),
-                      SizedBox(height: mQuery.size.height*0.016,),
-                    Container(
-                    width: double.infinity,
-                    height: mQuery.size.height * 0.23,
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6),
-                        color: Color(0xfff8fcfe),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 0.2,
-                          blurRadius: 7,
-                          offset: Offset(0, 0), // changes the position of the shadow
-                        ),
-                      ],
                     ),
+                    SizedBox(height: mQuery.size.height * 0.01),
+                    Divider(),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(height: mQuery.size.height * 0.01),
                           Text(
-                            "SELECT DELIVERY DATE",
-                            style: TextStyle(fontSize: 14, color: Colors.black54),
+                            "Pickup Slot",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w800),
                           ),
-                          SizedBox(height: mQuery.size.height * 0.01),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                width: mQuery.size.width * 0.2,
-                                height: mQuery.size.height * 0.048,
-                                decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6),
-                                border: Border.all(
-                                color: Colors.grey
-                              )
-                              ),
-                                child: Center(
-                                  child: Text("25 June",style: TextStyle(
-                                    fontSize: 13
-                                  ),),
+                          SizedBox(height: mQuery.size.height * 0.016),
+                          Container(
+                            width: double.infinity,
+                            height: mQuery.size.height * 0.23,
+                            padding: EdgeInsets.symmetric(horizontal: 16),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(6),
+                              color: Color(0xfff8fcfe),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 0.2,
+                                  blurRadius: 7,
+                                  offset: Offset(0, 0),
                                 ),
-                              ),
-                              Container(
-                                width: mQuery.size.width * 0.2,
-                                height: mQuery.size.height * 0.048,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(6),
-                                    border: Border.all(
-                                        color: Colors.grey
-                                    )
-                                ),
-                                child: Center(
-                                  child: Text("28 June",style: TextStyle(
-                                      fontSize: 13
-                                  ),),
-                                ),
-                              ),
-                              Container(
-                                width: mQuery.size.width * 0.2,
-                                height: mQuery.size.height * 0.048,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(6),
-                                    border: Border.all(
-                                        color: Colors.grey
-                                    )
-                                ),
-                                child: Center(
-                                  child: Text("29 June",style: TextStyle(
-                                      fontSize: 13
-                                  ),),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: mQuery.size.height * 0.006),
-                          Divider(),
-                          SizedBox(height: mQuery.size.height*0.006,),
-                          Text(
-                            "SELECT DELIVERY TIME",
-                            style: TextStyle(fontSize: 14,
-                                color: Colors.black54),
-                          ),
-                          SizedBox(height: mQuery.size.height * 0.01),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                width: mQuery.size.width * 0.25,
-                                height: mQuery.size.height * 0.048,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(6),
-                                    border: Border.all(
-                                        color: Colors.grey
-                                    )
-                                ),
-                                child: Center(
-                                  child: Text("10am - 12pm",style: TextStyle(
-                                      fontSize: 13
-                                  ),),
-                                ),
-                              ),
-                              Container(
-                                width: mQuery.size.width * 0.25,
-                                height: mQuery.size.height * 0.048,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(6),
-                                    border: Border.all(
-                                        color: Colors.grey
-                                    )
-                                ),
-                                child: Center(
-                                  child: Text("02pm - 04pm",style: TextStyle(
-                                      fontSize: 13
-                                  ),),
-                                ),
-                              ),
-                              Container(
-                                width: mQuery.size.width * 0.25,
-                                height: mQuery.size.height * 0.048,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(6),
-                                    border: Border.all(
-                                        color: Colors.grey
-                                    )
-                                ),
-                                child: Center(
-                                  child: Text("06pm - 08pm",style: TextStyle(
-                                      fontSize: 13
-                                  ),),
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                  ),
-                      SizedBox(height: mQuery.size.height*0.01,),
-                      Divider(),
-                      SizedBox(height: mQuery.size.height*0.01,),
-                      RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: "Note: ",style: TextStyle(
-                              color: Colors.red
-                            )
-                            ),
-                            TextSpan(
-                              text: "Delivery of heavy and dry clean items may be delayed.",style: TextStyle(
-                              color: Colors.black54,
-                              fontSize: 12
-                            )
-                            )
-                          ]
-                        ),
-                      ),
-                      SizedBox(height: mQuery.size.height*0.02,),
-                      Container(
-                        width: double.infinity,
-                        height: mQuery.size.height*0.08,
-                        padding: EdgeInsets.symmetric(horizontal: 16),
-                        decoration: BoxDecoration(
-                            color: Color(0xff29b2fe),
-                            borderRadius: BorderRadius.circular(6)
-                        ),
-                        child: Row(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: mQuery.size.height*0.012,),
-                                Text("$noCloths ITEMS",style: TextStyle(
-                                    color: Colors.white
-                                ),),
-                                Text("₹ 1,220 plus taxes",style: TextStyle(
-                                    color: Colors.white
-                                ))
                               ],
                             ),
-                            Expanded(child: SizedBox()),
-                            Text("Proceed",style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 17,
-                                fontWeight: FontWeight.w800
-                            )),
-                            SizedBox(width: mQuery.size.width*0.02,),
-                            Icon(Icons.arrow_right,color: Colors.white,)
-                          ],
-                        ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: mQuery.size.height * 0.01),
+                                Text(
+                                  "SELECT PICKUP DATE",
+                                  style: TextStyle(
+                                      fontSize: 14, color: Colors.black54),
+                                ),
+                                SizedBox(height: mQuery.size.height * 0.01),
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    for (int i = 0; i < dates.length; i++)
+                                      GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            selectedDateIndex = i;
+                                          });
+                                        },
+                                        child: Container(
+                                          width: mQuery.size.width * 0.2,
+                                          height: mQuery.size.height * 0.048,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                            BorderRadius.circular(6),
+                                            border: Border.all(
+                                              color: selectedDateIndex == i
+                                                  ? Color(0xff009c1a)
+                                                  : Colors.grey,
+                                            ),
+                                            color: selectedDateIndex == i
+                                                ? Color(0xff009c1a)
+                                                : Colors.white,
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              dates[i],
+                                              style: TextStyle(
+                                                color: selectedDateIndex == i
+                                                    ? Colors.white
+                                                    : Colors.black,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                  ],
+                                ),
+                                SizedBox(height: mQuery.size.height * 0.006),
+                                Divider(),
+                                SizedBox(height: mQuery.size.height * 0.006),
+                                Text(
+                                  "SELECT PICKUP TIME",
+                                  style: TextStyle(
+                                      fontSize: 14, color: Colors.black54),
+                                ),
+                                SizedBox(height: mQuery.size.height * 0.01),
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    for(int i=0; i<times.length; i++)
+                                      GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            selectedTimeIndex = i;
+                                          });
+                                        },
+                                        child: Container(
+                                          width: mQuery.size.width * 0.25,
+                                          height: mQuery.size.height * 0.048,
+                                          decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(6),
+                                              border: Border.all(
+                                                  color: selectedTimeIndex == i
+                                                      ? Color(0xff009c1a)
+                                                      : Colors.grey
+                                              ),
+                                              color: selectedTimeIndex == i
+                                                  ? Color(0xff009c1a)
+                                                  : Colors.white
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              times[i],
+                                              style: TextStyle(fontSize: 13,
+                                                  color: selectedTimeIndex == i
+                                                      ? Colors.white
+                                                      : Colors.black),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: mQuery.size.height * 0.022),
+                          Divider(),
+                          SizedBox(height: mQuery.size.height * 0.006),
+                          Text(
+                            "Delivery Slot",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w800),
+                          ),
+                          SizedBox(height: mQuery.size.height * 0.016),
+                          Container(
+                            width: double.infinity,
+                            height: mQuery.size.height * 0.23,
+                            padding: EdgeInsets.symmetric(horizontal: 16),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(6),
+                              color: Color(0xfff8fcfe),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 0.2,
+                                  blurRadius: 7,
+                                  offset: Offset(0, 0), // changes the position of the shadow
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: mQuery.size.height * 0.01),
+                                Text(
+                                  "SELECT DELIVERY DATE",
+                                  style: TextStyle(
+                                      fontSize: 14, color: Colors.black54),
+                                ),
+                                SizedBox(height: mQuery.size.height * 0.01),
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    for(int i = 0; i<dates2.length; i++)
+                                      GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            selectedDateIndex2 = i;
+                                          });
+                                        },
+                                        child: Container(
+                                          width: mQuery.size.width * 0.2,
+                                          height: mQuery.size.height * 0.048,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(6),
+                                            border: Border.all(
+                                              color: selectedDateIndex2 == i
+                                                  ? Color(0xff006acb)
+                                                  : Colors.grey,
+                                            ),
+                                            color: selectedDateIndex2 == i
+                                                ? Color(0xff006acb)
+                                                : Colors.white,
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              dates2[i],
+                                              style: TextStyle(fontSize: 13,
+                                                color: selectedDateIndex2 == i
+                                                    ? Colors.white
+                                                    : Colors.black,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                  ],
+                                ),
+                                SizedBox(height: mQuery.size.height * 0.006),
+                                Divider(),
+                                SizedBox(height: mQuery.size.height * 0.006),
+                                Text(
+                                  "SELECT DELIVERY TIME",
+                                  style: TextStyle(
+                                      fontSize: 14, color: Colors.black54),
+                                ),
+                                SizedBox(height: mQuery.size.height * 0.01),
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    for(int i=0; i<times2.length; i++)
+                                      GestureDetector(
+                                        onTap:()
+                                        {
+                                          setState(() {
+                                            selectedTimeIndex2 = i;
+                                          });
+                                        },
+                                        child: Container(
+                                          width: mQuery.size.width * 0.25,
+                                          height: mQuery.size.height * 0.048,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(6),
+                                            border: Border.all(
+                                              color: selectedTimeIndex2 == i
+                                                  ? Color(0xff006acb)
+                                                  : Colors.grey,
+                                            ),
+                                            color: selectedTimeIndex2 == i
+                                                ? Color(0xff006acb)
+                                                : Colors.white,
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              times2[i],
+                                              style: TextStyle(fontSize: 13,
+                                                color: selectedTimeIndex2 == i
+                                                    ? Colors.white
+                                                    : Colors.black,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: mQuery.size.height * 0.01),
+                          Divider(),
+                          SizedBox(height: mQuery.size.height * 0.01),
+                          RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: "Note: ",
+                                  style: TextStyle(color: Colors.red),
+                                ),
+                                TextSpan(
+                                  text:
+                                  "Delivery of heavy and dry clean items may be delayed.",
+                                  style: TextStyle(
+                                      color: Colors.black54, fontSize: 12),
+                                )
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: mQuery.size.height * 0.02),
+                          Container(
+                            width: double.infinity,
+                            height: mQuery.size.height * 0.08,
+                            padding: EdgeInsets.symmetric(horizontal: 16),
+                            decoration: BoxDecoration(
+                                color: Color(0xff29b2fe),
+                                borderRadius: BorderRadius.circular(6)),
+                            child: Row(
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(height: mQuery.size.height * 0.012),
+                                    Text(
+                                      "$noCloths ITEMS",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Text(
+                                      "₹ 1,220 plus taxes",
+                                      style: TextStyle(color: Colors.white),
+                                    )
+                                  ],
+                                ),
+                                Expanded(child: SizedBox()),
+                                Text(
+                                  "View Cart",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w800),
+                                ),
+                                SizedBox(width: mQuery.size.width * 0.02),
+                                Icon(Icons.arrow_right, color: Colors.white)
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ),
+              ),
+            );
+          },
         );
       },
     );

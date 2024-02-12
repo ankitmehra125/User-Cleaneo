@@ -21,12 +21,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      // home: HomePage(),
       // home: WelcomePage()  
       // home: SplashScreen(),
       // home: OTPPage(),
       // home: ManageCardsPage()
-      // home: WashPage(),
+      home: WashPage(),
     );
   }
 }
