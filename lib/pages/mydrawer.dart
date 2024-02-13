@@ -1,3 +1,4 @@
+import 'package:cleaneo_user_app/pages/donate.dart';
 import 'package:cleaneo_user_app/pages/help_page.dart';
 import 'package:cleaneo_user_app/pages/home_page.dart';
 import 'package:cleaneo_user_app/pages/manage_cards_page.dart';
@@ -150,12 +151,20 @@ class _MyDrawerState extends State<MyDrawer> {
                             fontSize: 15
                         ),),
                       ),
-                      ListTile(
-                        leading: Icon(Icons.favorite_border,color: Colors.cyan),
-                        title: Text("Donate",style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 15
-                        ),),
+                      GestureDetector(
+                        onTap: ()
+                        {
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return Donate();
+                          }));
+                        },
+                        child: ListTile(
+                          leading: Icon(Icons.favorite_border,color: Colors.cyan),
+                          title: Text("Donate",style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 15
+                          ),),
+                        ),
                       ),
                       ListTile(
                         leading: Icon(Icons.wallet_travel_rounded,color: Colors.cyan),

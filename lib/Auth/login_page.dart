@@ -1,4 +1,5 @@
 
+import 'package:cleaneo_user_app/Auth/welcome_page.dart';
 import 'package:cleaneo_user_app/pages/home_page.dart';
 import 'package:cleaneo_user_app/Auth/otp_page.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,14 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.only(top: 45, left: 16, right: 16, bottom: 20),
               child: Row(
                 children: [
-                  Icon(Icons.arrow_back, color: Colors.white,),
+                  GestureDetector(
+                      onTap:()
+                      {
+                        Navigator.push(context, MaterialPageRoute(builder: (context){
+                          return WelcomePage();
+                        }));
+                      },
+                      child: Icon(Icons.arrow_back, color: Colors.white,)),
                   SizedBox(width: mQuery.size.width * 0.045,),
                   Text("Log In", style: TextStyle(
                         fontSize: 20,
@@ -55,14 +63,6 @@ class _LoginPageState extends State<LoginPage> {
                       topLeft: Radius.circular(16),
                       topRight: Radius.circular(16)
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 0.3,
-                      blurRadius: 1,
-                      offset: Offset(3, 3), // changes the position of the shadow
-                    ),
-                  ],
                 ),
                 child: Padding(
                   padding: const EdgeInsets.only(
@@ -87,9 +87,9 @@ class _LoginPageState extends State<LoginPage> {
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 2,
+                                spreadRadius: 0,
                                 blurRadius: 10,
-                                offset: Offset(0, 0),
+                                offset: Offset(0, 0), // changes the position of the shadow
                               ),
                             ],
                           ),

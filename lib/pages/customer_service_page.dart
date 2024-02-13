@@ -1,5 +1,5 @@
-import 'package:cleaneo_user_app/pages/help_page.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CustomerServicePage extends StatefulWidget {
   const CustomerServicePage({Key? key}) : super(key: key);
@@ -11,6 +11,7 @@ class CustomerServicePage extends StatefulWidget {
 class _CustomerServicePageState extends State<CustomerServicePage> {
   String _feedback = '';
   int maxWordLimit = 140;
+  bool _showEmailOptions = false;
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +31,8 @@ class _CustomerServicePageState extends State<CustomerServicePage> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: ()
-                    {
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return HelpPage();
-                      }));
+                    onTap: () {
+                      Navigator.pop(context);
                     },
                     child: Icon(
                       Icons.arrow_back,
@@ -72,20 +70,32 @@ class _CustomerServicePageState extends State<CustomerServicePage> {
                   ],
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 16, top: 20),
+                  padding: const EdgeInsets.only(
+                      left: 16, right: 16, top: 20, bottom: 20),
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        ContactInfoWidget(
-                          icon: Icons.email_outlined,
-                          label: "support@cleaneo.com",
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              _showEmailOptions = !_showEmailOptions;
+                            });
+                          },
+                          child: ContactInfoWidget(
+                            icon: Icons.email_outlined,
+                            label: "support@cleaneo.com",
+                            email: "support@cleaneo.com", // email address
+                          ),
                         ),
-                        SizedBox(height: mQuery.size.height * 0.04),
+                        SizedBox(height: mQuery.size.height*0.04), // Add space here
+                        if (_showEmailOptions)
+                          SizedBox(height: mQuery.size.height * 0.04),
                         ContactInfoWidget(
                           icon: Icons.phone_android_outlined,
                           label: "(+91) 9978997899",
+                          phoneNumber: "+919978997899", // phone number
                         ),
-                        SizedBox(height: mQuery.size.height * 0.03),
+                        SizedBox(height: mQuery.size.height * 0.04),
                         Container(
                           padding: EdgeInsets.symmetric(
                               horizontal: mQuery.size.width * 0.3),
@@ -118,7 +128,7 @@ class _CustomerServicePageState extends State<CustomerServicePage> {
                             ],
                           ),
                         ),
-                        SizedBox(height: mQuery.size.height * 0.02),
+                        SizedBox(height: mQuery.size.height * 0.025),
                         Text(
                           "Write to us",
                           style: TextStyle(fontWeight: FontWeight.w700),
@@ -136,21 +146,24 @@ class _CustomerServicePageState extends State<CustomerServicePage> {
                             });
                           },
                         ),
-                        SizedBox(height: mQuery.size.height * 0.13),
-                        Container(
-                          width: double.infinity,
-                          height: mQuery.size.height * 0.06,
-                          decoration: BoxDecoration(
-                              color: Color(0xff29b2fe),
-                              borderRadius: BorderRadius.circular(6)),
-                          child: Center(
-                            child: Text(
-                              "Submit",
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600),
+                        SizedBox(height: mQuery.size.height * 0.1),
+                        ElevatedButton(
+                          onPressed: () {
+                            // Handle submission
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Color(0xff29b2fe),
+                            minimumSize: Size(double.infinity, mQuery.size.height * 0.06),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(6),
                             ),
+                          ),
+                          child: Text(
+                            "Submit",
+                            style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600),
                           ),
                         ),
                       ],
@@ -169,41 +182,84 @@ class _CustomerServicePageState extends State<CustomerServicePage> {
 class ContactInfoWidget extends StatelessWidget {
   final IconData icon;
   final String label;
+  final String? email;
+  final String? phoneNumber;
 
-  ContactInfoWidget({required this.icon, required this.label});
+  ContactInfoWidget({required this.icon, required this.label, this.email, this.phoneNumber});
 
   @override
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
-    return Column(
-      children: [
-        Container(
-          width: mQuery.size.width * 0.15,
-          height: mQuery.size.height * 0.06,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 2,
-                blurRadius: 10,
-                offset: Offset(0, 0),
-              ),
-            ],
+    return GestureDetector(
+      onTap: () {
+        if (email != null) {
+          _launchEmail(context, email!);
+        } else if (phoneNumber != null) {
+          _launchPhone(context, phoneNumber!);
+        }
+      },
+      child: Column(
+        children: [
+          Container(
+            width: mQuery.size.width * 0.15,
+            height: mQuery.size.height * 0.06,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 2,
+                  blurRadius: 10,
+                  offset: Offset(0, 0),
+                ),
+              ],
+            ),
+            child: Icon(
+              icon,
+              color: Colors.cyan,
+              size: 30,
+            ),
           ),
-          child: Icon(
-            icon,
-            color: Colors.cyan,
-            size: 30,
+          SizedBox(height: 8), // Adjust the space here
+          Text(
+            label,
+            style: TextStyle(fontWeight: FontWeight.w700),
           ),
-        ),
-        SizedBox(height: mQuery.size.height * 0.013),
-        Text(
-          label,
-          style: TextStyle(fontWeight: FontWeight.w700),
-        ),
-      ],
+        ],
+      ),
     );
+  }
+
+  Future<void> _launchEmail(BuildContext context, String email) async {
+    final Uri _emailLaunchUri = Uri(
+      scheme: 'mailto',
+      path: email,
+    );
+    if (await canLaunch(_emailLaunchUri.toString())) {
+      await launch(_emailLaunchUri.toString());
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Could not launch email'),
+        ),
+      );
+    }
+  }
+
+  Future<void> _launchPhone(BuildContext context, String phoneNumber) async {
+    final Uri _phoneLaunchUri = Uri(
+      scheme: 'tel',
+      path: phoneNumber,
+    );
+    if (await canLaunch(_phoneLaunchUri.toString())) {
+      await launch(_phoneLaunchUri.toString());
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Could not launch phone call'),
+        ),
+      );
+    }
   }
 }
 

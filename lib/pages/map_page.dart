@@ -35,7 +35,7 @@ class _MapPageState extends State<MapPage> {
                           }));
                     },
                     child: Icon(
-                      Icons.arrow_back,
+                      Icons.close,
                       color: Colors.white,
                     ),
                   ),

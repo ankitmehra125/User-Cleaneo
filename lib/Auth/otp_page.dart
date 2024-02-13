@@ -1,3 +1,4 @@
+import 'package:cleaneo_user_app/Auth/login_page.dart';
 import 'package:cleaneo_user_app/pages/help_page.dart';
 import 'package:cleaneo_user_app/pages/home_page.dart';
 import 'package:cleaneo_user_app/pages/map_page.dart';
@@ -43,10 +44,10 @@ class _OTPPageState extends State<OTPPage> {
             borderRadius: BorderRadius.circular(8),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.shade300,
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: Offset(0, 0),
+              color: Colors.grey.withOpacity(0.45),
+              spreadRadius: 0,
+              blurRadius: 10,
+              offset: Offset(0, 0), // changes the position of the shadow
             ),
           ],
         )
@@ -66,11 +67,11 @@ class _OTPPageState extends State<OTPPage> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                            return HelpPage();
-                          }));
+                    onTap:()
+                    {
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return LoginPage();
+                      }));
                     },
                     child: Icon(
                       Icons.arrow_back,

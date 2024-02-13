@@ -1,4 +1,5 @@
 import 'package:cleaneo_user_app/Auth/login_page.dart';
+import 'package:cleaneo_user_app/Auth/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
@@ -40,7 +41,14 @@ class _SignUpPageState extends State<SignUpPage> {
               padding: const EdgeInsets.only(top: 45, left: 16, right: 16, bottom: 20),
               child: Row(
                 children: [
-                  Icon(Icons.arrow_back, color: Colors.white,),
+                  GestureDetector(
+                    onTap:()
+                    {
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return WelcomePage();
+                      }));
+                    },
+                      child: Icon(Icons.arrow_back, color: Colors.white,)),
                   SizedBox(width: mQuery.size.width * 0.045,),
                   Text("Sign Up", style: TextStyle(
                       fontSize: 20,
@@ -59,14 +67,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     topLeft: Radius.circular(16),
                     topRight: Radius.circular(16)
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.shade400,
-                      spreadRadius: 0.3,
-                      blurRadius: 1,
-                      offset: Offset(3, 3), // changes the position of the shadow
-                    ),
-                  ],
                 ),
                 child: Padding(
                   padding: const EdgeInsets.only(
@@ -89,9 +89,9 @@ class _SignUpPageState extends State<SignUpPage> {
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 2,
+                                spreadRadius: 0,
                                 blurRadius: 10,
-                                offset: Offset(0, 0),
+                                offset: Offset(0, 0), // changes the position of the shadow
                               ),
                             ],
                           ),
@@ -131,9 +131,9 @@ class _SignUpPageState extends State<SignUpPage> {
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 2,
+                                spreadRadius: 0,
                                 blurRadius: 10,
-                                offset: Offset(0, 0),
+                                offset: Offset(0, 0), // changes the position of the shadow
                               ),
                             ],
                           ),
@@ -201,9 +201,9 @@ class _SignUpPageState extends State<SignUpPage> {
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 2,
+                                spreadRadius: 0,
                                 blurRadius: 10,
-                                offset: Offset(0, 0),
+                                offset: Offset(0, 0), // changes the position of the shadow
                               ),
                             ],
                           ),

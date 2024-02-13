@@ -64,8 +64,7 @@ class _HelpPageState extends State<HelpPage> {
                       color: Colors.grey.withOpacity(0.5),
                       spreadRadius: 0.3,
                       blurRadius: 1,
-                      offset: Offset(
-                          3, 3), // changes the position of the shadow
+                      offset: Offset(0,0), // changes the position of the shadow
                     ),
                   ],
                 ),
@@ -95,10 +94,9 @@ class _HelpPageState extends State<HelpPage> {
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 2,
+                                  spreadRadius: 0,
                                   blurRadius: 10,
-                                  offset: Offset(
-                                      0, 0), // changes the position of the shadow
+                                  offset: Offset(0, 0), // changes the position of the shadow
                                 ),
                               ],
                             ),
@@ -132,10 +130,9 @@ class _HelpPageState extends State<HelpPage> {
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 2,
+                                  spreadRadius: 0,
                                   blurRadius: 10,
-                                  offset: Offset(
-                                      0, 0), // changes the position of the shadow
+                                  offset: Offset(0, 0), // changes the position of the shadow
                                 ),
                               ],
                             ),
@@ -169,10 +166,9 @@ class _HelpPageState extends State<HelpPage> {
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 2,
+                                  spreadRadius: 0,
                                   blurRadius: 10,
-                                  offset: Offset(
-                                      0, 0), // changes the position of the shadow
+                                  offset: Offset(0, 0), // changes the position of the shadow
                                 ),
                               ],
                             ),
@@ -206,10 +202,9 @@ class _HelpPageState extends State<HelpPage> {
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 2,
+                                  spreadRadius: 0,
                                   blurRadius: 10,
-                                  offset: Offset(
-                                      0, 0), // changes the position of the shadow
+                                  offset: Offset(0, 0), // changes the position of the shadow
                                 ),
                               ],
                             ),
@@ -236,10 +231,9 @@ class _HelpPageState extends State<HelpPage> {
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 2,
+                                spreadRadius: 0,
                                 blurRadius: 10,
-                                offset: Offset(
-                                    0, 0), // changes the position of the shadow
+                                offset: Offset(0, 0), // changes the position of the shadow
                               ),
                             ],
                           ),
@@ -261,8 +255,6 @@ class _HelpPageState extends State<HelpPage> {
                             ),
                           ),
                         ),
-
-
                       ],
                     ),
                   ),
