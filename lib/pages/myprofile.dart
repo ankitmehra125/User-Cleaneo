@@ -295,19 +295,27 @@ class _MyProfilePageState extends State<MyProfilePage> {
                               ),
                             ),
                             SizedBox(height: mQuery.size.height * 0.068),
-                            Container(
-                              width: double.infinity,
-                              height: mQuery.size.height * 0.06,
-                              decoration: BoxDecoration(
-                                  color: Color(0xff29b2fe),
-                                  borderRadius: BorderRadius.circular(6)),
-                              child: Center(
-                                child: Text(
-                                  "Save & Continue",
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w600,
+                            GestureDetector(
+                              onTap: ()
+                              {
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return HomePage();
+                                }));
+                              },
+                              child: Container(
+                                width: double.infinity,
+                                height: mQuery.size.height * 0.06,
+                                decoration: BoxDecoration(
+                                    color: Color(0xff29b2fe),
+                                    borderRadius: BorderRadius.circular(6)),
+                                child: Center(
+                                  child: Text(
+                                    "Save & Continue",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w600,
+                                    ),
                                   ),
                                 ),
                               ),

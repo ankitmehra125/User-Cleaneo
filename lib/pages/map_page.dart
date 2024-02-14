@@ -28,6 +28,12 @@ class _MapPageState extends State<MapPage> {
               child: Row(
                 children: [
                   GestureDetector(
+                    onTap: ()
+                    {
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return HomePage();
+                      }));
+                    },
                     child: Icon(
                       Icons.close,
                       color: Colors.white,

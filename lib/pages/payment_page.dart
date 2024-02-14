@@ -14,6 +14,13 @@ class PaymentPage extends StatefulWidget {
 class _PaymentPageState extends State<PaymentPage> {
   int selectedPaymentMethod = -1;
 
+  List<Map<String, String>> cardDetails = [
+    {"type": "Visa", "number": "6220 XXXX XXXX 4452"},
+    {"type": "Mastercard", "number": "5555 XXXX XXXX 8888"},
+    {"type": "Amex", "number": "4111 XXXX XXXX 7777"},
+    // Add more card details here as needed
+  ];
+
   @override
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);

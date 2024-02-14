@@ -87,7 +87,7 @@ class _CustomerServicePageState extends State<CustomerServicePage> {
                             email: "support@cleaneo.com", // email address
                           ),
                         ),
-                        SizedBox(height: mQuery.size.height*0.04), // Add space here
+                        SizedBox(height: mQuery.size.height * 0.04),
                         if (_showEmailOptions)
                           SizedBox(height: mQuery.size.height * 0.04),
                         ContactInfoWidget(
@@ -153,7 +153,8 @@ class _CustomerServicePageState extends State<CustomerServicePage> {
                           },
                           style: ElevatedButton.styleFrom(
                             primary: Color(0xff29b2fe),
-                            minimumSize: Size(double.infinity, mQuery.size.height * 0.06),
+                            minimumSize:
+                            Size(double.infinity, mQuery.size.height * 0.06),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(6),
                             ),
@@ -185,7 +186,8 @@ class ContactInfoWidget extends StatelessWidget {
   final String? email;
   final String? phoneNumber;
 
-  ContactInfoWidget({required this.icon, required this.label, this.email, this.phoneNumber});
+  ContactInfoWidget(
+      {required this.icon, required this.label, this.email, this.phoneNumber});
 
   @override
   Widget build(BuildContext context) {
@@ -234,6 +236,7 @@ class ContactInfoWidget extends StatelessWidget {
     final Uri _emailLaunchUri = Uri(
       scheme: 'mailto',
       path: email,
+      queryParameters: {'subject': 'Feedback for Cleaneo'},
     );
     if (await canLaunch(_emailLaunchUri.toString())) {
       await launch(_emailLaunchUri.toString());
@@ -245,6 +248,8 @@ class ContactInfoWidget extends StatelessWidget {
       );
     }
   }
+
+
 
   Future<void> _launchPhone(BuildContext context, String phoneNumber) async {
     final Uri _phoneLaunchUri = Uri(

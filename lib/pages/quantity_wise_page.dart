@@ -1,6 +1,8 @@
 import 'package:cleaneo_user_app/pages/payment_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:dotted_line/dotted_line.dart';
 
 class QuantityWisePage extends StatefulWidget {
   const QuantityWisePage({Key? key}) : super(key: key);
@@ -11,6 +13,7 @@ class QuantityWisePage extends StatefulWidget {
 
 class _QuantityWisePageState extends State<QuantityWisePage> {
   TextEditingController searchController = TextEditingController();
+  TextEditingController extranoteController = TextEditingController();
   String? selectedType;
   bool clothSoftenerSelected = false;
   bool antigermsSelected = false;
@@ -25,7 +28,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
   double totalKgValue = 0;
   var address = "Home";
   var caddress = "B-702, Sarthak the Sarjak";
-
+  int selectedIndex = -1;
 
   @override
   void initState() {
@@ -53,7 +56,23 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
     {"name": "Jump Suits", "price": "₹ 50 PER KG"},
   ];
 
+  Map<String, double> prices = {
+    "Item Total": 1640,
+    "Delivery Charges": 50,
+    "Tax": 60,
+  };
+
+  double calculateTotal(Map<String, double> prices) {
+    double total = 0;
+    prices.forEach((key, value) {
+      total += value;
+    });
+    return total;
+  }
+
+
   List<int> kgValues = List.filled(13, 0);
+  List<bool> isSelected = [false, false, false];
 
   @override
   Widget build(BuildContext context) {
@@ -137,7 +156,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                           Text(
                             "Add Clothes",
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 15,
                               fontWeight: FontWeight.w900,
                             ),
                           ),
@@ -171,14 +190,14 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                     itemList[index]["name"],
                                     itemList[index]["price"],
                                     kgValues[index],
-                                        () {
+                                    () {
                                       setState(() {
                                         kgValues[index] = kgValues[index] > 0
                                             ? kgValues[index] - 1
                                             : 0;
                                       });
                                     },
-                                        () {
+                                    () {
                                       setState(() {
                                         kgValues[index]++;
                                         calculateTotalKgValue();
@@ -202,7 +221,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                         Text(
                           "Select Add-On",
                           style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w900),
+                              fontSize: 15, fontWeight: FontWeight.w900),
                         ),
                       ],
                     ),
@@ -240,7 +259,6 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                               Text(
                                 "Cloth Softener",
                                 style: TextStyle(
-                                  fontSize: 15,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
@@ -267,7 +285,6 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                               Text(
                                 "Anti-Germs Liquid",
                                 style: TextStyle(
-                                  fontSize: 15,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
@@ -283,6 +300,9 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                         ],
                       ),
                     ),
+                    SizedBox(
+                      height: 10,
+                    )
                   ],
                 ),
                 GestureDetector(
@@ -404,7 +424,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
             children: [
               Text(
                 itemName,
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                style: TextStyle(fontWeight: FontWeight.w600),
               ),
               Text(
                 itemPrice,
@@ -457,9 +477,8 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
     );
   }
 
-
-
   void _openBottomSheet(BuildContext context) {
+    String totalSum = '₹ ${calculateTotal(prices).toStringAsFixed(2)}';
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -476,7 +495,8 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
         int? selectedDateIndex2; // Track the selected date index for delivery
         int? selectedTimeIndex2;
 
-        bool showSecondDropdown = false; // Variable to control second dropdown visibility
+        bool showSecondDropdown =
+            false; // Variable to control second dropdown visibility
 
         return StatefulBuilder(
           builder: (context, setState) {
@@ -540,7 +560,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                 SizedBox(height: mQuery.size.height * 0.008),
                                 Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     for (int i = 0; i < dates.length; i++)
                                       GestureDetector(
@@ -554,7 +574,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                           height: mQuery.size.height * 0.04,
                                           decoration: BoxDecoration(
                                             borderRadius:
-                                            BorderRadius.circular(6),
+                                                BorderRadius.circular(6),
                                             border: Border.all(
                                               color: selectedDateIndex == i
                                                   ? Color(0xff009c1a)
@@ -589,7 +609,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                 SizedBox(height: mQuery.size.height * 0.008),
                                 Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     for (int i = 0; i < times.length; i++)
                                       GestureDetector(
@@ -603,7 +623,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                           height: mQuery.size.height * 0.04,
                                           decoration: BoxDecoration(
                                               borderRadius:
-                                              BorderRadius.circular(6),
+                                                  BorderRadius.circular(6),
                                               border: Border.all(
                                                   color: selectedTimeIndex == i
                                                       ? Color(0xff009c1a)
@@ -649,7 +669,8 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                   color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 0.2,
                                   blurRadius: 7,
-                                  offset: Offset(0, 0), // changes the position of the shadow
+                                  offset: Offset(0,
+                                      0), // changes the position of the shadow
                                 ),
                               ],
                             ),
@@ -665,7 +686,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                 SizedBox(height: mQuery.size.height * 0.008),
                                 Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     for (int i = 0; i < dates2.length; i++)
                                       GestureDetector(
@@ -679,7 +700,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                           height: mQuery.size.height * 0.04,
                                           decoration: BoxDecoration(
                                             borderRadius:
-                                            BorderRadius.circular(6),
+                                                BorderRadius.circular(6),
                                             border: Border.all(
                                               color: selectedDateIndex2 == i
                                                   ? Color(0xff006acb)
@@ -715,7 +736,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                 SizedBox(height: mQuery.size.height * 0.008),
                                 Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     for (int i = 0; i < times2.length; i++)
                                       GestureDetector(
@@ -729,7 +750,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                           height: mQuery.size.height * 0.04,
                                           decoration: BoxDecoration(
                                             borderRadius:
-                                            BorderRadius.circular(6),
+                                                BorderRadius.circular(6),
                                             border: Border.all(
                                               color: selectedTimeIndex2 == i
                                                   ? Color(0xff006acb)
@@ -769,7 +790,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                 ),
                                 TextSpan(
                                   text:
-                                  "Delivery of heavy and dry clean items may be delayed.",
+                                      "Delivery of heavy and dry clean items may be delayed.",
                                   style: TextStyle(
                                       color: Colors.black54, fontSize: 12),
                                 )
@@ -786,244 +807,689 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                   return StatefulBuilder(
                                     builder: (context, setState) {
                                       return Container(
-                                        height: mQuery.size.height*0.8,
+                                        height: mQuery.size.height * 0.8,
                                         width: double.infinity,
                                         decoration: BoxDecoration(
                                             borderRadius: BorderRadius.only(
                                                 topLeft: Radius.circular(16),
-                                                topRight: Radius.circular(16)
-                                            ),
-                                            color: Colors.white
-                                        ),
-                                        child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            SizedBox(height: mQuery.size.height*0.03,),
-                                            Padding(
-                                              padding: const EdgeInsets.symmetric(horizontal: 16),
-                                              child: Text("Order Summary", style: TextStyle(
-                                                  fontSize: 15, fontWeight: FontWeight.w900),),
-                                            ),
-                                            SizedBox(height: mQuery.size.height*0.02,),
-
-                                            Container(
-                                              width: double.infinity,
-                                              height: mQuery.size.height * 0.1,
-                                              padding: EdgeInsets.symmetric(horizontal: 12),
-                                              decoration: BoxDecoration(
-                                                  color: Color(0xffebf7ed)
+                                                topRight: Radius.circular(16)),
+                                            color: Colors.white),
+                                        child: SingleChildScrollView(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              SizedBox(
+                                                height:
+                                                    mQuery.size.height * 0.03,
                                               ),
-                                              child: Column(
-                                                children: [
-                                                  Row(
-                                                    children: [
-                                                      Container(
-                                                        decoration: BoxDecoration(
-                                                          shape: BoxShape.circle,
-                                                          color: Color(0xff009c1a),
-                                                        ),
-                                                        child: Icon(
-                                                          Icons.check,
-                                                          color: Colors.white,
-                                                          size: 12,
-                                                        ),
-                                                      ),
-                                                      SizedBox(width: mQuery.size.width*0.032,),
-                                                      Text(
-                                                        "Pickup from $address",
-                                                        style: TextStyle(
-                                                          fontSize: 14,
-                                                          fontWeight: FontWeight.w700,
-                                                        ),
-                                                      ),
-                                                      Expanded(child: SizedBox()),
-                                                      TextButton(
-                                                        onPressed: () {},
-                                                        child: Text(
-                                                          "CHANGE",
-                                                          style: TextStyle(
-                                                            color: Colors.red,
-                                                            fontWeight: FontWeight.w700,
-                                                            fontSize: 12,
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 16),
+                                                child: Text(
+                                                  "Order Summary",
+                                                  style: TextStyle(
+                                                      fontSize: 15,
+                                                      fontWeight:
+                                                          FontWeight.w900),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height:
+                                                    mQuery.size.height * 0.02,
+                                              ),
+                                              Container(
+                                                width: double.infinity,
+                                                height:
+                                                    mQuery.size.height * 0.1,
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 12),
+                                                decoration: BoxDecoration(
+                                                    color: Color(0xffebf7ed)),
+                                                child: Column(
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        Container(
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            shape:
+                                                                BoxShape.circle,
+                                                            color: Color(
+                                                                0xff009c1a),
+                                                          ),
+                                                          child: Icon(
+                                                            Icons.check,
+                                                            color: Colors.white,
+                                                            size: 12,
                                                           ),
                                                         ),
-                                                      )
-                                                    ],
-                                                  ),
-                                                  Row(
-                                                    children: [
-                                                      SizedBox(width: mQuery.size.width*0.065,),
-                                                      Text(
-                                                        "$caddress",
-                                                        style: TextStyle(
-                                                          fontSize: 13,
-                                                          fontWeight: FontWeight.w600,
+                                                        SizedBox(
+                                                          width: mQuery
+                                                                  .size.width *
+                                                              0.032,
                                                         ),
-                                                      )
-                                                    ],
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                            SizedBox(height: mQuery.size.height*0.015,),
-                                            Padding(
-                                              padding: EdgeInsets.symmetric(horizontal: 16),
-                                              child: Column(
-                                                children: [
-                                                  Text("Clothes Detail",style: TextStyle(
-                                                      fontSize: 15,
-                                                      fontWeight: FontWeight.w800
-                                                  ),)
-                                                ],
-                                              ),
-                                            ),
-                                            SizedBox(height: mQuery.size.height*0.02,),
-
-                                            SingleChildScrollView(
-                                              child: Column(
-                                                children: [
-                                                  Container(
-                                                    width: double.infinity,
-                                                    height: mQuery.size.height * 0.4,
-                                                    margin: EdgeInsets.symmetric(horizontal: 16),
-                                                    decoration: BoxDecoration(
-                                                      borderRadius: BorderRadius.circular(6),
-                                                      color: Colors.white,
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                          color: Colors.grey.withOpacity(0.5),
-                                                          spreadRadius: 0.2,
-                                                          blurRadius: 7,
-                                                          offset: Offset(0, 0),
+                                                        Text(
+                                                          "Pickup from $address",
+                                                          style: TextStyle(
+                                                            fontSize: 14,
+                                                            fontWeight:
+                                                                FontWeight.w700,
+                                                          ),
                                                         ),
-                                                      ],
-                                                    ),
-                                                    child: Column(
-                                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                                      children: [
-                                                        SizedBox(height: mQuery.size.height * 0.015),
-                                                        Padding(
-                                                          padding: const EdgeInsets.only(left: 16),
+                                                        Expanded(
+                                                            child: SizedBox()),
+                                                        TextButton(
+                                                          onPressed: () {},
                                                           child: Text(
-                                                            "WASH",
+                                                            "CHANGE",
                                                             style: TextStyle(
-                                                              fontSize: 13,
-                                                              fontWeight: FontWeight.bold,
-                                                              color: Color(0xff29b2fe),
+                                                              color: Colors.red,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w700,
+                                                              fontSize: 12,
                                                             ),
                                                           ),
-                                                        ),
-                                                        SizedBox(height: mQuery.size.height * 0.012),
-                                                        Expanded(
-                                                          child: ListView.builder(
-                                                            itemCount: itemList.length,
-                                                            itemBuilder: (BuildContext context, int index) {
-                                                              // Extracting the price per kg
-                                                              double pricePerKg = double.parse(itemList[index]["price"].split(" ")[1]); // Assuming "₹ 10 PER KG" format
-
-                                                              // Calculate total cost
-                                                              double totalCost = kgValues[index] * pricePerKg;
-
-                                                              return Column(
-                                                                children: [
-                                                                  buildItemContainer(
-                                                                    mQuery,
-                                                                    itemList[index]["name"],
-                                                                    itemList[index]["price"],
-                                                                    kgValues[index],
-                                                                        () {
-                                                                      setState(() {
-                                                                        kgValues[index] = kgValues[index] > 0 ? kgValues[index] - 1 : 0;
-                                                                      });
-                                                                    },
-                                                                        () {
-                                                                      setState(() {
-                                                                        kgValues[index]++;
-                                                                        calculateTotalKgValue();
-                                                                      });
-                                                                    },
-                                                                  ),
-
-                                                                  Container(
-                                                                    padding: EdgeInsets.only(right: 28),
-                                                                    child: Row(
-                                                                      mainAxisAlignment: MainAxisAlignment.end,
-                                                                      children: [
-                                                                        Text(
-                                                                          '₹ ${(totalCost).toStringAsFixed(0)}', // Formatting to two decimal places
-                                                                          style: TextStyle(
-                                                                            fontSize: 12,
-                                                                            fontWeight: FontWeight.bold,
-                                                                            color: Color(0xff29b2fe), // Color for totalCost
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              );
-                                                            },
-                                                          ),
-                                                        ),
-
-
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-
-                                            SizedBox(height: mQuery.size.height*0.06,),
-
-                                            GestureDetector(
-                                              onTap: ()
-                                              {
-                                                Navigator.push(context, MaterialPageRoute(builder: (context){
-                                                  return PaymentPage();
-                                                }));
-                                              },
-                                              child: Container(
-                                                width: double.infinity,
-                                                height: mQuery.size.height * 0.08,
-                                                margin: EdgeInsets.symmetric(horizontal: 16),
-                                                padding: EdgeInsets.symmetric(horizontal: 16),
-                                                decoration: BoxDecoration(
-                                                    color: Color(0xff29b2fe),
-                                                    borderRadius: BorderRadius.circular(6)),
-                                                child: Row(
-                                                  children: [
-                                                    Column(
-                                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                                      children: [
-                                                        SizedBox(
-                                                            height: mQuery.size.height * 0.012),
-                                                        Text(
-                                                          "TOTAL",
-                                                          style: TextStyle(color: Colors.white),
-                                                        ),
-                                                        Text(
-                                                          "₹ 1750.00",
-                                                          style: TextStyle(color: Colors.white),
                                                         )
                                                       ],
                                                     ),
-                                                    Expanded(child: SizedBox()),
-                                                    Text(
-                                                      "Make Payment",
-                                                      style: TextStyle(
-                                                          color: Colors.white,
-                                                          fontSize: 17,
-                                                          fontWeight: FontWeight.w800),
-                                                    ),
-                                                    SizedBox(width: mQuery.size.width * 0.02),
-                                                    Icon(Icons.arrow_right, color: Colors.white)
+                                                    Row(
+                                                      children: [
+                                                        SizedBox(
+                                                          width: mQuery
+                                                                  .size.width *
+                                                              0.065,
+                                                        ),
+                                                        Text(
+                                                          "$caddress",
+                                                          style: TextStyle(
+                                                            fontSize: 13,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                          ),
+                                                        )
+                                                      ],
+                                                    )
                                                   ],
                                                 ),
                                               ),
-                                            ),
+                                              SizedBox(
+                                                height:
+                                                    mQuery.size.height * 0.015,
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 16),
+                                                child: Column(
+                                                  children: [
+                                                    Text(
+                                                      "Clothes Detail",
+                                                      style: TextStyle(
+                                                          fontSize: 15,
+                                                          fontWeight:
+                                                              FontWeight.w800),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height:
+                                                    mQuery.size.height * 0.02,
+                                              ),
+                                              SingleChildScrollView(
+                                                child: Column(
+                                                  children: [
+                                                    Container(
+                                                      width: double.infinity,
+                                                      height:
+                                                          mQuery.size.height *
+                                                              0.4,
+                                                      margin:
+                                                          EdgeInsets.symmetric(
+                                                              horizontal: 16),
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(6),
+                                                        color: Colors.white,
+                                                        boxShadow: [
+                                                          BoxShadow(
+                                                            color: Colors.grey
+                                                                .withOpacity(
+                                                                    0.5),
+                                                            spreadRadius: 0.2,
+                                                            blurRadius: 7,
+                                                            offset:
+                                                                Offset(0, 0),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      child: Column(
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          SizedBox(
+                                                              height: mQuery
+                                                                      .size
+                                                                      .height *
+                                                                  0.015),
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                    .only(
+                                                                    left: 16),
+                                                            child: Text(
+                                                              "WASH",
+                                                              style: TextStyle(
+                                                                fontSize: 13,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                color: Color(
+                                                                    0xff29b2fe),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                              height: mQuery
+                                                                      .size
+                                                                      .height *
+                                                                  0.012),
+                                                          Expanded(
+                                                            child: ListView
+                                                                .builder(
+                                                              itemCount:
+                                                                  itemList
+                                                                      .length,
+                                                              itemBuilder:
+                                                                  (BuildContext
+                                                                          context,
+                                                                      int index) {
+                                                                // Extracting the price per kg
+                                                                double
+                                                                    pricePerKg =
+                                                                    double.parse(itemList[index]
+                                                                            [
+                                                                            "price"]
+                                                                        .split(
+                                                                            " ")[1]); // Assuming "₹ 10 PER KG" format
 
-                                          ],
+                                                                // Calculate total cost
+                                                                double
+                                                                    totalCost =
+                                                                    kgValues[
+                                                                            index] *
+                                                                        pricePerKg;
+
+                                                                return Column(
+                                                                  children: [
+                                                                    buildItemContainer(
+                                                                      mQuery,
+                                                                      itemList[
+                                                                              index]
+                                                                          [
+                                                                          "name"],
+                                                                      itemList[
+                                                                              index]
+                                                                          [
+                                                                          "price"],
+                                                                      kgValues[
+                                                                          index],
+                                                                      () {
+                                                                        setState(
+                                                                            () {
+                                                                          kgValues[
+                                                                              index] = kgValues[index] >
+                                                                                  0
+                                                                              ? kgValues[index] - 1
+                                                                              : 0;
+                                                                        });
+                                                                      },
+                                                                      () {
+                                                                        setState(
+                                                                            () {
+                                                                          kgValues[
+                                                                              index]++;
+                                                                          calculateTotalKgValue();
+                                                                        });
+                                                                      },
+                                                                    ),
+                                                                    Container(
+                                                                      padding: EdgeInsets.only(
+                                                                          right:
+                                                                              28),
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.end,
+                                                                        children: [
+                                                                          Text(
+                                                                            '₹ ${(totalCost).toStringAsFixed(0)}', // Formatting to two decimal places
+                                                                            style:
+                                                                                TextStyle(
+                                                                              fontSize: 12,
+                                                                              fontWeight: FontWeight.bold,
+                                                                              color: Color(0xff29b2fe), // Color for totalCost
+                                                                            ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                );
+                                                              },
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 10,
+                                                          ),
+                                                          Text("hello")
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      height:
+                                                          mQuery.size.height *
+                                                              0.02,
+                                                    ),
+                                                    Padding(
+                                                      padding: const EdgeInsets
+                                                          .symmetric(
+                                                          horizontal: 16),
+                                                      child: Column(
+                                                        children: [
+                                                          Row(
+                                                            children: [
+                                                              Text(
+                                                                "Extra Note",
+                                                                style: TextStyle(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w800,
+                                                                    fontSize:
+                                                                        15),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          SizedBox(
+                                                            height: mQuery.size
+                                                                    .height *
+                                                                0.02,
+                                                          ),
+                                                          Container(
+                                                            width:
+                                                                double.infinity,
+                                                            height: mQuery.size
+                                                                    .height *
+                                                                0.16,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          6),
+                                                              color:
+                                                                  Colors.white,
+                                                              boxShadow: [
+                                                                BoxShadow(
+                                                                  color: Colors
+                                                                      .grey
+                                                                      .withOpacity(
+                                                                          0.5),
+                                                                  spreadRadius:
+                                                                      0.2,
+                                                                  blurRadius: 7,
+                                                                  offset:
+                                                                      Offset(
+                                                                          0, 0),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            child: TextField(
+                                                              controller:
+                                                                  extranoteController,
+                                                              cursorColor:
+                                                                  Colors
+                                                                      .black54,
+                                                              decoration: InputDecoration(
+                                                                  border:
+                                                                      InputBorder
+                                                                          .none,
+                                                                  hintText:
+                                                                      "Write message here",
+                                                                  contentPadding:
+                                                                      EdgeInsets.only(
+                                                                          left:
+                                                                              16,
+                                                                          right:
+                                                                              6),
+                                                                  hintStyle: TextStyle(
+                                                                      color: Colors
+                                                                          .black54,
+                                                                      fontSize:
+                                                                          14,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w600)),
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      height:
+                                                          mQuery.size.height *
+                                                              0.025,
+                                                    ),
+                                                    Container(
+                                                      width: double.infinity,
+                                                      height:
+                                                          mQuery.size.height *
+                                                              0.27,
+                                                      color: Color(0xfff8feff),
+                                                      child: Padding(
+                                                        padding: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 16),
+                                                        child:
+                                                            SingleChildScrollView(
+                                                          child: Column(
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              SizedBox(
+                                                                height: mQuery
+                                                                        .size
+                                                                        .height *
+                                                                    0.016,
+                                                              ),
+                                                              Text(
+                                                                "Support your Rider",
+                                                                style: TextStyle(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w800),
+                                                              ),
+                                                              SizedBox(
+                                                                height: mQuery
+                                                                        .size
+                                                                        .height *
+                                                                    0.007,
+                                                              ),
+                                                              Text(
+                                                                "Support your valet and make their day! 100% of your tip will "
+                                                                "be transferred to your valet.",
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        13,
+                                                                    color: Colors
+                                                                        .black54),
+                                                              ),
+                                                              SizedBox(
+                                                                height: mQuery
+                                                                        .size
+                                                                        .height *
+                                                                    0.02,
+                                                              ),
+                                                              Row(
+                                                                children: [
+                                                                  ContainerItem(
+                                                                    text:
+                                                                        "+ ₹ 10",
+                                                                    isSelected:
+                                                                        selectedContainerIndex ==
+                                                                            0,
+                                                                    onTap: () {
+                                                                      setState(
+                                                                          () {
+                                                                        selectedContainerIndex =
+                                                                            0;
+                                                                      });
+                                                                    },
+                                                                  ),
+                                                                  SizedBox(
+                                                                      width: mQuery
+                                                                              .size
+                                                                              .width *
+                                                                          0.036),
+                                                                  ContainerItem(
+                                                                    text:
+                                                                        "+ ₹ 20",
+                                                                    isSelected:
+                                                                        selectedContainerIndex ==
+                                                                            1,
+                                                                    onTap: () {
+                                                                      setState(
+                                                                          () {
+                                                                        selectedContainerIndex =
+                                                                            1;
+                                                                      });
+                                                                    },
+                                                                  ),
+                                                                  SizedBox(width: mQuery.size.width * 0.036),
+                                                                  ContainerItem(
+                                                                    text:
+                                                                        "+ ₹ 30",
+                                                                    isSelected:
+                                                                        selectedContainerIndex ==
+                                                                            2,
+                                                                    onTap: () {
+                                                                      setState(
+                                                                          () {
+                                                                        selectedContainerIndex =
+                                                                            2;
+                                                                      });
+                                                                    },
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              SizedBox(height: mQuery.size.height * 0.022,),
+                                                              Text(
+                                                                "Offers",
+                                                                style: TextStyle(fontWeight: FontWeight.w700),
+                                                              ),
+                                                              SizedBox(height: mQuery.size.height * 0.0072,),
+                                                              Row(
+                                                                children: [
+                                                                  SvgPicture.asset("assets/images/promo.svg",
+                                                                    width: 22,
+                                                                  ),
+                                                                  SizedBox(width: mQuery.size.width * 0.03,),
+                                                                  Text(
+                                                                    "Select a promo code",
+                                                                    style: TextStyle(fontWeight: FontWeight.w600,),
+                                                                  ),
+                                                                  Expanded(
+                                                                      child:
+                                                                          SizedBox()),
+                                                                  GestureDetector(
+                                                                    onTap: () {
+                                                                      // Navigate to Offers Page
+                                                                    },
+                                                                    child: Text(
+                                                                      "View Offers",
+                                                                      style: TextStyle(
+                                                                          color:
+                                                                              Colors.red),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      height:
+                                                          mQuery.size.height *
+                                                              0.023,
+                                                    ),
+                                                    Padding(
+                                                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                                                      child: Column(
+                                                        children: [
+                                                          Row(
+                                                            children: [
+                                                              Text(
+                                                                "Item Total",
+                                                                style: TextStyle(
+                                                                  color: Colors.black54,
+                                                                ),
+                                                              ),
+                                                              Expanded(child: SizedBox()),
+                                                              Text(
+                                                                "₹ ${prices["Item Total"]?.toStringAsFixed(2)}",
+                                                                style: TextStyle(
+                                                                  color: Colors.black54,
+                                                                ),
+                                                              )
+                                                            ],
+                                                          ),
+                                                          SizedBox(height: mQuery.size.height * 0.01,),
+                                                          DottedLine(
+                                                            direction: Axis.horizontal,
+                                                            alignment: WrapAlignment.center,
+                                                            lineLength: double.infinity,
+                                                            lineThickness: 1.0,
+                                                            dashLength: 4.0,
+                                                            dashColor: Colors.black54,
+                                                            dashRadius: 0.0,
+                                                            dashGapLength: 4.0,
+                                                            dashGapRadius: 0.0,
+                                                          ),
+                                                          SizedBox(height: mQuery.size.height * 0.01,),
+                                                          Row(
+                                                            children: [
+                                                              Text(
+                                                                "Delivery Charges",
+                                                                style: TextStyle(
+                                                                  color: Colors.black54,
+                                                                ),
+                                                              ),
+                                                              Expanded(child: SizedBox()),
+                                                              Text(
+                                                                "₹ ${prices["Delivery Charges"]?.toStringAsFixed(2)}",
+                                                                style: TextStyle(
+                                                                  color: Colors.black54,
+                                                                ),
+                                                              )
+                                                            ],
+                                                          ),
+                                                          SizedBox(height: mQuery.size.height * 0.01,),
+                                                          DottedLine(
+                                                            direction: Axis.horizontal,
+                                                            alignment: WrapAlignment.center,
+                                                            lineLength: double.infinity,
+                                                            lineThickness: 1.0,
+                                                            dashLength: 4.0,
+                                                            dashColor: Colors.black54,
+                                                            dashRadius: 0.0,
+                                                            dashGapLength: 4.0,
+                                                            dashGapRadius: 0.0,
+                                                          ),
+                                                          SizedBox(height: mQuery.size.height * 0.01,),
+                                                          Row(
+                                                            children: [
+                                                              Text(
+                                                                "Tax",
+                                                                style: TextStyle(
+                                                                  color: Colors.black54,
+                                                                ),
+                                                              ),
+                                                              Expanded(
+                                                                child: SizedBox(),
+                                                              ),
+                                                              Text(
+                                                                "₹ ${prices["Tax"]?.toStringAsFixed(2)}",
+                                                                style: TextStyle(
+                                                                  color: Colors.black54,
+                                                                ),
+                                                              )
+                                                            ],
+                                                          ),
+                                                          Divider(),
+                                                          Row(
+                                                            children: [
+                                                              Text(
+                                                                "Grand Total",
+                                                                style: TextStyle(
+                                                                  fontSize: 15,
+                                                                  fontWeight: FontWeight.w800,
+                                                                ),
+                                                              ),
+                                                              Expanded(child: SizedBox()),
+                                                              Text(
+                                                                totalSum,
+                                                                style: TextStyle(
+                                                                  fontSize: 15,
+                                                                  color: Color(0xff29b2fe),
+                                                                  fontWeight: FontWeight.w800,
+                                                                ),
+                                                              )
+                                                            ],
+                                                          )
+                                                        ],
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height:
+                                                    mQuery.size.height * 0.06,
+                                              ),
+                                              GestureDetector(
+                                                onTap: () {
+                                                  Navigator.push(context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) {
+                                                    return PaymentPage();
+                                                  }));
+                                                },
+                                                child: Container(
+                                                  width: double.infinity,
+                                                  height: mQuery.size.height * 0.08,
+                                                  margin: EdgeInsets.symmetric(horizontal: 16),
+                                                  padding: EdgeInsets.symmetric(horizontal: 16),
+                                                  decoration: BoxDecoration(
+                                                      color: Color(0xff29b2fe),
+                                                      borderRadius: BorderRadius.circular(6)),
+                                                  child: Row(
+                                                    children: [
+                                                      Column(
+                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                        children: [
+                                                          SizedBox(height: mQuery.size.height * 0.012),
+                                                          Text("TOTAL",
+                                                            style: TextStyle(color: Colors.white),
+                                                          ),
+                                                          Text(totalSum,
+                                                            style: TextStyle(color: Colors.white),
+                                                          )
+                                                        ],
+                                                      ),
+                                                      Expanded(child: SizedBox()),
+                                                      Text(
+                                                        "Make Payment",
+                                                        style: TextStyle(
+                                                            color: Colors.white,
+                                                            fontSize: 17,
+                                                            fontWeight: FontWeight.w800),
+                                                      ),
+                                                      SizedBox(width: mQuery.size.width * 0.02),
+                                                      Icon(Icons.arrow_right,
+                                                          color: Colors.white)
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       );
                                     },
@@ -1043,22 +1509,17 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                   Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      SizedBox(
-                                          height: mQuery.size.height * 0.012),
-                                      Text(
-                                        "ITEMS",
+                                      SizedBox(height: mQuery.size.height * 0.012),
+                                      Text("ITEMS",
                                         style: TextStyle(color: Colors.white),
                                       ),
-                                      Text(
-                                        "₹ 1,220 plus taxes",
+                                      Text("₹ 1,220 plus taxes",
                                         style: TextStyle(color: Colors.white),
                                       )
                                     ],
                                   ),
                                   Expanded(child: SizedBox()),
-                                  Text(
-                                    "View Cart",
-                                    style: TextStyle(
+                                  Text("View Cart", style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 17,
                                         fontWeight: FontWeight.w800),
@@ -1081,6 +1542,46 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
       },
     );
   }
+}
 
+class ContainerItem extends StatelessWidget {
+  final String text;
+  final bool isSelected;
+  final Function onTap;
 
+  const ContainerItem({
+    Key? key,
+    required this.text,
+    required this.isSelected,
+    required this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap as void Function()?,
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 0.2,
+              blurRadius: 7,
+              offset: Offset(0, 0),
+            ),
+          ],
+          color: isSelected ? Color(0xff29b2fe) : Colors.white,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Text(
+          text,
+          style: TextStyle(
+            color: isSelected ? Colors.white : Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
 }

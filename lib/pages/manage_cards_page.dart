@@ -622,7 +622,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                           bottom: 390
                                         ),
                                         behavior: SnackBarBehavior.floating,
-                                        duration: Duration(seconds: 3),
+                                        duration: Duration(seconds: 1),
                                         // backgroundColor: Color(0xffededed),
                                         backgroundColor: Colors.white,
                                         content: Text(

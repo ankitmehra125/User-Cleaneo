@@ -30,135 +30,139 @@ class _WashPageState extends State<WashPage> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Color(0xff006acb),
-              ),
-              child: Column(
-                children: [
-                  SizedBox(height: mQuery.size.height * 0.034),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        top: 45, left: 16, right: 16, bottom: 20),
-                    child: Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context); // Navigate back to previous page
-                          },
-                          child: Icon(Icons.arrow_back, color: Colors.white),
-                        ),
-                        SizedBox(width: mQuery.size.width * 0.045),
-                        Row(
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color(0xff006acb),
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(height: mQuery.size.height * 0.034),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 45, left: 16, right: 16, bottom: 20),
+                        child: Row(
                           children: [
-                            Text(
-                              "Wash",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w700),
-                            ),
-                            SizedBox(width: mQuery.size.width*0.02,),
                             GestureDetector(
                               onTap: () {
-                                setState(() {
-                                  _isDropdownOpen = !_isDropdownOpen;
-                                });
+                                Navigator.pop(context); // Navigate back to previous page
                               },
-                              child: Icon(Icons.arrow_drop_down, color: Colors.white),
+                              child: Icon(Icons.arrow_back, color: Colors.white),
                             ),
+                            SizedBox(width: mQuery.size.width * 0.045),
+                            Row(
+                              children: [
+                                Text(
+                                  "Wash",
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                                SizedBox(width: mQuery.size.width*0.02,),
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _isDropdownOpen = !_isDropdownOpen;
+                                    });
+                                  },
+                                  child: Icon(Icons.arrow_drop_down, color: Colors.white),
+                                ),
+                              ],
+                            )
                           ],
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(16),
-                          topRight: Radius.circular(16)),
-                    ),
-                    child: TabBar(
-                      controller: _tabController,
-                      tabs: [
-                        Tab(text: "Quantity Wise"),
-                        Tab(text: "By Weight"),
-                      ],
-                      labelColor: Color(0xff29b2fe),
-                      indicatorColor: Color(0xff29b2fe),
-                      labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
-                    ),
-                  ),
-                  Container(
-                    width: double.infinity,
-                    height: mQuery.size.height,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                    ),
-                    child: TabBarView(
-                      controller: _tabController,
-                      children: [
-                        QuantityWisePage(),
-                        ByWeightPage(),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            if (_isDropdownOpen)
-              Positioned(
-                top: mQuery.size.height*0.14,
-                left: mQuery.size.height*0.08,
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      _isDropdownOpen = false;
-                    });
-                  },
-                  child: Container(
-                    height: mQuery.size.height*0.24,
-                    width: mQuery.size.width*0.48,
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 0.2,
-                          blurRadius: 7,
-                          offset: Offset(0, 0), // changes the position of the shadow
                         ),
-                      ],
-                    ),
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          SizedBox(height: mQuery.size.height*0.001,),
-                          _buildDropdownRow("Wash & Iron", 0),
-                          SizedBox(height: mQuery.size.height*0.001),
-                          _buildDropdownRow("Stream Iron", 1),
-                          SizedBox(height: mQuery.size.height*0.001),
-                          _buildDropdownRow("Dry Clean", 2),
-                          SizedBox(height: mQuery.size.height*0.001),
-                          _buildDropdownRow("Premium", 3),
-                          SizedBox(height: mQuery.size.height*0.001),
-                          _buildDropdownRow("Shoe & Bag Care", 4),
-                        ],
                       ),
+                      Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(16),
+                              topRight: Radius.circular(16)),
+                        ),
+                        child: TabBar(
+                          controller: _tabController,
+                          tabs: [
+                            Tab(text: "Quantity Wise"),
+                            Tab(text: "By Weight"),
+                          ],
+                          labelColor: Color(0xff29b2fe),
+                          indicatorColor: Color(0xff29b2fe),
+                          labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        height: mQuery.size.height,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                        ),
+                        child: TabBarView(
+                          controller: _tabController,
+                          children: [
+                            QuantityWisePage(),
+                            ByWeightPage(),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          if (_isDropdownOpen)
+            Positioned(
+              top: mQuery.size.height*0.14,
+              left: mQuery.size.height*0.08,
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _isDropdownOpen = false;
+                  });
+                },
+                child: Container(
+                  height: mQuery.size.height*0.24,
+                  width: mQuery.size.width*0.48,
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 0.2,
+                        blurRadius: 7,
+                        offset: Offset(0, 0), // changes the position of the shadow
+                      ),
+                    ],
+                  ),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        SizedBox(height: mQuery.size.height*0.001,),
+                        _buildDropdownRow("Wash & Iron", 0),
+                        SizedBox(height: mQuery.size.height*0.001),
+                        _buildDropdownRow("Stream Iron", 1),
+                        SizedBox(height: mQuery.size.height*0.001),
+                        _buildDropdownRow("Dry Clean", 2),
+                        SizedBox(height: mQuery.size.height*0.001),
+                        _buildDropdownRow("Premium", 3),
+                        SizedBox(height: mQuery.size.height*0.001),
+                        _buildDropdownRow("Shoe & Bag Care", 4),
+                      ],
                     ),
                   ),
                 ),
               ),
-          ],
-        ),
+            ),
+        ],
       ),
     );
   }
