@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: SplashScreen(),
+      home: SplashScreen(),
       // home: SignUpPage(),
       // home: OTPPage(),
       // home: HomePage(),
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       // home: HelpPage(),
       // home: CustomerServicePage(),
       // home: Donate(),
-      home: PaymentPage(),
+      // home: PaymentPage(),
     );
   }
 }

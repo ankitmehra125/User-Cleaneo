@@ -171,14 +171,14 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                     itemList[index]["name"],
                                     itemList[index]["price"],
                                     kgValues[index],
-                                    () {
+                                        () {
                                       setState(() {
                                         kgValues[index] = kgValues[index] > 0
                                             ? kgValues[index] - 1
                                             : 0;
                                       });
                                     },
-                                    () {
+                                        () {
                                       setState(() {
                                         kgValues[index]++;
                                         calculateTotalKgValue();
@@ -789,11 +789,11 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                         height: mQuery.size.height*0.8,
                                         width: double.infinity,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(16),
-                                            topRight: Radius.circular(16)
-                                          ),
-                                          color: Colors.white
+                                            borderRadius: BorderRadius.only(
+                                                topLeft: Radius.circular(16),
+                                                topRight: Radius.circular(16)
+                                            ),
+                                            color: Colors.white
                                         ),
                                         child: Column(
                                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -811,23 +811,23 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                               height: mQuery.size.height * 0.1,
                                               padding: EdgeInsets.symmetric(horizontal: 12),
                                               decoration: BoxDecoration(
-                                                color: Color(0xffebf7ed)
+                                                  color: Color(0xffebf7ed)
                                               ),
                                               child: Column(
                                                 children: [
                                                   Row(
                                                     children: [
-                                                        Container(
-                                                          decoration: BoxDecoration(
-                                                            shape: BoxShape.circle,
-                                                            color: Color(0xff009c1a),
-                                                          ),
-                                                          child: Icon(
-                                                            Icons.check,
-                                                            color: Colors.white,
-                                                            size: 12,
-                                                          ),
+                                                      Container(
+                                                        decoration: BoxDecoration(
+                                                          shape: BoxShape.circle,
+                                                          color: Color(0xff009c1a),
                                                         ),
+                                                        child: Icon(
+                                                          Icons.check,
+                                                          color: Colors.white,
+                                                          size: 12,
+                                                        ),
+                                                      ),
                                                       SizedBox(width: mQuery.size.width*0.032,),
                                                       Text(
                                                         "Pickup from $address",
@@ -871,8 +871,8 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                               child: Column(
                                                 children: [
                                                   Text("Clothes Detail",style: TextStyle(
-                                                    fontSize: 15,
-                                                    fontWeight: FontWeight.w800
+                                                      fontSize: 15,
+                                                      fontWeight: FontWeight.w800
                                                   ),)
                                                 ],
                                               ),
@@ -1084,5 +1084,3 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
 
 
 }
-
-

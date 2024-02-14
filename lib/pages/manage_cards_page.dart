@@ -97,156 +97,158 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                       topRight: Radius.circular(16)
                   ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(height: mQuery.size.height * 0.02,),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Row(
-                        children: [
-                          Text("Credit/Debit Cards", style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w800
-                          ),),
-                          Expanded(child: SizedBox()),
-                          GestureDetector(
-                            onTap: _openBottomSheet,
-                            child: Row(
-                              children: [
-                                Container(
-                                  width: mQuery.size.width * 0.06,
-                                  height: mQuery.size.height * 0.06,
-                                  decoration: BoxDecoration(
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: mQuery.size.height * 0.02,),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Row(
+                          children: [
+                            Text("Credit/Debit Cards", style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w800
+                            ),),
+                            Expanded(child: SizedBox()),
+                            GestureDetector(
+                              onTap: _openBottomSheet,
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: mQuery.size.width * 0.06,
+                                    height: mQuery.size.height * 0.06,
+                                    decoration: BoxDecoration(
+                                        color: Color(0xff29b2fe),
+                                        shape: BoxShape.circle
+                                    ),
+                                    child: Center(
+                                      child: Icon(Icons.add, color: Colors.white,
+                                          size: 15),
+                                    ),
+                                  ),
+                                  SizedBox(width: mQuery.size.width * 0.03,),
+                                  Text("Add New", style: TextStyle(
+                                      fontSize: 13,
                                       color: Color(0xff29b2fe),
-                                      shape: BoxShape.circle
-                                  ),
-                                  child: Center(
-                                    child: Icon(Icons.add, color: Colors.white,
-                                        size: 15),
-                                  ),
-                                ),
-                                SizedBox(width: mQuery.size.width * 0.03,),
-                                Text("Add New", style: TextStyle(
-                                    fontSize: 13,
-                                    color: Color(0xff29b2fe),
-                                    fontWeight: FontWeight.w600
-                                ),)
-                              ],
-                            ),
-                          )
-                        ],
+                                      fontWeight: FontWeight.w600
+                                  ),)
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    Divider(),
-
-                    SizedBox(height: mQuery.size.height * 0.025,),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16),
-                      child: Column(
-                        children: [
-                          for (int i = 0; i < cards.length; i++)
-                            Column(
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                                  width: double.infinity,
-                                  height: mQuery.size.height * 0.1,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey.withOpacity(0.5),
-                                        spreadRadius: 0,
-                                        blurRadius: 10,
-                                        offset: Offset(0, 0), // changes the position of the shadow
-                                      ),
-                                    ],
-                                  ),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          if (cards[i].cardType != null) SvgPicture.asset(
-                                            getImagePath(cards[i].cardType!),
-                                            width: 20, height: 24,
-                                          ),
-                                          SizedBox(width: mQuery.size.width * 0.03,),
-                                          RichText(
-                                              text: TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                        text: "${cards[i].cardNumber} ", style: TextStyle(
-                                                        color: Colors.black,
-                                                        fontWeight: FontWeight.w600
-                                                    )
-                                                    ),
-                                                    TextSpan(
-                                                        text: "${cards[i].cvv}", style: TextStyle(
-                                                        color: Colors.black,
-                                                        fontWeight: FontWeight.w600,
-                                                        fontSize: 15
-                                                    )
-                                                    ),
-                                                  ]
-                                              )
-                                          ),
-                                          Expanded(child: SizedBox()),
-                                          GestureDetector(
-                                              onTap: () {
-                                                _openDeleteBottomSheet(cards[i]);
-                                              },
-                                              child: Icon(Icons.delete, color: Colors.black54,)),
-                                          SizedBox(width: mQuery.size.width*0.03,),
-                                          Container(
-                                            width: mQuery.size.width*0.05,
-                                            height: mQuery.size.height*0.04,
-                                            decoration: BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                border: Border.all(
-                                                    color: Colors.grey
+                      Divider(),
+                  
+                      SizedBox(height: mQuery.size.height * 0.025,),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16),
+                        child: Column(
+                          children: [
+                            for (int i = 0; i < cards.length; i++)
+                              Column(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                                    width: double.infinity,
+                                    height: mQuery.size.height * 0.1,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.5),
+                                          spreadRadius: 0,
+                                          blurRadius: 10,
+                                          offset: Offset(0, 0), // changes the position of the shadow
+                                        ),
+                                      ],
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            if (cards[i].cardType != null) SvgPicture.asset(
+                                              getImagePath(cards[i].cardType!),
+                                              width: 20, height: 24,
+                                            ),
+                                            SizedBox(width: mQuery.size.width * 0.03,),
+                                            RichText(
+                                                text: TextSpan(
+                                                    children: [
+                                                      TextSpan(
+                                                          text: "${cards[i].cardNumber} ", style: TextStyle(
+                                                          color: Colors.black,
+                                                          fontWeight: FontWeight.w600
+                                                      )
+                                                      ),
+                                                      TextSpan(
+                                                          text: "${cards[i].cvv}", style: TextStyle(
+                                                          color: Colors.black,
+                                                          fontWeight: FontWeight.w600,
+                                                          fontSize: 15
+                                                      )
+                                                      ),
+                                                    ]
                                                 )
                                             ),
-                                            child: Center(
-                                              child: Icon(
-                                                Icons.check,
-                                                size: 12,
+                                            Expanded(child: SizedBox()),
+                                            GestureDetector(
+                                                onTap: () {
+                                                  _openDeleteBottomSheet(cards[i]);
+                                                },
+                                                child: Icon(Icons.delete, color: Colors.black54,)),
+                                            SizedBox(width: mQuery.size.width*0.03,),
+                                            Container(
+                                              width: mQuery.size.width*0.05,
+                                              height: mQuery.size.height*0.04,
+                                              decoration: BoxDecoration(
+                                                  shape: BoxShape.circle,
+                                                  border: Border.all(
+                                                      color: Colors.grey
+                                                  )
                                               ),
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                      Expanded(child: SizedBox()),
-                                      Text("Valid Till ${cards[i].expiryDate}", style: TextStyle(
-                                          color: Colors.black54,
-                                          fontSize: 13
-                                      ),)
-                                    ],
+                                              child: Center(
+                                                child: Icon(
+                                                  Icons.check,
+                                                  size: 12,
+                                                ),
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                        Expanded(child: SizedBox()),
+                                        Text("Valid Till ${cards[i].expiryDate}", style: TextStyle(
+                                            color: Colors.black54,
+                                            fontSize: 13
+                                        ),)
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                SizedBox(height: mQuery.size.height*0.023), // Add space between containers
-                              ],
-                            ),
-                          if (cards.isEmpty)
-                            Column(
-                              children: [
-                                SizedBox(height: mQuery.size.height*0.21,),
-                                Center(
-                                  child: Text("No Credit/debit \n  cards added ",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.black54
-                                    ),),
-                                ),
-                              ],
-                            )
-                        ],
-                      ),
-                    )
-
-                  ],
+                                  SizedBox(height: mQuery.size.height*0.023), // Add space between containers
+                                ],
+                              ),
+                            if (cards.isEmpty)
+                              Column(
+                                children: [
+                                  SizedBox(height: mQuery.size.height*0.21,),
+                                  Center(
+                                    child: Text("No Credit/debit \n  cards added ",
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.black54
+                                      ),),
+                                  ),
+                                ],
+                              )
+                          ],
+                        ),
+                      )
+                  
+                    ],
+                  ),
                 ),
               ),
             )

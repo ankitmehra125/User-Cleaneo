@@ -35,11 +35,11 @@ class _HelpPageState extends State<HelpPage> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: ()
-                      {    Navigator.push(context,MaterialPageRoute(builder: (context){
-                          return HomePage();
-                        }));
-                      },
+                    // onTap: ()
+                    //   {    Navigator.push(context,MaterialPageRoute(builder: (context){
+                    //       return HomePage();
+                    //     }));
+                    //   },
                       child: Icon(Icons.arrow_back, color: Colors.white,)),
                   SizedBox(width: mQuery.size.width * 0.045,),
                   Text("Help", style: TextStyle(

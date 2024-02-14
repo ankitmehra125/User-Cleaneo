@@ -120,8 +120,8 @@ class _DryCleanPageState extends State<DryCleanPage> {
                             ),
                             SizedBox(height: mQuery.size.height*0.026,),
                             Text("Clothes Detail",style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w800
+                                fontSize: 14,
+                                fontWeight: FontWeight.w800
                             ),),
                             SizedBox(height: mQuery.size.height*0.02,),
                             Column(
@@ -245,4 +245,3 @@ class _DryCleanPageState extends State<DryCleanPage> {
     );
   }
 }
-

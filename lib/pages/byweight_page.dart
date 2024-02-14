@@ -300,7 +300,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
               onTap: ()
               {
                 _openBottomSheet(context);
-                },
+              },
               child: Container(
                 width: double.infinity,
                 height: mQuery.size.height*0.08,
