@@ -9,8 +9,6 @@ import 'home_page.dart';
 class ByWeightPage extends StatefulWidget {
   const ByWeightPage({Key? key});
 
-
-
   @override
   State<ByWeightPage> createState() => _ByWeightPageState();
 }

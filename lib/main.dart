@@ -1,5 +1,6 @@
 import 'package:cleaneo_user_app/Auth/signup_page.dart';
 import 'package:cleaneo_user_app/pages/Donateslider.dart';
+import 'package:cleaneo_user_app/pages/address_page.dart';
 import 'package:cleaneo_user_app/pages/customer_service_page.dart';
 import 'package:cleaneo_user_app/pages/donate.dart';
 import 'package:cleaneo_user_app/pages/dryclean_page.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: SplashScreen(),
+      home: SplashScreen(),
       // home: SignUpPage(),
       // home: OTPPage(),
       // home: HomePage(),
@@ -37,13 +38,14 @@ class MyApp extends StatelessWidget {
       // home: SplashScreen(),
       // home: OTPPage(),
       // home: ManageCardsPage()
-      home: WashPage(),
+      // home: WashPage(),
       // home: DryCleanPage(),
       // home: QuantityWisePage(),
       // home: HelpPage(),
       // home: CustomerServicePage(),
       // home: Donate(),
       // home: PaymentPage(),
+      // home: AddressPage(),
     );
   }
 }
