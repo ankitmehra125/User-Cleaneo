@@ -496,7 +496,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                   borderRadius: BorderRadius.circular(6)
                                 ),
                                 child: Center(
-                                  child: Text("Make Payment",style: TextStyle(
+                                  child: Text("Make Payment ",style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 15,
                                     fontWeight: FontWeight.w600
