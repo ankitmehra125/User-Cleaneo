@@ -84,58 +84,61 @@ class _DonateState extends State<Donate> {
                     ),
                   ],
                 ),
-                child: Column(
-                  children: [
-                    SizedBox(height: mQuery.size.height*0.023,),
-                    DonateSlider(),
-                    SizedBox(height: mQuery.size.height*0.02,),
-                    Row(
-                      children: [
-                        Text(
-                          "Donate for a better India",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: mQuery.size.height*0.02,),
-                    Row(
-                      children: [
-                        Container(
-                          width: 312.0,
-                          child: const Text(
-                            "Welcome to Donete, your gateway to impactful giving! Discover a diverse array of causes, from education to environmental conservation, all within our intuitive and secure platform. Easily track the real-time impact of your donations, connect with like-minded individuals, and engage in dynamic fundraising campaigns. Donete is more than a donation platform; it's a community fostering positive change. Join us today and make a lasting impact on the causes that matter most to you!",
-                            textAlign: TextAlign.start,
+                child: SingleChildScrollView(
+                  child:   Column(
+                    children: [
+                      SizedBox(height: mQuery.size.height*0.023,),
+                      DonateSlider(),
+                      SizedBox(height: mQuery.size.height*0.02,),
+                      Row(
+                        children: [
+                          Text(
+                            "Donate for a better India",
                             style: TextStyle(
-                              color: Color(0xff6d6e73),
-                              fontSize: 12.0,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    Spacer(),
-                    ElevatedButton(
-                      onPressed: () {
-                        print('Button Pressed!');
-                      },
-                      style: ElevatedButton.styleFrom(
-                        primary: Color(0xFF009C1A),
-                        onPrimary: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        elevation: 0,
-                        minimumSize: Size(400.0, 50.0),
+                        ],
                       ),
-                      child: const Text('Donate',style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600
-                      ),),
-                    ),
-                  ],
+                      SizedBox(height: mQuery.size.height*0.02,),
+                      Row(
+                        children: [
+                          Container(
+                            width: 312.0,
+                            child: const Text(
+                              "Welcome to Donete, your gateway to impactful giving! Discover a diverse array of causes, from education to environmental conservation, all within our intuitive and secure platform. Easily track the real-time impact of your donations, connect with like-minded individuals, and engage in dynamic fundraising campaigns. Donete is more than a donation platform; it's a community fostering positive change. Join us today and make a lasting impact on the causes that matter most to you!",
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                color: Color(0xff6d6e73),
+                                fontSize: 12.0,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: mQuery.size.height*0.09,),
+                      ElevatedButton(
+                        onPressed: ()
+                        {
+                          print('Button Pressed!');
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Color(0xFF009C1A),
+                          onPrimary: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          elevation: 0,
+                          minimumSize: Size(400.0, 50.0),
+                        ),
+                        child: const Text('Donate',style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600
+                        ),),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             )

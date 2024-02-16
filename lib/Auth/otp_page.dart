@@ -1,10 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:pinput/pinput.dart';
 import 'package:cleaneo_user_app/Auth/login_page.dart';
 import 'package:cleaneo_user_app/pages/help_page.dart';
 import 'package:cleaneo_user_app/pages/home_page.dart';
 import 'package:cleaneo_user_app/pages/map_page.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:pinput/pinput.dart';
 
 class OTPPage extends StatefulWidget {
   const OTPPage({Key? key}) : super(key: key);
@@ -37,20 +36,20 @@ class _OTPPageState extends State<OTPPage> {
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     final defaultPinTheme = PinTheme(
-        width: mQuery.size.width*0.23,
-        height: mQuery.size.height*0.1,
-        decoration: BoxDecoration(
-          color: Colors.white,
-            borderRadius: BorderRadius.circular(8),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.45),
-              spreadRadius: 0,
-              blurRadius: 10,
-              offset: Offset(0, 0), // changes the position of the shadow
-            ),
-          ],
-        )
+      width: mQuery.size.width * 0.23,
+      height: mQuery.size.height * 0.1,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.45),
+            spreadRadius: 0,
+            blurRadius: 10,
+            offset: Offset(0, 0), // changes the position of the shadow
+          ),
+        ],
+      ),
     );
     return Scaffold(
       body: Container(
@@ -67,11 +66,11 @@ class _OTPPageState extends State<OTPPage> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap:()
-                    {
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return LoginPage();
-                      }));
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                            return LoginPage();
+                          }));
                     },
                     child: Icon(
                       Icons.arrow_back,
@@ -102,62 +101,72 @@ class _OTPPageState extends State<OTPPage> {
                 ),
                 child: SingleChildScrollView(
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
+                    padding:
+                    const EdgeInsets.only(left: 16, right: 16, top: 16),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Enter 4 Digit Code",style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w800
-                        ),),
-                        SizedBox(height: mQuery.size.height*0.01,),
-                        Text("Sent to +91 9793878788",style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black87
-                        ),),
-                        SizedBox(height: mQuery.size.height*0.04,),
+                        Text(
+                          "Enter 4 Digit Code",
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.w800),
+                        ),
+                        SizedBox(height: mQuery.size.height * 0.01),
+                        Text(
+                          "Sent to +91 9793878788",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black87),
+                        ),
+                        SizedBox(height: mQuery.size.height * 0.04),
                         Pinput(
                           length: 4,
                           defaultPinTheme: defaultPinTheme,
                         ),
-                        SizedBox(height: mQuery.size.height*0.1,),
-                        Text("Problems receiving the code?",style: TextStyle(
-                          fontWeight: FontWeight.w600
-                        ),),
-                        SizedBox(height: mQuery.size.height*0.008,),
+                        SizedBox(height: mQuery.size.height * 0.1),
+                        Text(
+                          "Problems receiving the code?",
+                          style: TextStyle(fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(height: mQuery.size.height * 0.008),
                         Row(
                           children: [
-                            Icon(Icons.refresh,color: Colors.cyan,),
-                            SizedBox(width: mQuery.size.width*0.015,),
-                            Text("RESEND", style: TextStyle(
+                            Icon(
+                              Icons.refresh,
                               color: Colors.cyan,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600
-                            ),)
+                            ),
+                            SizedBox(width: mQuery.size.width * 0.015),
+                            Text(
+                              "RESEND",
+                              style: TextStyle(
+                                  color: Colors.cyan,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600),
+                            )
                           ],
                         ),
-                  
-                        SizedBox(height: mQuery.size.height*0.35,),
+                        SizedBox(height: mQuery.size.height * 0.35),
                         GestureDetector(
-                          onTap: ()
-                          {
-                            Navigator.push(context, MaterialPageRoute(builder: (context){
-                              return MapPage();
-                            }));
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                                  return MapPage();
+                                }));
                           },
                           child: Container(
                             width: double.infinity,
-                            height: mQuery.size.height*0.06,
+                            height: mQuery.size.height * 0.06,
                             decoration: BoxDecoration(
                                 color: Color(0xff29b2fe),
-                                borderRadius: BorderRadius.circular(6)
-                            ),
+                                borderRadius: BorderRadius.circular(6)),
                             child: Center(
-                              child: Text("Verify",style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600
-                              ),),
+                              child: Text(
+                                "Verify",
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600),
+                              ),
                             ),
                           ),
                         ),
@@ -179,10 +188,7 @@ class OTPBox extends StatelessWidget {
   final FocusNode focusNode;
   final bool isFocused;
 
-  OTPBox(
-      {required this.controller,
-        required this.focusNode,
-        required this.isFocused});
+  OTPBox({required this.controller, required this.focusNode, required this.isFocused});
 
   @override
   Widget build(BuildContext context) {
@@ -191,6 +197,7 @@ class OTPBox extends StatelessWidget {
       width: mQuery.size.width * 0.18, // Adjust the width as needed
       height: mQuery.size.width * 0.63, // Adjust the height as needed
       child: TextField(
+        style: TextStyle(fontSize: 30), // Adjusting the font size here
         controller: controller,
         focusNode: focusNode,
         textAlign: TextAlign.center,
@@ -199,8 +206,8 @@ class OTPBox extends StatelessWidget {
         decoration: InputDecoration(
           counterText: "", // Hide the character counter
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide.none
+              borderRadius: BorderRadius.circular(8),
+              borderSide: BorderSide.none
           ),
         ),
       ),

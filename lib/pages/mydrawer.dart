@@ -24,71 +24,81 @@ class _MyDrawerState extends State<MyDrawer> {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.only(left: 12),
+              padding: EdgeInsets.only(right: 4),
               color: Color(0xfff3fbff),
               height: mQuery.size.height*0.15,
               child: Column(
                 children: [
                   SizedBox(height: mQuery.size.height*0.058),
                   GestureDetector(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        GestureDetector(
-                          onTap: ()
-                          {
-                            Navigator.push(context, MaterialPageRoute(builder: (context){
-                              return MyProfilePage();
-                            }));
-                          },
-                          child: ProfilePicture(
-                            name: "",
-                            radius: 20,
-                            fontsize: 10,
-                            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwKKzV4oKveaDEmBr38LXuMWTho1d1-mjOOcjau6XJ1A&s",
-                          ),
-                        ),
-                        SizedBox(width: mQuery.size.width*0.022,),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                SizedBox(height: mQuery.size.height*0.02,),
-                                Text("Shweta Somaiya",style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600
-                                ),),
-                                SizedBox(width: mQuery.size.width*0.22,),
-                                Icon(Icons.edit,color: Colors.cyan,),
-                              ],
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          GestureDetector(
+                            onTap: ()
+                            {
+                              Navigator.push(context, MaterialPageRoute(builder: (context){
+                                return MyProfilePage();
+                              }));
+                            },
+                            child: ProfilePicture(
+                              name: "",
+                              radius: 20,
+                              fontsize: 10,
+                              img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwKKzV4oKveaDEmBr38LXuMWTho1d1-mjOOcjau6XJ1A&s",
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Icon(Icons.phone_android,size: 18,),
-                                Text("(+91) 9978997899"),
-                                SizedBox(width: mQuery.size.width*0.02,),
-                                Container(
-                                  width: mQuery.size.width*0.04,
-                                  height: mQuery.size.height*0.04,
-                                  decoration: BoxDecoration(
-                                    color: Colors.green,
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Center(
-                                    child: Icon(
-                                      Icons.check,
-                                      color: Colors.white,
-                                      size: 10,
+                          ),
+                          SizedBox(width: mQuery.size.width*0.024,),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  SizedBox(height: mQuery.size.height*0.02,),
+                                  Text("Shweta Somaiya",style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600
+                                  ),),
+                                  SizedBox(width: mQuery.size.width*0.22,),
+                                  GestureDetector(
+                                      onTap: ()
+                                      {
+                                        Navigator.push(context, MaterialPageRoute(builder: (context){
+                                          return MyProfilePage();
+                                        }));
+                                      },
+                                      child: Icon(Icons.edit,color: Colors.cyan,)),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Icon(Icons.phone_android,size: 18,),
+                                  Text("(+91) 9978997899"),
+                                  SizedBox(width: mQuery.size.width*0.02,),
+                                  Container(
+                                    width: mQuery.size.width*0.04,
+                                    height: mQuery.size.height*0.04,
+                                    decoration: BoxDecoration(
+                                      color: Colors.green,
+                                      shape: BoxShape.circle,
                                     ),
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ],
+                                    child: Center(
+                                      child: Icon(
+                                        Icons.check,
+                                        color: Colors.white,
+                                        size: 10,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
 
