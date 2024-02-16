@@ -1,3 +1,4 @@
+import 'package:cleaneo_user_app/Auth/login_page.dart';
 import 'package:cleaneo_user_app/Auth/signup_page.dart';
 import 'package:cleaneo_user_app/pages/Donateslider.dart';
 import 'package:cleaneo_user_app/pages/address_page.dart';
@@ -30,12 +31,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: SplashScreen(),
+      // home: LoginPage(),
       // home: SignUpPage(),
       // home: OTPPage(),
-      // home: HomePage(),
-      // home: WelcomePage()  
-      home: SplashScreen(),
+      home: HomePage(),
+      // home: WelcomePage()
+      // home: SplashScreen(),
       // home: OTPPage(),
       // home: ManageCardsPage()
       // home: WashPage(),

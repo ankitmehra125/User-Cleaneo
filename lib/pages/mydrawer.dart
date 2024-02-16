@@ -24,7 +24,7 @@ class _MyDrawerState extends State<MyDrawer> {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.only(right: 4),
+              padding: EdgeInsets.only(right: 4,left: 10),
               color: Color(0xfff3fbff),
               height: mQuery.size.height*0.15,
               child: Column(
@@ -58,7 +58,7 @@ class _MyDrawerState extends State<MyDrawer> {
                                 children: [
                                   SizedBox(height: mQuery.size.height*0.02,),
                                   Text("Shweta Somaiya",style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: mQuery.size.height*0.022,
                                       fontWeight: FontWeight.w600
                                   ),),
                                   SizedBox(width: mQuery.size.width*0.22,),
@@ -75,8 +75,11 @@ class _MyDrawerState extends State<MyDrawer> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Icon(Icons.phone_android,size: 18,),
-                                  Text("(+91) 9978997899"),
+                                  Icon(Icons.phone_android,
+                                      size: mQuery.size.width*0.05,),
+                                  Text("(+91) 9978997899",style: TextStyle(
+                                    fontSize: mQuery.size.height*0.0195,
+                                  ),),
                                   SizedBox(width: mQuery.size.width*0.02,),
                                   Container(
                                     width: mQuery.size.width*0.04,
@@ -136,7 +139,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Icon(Icons.dashboard,color: Colors.cyan,),
                           title: Text("Dashboard",style: TextStyle(
                               fontWeight: FontWeight.w600,
-                              fontSize: 15
+                              fontSize: mQuery.size.height*0.0212,
                           ),),
                         ),
                       ),
@@ -144,21 +147,21 @@ class _MyDrawerState extends State<MyDrawer> {
                         leading: Icon(Icons.shopping_bag_outlined,color: Colors.cyan,),
                         title: Text("Your Orders",style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            fontSize: 15
+                            fontSize: mQuery.size.height*0.0212,
                         ),),
                       ),
                       ListTile(
                         leading: Icon(Icons.location_on_outlined,color: Colors.cyan,),
                         title: Text("Address Book",style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            fontSize: 15
+                          fontSize: mQuery.size.height*0.0212,
                         ),),
                       ),
                       ListTile(
                         leading: Icon(Icons.notifications_none_sharp,color: Colors.cyan,),
                         title: Text("Notifications",style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            fontSize: 15
+                          fontSize: mQuery.size.height*0.0212,
                         ),),
                       ),
                       GestureDetector(
@@ -172,7 +175,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Icon(Icons.favorite_border,color: Colors.cyan),
                           title: Text("Donate",style: TextStyle(
                               fontWeight: FontWeight.w600,
-                              fontSize: 15
+                            fontSize: mQuery.size.height*0.0212,
                           ),),
                         ),
                       ),
@@ -180,7 +183,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         leading: Icon(Icons.wallet_travel_rounded,color: Colors.cyan),
                         title: Text("Wallet",style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            fontSize: 15
+                          fontSize: mQuery.size.height*0.0212,
                         ),),
                       ),
                       GestureDetector(
@@ -194,7 +197,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Icon(Icons.credit_card,color: Colors.cyan),
                           title: Text("Manage Cards",style: TextStyle(
                               fontWeight: FontWeight.w600,
-                              fontSize: 15
+                            fontSize: mQuery.size.height*0.0212,
                           ),),
                         ),
                       ),
@@ -202,21 +205,21 @@ class _MyDrawerState extends State<MyDrawer> {
                         leading: Icon(Icons.local_offer,color: Colors.cyan),
                         title: Text("Offers",style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            fontSize: 15
+                          fontSize: mQuery.size.height*0.0212,
                         ),),
                       ),
                       ListTile(
                         leading: Icon(Icons.card_giftcard,color: Colors.cyan),
                         title: Text("Refer and Earn",style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            fontSize: 15
+                          fontSize: mQuery.size.height*0.0212,
                         ),),
                       ),
                       ListTile(
                         leading: Icon(Icons.star_border_outlined,color: Colors.cyan),
                         title: Text("Reviews",style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            fontSize: 15
+                          fontSize: mQuery.size.height*0.0212,
                         ),),
                       ),
                       GestureDetector(
@@ -230,7 +233,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Icon(Icons.help_outline,color: Colors.cyan),
                           title: Text("Help",style: TextStyle(
                               fontWeight: FontWeight.w600,
-                              fontSize: 15
+                            fontSize: mQuery.size.height*0.0212,
                           ),),
                         ),
                       ),
@@ -245,20 +248,23 @@ class _MyDrawerState extends State<MyDrawer> {
               color: Colors.white,
               child: Column(
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        color: Colors.cyan,
-                        borderRadius: BorderRadius.circular(8)
-                    ),
-                    width: mQuery.size.width*0.75,
-                    height: mQuery.size.height*0.04,
-                    child: const Center(
-                      child: Text("Join us as a partner",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold
-                        ),),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.cyan,
+                          borderRadius: BorderRadius.circular(8)
+                      ),
+                      width: double.infinity,
+                      height: mQuery.size.height*0.04,
+                      child:  Center(
+                        child: Text("Join us as a partner",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: mQuery.size.height*0.02,
+                              fontWeight: FontWeight.bold
+                          ),),
+                      ),
                     ),
                   ),
                   const Divider(color: Colors.grey,
@@ -279,7 +285,7 @@ class _MyDrawerState extends State<MyDrawer> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Text("Sign Out",style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: mQuery.size.height*0.022,
                                       color: Colors.black,
                                       fontWeight: FontWeight.w600
                                   ),),
@@ -291,7 +297,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         Container(
                           padding: EdgeInsets.symmetric(horizontal: 12),
                           child: Text("CLEANEO V$versionNo",style: TextStyle(
-                            fontSize: 13,
+                            fontSize: mQuery.size.height*0.018,
                           ),),
                         ),
                       ],

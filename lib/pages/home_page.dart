@@ -114,11 +114,11 @@ class _HomePageState extends State<HomePage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
+                        Text(
                           "Welcome back!",
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: mQuery.size.height*0.0215,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -146,12 +146,12 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.only(left: 16, right: 16),
                     child: Row(
                       children: [
-                        const Text(
+                        Text(
                           "Shweta",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
-                            fontSize: 22,
+                            fontSize: mQuery.size.height*0.028,
                           ),
                         ),
                         Expanded(child: SizedBox()),
@@ -160,11 +160,11 @@ class _HomePageState extends State<HomePage> {
                           color: Colors.white,
                         ),
                         SizedBox(width: mQuery.size.width * 0.02),
-                        const Text(
+                        Text(
                           "Ongoing Orders",
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 14,
+                            fontSize: mQuery.size.height*0.019,
                           ),
                         )
                       ],
@@ -186,7 +186,7 @@ class _HomePageState extends State<HomePage> {
                         border: InputBorder.none,
                         hintText: "Search",
                         hintStyle: TextStyle(
-                          fontSize: 16,
+                          fontSize: mQuery.size.height*0.023,
                           color: Colors.grey.shade600,
                           fontWeight: FontWeight.w600,
                         ),
@@ -243,7 +243,7 @@ class _HomePageState extends State<HomePage> {
                               Text(
                                 item["text"],
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: mQuery.size.height*0.022,
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
@@ -346,7 +346,10 @@ class _HomePageState extends State<HomePage> {
       child: Center(
         child: Text(
           "Know More",
-          style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w800),
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: mQuery.size.height*0.0175,
+              fontWeight: FontWeight.w800),
         ),
       ),
     );
@@ -371,7 +374,9 @@ class _HomePageState extends State<HomePage> {
         child: Center(
           child: Text(
             title,
-            style: TextStyle(fontSize: 10, fontWeight: FontWeight.w600),
+            style: TextStyle(
+                fontSize: mQuery.size.height*0.015,
+                fontWeight: FontWeight.w600),
           ),
         ),
       ),

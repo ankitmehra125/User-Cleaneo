@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -80,7 +81,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                       child: Icon(Icons.arrow_back, color: Colors.white,)),
                   SizedBox(width: mQuery.size.width * 0.045,),
                   Text("Manage Cards", style: TextStyle(
-                      fontSize: 20,
+                      fontSize: mQuery.size.height*0.027,
                       color: Colors.white,
                       fontWeight: FontWeight.w700
                   ),)
@@ -107,7 +108,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                         child: Row(
                           children: [
                             Text("Credit/Debit Cards", style: TextStyle(
-                                fontSize: 16,
+                                fontSize: mQuery.size.height*0.0212,
                                 fontWeight: FontWeight.w800
                             ),),
                             Expanded(child: SizedBox()),
@@ -124,12 +125,13 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                     ),
                                     child: Center(
                                       child: Icon(Icons.add, color: Colors.white,
-                                          size: 15),
+                                          size: mQuery.size.width*0.03
+                                      ),
                                     ),
                                   ),
                                   SizedBox(width: mQuery.size.width * 0.03,),
                                   Text("Add New", style: TextStyle(
-                                      fontSize: 13,
+                                      fontSize: mQuery.size.height*0.018,
                                       color: Color(0xff29b2fe),
                                       fontWeight: FontWeight.w600
                                   ),)
@@ -180,6 +182,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                                       TextSpan(
                                                           text: "${cards[i].cardNumber} ", style: TextStyle(
                                                           color: Colors.black,
+                                                          fontSize: mQuery.size.height*0.018,
                                                           fontWeight: FontWeight.w600
                                                       )
                                                       ),
@@ -187,7 +190,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                                           text: "${cards[i].cvv}", style: TextStyle(
                                                           color: Colors.black,
                                                           fontWeight: FontWeight.w600,
-                                                          fontSize: 15
+                                                        fontSize: mQuery.size.height*0.018,
                                                       )
                                                       ),
                                                     ]
@@ -221,7 +224,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                         Expanded(child: SizedBox()),
                                         Text("Valid Till ${cards[i].expiryDate}", style: TextStyle(
                                             color: Colors.black54,
-                                            fontSize: 13
+                                          fontSize: mQuery.size.height*0.0145,
                                         ),)
                                       ],
                                     ),
@@ -236,7 +239,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                   Center(
                                     child: Text("No Credit/debit \n  cards added ",
                                       style: TextStyle(
-                                        fontSize: 20,
+                                          fontSize: mQuery.size.height*0.025,
                                         fontWeight: FontWeight.w700,
                                         color: Colors.black54
                                       ),),
@@ -299,7 +302,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                           Text(
                             "Add Debit/Credit Card",
                             style: TextStyle(
-                              fontSize: 19,
+                              fontSize: mQuery.size.height*0.024,
                               fontWeight: FontWeight.w700,
                             ),
                           ),
@@ -467,7 +470,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                   enabledBorder: InputBorder.none,
                                   hintText: "Card Number",
                                   hintStyle: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: mQuery.size.height*0.02,
                                     fontWeight: FontWeight.w600,
                                     color: Color(0xffABAFB1),
                                   ),
@@ -503,7 +506,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                       enabledBorder: InputBorder.none,
                                       hintText: "MM/YY",
                                       hintStyle: TextStyle(
-                                        fontSize: 14,
+                                        fontSize: mQuery.size.height*0.02,
                                         fontWeight: FontWeight.w600,
                                         color: Color(0xffABAFB1),
                                       ),
@@ -531,13 +534,17 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                   child: TextField(
                                     cursorColor: Colors.grey,
                                     controller: cvvController,
+                                    keyboardType: TextInputType.number,
                                     obscureText: true,
+                                    inputFormatters: <TextInputFormatter>[
+                                      FilteringTextInputFormatter.digitsOnly // Allow only numeric input
+                                    ],
                                     decoration: InputDecoration(
                                       focusedBorder: InputBorder.none,
                                       enabledBorder: InputBorder.none,
                                       hintText: "CVV",
                                       hintStyle: TextStyle(
-                                        fontSize: 14,
+                                        fontSize: mQuery.size.height*0.02,
                                         fontWeight: FontWeight.w600,
                                         color: Color(0xffABAFB1),
                                       ),
@@ -573,7 +580,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                   enabledBorder: InputBorder.none,
                                   hintText: "Name",
                                   hintStyle: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: mQuery.size.height*0.02,
                                     fontWeight: FontWeight.w600,
                                     color: Color(0xffABAFB1),
                                   ),
@@ -601,6 +608,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                       child: Text(
                                         "Cancel",
                                         style: TextStyle(
+                                            fontSize: mQuery.size.height*0.02,
                                             color: Colors.white,
                                             fontWeight: FontWeight.w800),
                                       ),
@@ -619,7 +627,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(SnackBar(
                                         margin: EdgeInsets.only(
-                                          bottom: 390
+                                          bottom: mQuery.size.height*0.55
                                         ),
                                         behavior: SnackBarBehavior.floating,
                                         duration: Duration(seconds: 1),
@@ -627,7 +635,9 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                         backgroundColor: Colors.white,
                                         content: Text(
                                             "All fields are required to add a card",style: TextStyle(
-                                          color: Colors.red
+                                          color: Colors.red,
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: mQuery.size.height*0.022
                                         ),),
                                       ));
                                       return; // Don't proceed further
@@ -669,6 +679,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                       child: Text(
                                         "Add",
                                         style: TextStyle(
+                                            fontSize: mQuery.size.height*0.02,
                                             color: Colors.white,
                                             fontWeight: FontWeight.w800),
                                       ),
@@ -714,7 +725,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                   child: Row(
                     children: [
                       Text("Delete Card",style: TextStyle(
-                          fontSize: 19,
+                          fontSize: mQuery.size.height*0.024,
                           fontWeight: FontWeight.w700
                       ),),
                       Expanded(child: SizedBox()),
@@ -733,7 +744,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                 Text("Are you sure you want to \n    "
                     "   delete this card?",
                  style: TextStyle(
-                   fontSize: 16,
+                     fontSize: mQuery.size.height*0.02,
                    fontWeight: FontWeight.w600
                  ),),
                 SizedBox(height: mQuery.size.height*0.04),
@@ -754,6 +765,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                           ),
                           child: Center(
                             child: Text("Cancel", style: TextStyle(
+                                fontSize: mQuery.size.height*0.02,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w800
                             ),),
@@ -777,6 +789,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                           child: Center(
                             child: Text("Delete", style: TextStyle(
                                 color: Colors.white,
+                                fontSize: mQuery.size.height*0.02,
                                 fontWeight: FontWeight.w800
                             ),),
                           ),

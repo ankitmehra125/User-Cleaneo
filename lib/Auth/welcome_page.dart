@@ -52,12 +52,12 @@ class _WelcomePageState extends State<WelcomePage> {
                               "Sign Up",
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16,
+                                  fontSize: mQuery.size.height*0.023,
                                   fontWeight: FontWeight.w700),
                             )),
                       ),
                     ),
-              
+
                     SizedBox(
                       height: mQuery.size.height * 0.04,
                     ),
@@ -80,21 +80,22 @@ class _WelcomePageState extends State<WelcomePage> {
                               "Log in",
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16,
+                                  fontSize: mQuery.size.height*0.023,
                                   fontWeight: FontWeight.w700),
                             )),
                       ),
                     ),
-              
+
                     SizedBox(height: mQuery.size.height*0.24,),
                     Center(
                       child: Text(
                         "By Continuing, you agree to our",
                         style: TextStyle(
+                            fontSize: mQuery.size.height*0.02,
                             color: Colors.white, fontWeight: FontWeight.w700),
                       ),
                     ),
-              
+
                     SizedBox(
                       height: mQuery.size.height * 0.025,
                     ),
@@ -106,61 +107,61 @@ class _WelcomePageState extends State<WelcomePage> {
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Text(
+                            Text(
                               "Terms of Service",
                               style: TextStyle(
-                                  fontSize: 11,
+                                  fontSize: mQuery.size.height*0.016,
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600),
                             ),
                             Container(
                               height: 2,
-                              width: 80,
+                              width: mQuery.size.width*0.25,
                               color: Colors.white,
                             ),
                           ],
                         ),
-              
+
                         // privacy policy
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Text(
+                            Text(
                               "Privacy Policy",
                               style: TextStyle(
-                                  fontSize: 11,
+                                  fontSize: mQuery.size.height*0.016,
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600),
                             ),
                             Container(
                               height: 2,
-                              width: 80,
+                              width: mQuery.size.width*0.23,
                               color: Colors.white,
                             ),
                           ],
                         ),
-              
+
                         // content policies
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Text(
+                             Text(
                               "Content Policies",
                               style: TextStyle(
-                                  fontSize: 11,
+                                  fontSize: mQuery.size.height*0.016,
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600),
                             ),
                             Container(
                               height: 2,
-                              width: 80,
+                              width: mQuery.size.width*0.25,
                               color: Colors.white,
                             ),
                           ],
                         )
                       ],
                     ),
-              
+
                     // Divider Row
                   ],
                 ),

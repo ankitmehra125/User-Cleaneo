@@ -83,7 +83,7 @@ class _OTPPageState extends State<OTPPage> {
                   Text(
                     "Verify Phone Number",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
                         fontWeight: FontWeight.w700),
                   )
@@ -109,12 +109,14 @@ class _OTPPageState extends State<OTPPage> {
                         Text(
                           "Enter 4 Digit Code",
                           style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w800),
+                              fontSize: mQuery.size.height*0.0215,
+                              fontWeight: FontWeight.w800),
                         ),
                         SizedBox(height: mQuery.size.height * 0.01),
                         Text(
                           "Sent to +91 9793878788",
                           style: TextStyle(
+                              fontSize: mQuery.size.height*0.02,
                               fontWeight: FontWeight.w600,
                               color: Colors.black87),
                         ),
@@ -126,7 +128,9 @@ class _OTPPageState extends State<OTPPage> {
                         SizedBox(height: mQuery.size.height * 0.1),
                         Text(
                           "Problems receiving the code?",
-                          style: TextStyle(fontWeight: FontWeight.w600),
+                          style: TextStyle(
+                              fontSize: mQuery.size.height*0.02,
+                              fontWeight: FontWeight.w600),
                         ),
                         SizedBox(height: mQuery.size.height * 0.008),
                         Row(
@@ -140,7 +144,7 @@ class _OTPPageState extends State<OTPPage> {
                               "RESEND",
                               style: TextStyle(
                                   color: Colors.cyan,
-                                  fontSize: 16,
+                                  fontSize: mQuery.size.height*0.02,
                                   fontWeight: FontWeight.w600),
                             )
                           ],
@@ -163,7 +167,7 @@ class _OTPPageState extends State<OTPPage> {
                               child: Text(
                                 "Verify",
                                 style: TextStyle(
-                                    fontSize: 15,
+                                    fontSize: mQuery.size.height*0.022,
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600),
                               ),
@@ -194,17 +198,17 @@ class OTPBox extends StatelessWidget {
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     return Container(
-      width: mQuery.size.width * 0.18, // Adjust the width as needed
-      height: mQuery.size.width * 0.63, // Adjust the height as needed
+      width: mQuery.size.width * 0.18,
+      height: mQuery.size.width * 0.63,
       child: TextField(
-        style: TextStyle(fontSize: 30), // Adjusting the font size here
+        style: TextStyle(fontSize: 30),
         controller: controller,
         focusNode: focusNode,
         textAlign: TextAlign.center,
         keyboardType: TextInputType.number,
         maxLength: 1,
         decoration: InputDecoration(
-          counterText: "", // Hide the character counter
+          counterText: "",
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
               borderSide: BorderSide.none

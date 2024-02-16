@@ -3,6 +3,7 @@ import 'package:cleaneo_user_app/Auth/welcome_page.dart';
 import 'package:cleaneo_user_app/pages/home_page.dart';
 import 'package:cleaneo_user_app/Auth/otp_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:country_code_picker/country_code_picker.dart';
@@ -47,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: Icon(Icons.arrow_back, color: Colors.white,)),
                   SizedBox(width: mQuery.size.width * 0.045,),
                   Text("Log In", style: TextStyle(
-                        fontSize: 20,
+                      fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
                         fontWeight: FontWeight.w700
                     ),),
@@ -75,7 +76,8 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(height: mQuery.size.height*0.03,),
                         // PHONE NUMBER
                         Text("Phone Number*", style: TextStyle(
-                            fontWeight: FontWeight.w600
+                            fontWeight: FontWeight.w600,
+                          fontSize: mQuery.size.height*0.02,
                         ),),
                         SizedBox(height: mQuery.size.height * 0.01,),
                         Container(
@@ -125,16 +127,21 @@ class _LoginPageState extends State<LoginPage> {
                                   keyboardType: TextInputType.phone,
                                   cursorColor: Colors.grey,
                                   controller: phonenoController,
+                                  maxLength: 10,
+                                  inputFormatters: <TextInputFormatter>[
+                                    FilteringTextInputFormatter.digitsOnly // Allow only numeric input
+                                  ],
                                   decoration: InputDecoration(
                                     hintText: "Enter Phone Number*",
                                     hintStyle: TextStyle(
-                                      fontSize: 14,
+                                      fontSize: mQuery.size.height*0.0215,
                                       fontWeight: FontWeight.w600,
                                       color: Color(0xffABAFB1),
                                     ),
                                     focusedBorder: InputBorder.none,
                                     enabledBorder: InputBorder.none,
-                                    contentPadding: EdgeInsets.symmetric(vertical: 16),
+                                    contentPadding: EdgeInsets.symmetric(vertical: 2),
+                                    counter: SizedBox.shrink()
                                   ),
                                 ),
                               ),
@@ -152,7 +159,7 @@ class _LoginPageState extends State<LoginPage> {
 
                               },
                               child: Text("Forgot Password?",style: TextStyle(
-                                  fontSize: 15,
+                                  fontSize: mQuery.size.height*0.02,
                                   fontWeight: FontWeight.w600,
                                   color: Color(0xff29b2fe)
                               ),),
@@ -177,7 +184,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             child: Center(
                               child: Text("Log In",style: TextStyle(
-                                  fontSize: 15,
+                                  fontSize: mQuery.size.height*0.022,
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600
                               ),),
@@ -189,12 +196,12 @@ class _LoginPageState extends State<LoginPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text("Don't have an account?",style: TextStyle(
-                                fontSize: 15,
+                                fontSize: mQuery.size.height*0.022,
                                 fontWeight: FontWeight.w600
                             ),),
                             SizedBox(width: mQuery.size.width*0.02,),
                             Text("Sign Up",style: TextStyle(
-                                fontSize: 15,
+                                fontSize: mQuery.size.height*0.022,
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xff29b2fe)
                             ),)

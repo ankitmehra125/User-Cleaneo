@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
@@ -70,7 +71,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                   Text(
                     "My Profile",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
                         fontWeight: FontWeight.w700),
                   )
@@ -155,7 +156,9 @@ class _MyProfilePageState extends State<MyProfilePage> {
                           children: [
                             Text(
                               "Full Name*",
-                              style: TextStyle(fontWeight: FontWeight.w600),
+                              style: TextStyle(
+                                  fontSize: mQuery.size.height*0.02,
+                                  fontWeight: FontWeight.w600),
                             ),
                             SizedBox(height: mQuery.size.height * 0.01),
                             Container(
@@ -182,7 +185,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                   enabledBorder: InputBorder.none,
                                   hintText: "Enter Full Name",
                                   hintStyle: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: mQuery.size.height*0.0215,
                                     fontWeight: FontWeight.w600,
                                     color: Color(0xffABAFB1),
                                   ),
@@ -192,7 +195,9 @@ class _MyProfilePageState extends State<MyProfilePage> {
                             SizedBox(height: mQuery.size.height * 0.03),
                             Text(
                               "Phone Number*",
-                              style: TextStyle(fontWeight: FontWeight.w600),
+                              style: TextStyle(
+                                  fontSize: mQuery.size.height*0.02,
+                                  fontWeight: FontWeight.w600),
                             ),
                             SizedBox(height: mQuery.size.height * 0.01),
                             Container(
@@ -242,13 +247,21 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                       keyboardType: TextInputType.phone,
                                       cursorColor: Colors.grey,
                                       controller: phonenoController,
+                                      maxLength: 10,
+                                      inputFormatters: <TextInputFormatter>[
+                                        FilteringTextInputFormatter.digitsOnly // Allow only numeric input
+                                      ],
                                       decoration: InputDecoration(
                                         hintText: "Enter Phone Number*",
                                         hintStyle: TextStyle(
-                                          fontSize: 13,
+                                          fontSize: mQuery.size.height*0.0215,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0xffABAFB1),
                                         ),
+                                        contentPadding: EdgeInsets.only(
+                                          top: mQuery.size.height*0.003
+                                        ),
+                                        counter: SizedBox.shrink(),
                                         focusedBorder: InputBorder.none,
                                         enabledBorder: InputBorder.none,
                                       ),
@@ -260,7 +273,9 @@ class _MyProfilePageState extends State<MyProfilePage> {
                             SizedBox(height: mQuery.size.height * 0.03),
                             Text(
                               "Email",
-                              style: TextStyle(fontWeight: FontWeight.w600),
+                              style: TextStyle(
+                                  fontSize: mQuery.size.height*0.02,
+                                  fontWeight: FontWeight.w600),
                             ),
                             SizedBox(height: mQuery.size.height * 0.01),
                             Container(
@@ -287,7 +302,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                   enabledBorder: InputBorder.none,
                                   hintText: "Enter Email",
                                   hintStyle: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: mQuery.size.height*0.0215,
                                     fontWeight: FontWeight.w600,
                                     color: Color(0xffABAFB1),
                                   ),
@@ -312,7 +327,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                   child: Text(
                                     "Save & Continue",
                                     style: TextStyle(
-                                      fontSize: 15,
+                                      fontSize: mQuery.size.height*0.022,
                                       color: Colors.white,
                                       fontWeight: FontWeight.w600,
                                     ),

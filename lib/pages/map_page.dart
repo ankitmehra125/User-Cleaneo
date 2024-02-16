@@ -45,7 +45,7 @@ class _MapPageState extends State<MapPage> {
                   Text(
                     "Enable Location Services",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
                         fontWeight: FontWeight.w700),
                   )
@@ -66,7 +66,7 @@ class _MapPageState extends State<MapPage> {
                     children: [
                       SizedBox(height: mQuery.size.height*0.037),
                       Text("Allow Cleaneo to use your",style: TextStyle(
-                          fontSize: 15,
+                          fontSize: mQuery.size.height*0.0215,
                           fontWeight: FontWeight.w900
                       ),),
                       Text("location for services.",style: TextStyle(
@@ -99,7 +99,8 @@ class _MapPageState extends State<MapPage> {
                             ),
                             child: Center(
                               child: Text("Enable Location Services",
-                                style: const TextStyle(
+                                style: TextStyle(
+                                  fontSize: mQuery.size.height*0.022,
                                   color: Colors.white,
                                   fontWeight: FontWeight.w800,
                                 ),),
