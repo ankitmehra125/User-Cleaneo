@@ -39,7 +39,12 @@ class _SignUpPageState extends State<SignUpPage> {
           children: [
             SizedBox(height: mQuery.size.height * 0.034),
             Padding(
-              padding: const EdgeInsets.only(top: 45, left: 16, right: 16, bottom: 20),
+              padding: EdgeInsets.only(
+                top: mQuery.size.height*0.058,
+                bottom: mQuery.size.height*0.03,
+                left: mQuery.size.width*0.045,
+                right: mQuery.size.width*0.045,
+              ),
               child: Row(
                 children: [
                   GestureDetector(

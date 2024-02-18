@@ -44,8 +44,12 @@ class _WashPageState extends State<WashPage> with SingleTickerProviderStateMixin
                     children: [
                       SizedBox(height: mQuery.size.height * 0.034),
                       Padding(
-                        padding: const EdgeInsets.only(
-                            top: 45, left: 16, right: 16, bottom: 20),
+                        padding: EdgeInsets.only(
+                          top: mQuery.size.height*0.058,
+                          bottom: mQuery.size.height*0.03,
+                          left: mQuery.size.width*0.045,
+                          right: mQuery.size.width*0.045,
+                        ),
                         child: Row(
                           children: [
                             GestureDetector(
@@ -60,7 +64,7 @@ class _WashPageState extends State<WashPage> with SingleTickerProviderStateMixin
                                 Text(
                                   "Wash",
                                   style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: mQuery.size.height*0.027,
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700),
                                 ),
@@ -198,7 +202,7 @@ class _WashPageState extends State<WashPage> with SingleTickerProviderStateMixin
               Text(
                 text,
                 style: TextStyle(
-                  fontSize: 13,
+                  fontSize: mQuery.size.height*0.018,
                   fontWeight: FontWeight.w600,
                 ),
               ),

@@ -1,3 +1,4 @@
+import 'package:cleaneo_user_app/pages/address_page.dart';
 import 'package:cleaneo_user_app/pages/donate.dart';
 import 'package:cleaneo_user_app/pages/help_page.dart';
 import 'package:cleaneo_user_app/pages/home_page.dart';
@@ -150,12 +151,20 @@ class _MyDrawerState extends State<MyDrawer> {
                             fontSize: mQuery.size.height*0.0212,
                         ),),
                       ),
-                      ListTile(
-                        leading: Icon(Icons.location_on_outlined,color: Colors.cyan,),
-                        title: Text("Address Book",style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                          fontSize: mQuery.size.height*0.0212,
-                        ),),
+                      GestureDetector(
+                        onTap: ()
+                        {
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return AddressPage();
+                          }));
+                        },
+                        child: ListTile(
+                          leading: Icon(Icons.location_on_outlined,color: Colors.cyan,),
+                          title: Text("Address Book",style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                            fontSize: mQuery.size.height*0.0212,
+                          ),),
+                        ),
                       ),
                       ListTile(
                         leading: Icon(Icons.notifications_none_sharp,color: Colors.cyan,),

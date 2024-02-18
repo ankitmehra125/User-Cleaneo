@@ -10,6 +10,7 @@ import 'package:cleaneo_user_app/pages/myprofile.dart';
 import 'package:cleaneo_user_app/Auth/otp_page.dart';
 import 'package:cleaneo_user_app/pages/payment_page.dart';
 import 'package:cleaneo_user_app/pages/quantity_wise_page.dart';
+import 'package:cleaneo_user_app/pages/rating_page.dart';
 import 'package:cleaneo_user_app/pages/termsandcondition_page.dart';
 import 'package:cleaneo_user_app/pages/wash_page.dart';
 import 'package:cleaneo_user_app/Auth/welcome_page.dart';
@@ -34,12 +35,12 @@ class MyApp extends StatelessWidget {
       // home: LoginPage(),
       // home: SignUpPage(),
       // home: OTPPage(),
-      home: HomePage(),
+      // home: HomePage(),
       // home: WelcomePage()
       // home: SplashScreen(),
       // home: OTPPage(),
       // home: ManageCardsPage()
-      // home: WashPage(),
+      home: WashPage(),
       // home: DryCleanPage(),
       // home: QuantityWisePage(),
       // home: HelpPage(),
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
       // home: Donate(),
       // home: PaymentPage(),
       // home: AddressPage(),
+      // home: RatingPage(),
     );
   }
 }

@@ -34,11 +34,11 @@ class _DryCleanPageState extends State<DryCleanPage> {
               children: [
                 SizedBox(height: mQuery.size.height * 0.034),
                 Padding(
-                  padding: const EdgeInsets.only(
-                    top: 45,
-                    left: 16,
-                    right: 16,
-                    bottom: 20,
+                  padding: EdgeInsets.only(
+                    top: mQuery.size.height*0.058,
+                    bottom: mQuery.size.height*0.03,
+                    left: mQuery.size.width*0.045,
+                    right: mQuery.size.width*0.045,
                   ),
                   child: Row(
                     children: [
@@ -55,7 +55,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                       Text(
                         "Dry Clean",
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: mQuery.size.height*0.027,
                             color: Colors.white,
                             fontWeight: FontWeight.w700),
                       ),
@@ -89,7 +89,9 @@ class _DryCleanPageState extends State<DryCleanPage> {
                       ],
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 16, right: 16),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: mQuery.size.width*0.045
+                      ),
                       child: SingleChildScrollView(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -110,7 +112,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                   border: InputBorder.none,
                                   hintText: "Search",
                                   hintStyle: TextStyle(
-                                    fontSize: 16,
+                                    fontSize: mQuery.size.height*0.021,
                                     color: Colors.grey.shade600,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -120,7 +122,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                             ),
                             SizedBox(height: mQuery.size.height*0.026,),
                             Text("Clothes Detail",style: TextStyle(
-                                fontSize: 14,
+                                fontSize: mQuery.size.height*0.0195,
                                 fontWeight: FontWeight.w800
                             ),),
                             SizedBox(height: mQuery.size.height*0.02,),

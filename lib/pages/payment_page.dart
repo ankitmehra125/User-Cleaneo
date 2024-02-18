@@ -57,7 +57,7 @@ class _PaymentPageState extends State<PaymentPage> {
                     Text(
                       "Payment",
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: mQuery.size.height*0.027,
                           color: Colors.white,
                           fontWeight: FontWeight.w700),
                     )
@@ -94,19 +94,21 @@ class _PaymentPageState extends State<PaymentPage> {
                                 Text(
                                   "Cleaneo Wallet",
                                   style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: mQuery.size.height*0.022,
                                       fontWeight: FontWeight.w800),
                                 ),
                                 Row(
                                   children: [
                                     Text(
                                       "Available balance ",
-                                      style: TextStyle(fontSize: 12),
+                                      style: TextStyle(
+                                        fontSize: mQuery.size.height*0.0175,
+                                      ),
                                     ),
                                     Text(
                                       "ADD MONEY",
                                       style: TextStyle(
-                                          fontSize: 12,
+                                          fontSize: mQuery.size.height*0.0175,
                                           color: Color(0xff29b2fe),
                                           fontWeight: FontWeight.w600),
                                     )
@@ -178,7 +180,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                   Text(
                                     "Cash",
                                     style: TextStyle(
-                                        fontSize: 13,
+                                        fontSize: mQuery.size.height*0.0195,
                                         fontWeight: FontWeight.w600),
                                   ),
                                   Expanded(child: SizedBox()),
@@ -219,7 +221,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                       Text(
                                         "Other Wallets/UPI",
                                         style: TextStyle(
-                                            fontSize: 13,
+                                            fontSize: mQuery.size.height*0.0195,
                                             fontWeight: FontWeight.w600),
                                       ),
                                       Expanded(child: SizedBox()),
@@ -238,7 +240,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                       Text(
                                         "Add New",
                                         style: TextStyle(
-                                            fontSize: 13,
+                                            fontSize: mQuery.size.height*0.018,
                                             color: Color(0xff29b2fe),
                                             fontWeight: FontWeight.w600),
                                       )
@@ -262,6 +264,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                       Text(
                                         "Paytm",
                                         style: TextStyle(
+                                            fontSize: mQuery.size.height*0.0195,
                                             fontWeight: FontWeight.w600),
                                       ),
                                       Expanded(child: SizedBox()),
@@ -287,6 +290,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                       Text(
                                         "PhonePe",
                                         style: TextStyle(
+                                            fontSize: mQuery.size.height*0.0195,
                                             fontWeight: FontWeight.w600),
                                       ),
                                       Expanded(child: SizedBox()),
@@ -312,6 +316,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                       Text(
                                         "GPay",
                                         style: TextStyle(
+                                            fontSize: mQuery.size.height*0.0195,
                                             fontWeight: FontWeight.w600),
                                       ),
                                       Expanded(child: SizedBox()),
@@ -354,7 +359,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                       Text(
                                         "Credit/ Debit Cards",
                                         style: TextStyle(
-                                            fontSize: 13,
+                                            fontSize: mQuery.size.height*0.02,
                                             fontWeight: FontWeight.w600),
                                       ),
                                       Expanded(child: SizedBox()),
@@ -373,7 +378,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                       Text(
                                         "Add New",
                                         style: TextStyle(
-                                            fontSize: 13,
+                                            fontSize: mQuery.size.height*0.018,
                                             color: Color(0xff29b2fe),
                                             fontWeight: FontWeight.w600),
                                       )
@@ -397,6 +402,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                       Text(
                                         "6220 XXXX XXXX 4452",
                                         style: TextStyle(
+                                            fontSize: mQuery.size.height*0.0195,
                                             fontWeight: FontWeight.w600),
                                       ),
                                       Expanded(child: SizedBox()),
@@ -429,6 +435,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                       Text(
                                         "5555 XXXX XXXX 8888",
                                         style: TextStyle(
+                                            fontSize: mQuery.size.height*0.0195,
                                             fontWeight: FontWeight.w600),
                                       ),
                                       Expanded(child: SizedBox()),
@@ -461,6 +468,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                       Text(
                                         "4111 XXXX XXXX 7777",
                                         style: TextStyle(
+                                            fontSize: mQuery.size.height*0.0195,
                                             fontWeight: FontWeight.w600),
                                       ),
                                       Expanded(child: SizedBox()),
@@ -498,7 +506,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 child: Center(
                                   child: Text("Make Payment ",style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 15,
+                                      fontSize: mQuery.size.height*0.023,
                                     fontWeight: FontWeight.w600
                                   ),),
                                 ),

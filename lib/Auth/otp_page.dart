@@ -50,6 +50,10 @@ class _OTPPageState extends State<OTPPage> {
           ),
         ],
       ),
+      textStyle: TextStyle(
+        fontSize: mQuery.size.height*0.04,
+        fontWeight: FontWeight.w700
+      )
     );
     return Scaffold(
       body: Container(
@@ -61,8 +65,12 @@ class _OTPPageState extends State<OTPPage> {
           children: [
             SizedBox(height: mQuery.size.height * 0.034),
             Padding(
-              padding: const EdgeInsets.only(
-                  top: 45, left: 16, right: 16, bottom: 20),
+              padding: EdgeInsets.only(
+                top: mQuery.size.height*0.058,
+                bottom: mQuery.size.height*0.03,
+                left: mQuery.size.width*0.045,
+                right: mQuery.size.width*0.045,
+              ),
               child: Row(
                 children: [
                   GestureDetector(
@@ -201,7 +209,9 @@ class OTPBox extends StatelessWidget {
       width: mQuery.size.width * 0.18,
       height: mQuery.size.width * 0.63,
       child: TextField(
-        style: TextStyle(fontSize: 30),
+        style: TextStyle(
+          fontSize: 30
+        ),
         controller: controller,
         focusNode: focusNode,
         textAlign: TextAlign.center,

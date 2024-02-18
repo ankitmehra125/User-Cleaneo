@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -325,10 +326,10 @@ class _HomePageState extends State<HomePage> {
           },
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-            BottomNavigationBarItem(icon: Icon(CupertinoIcons.bag), label: ""),
+            BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.shoppingBag), label: ""),
             BottomNavigationBarItem(icon: Icon(CupertinoIcons.bell), label: ""),
-            BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: ""),
-            BottomNavigationBarItem(icon: Icon(Icons.wallet), label: ""),
+            BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.solidSave), label: ""),
+            BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.wallet), label: ""),
           ],
         ),
       ),

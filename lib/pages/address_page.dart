@@ -23,8 +23,12 @@ class _AddressPageState extends State<AddressPage> {
           children: [
             SizedBox(height: mQuery.size.height * 0.034),
             Padding(
-              padding: const EdgeInsets.only(
-                  top: 45, left: 16, right: 16, bottom: 20),
+                padding: EdgeInsets.only(
+                  top: mQuery.size.height*0.058,
+                  bottom: mQuery.size.height*0.03,
+                  left: mQuery.size.width*0.045,
+                  right: mQuery.size.width*0.045,
+                ),
               child: GestureDetector(
                 child: Row(
                   children: [
@@ -46,7 +50,7 @@ class _AddressPageState extends State<AddressPage> {
                     Text(
                       "My Addresses",
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: mQuery.size.height*0.027,
                           color: Colors.white,
                           fontWeight: FontWeight.w700),
                     )
@@ -63,35 +67,35 @@ class _AddressPageState extends State<AddressPage> {
                       topLeft: Radius.circular(16),
                       topRight: Radius.circular(16)),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: mQuery.size.width * 0.04,
-                            height: mQuery.size.height * 0.05,
-                            decoration: BoxDecoration(
-                                color: Color(0xff29b2fe),
-                                shape: BoxShape.circle),
-                            child: Center(
-                              child: Icon(Icons.add,
-                                  color: Colors.white, size: 15),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: mQuery.size.width * 0.04,
+                              height: mQuery.size.height * 0.05,
+                              decoration: BoxDecoration(
+                                  color: Color(0xff29b2fe),
+                                  shape: BoxShape.circle),
+                              child: Center(
+                                child: Icon(Icons.add,
+                                    color: Colors.white, size: 15),
+                              ),
                             ),
-                          ),
-                          SizedBox(width: mQuery.size.width*0.02,),
-                          Text("Add Address",style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w700
-                          ),)
-                        ],
+                            SizedBox(width: mQuery.size.width*0.02,),
+                            Text("Add Address",style: TextStyle(
+                              fontSize: mQuery.size.height*0.0195,
+                              fontWeight: FontWeight.w700
+                            ),)
+                          ],
+                        ),
                       ),
-                    ),
-                    SizedBox(height: mQuery.size.height*0.02,),
-                    SingleChildScrollView(
-                      child: Padding(
+                      SizedBox(height: mQuery.size.height*0.02,),
+                      Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Column(
                           children: [
@@ -109,12 +113,37 @@ class _AddressPageState extends State<AddressPage> {
                                   ),
                                 ],
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
-                    )
-                  ],
+                    ],
+                  ),
+                ),
+
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              height: mQuery.size.height*0.06,
+              color: Colors.white,
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                margin: EdgeInsets.symmetric(
+                  horizontal: mQuery.size.width*0.045
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(6)
+                ),
+                child: Center(
+                  child: Text("Save Address",
+                   style: TextStyle(
+                     fontSize: mQuery.size.height*0.022,
+                     color: Colors.white,
+                     fontWeight: FontWeight.w600
+                   ),),
                 ),
               ),
             )

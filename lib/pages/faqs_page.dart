@@ -24,8 +24,12 @@ class _FAQSPageState extends State<FAQSPage> {
           children: [
             SizedBox(height: mQuery.size.height * 0.034),
             Padding(
-              padding: const EdgeInsets.only(
-                  top: 45, left: 16, right: 16, bottom: 20),
+              padding: EdgeInsets.only(
+                top: mQuery.size.height*0.058,
+                bottom: mQuery.size.height*0.03,
+                left: mQuery.size.width*0.045,
+                right: mQuery.size.width*0.045,
+              ),
               child: Row(
                 children: [
                   InkWell(
@@ -40,7 +44,7 @@ class _FAQSPageState extends State<FAQSPage> {
                   Text(
                     "FAQs",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
                         fontWeight: FontWeight.w700),
                   ),
@@ -122,7 +126,8 @@ class _FAQSPageState extends State<FAQSPage> {
                           Center(
                             child: Text(
                               "I am not getting any emails", // Your Question or Title
-                              style: TextStyle(fontWeight: FontWeight.w600),
+                              style: TextStyle(fontWeight: FontWeight.w600,
+                                  fontSize: mQuery.size.height*0.019),
                             ),
                           ),
                           Icon(
@@ -141,7 +146,9 @@ class _FAQSPageState extends State<FAQSPage> {
                           "Lorem ipsum dolor sit amet consectetur "
                               "adipisicing elit. Debitis voluptate dolor "
                               "doloremque amet fuga tempora ad ex molestias soluta non aperiam odio, labore eum",
-                          style: TextStyle(fontSize: 16),
+                          style: TextStyle(
+                              fontSize: mQuery.size.height*0.018
+                          ),
                         ),
                       ),
                     ),

@@ -22,8 +22,12 @@ class _AboutusPageState extends State<AboutusPage> {
           children: [
             SizedBox(height: mQuery.size.height * 0.034),
             Padding(
-              padding: const EdgeInsets.only(
-                  top: 45, left: 16, right: 16, bottom: 20),
+              padding: EdgeInsets.only(
+                top: mQuery.size.height*0.058,
+                bottom: mQuery.size.height*0.03,
+                left: mQuery.size.width*0.045,
+                right: mQuery.size.width*0.045,
+              ),
               child: Row(
                 children: [
                   GestureDetector(
@@ -44,7 +48,7 @@ class _AboutusPageState extends State<AboutusPage> {
                   Text(
                     "About Us",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
                         fontWeight: FontWeight.w700),
                   )
@@ -73,7 +77,10 @@ class _AboutusPageState extends State<AboutusPage> {
                   padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
                   child: Text("Lorem ipsum dolor sit amet consectetur "
                       "adipisicing elit. Debitis voluptate dolor "
-                      "doloremque amet fuga tempora ad ex molestias soluta non aperiam odio, labore eum ullam excepturi minus libero? Cupiditate laborum mollitia assumenda nnulla doloremque sapiente corporis! Numquam quae voluptates magni suscipit dolores molestiae, deserunt aliquam obcaecati officiis cum eveniet iure architecto nostrum fuga facere incidunt soluta eligendi sed dolorum, quo repellendus distinctio aspernatur consectetur! Beatae repudiandae, consequatur quod hic quae nam blanditiis assumenda placeat necessitatibus dolore nihil est. Expedita delectus."),
+                      "doloremque amet fuga tempora ad ex molestias soluta non aperiam odio, labore eum ullam excepturi minus libero? Cupiditate laborum mollitia assumenda nnulla doloremque sapiente corporis! Numquam quae voluptates magni suscipit dolores molestiae, deserunt aliquam obcaecati officiis cum eveniet iure architecto nostrum fuga facere incidunt soluta eligendi sed dolorum, quo repellendus distinctio aspernatur consectetur! Beatae repudiandae, consequatur quod hic quae nam blanditiis assumenda placeat necessitatibus dolore nihil est. Expedita delectus.",
+                  style: TextStyle(
+                      fontSize: mQuery.size.height*0.018
+                  ),),
                 ),
               ),
             )

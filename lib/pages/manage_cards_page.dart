@@ -475,7 +475,9 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                     color: Color(0xffABAFB1),
                                   ),
                                   contentPadding: EdgeInsets.symmetric(
-                                      vertical: 16, horizontal: 16),
+                                    horizontal: mQuery.size.width*0.032,
+                                    vertical: mQuery.size.height*0.018,
+                                  ),
                                 ),
                               ),
                             ),
@@ -499,6 +501,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                     ],
                                   ),
                                   child: TextField(
+                                    keyboardType: TextInputType.number,
                                     cursorColor: Colors.grey,
                                     controller: mmyyController,
                                     decoration: InputDecoration(
@@ -511,7 +514,9 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                         color: Color(0xffABAFB1),
                                       ),
                                       contentPadding: EdgeInsets.symmetric(
-                                          vertical: 16, horizontal: 16),
+                                        horizontal: mQuery.size.width*0.032,
+                                        vertical: mQuery.size.height*0.018,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -549,7 +554,9 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                         color: Color(0xffABAFB1),
                                       ),
                                       contentPadding: EdgeInsets.symmetric(
-                                          vertical: 16, horizontal: 16),
+                                        horizontal: mQuery.size.width*0.032,
+                                        vertical: mQuery.size.height*0.018,
+                                      ),
                                     ),
                                   ),
                                 )
@@ -585,7 +592,9 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                     color: Color(0xffABAFB1),
                                   ),
                                   contentPadding: EdgeInsets.symmetric(
-                                      vertical: 16, horizontal: 16),
+                                    horizontal: mQuery.size.width*0.032,
+                                    vertical: mQuery.size.height*0.018,
+                                  ),
                                 ),
                               ),
                             ),

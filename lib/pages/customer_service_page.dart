@@ -26,8 +26,12 @@ class _CustomerServicePageState extends State<CustomerServicePage> {
           children: [
             SizedBox(height: mQuery.size.height * 0.034),
             Padding(
-              padding: const EdgeInsets.only(
-                  top: 45, left: 16, right: 16, bottom: 20),
+              padding: EdgeInsets.only(
+                top: mQuery.size.height*0.058,
+                bottom: mQuery.size.height*0.03,
+                left: mQuery.size.width*0.045,
+                right: mQuery.size.width*0.045,
+              ),
               child: Row(
                 children: [
                   GestureDetector(
@@ -45,7 +49,7 @@ class _CustomerServicePageState extends State<CustomerServicePage> {
                   Text(
                     "Customer Service",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
                         fontWeight: FontWeight.w700),
                   )
@@ -110,9 +114,10 @@ class _CustomerServicePageState extends State<CustomerServicePage> {
                               SizedBox(
                                 width: mQuery.size.width * 0.05,
                               ),
-                              const Text(
+                              Text(
                                 "OR",
                                 style: TextStyle(
+                                    fontSize: mQuery.size.height*0.02,
                                     color: Colors.grey,
                                     fontWeight: FontWeight.w700),
                               ),
@@ -131,7 +136,8 @@ class _CustomerServicePageState extends State<CustomerServicePage> {
                         SizedBox(height: mQuery.size.height * 0.025),
                         Text(
                           "Write to us",
-                          style: TextStyle(fontWeight: FontWeight.w700),
+                          style: TextStyle(fontWeight: FontWeight.w700,
+                              fontSize: mQuery.size.height*0.02),
                         ),
                         SizedBox(height: mQuery.size.height * 0.023),
                         FeedbackContainer(
@@ -162,7 +168,7 @@ class _CustomerServicePageState extends State<CustomerServicePage> {
                           child: Text(
                             "Submit",
                             style: TextStyle(
-                                fontSize: 15,
+                                fontSize: mQuery.size.height*0.023,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w600),
                           ),
