@@ -32,24 +32,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: LoginPage(),
-      //  home: RatingPage(),
-      // home: SignUpPage(),
-      // home: OTPPage(),
-      home: HomePage(),
-      // home: WelcomePage()
-      // home: SplashScreen(),
-      // home: OTPPage(),
-      // home: ManageCardsPage()
-      // home: WashPage(),
-      // home: DryCleanPage(),
-      // home: QuantityWisePage(),
-      // home: HelpPage(),
-      // home: CustomerServicePage(),
-      // home: Donate(),
-      // home: PaymentPage(),
-      // home: AddressPage(),
-      // home: RatingPage(),
+      home: SplashScreen(),
     );
   }
 }
