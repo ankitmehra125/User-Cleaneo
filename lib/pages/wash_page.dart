@@ -98,7 +98,9 @@ class _WashPageState extends State<WashPage> with SingleTickerProviderStateMixin
                           ],
                           labelColor: Color(0xff29b2fe),
                           indicatorColor: Color(0xff29b2fe),
-                          labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                          labelStyle: TextStyle(
+                            fontSize: mQuery.size.height*0.023
+                          , fontWeight: FontWeight.w700),
                         ),
                       ),
                       Container(

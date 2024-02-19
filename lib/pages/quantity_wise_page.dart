@@ -1,5 +1,5 @@
 import 'package:cleaneo_user_app/pages/address_page.dart';
-import 'package:cleaneo_user_app/pages/payment_page.dart';
+import 'package:cleaneo_user_app/Payment/payment_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -484,7 +484,9 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
       Function() onRemovePressed,
       Function() onAddPressed) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16),
+      margin: EdgeInsets.symmetric(
+        horizontal: mQuery.size.width*0.033
+      ),
       width: double.infinity,
       height: mQuery.size.height * 0.07,
       child: Row(
@@ -527,7 +529,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
             "$kgValue",
             style: TextStyle(
               color: Color(0xff29b2fe),
-              fontSize: mQuery.size.height*0.028,
+                fontSize: mQuery.size.height*0.024
             ),
           ),
           SizedBox(width: mQuery.size.width * 0.026),
@@ -1213,12 +1215,11 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                       children: [
                                                         SizedBox(width: mQuery.size.width * 0.065,),
                                                         Text(
-                                                          "$caddress",
+                                                          "$caddress" != null && "$caddress" != "" ? "$caddress" : "B-702, Sarthak the Sarjak",
                                                           style: TextStyle(
                                                             color: Colors.black,
-                                                            fontSize: mQuery.size.height*0.0183,
-                                                            fontWeight:
-                                                                FontWeight.w600,
+                                                            fontSize: mQuery.size.height * 0.0183,
+                                                            fontWeight: FontWeight.w600,
                                                           ),
                                                         )
                                                       ],

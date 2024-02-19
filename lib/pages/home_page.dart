@@ -310,29 +310,69 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       drawer: const MyDrawer(),
+
       bottomNavigationBar: Container(
-        margin: const EdgeInsets.only(top: 6),
+        padding: EdgeInsets.only(
+          top: mQuery.size.height*0.007
+        ),
         height: mQuery.size.height * 0.1,
         child: BottomNavigationBar(
-          iconSize: 30,
           backgroundColor: Colors.white,
           type: BottomNavigationBarType.fixed,
-          selectedItemColor: Color(0xff29befe),
           currentIndex: _selectedIndex,
           onTap: (index) {
             setState(() {
               _selectedIndex = index;
             });
           },
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-            BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.shoppingBag), label: ""),
-            BottomNavigationBarItem(icon: Icon(CupertinoIcons.bell), label: ""),
-            BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.solidSave), label: ""),
-            BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.wallet), label: ""),
+          items: [
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/images/home.png",
+                width: mQuery.size.width * 0.075,
+                color: _selectedIndex == 0 ? Colors.cyan : Colors.black,
+              ),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/images/drawer-images/shopping-bag.png",
+                width: mQuery.size.width * 0.075,
+                color: _selectedIndex == 1 ? Colors.cyan : Colors.black,
+              ),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/images/drawer-images/bell.png",
+                width: mQuery.size.width * 0.075,
+                color: _selectedIndex == 2 ? Colors.cyan : Colors.black,
+              ),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/images/drawer-images/heart.png",
+                width: mQuery.size.width * 0.075,
+                color: _selectedIndex == 3 ? Colors.cyan : Colors.black,
+              ),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/images/drawer-images/wallet.png",
+                width: mQuery.size.width * 0.075,
+                color: _selectedIndex == 4 ? Colors.cyan : Colors.black,
+              ),
+              label: "",
+            ),
           ],
         ),
       ),
+
+
+
+
     );
   }
 

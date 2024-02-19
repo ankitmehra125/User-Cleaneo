@@ -1,9 +1,9 @@
-import 'package:cleaneo_user_app/pages/aboutus_page.dart';
-import 'package:cleaneo_user_app/pages/customer_service_page.dart';
-import 'package:cleaneo_user_app/pages/faqs_page.dart';
+import 'package:cleaneo_user_app/Help/aboutus_page.dart';
+import 'package:cleaneo_user_app/Help/customer_service_page.dart';
+import 'package:cleaneo_user_app/Help/faqs_page.dart';
 import 'package:cleaneo_user_app/pages/home_page.dart';
-import 'package:cleaneo_user_app/pages/privacypolicy_page.dart';
-import 'package:cleaneo_user_app/pages/termsandcondition_page.dart';
+import 'package:cleaneo_user_app/Help/privacypolicy_page.dart';
+import 'package:cleaneo_user_app/Help/termsandcondition_page.dart';
 import 'package:flutter/material.dart';
 
 

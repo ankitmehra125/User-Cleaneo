@@ -1,5 +1,5 @@
 import 'package:cleaneo_user_app/pages/address_page.dart';
-import 'package:cleaneo_user_app/pages/payment_page.dart';
+import 'package:cleaneo_user_app/Payment/payment_page.dart';
 import 'package:cleaneo_user_app/pages/quantity_wise_page.dart';
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/gestures.dart';
@@ -1701,7 +1701,9 @@ class _ByWeightPageState extends State<ByWeightPage> {
       Function() onRemovePressed,
       Function() onAddPressed) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16),
+      margin: EdgeInsets.symmetric(
+          horizontal: mQuery.size.width*0.033
+      ),
       width: double.infinity,
       height: mQuery.size.height * 0.07,
       child: Row(
@@ -1741,7 +1743,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
             "$kgValue",
             style: TextStyle(
               color: Color(0xff29b2fe),
-              fontSize: 20,
+              fontSize: mQuery.size.height*0.024
             ),
           ),
           SizedBox(width: mQuery.size.width * 0.026),

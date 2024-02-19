@@ -1,8 +1,8 @@
 import 'package:cleaneo_user_app/pages/address_page.dart';
 import 'package:cleaneo_user_app/pages/donate.dart';
-import 'package:cleaneo_user_app/pages/help_page.dart';
+import 'package:cleaneo_user_app/Help/help_page.dart';
 import 'package:cleaneo_user_app/pages/home_page.dart';
-import 'package:cleaneo_user_app/pages/manage_cards_page.dart';
+import 'package:cleaneo_user_app/Payment/manage_cards_page.dart';
 import 'package:cleaneo_user_app/pages/myprofile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
@@ -70,7 +70,8 @@ class _MyDrawerState extends State<MyDrawer> {
                                           return MyProfilePage();
                                         }));
                                       },
-                                      child: Icon(Icons.edit,color: Colors.cyan,)),
+                                      child: Image.asset("assets/images/drawer-images/edit.png",color: Color(0xff29b2fe),
+                                          width: mQuery.size.width*0.06),)
                                 ],
                               ),
                               Row(
@@ -137,20 +138,25 @@ class _MyDrawerState extends State<MyDrawer> {
                           }));
                         },
                         child: ListTile(
-                          leading: Icon(Icons.dashboard,color: Colors.cyan,),
+                          leading: Image.asset("assets/images/drawer-images/dashboard.png",color: Color(0xff29b2fe),
+                              width: mQuery.size.width*0.065),
                           title: Text("Dashboard",style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: mQuery.size.height*0.0212,
-                          ),),
-                        ),
+                            fontWeight: FontWeight.w600,
+                            fontSize: mQuery.size.height*0.0212,
+                          ),
+                           ),
+                        )
                       ),
+
                       ListTile(
-                        leading: Icon(Icons.shopping_bag_outlined,color: Colors.cyan,),
+                        leading: Image.asset("assets/images/drawer-images/shopping-bag.png",color: Color(0xff29b2fe),
+                            width: mQuery.size.width*0.06),
                         title: Text("Your Orders",style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: mQuery.size.height*0.0212,
                         ),),
                       ),
+
                       GestureDetector(
                         onTap: ()
                         {
@@ -159,7 +165,8 @@ class _MyDrawerState extends State<MyDrawer> {
                           }));
                         },
                         child: ListTile(
-                          leading: Icon(Icons.location_on_outlined,color: Colors.cyan,),
+                          leading: Image.asset("assets/images/drawer-images/location_icon.png",color: Color(0xff29b2fe),
+                              width: mQuery.size.width*0.06),
                           title: Text("Address Book",style: TextStyle(
                               fontWeight: FontWeight.w600,
                             fontSize: mQuery.size.height*0.0212,
@@ -167,7 +174,8 @@ class _MyDrawerState extends State<MyDrawer> {
                         ),
                       ),
                       ListTile(
-                        leading: Icon(Icons.notifications_none_sharp,color: Colors.cyan,),
+                        leading: Image.asset("assets/images/drawer-images/bell.png",color: Color(0xff29b2fe),
+                            width: mQuery.size.width*0.06),
                         title: Text("Notifications",style: TextStyle(
                             fontWeight: FontWeight.w600,
                           fontSize: mQuery.size.height*0.0212,
@@ -181,7 +189,8 @@ class _MyDrawerState extends State<MyDrawer> {
                           }));
                         },
                         child: ListTile(
-                          leading: Icon(Icons.favorite_border,color: Colors.cyan),
+                          leading: Image.asset("assets/images/drawer-images/heart.png",color: Color(0xff29b2fe),
+                              width: mQuery.size.width*0.06),
                           title: Text("Donate",style: TextStyle(
                               fontWeight: FontWeight.w600,
                             fontSize: mQuery.size.height*0.0212,
@@ -189,7 +198,8 @@ class _MyDrawerState extends State<MyDrawer> {
                         ),
                       ),
                       ListTile(
-                        leading: Icon(Icons.wallet_travel_rounded,color: Colors.cyan),
+                        leading: Image.asset("assets/images/drawer-images/wallet.png",color: Color(0xff29b2fe),
+                            width: mQuery.size.width*0.06),
                         title: Text("Wallet",style: TextStyle(
                             fontWeight: FontWeight.w600,
                           fontSize: mQuery.size.height*0.0212,
@@ -203,7 +213,8 @@ class _MyDrawerState extends State<MyDrawer> {
                           }));
                         },
                         child: ListTile(
-                          leading: Icon(Icons.credit_card,color: Colors.cyan),
+                          leading: Image.asset("assets/images/drawer-images/credit-card.png",color: Color(0xff29b2fe),
+                              width: mQuery.size.width*0.06),
                           title: Text("Manage Cards",style: TextStyle(
                               fontWeight: FontWeight.w600,
                             fontSize: mQuery.size.height*0.0212,
@@ -211,21 +222,24 @@ class _MyDrawerState extends State<MyDrawer> {
                         ),
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_offer,color: Colors.cyan),
+                        leading: Image.asset("assets/images/drawer-images/offers.png",color: Color(0xff29b2fe),
+                            width: mQuery.size.width*0.06),
                         title: Text("Offers",style: TextStyle(
                             fontWeight: FontWeight.w600,
                           fontSize: mQuery.size.height*0.0212,
                         ),),
                       ),
                       ListTile(
-                        leading: Icon(Icons.card_giftcard,color: Colors.cyan),
+                        leading: Image.asset("assets/images/drawer-images/gift.png",color: Color(0xff29b2fe),
+                            width: mQuery.size.width*0.06),
                         title: Text("Refer and Earn",style: TextStyle(
                             fontWeight: FontWeight.w600,
                           fontSize: mQuery.size.height*0.0212,
                         ),),
                       ),
                       ListTile(
-                        leading: Icon(Icons.star_border_outlined,color: Colors.cyan),
+                        leading: Image.asset("assets/images/drawer-images/star.png",color: Color(0xff29b2fe),
+                            width: mQuery.size.width*0.06),
                         title: Text("Reviews",style: TextStyle(
                             fontWeight: FontWeight.w600,
                           fontSize: mQuery.size.height*0.0212,
@@ -239,7 +253,8 @@ class _MyDrawerState extends State<MyDrawer> {
                           }));
                         },
                         child: ListTile(
-                          leading: Icon(Icons.help_outline,color: Colors.cyan),
+                          leading: Image.asset("assets/images/drawer-images/help.png",color: Color(0xff29b2fe),
+                              width: mQuery.size.width*0.06),
                           title: Text("Help",style: TextStyle(
                               fontWeight: FontWeight.w600,
                             fontSize: mQuery.size.height*0.0212,
@@ -253,12 +268,16 @@ class _MyDrawerState extends State<MyDrawer> {
             ),
 
             Container(
-              padding: EdgeInsets.only(top: 20),
+              padding: EdgeInsets.only(
+                top: mQuery.size.height*0.02
+              ),
               color: Colors.white,
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: mQuery.size.width*0.045
+                    ),
                     child: Container(
                       decoration: BoxDecoration(
                           color: Colors.cyan,
@@ -280,35 +299,36 @@ class _MyDrawerState extends State<MyDrawer> {
                     thickness: 0.5,),
                   Container(
                     color: Colors.white,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: mQuery.size.width*0.045
+                    ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: [
-                            TextButton(
-                              onPressed: ()
-                              {
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                GestureDetector(
+                                  onTap : ()
+                                  {
 
-                              },
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text("Sign Out",style: TextStyle(
+                                  },
+                                  child: Text("Sign Out",style: TextStyle(
                                       fontSize: mQuery.size.height*0.022,
                                       color: Colors.black,
                                       fontWeight: FontWeight.w600
                                   ),),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 12),
-                          child: Text("CLEANEO V$versionNo",style: TextStyle(
-                            fontSize: mQuery.size.height*0.018,
-                          ),),
-                        ),
+                        SizedBox(height: mQuery.size.height*0.0075,),
+                        Text("CLEANEO V$versionNo",style: TextStyle(
+                          fontSize: mQuery.size.height*0.016,
+                        ),),
                       ],
                     ),
                   ),

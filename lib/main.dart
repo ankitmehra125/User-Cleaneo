@@ -2,19 +2,19 @@ import 'package:cleaneo_user_app/Auth/login_page.dart';
 import 'package:cleaneo_user_app/Auth/signup_page.dart';
 import 'package:cleaneo_user_app/pages/Donateslider.dart';
 import 'package:cleaneo_user_app/pages/address_page.dart';
-import 'package:cleaneo_user_app/pages/customer_service_page.dart';
+import 'package:cleaneo_user_app/Help/customer_service_page.dart';
 import 'package:cleaneo_user_app/pages/donate.dart';
 import 'package:cleaneo_user_app/pages/dryclean_page.dart';
-import 'package:cleaneo_user_app/pages/manage_cards_page.dart';
+import 'package:cleaneo_user_app/Payment/manage_cards_page.dart';
 import 'package:cleaneo_user_app/pages/myprofile.dart';
 import 'package:cleaneo_user_app/Auth/otp_page.dart';
-import 'package:cleaneo_user_app/pages/payment_page.dart';
+import 'package:cleaneo_user_app/Payment/payment_page.dart';
 import 'package:cleaneo_user_app/pages/quantity_wise_page.dart';
 import 'package:cleaneo_user_app/pages/rating_page.dart';
-import 'package:cleaneo_user_app/pages/termsandcondition_page.dart';
+import 'package:cleaneo_user_app/Help/termsandcondition_page.dart';
 import 'package:cleaneo_user_app/pages/wash_page.dart';
 import 'package:cleaneo_user_app/Auth/welcome_page.dart';
-import 'package:cleaneo_user_app/pages/help_page.dart';
+import 'package:cleaneo_user_app/Help/help_page.dart';
 import 'package:cleaneo_user_app/pages/home_page.dart';
 import 'package:cleaneo_user_app/pages/mydrawer.dart';
 import 'package:cleaneo_user_app/pages/splash.dart';
@@ -33,14 +33,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: LoginPage(),
+      //  home: RatingPage(),
       // home: SignUpPage(),
       // home: OTPPage(),
-      // home: HomePage(),
+      home: HomePage(),
       // home: WelcomePage()
       // home: SplashScreen(),
       // home: OTPPage(),
       // home: ManageCardsPage()
-      home: WashPage(),
+      // home: WashPage(),
       // home: DryCleanPage(),
       // home: QuantityWisePage(),
       // home: HelpPage(),
