@@ -1,3 +1,4 @@
+import 'package:cleaneo_user_app/pages/dryclean_page.dart';
 import 'package:cleaneo_user_app/pages/mydrawer.dart';
 import 'package:cleaneo_user_app/pages/myprofile.dart';
 import 'package:cleaneo_user_app/pages/wash_page.dart';
@@ -213,10 +214,17 @@ class _HomePageState extends State<HomePage> {
                       var item = gridItems[index];
                       return GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => WashPage()),
-                          );
+                          if (item['text'] == 'Dry Clean') {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => DryCleanPage()),
+                            );
+                          } else {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => WashPage()),
+                            );
+                          }
                         },
                         child: Container(
                           margin: EdgeInsets.symmetric(horizontal: 12),
@@ -313,7 +321,7 @@ class _HomePageState extends State<HomePage> {
 
       bottomNavigationBar: Container(
         padding: EdgeInsets.only(
-          top: mQuery.size.height*0.007
+            top: mQuery.size.height*0.007
         ),
         height: mQuery.size.height * 0.1,
         child: BottomNavigationBar(
@@ -369,10 +377,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-
-
-
-
     );
   }
 
@@ -424,3 +428,5 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+

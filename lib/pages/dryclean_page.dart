@@ -205,7 +205,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                               Container(
                                 width: double.infinity,
                                 height: mQuery.size.height * 0.64,
-                                margin: EdgeInsets.symmetric(horizontal: 16),
+                                margin: EdgeInsets.symmetric(horizontal: 18),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(6),
                                   color: Colors.white,
@@ -223,7 +223,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                   children: [
                                     SizedBox(height: mQuery.size.height * 0.015),
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 16),
+                                      padding: const EdgeInsets.only(left: 12),
                                       child: Text(
                                         "WASH",
                                         style: TextStyle(
@@ -450,7 +450,9 @@ class _DryCleanPageState extends State<DryCleanPage> {
       Function() onRemovePressed,
       Function() onAddPressed) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16),
+      margin: EdgeInsets.symmetric(
+        horizontal: mQuery.size.width*0.025
+      ),
       width: double.infinity,
       height: mQuery.size.height * 0.07,
       child: Row(
@@ -1195,8 +1197,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                 mQuery.size.height * 0.015,
                                               ),
                                               Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                    horizontal: 16),
+                                                padding: EdgeInsets.symmetric(horizontal: 16),
                                                 child: Column(
                                                   children: [
                                                     Text(

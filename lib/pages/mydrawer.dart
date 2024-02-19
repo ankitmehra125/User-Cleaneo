@@ -4,6 +4,7 @@ import 'package:cleaneo_user_app/Help/help_page.dart';
 import 'package:cleaneo_user_app/pages/home_page.dart';
 import 'package:cleaneo_user_app/Payment/manage_cards_page.dart';
 import 'package:cleaneo_user_app/pages/myprofile.dart';
+import 'package:cleaneo_user_app/pages/refer_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 
@@ -25,7 +26,7 @@ class _MyDrawerState extends State<MyDrawer> {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.only(right: 4,left: 10),
+              width: double.infinity,
               color: Color(0xfff3fbff),
               height: mQuery.size.height*0.15,
               child: Column(
@@ -62,7 +63,7 @@ class _MyDrawerState extends State<MyDrawer> {
                                       fontSize: mQuery.size.height*0.022,
                                       fontWeight: FontWeight.w600
                                   ),),
-                                  SizedBox(width: mQuery.size.width*0.22,),
+                                  SizedBox(width: mQuery.size.width*0.2,),
                                   GestureDetector(
                                       onTap: ()
                                       {
@@ -229,13 +230,21 @@ class _MyDrawerState extends State<MyDrawer> {
                           fontSize: mQuery.size.height*0.0212,
                         ),),
                       ),
-                      ListTile(
-                        leading: Image.asset("assets/images/drawer-images/gift.png",color: Color(0xff29b2fe),
-                            width: mQuery.size.width*0.06),
-                        title: Text("Refer and Earn",style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                          fontSize: mQuery.size.height*0.0212,
-                        ),),
+                      GestureDetector(
+                        onTap: ()
+                        {
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return ReferPage();
+                          }));
+                        },
+                        child: ListTile(
+                          leading: Image.asset("assets/images/drawer-images/gift.png",color: Color(0xff29b2fe),
+                              width: mQuery.size.width*0.06),
+                          title: Text("Refer and Earn",style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                            fontSize: mQuery.size.height*0.0212,
+                          ),),
+                        ),
                       ),
                       ListTile(
                         leading: Image.asset("assets/images/drawer-images/star.png",color: Color(0xff29b2fe),

@@ -12,6 +12,7 @@ import 'package:cleaneo_user_app/Payment/payment_page.dart';
 import 'package:cleaneo_user_app/pages/quantity_wise_page.dart';
 import 'package:cleaneo_user_app/pages/rating_page.dart';
 import 'package:cleaneo_user_app/Help/termsandcondition_page.dart';
+import 'package:cleaneo_user_app/pages/refer_page.dart';
 import 'package:cleaneo_user_app/pages/wash_page.dart';
 import 'package:cleaneo_user_app/Auth/welcome_page.dart';
 import 'package:cleaneo_user_app/Help/help_page.dart';
