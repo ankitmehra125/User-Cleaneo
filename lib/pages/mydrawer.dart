@@ -1,10 +1,11 @@
 import 'package:cleaneo_user_app/pages/address_page.dart';
 import 'package:cleaneo_user_app/pages/donate.dart';
 import 'package:cleaneo_user_app/Help/help_page.dart';
-import 'package:cleaneo_user_app/pages/home_page.dart';
+import 'package:cleaneo_user_app/Dashboard/home_page.dart';
 import 'package:cleaneo_user_app/Payment/manage_cards_page.dart';
 import 'package:cleaneo_user_app/pages/myprofile.dart';
 import 'package:cleaneo_user_app/pages/refer_page.dart';
+import 'package:cleaneo_user_app/pages/review_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 
@@ -246,13 +247,21 @@ class _MyDrawerState extends State<MyDrawer> {
                           ),),
                         ),
                       ),
-                      ListTile(
-                        leading: Image.asset("assets/images/drawer-images/star.png",color: Color(0xff29b2fe),
-                            width: mQuery.size.width*0.06),
-                        title: Text("Reviews",style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                          fontSize: mQuery.size.height*0.0212,
-                        ),),
+                      GestureDetector(
+                        onTap: ()
+                        {
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return ReviewPage();
+                          }));
+                        },
+                        child: ListTile(
+                          leading: Image.asset("assets/images/drawer-images/star.png",color: Color(0xff29b2fe),
+                              width: mQuery.size.width*0.06),
+                          title: Text("Reviews",style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                            fontSize: mQuery.size.height*0.0212,
+                          ),),
+                        ),
                       ),
                       GestureDetector(
                         onTap: ()

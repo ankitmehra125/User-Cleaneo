@@ -1,4 +1,5 @@
 import 'package:cleaneo_user_app/Help/help_page.dart';
+import 'package:cleaneo_user_app/pages/reportdispute_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -12,6 +13,7 @@ class RatingPage extends StatefulWidget {
 
 class _RatingPageState extends State<RatingPage> {
   var userName = "Shweta";
+  TextEditingController messageController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
@@ -137,6 +139,7 @@ class _RatingPageState extends State<RatingPage> {
                             ],
                           ),
                           child: TextField(
+                            controller: messageController,
                             cursorColor: Colors.black54,
                             maxLines: null,
                             decoration: InputDecoration(
@@ -158,11 +161,19 @@ class _RatingPageState extends State<RatingPage> {
                             SvgPicture.asset("assets/images/alert.svg",
                               width: mQuery.size.width*0.058,),
                             SizedBox(width: mQuery.size.width*0.033,),
-                            Text("Report Dispute",style: TextStyle(
-                              fontSize: mQuery.size.height*0.02,
-                              color: Colors.red,
-                              fontWeight: FontWeight.w600
-                            ),)
+                            GestureDetector(
+                              onTap: ()
+                              {
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return ReportDisputePage();
+                                }));
+                              },
+                              child: Text("Report Dispute",style: TextStyle(
+                                fontSize: mQuery.size.height*0.02,
+                                color: Colors.red,
+                                fontWeight: FontWeight.w600
+                              ),),
+                            )
                           ],
                         ),
                         SizedBox(height: mQuery.size.height*0.065,),

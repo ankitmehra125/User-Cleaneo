@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 import 'package:cleaneo_user_app/Auth/login_page.dart';
 import 'package:cleaneo_user_app/Help/help_page.dart';
-import 'package:cleaneo_user_app/pages/home_page.dart';
+import 'package:cleaneo_user_app/Dashboard/home_page.dart';
 import 'package:cleaneo_user_app/pages/map_page.dart';
 
 class OTPPage extends StatefulWidget {

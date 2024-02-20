@@ -74,7 +74,11 @@ class _AboutusPageState extends State<AboutusPage> {
                   ],
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
+                  padding: EdgeInsets.only(
+                    top: mQuery.size.height*0.028,
+                    left: mQuery.size.width*0.045,
+                    right: mQuery.size.width*0.045,
+                  ),
                   child: Text("Lorem ipsum dolor sit amet consectetur "
                       "adipisicing elit. Debitis voluptate dolor "
                       "doloremque amet fuga tempora ad ex molestias soluta non aperiam odio, labore eum ullam excepturi minus libero? Cupiditate laborum mollitia assumenda nnulla doloremque sapiente corporis! Numquam quae voluptates magni suscipit dolores molestiae, deserunt aliquam obcaecati officiis cum eveniet iure architecto nostrum fuga facere incidunt soluta eligendi sed dolorum, quo repellendus distinctio aspernatur consectetur! Beatae repudiandae, consequatur quod hic quae nam blanditiis assumenda placeat necessitatibus dolore nihil est. Expedita delectus.",

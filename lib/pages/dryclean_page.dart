@@ -8,7 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../Help/aboutus_page.dart';
 import '../Help/customer_service_page.dart';
 import '../Help/faqs_page.dart';
-import 'home_page.dart';
+import '../Dashboard/home_page.dart';
 import '../Help/privacypolicy_page.dart';
 import '../Help/termsandcondition_page.dart';
 
