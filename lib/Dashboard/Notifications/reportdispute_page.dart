@@ -29,6 +29,8 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
 
   bool isOn = false;
 
+  var disputeId = "#123456";
+
   @override
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
@@ -344,25 +346,90 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
               padding: EdgeInsets.symmetric(
                 horizontal: mQuery.size.width*0.045
               ),
-              child: Container(
-                width: double.infinity,
-                height: mQuery.size.height*0.06,
-                decoration: BoxDecoration(
-                  color: Color(0xff29b2fe),
-                  borderRadius: BorderRadius.circular(6)
-                ),
-                child: Center(
-                  child: Text("Submit",style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    fontSize: mQuery.size.height*0.023
-                  ),),
+              child: GestureDetector(
+                onTap: () {
+                  _showConfirmationDialog();
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: mQuery.size.height*0.06,
+                  decoration: BoxDecoration(
+                    color: Color(0xff29b2fe),
+                    borderRadius: BorderRadius.circular(6)
+                  ),
+                  child: Center(
+                    child: Text("Submit",style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: mQuery.size.height*0.023
+                    ),),
+                  ),
                 ),
               ),
             )
           ],
         ),
       ),
+    );
+  }
+
+  void _showConfirmationDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        var mQuery = MediaQuery.of(context);
+        return AlertDialog(
+          backgroundColor: Colors.white,
+          title: Center(child: Text("Thank You for\n "
+              "your patience!",
+            style: TextStyle(
+              color: Color(0xff29b2fe),
+              fontWeight: FontWeight.w600,
+              fontSize: mQuery.size.height*0.028
+            ),)),
+          content: Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: mQuery.size.width*0.036
+            ),
+            child: Text("We are extremely sorry for the "
+                "\n inconvenience caused. Our \n"
+                "support team will enquire more \n "
+                "about the issue and get back to "
+                "you as soon as possible. \n \n "
+                "         Your dispure ID is: \n"
+                "                 $disputeId"
+                "",style: TextStyle(
+                fontWeight: FontWeight.w600
+            ),),
+          ),
+          actions: <Widget>[
+            GestureDetector(
+              onTap: ()
+              {
+                Navigator.pop(context);
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+                  return HomePage();
+                }));
+              },
+              child: Container(
+                width: double.infinity,
+                height: mQuery.size.height*0.06,
+                decoration: BoxDecoration(
+                    color: Color(0xff29b2fe),
+                    borderRadius: BorderRadius.circular(8)
+                ),
+                child: Center(
+                  child: Text("Okay",style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: mQuery.size.height*0.024
+                  ),),
+                ),
+              ),
+            )
+          ],
+        );
+      },
     );
   }
 }

@@ -1,13 +1,16 @@
+import 'package:cleaneo_user_app/Dashboard/Notifications/notification_page.dart';
+import 'package:cleaneo_user_app/Dashboard/Orders/yourOrders_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wallet/wallet_page.dart';
 import 'package:cleaneo_user_app/pages/donate.dart';
 import 'package:cleaneo_user_app/pages/dryclean_page.dart';
+import 'package:cleaneo_user_app/pages/mydrawer.dart';
 import 'package:cleaneo_user_app/pages/myprofile.dart';
-import 'package:cleaneo_user_app/pages/wash_page.dart';
+import 'package:cleaneo_user_app/Dashboard/Wash/wash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../pages/mydrawer.dart';
+
 
 
 class HomePage extends StatefulWidget {
@@ -41,6 +44,7 @@ class _HomePageState extends State<HomePage> {
   List<Widget> dealTexts = [
     Container(),
     Container(),
+
   ];
 
   @override
@@ -55,7 +59,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Stack(
         children: [
-          buildPage(0), // HomePage content
+          buildPage(0),
+          if(_selectedIndex == 1) YourOrdersPage(),
+          if(_selectedIndex == 2) NotificationsPage(),// HomePage content
           if (_selectedIndex == 3) Donate(), // Overlay DonatePage
           if (_selectedIndex == 4) WalletPage(), // Overlay WalletPage
         ],
@@ -393,7 +399,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
     );
   }
 
@@ -431,8 +437,9 @@ class _HomePageState extends State<HomePage> {
         height: mQuery.size.height * 0.04,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
+          color: selectedContainerIndex == index ? Color(0xffededed) : Colors.white,
           border: Border.all(
-              color: selectedContainerIndex == index ? Colors.green : Colors.grey),
+              color: selectedContainerIndex == index ? Color(0xffbcbcbc) : Colors.grey),
         ),
         child: Center(
           child: Text(

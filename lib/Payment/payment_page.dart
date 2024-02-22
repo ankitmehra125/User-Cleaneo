@@ -1,6 +1,6 @@
 import 'package:cleaneo_user_app/Help/help_page.dart';
 import 'package:cleaneo_user_app/Dashboard/home_page.dart';
-import 'package:cleaneo_user_app/pages/wash_page.dart';
+import 'package:cleaneo_user_app/Dashboard/Wash/wash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

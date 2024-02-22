@@ -1,4 +1,7 @@
+import 'package:cleaneo_user_app/Dashboard/Notifications/notification_page.dart';
+import 'package:cleaneo_user_app/Dashboard/Orders/yourOrders_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wallet/wallet_page.dart';
+import 'package:cleaneo_user_app/Dashboard/offers_page.dart';
 import 'package:cleaneo_user_app/pages/address_page.dart';
 import 'package:cleaneo_user_app/pages/donate.dart';
 import 'package:cleaneo_user_app/Help/help_page.dart';
@@ -151,13 +154,21 @@ class _MyDrawerState extends State<MyDrawer> {
                         )
                       ),
 
-                      ListTile(
-                        leading: Image.asset("assets/images/drawer-images/shopping-bag.png",color: Color(0xff29b2fe),
-                            width: mQuery.size.width*0.06),
-                        title: Text("Your Orders",style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: mQuery.size.height*0.0212,
-                        ),),
+                      GestureDetector(
+                        onTap: ()
+                        {
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return YourOrdersPage();
+                          }));
+                        },
+                        child: ListTile(
+                          leading: Image.asset("assets/images/drawer-images/shopping-bag.png",color: Color(0xff29b2fe),
+                              width: mQuery.size.width*0.06),
+                          title: Text("Your Orders",style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: mQuery.size.height*0.0212,
+                          ),),
+                        ),
                       ),
 
                       GestureDetector(
@@ -176,13 +187,21 @@ class _MyDrawerState extends State<MyDrawer> {
                           ),),
                         ),
                       ),
-                      ListTile(
-                        leading: Image.asset("assets/images/drawer-images/bell.png",color: Color(0xff29b2fe),
-                            width: mQuery.size.width*0.06),
-                        title: Text("Notifications",style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                          fontSize: mQuery.size.height*0.0212,
-                        ),),
+                      GestureDetector(
+                        onTap: ()
+                        {
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return NotificationsPage();
+                          }));
+                        },
+                        child: ListTile(
+                          leading: Image.asset("assets/images/drawer-images/bell.png",color: Color(0xff29b2fe),
+                              width: mQuery.size.width*0.06),
+                          title: Text("Notifications",style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                            fontSize: mQuery.size.height*0.0212,
+                          ),),
+                        ),
                       ),
                       GestureDetector(
                         onTap: ()
@@ -232,13 +251,21 @@ class _MyDrawerState extends State<MyDrawer> {
                           ),),
                         ),
                       ),
-                      ListTile(
-                        leading: Image.asset("assets/images/drawer-images/offers.png",color: Color(0xff29b2fe),
-                            width: mQuery.size.width*0.06),
-                        title: Text("Offers",style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                          fontSize: mQuery.size.height*0.0212,
-                        ),),
+                      GestureDetector(
+                        onTap: ()
+                        {
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return OffersPage();
+                          }));
+                        },
+                        child: ListTile(
+                          leading: Image.asset("assets/images/drawer-images/offers.png",color: Color(0xff29b2fe),
+                              width: mQuery.size.width*0.06),
+                          title: Text("Offers",style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                            fontSize: mQuery.size.height*0.0212,
+                          ),),
+                        ),
                       ),
                       GestureDetector(
                         onTap: ()

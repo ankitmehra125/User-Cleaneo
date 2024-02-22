@@ -1,7 +1,10 @@
 import 'package:cleaneo_user_app/Auth/login_page.dart';
 import 'package:cleaneo_user_app/Auth/signup_page.dart';
+import 'package:cleaneo_user_app/Dashboard/Notifications/notification_page.dart';
+import 'package:cleaneo_user_app/Dashboard/Orders/yourOrders_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wallet/addMoney_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wallet/wallet_page.dart';
+import 'package:cleaneo_user_app/Dashboard/offers_page.dart';
 import 'package:cleaneo_user_app/pages/Donateslider.dart';
 import 'package:cleaneo_user_app/pages/address_page.dart';
 import 'package:cleaneo_user_app/Help/customer_service_page.dart';
@@ -17,7 +20,7 @@ import 'package:cleaneo_user_app/Help/termsandcondition_page.dart';
 import 'package:cleaneo_user_app/pages/refer_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Notifications/reportdispute_page.dart';
 import 'package:cleaneo_user_app/pages/review_page.dart';
-import 'package:cleaneo_user_app/pages/wash_page.dart';
+import 'package:cleaneo_user_app/Dashboard/Wash/wash_page.dart';
 import 'package:cleaneo_user_app/Auth/welcome_page.dart';
 import 'package:cleaneo_user_app/Help/help_page.dart';
 import 'package:cleaneo_user_app/Dashboard/home_page.dart';
@@ -37,7 +40,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: SplashScreen()
     );
   }
 }
