@@ -94,6 +94,9 @@ class _ReviewPageState extends State<ReviewPage> {
                         return Container(
                           margin: EdgeInsets.only(bottom: mQuery.size.height * 0.03),
                           width: double.infinity,
+                          padding: EdgeInsets.only(
+                            bottom: mQuery.size.height*0.016
+                          ),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(6),
                             color: Colors.white,

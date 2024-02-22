@@ -1,12 +1,13 @@
+import 'package:cleaneo_user_app/Dashboard/Wallet/wallet_page.dart';
+import 'package:cleaneo_user_app/pages/donate.dart';
 import 'package:cleaneo_user_app/pages/dryclean_page.dart';
-import 'package:cleaneo_user_app/pages/mydrawer.dart';
 import 'package:cleaneo_user_app/pages/myprofile.dart';
 import 'package:cleaneo_user_app/pages/wash_page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../pages/mydrawer.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -20,6 +21,7 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   var orderNo = 3;
   int selectedContainerIndex = -1;
+  String userName = "Shweta";
 
   TextEditingController searchController = TextEditingController();
   List<Map<String, dynamic>> gridItems = [
@@ -36,6 +38,10 @@ class _HomePageState extends State<HomePage> {
     "https://cdn.vectorstock.com/i/preview-1x/10/75/amazing-deals-sign-over-colorful-cut-out-foil-vector-48291075.jpg",
     // Add more image filenames as needed
   ];
+  List<Widget> dealTexts = [
+    Container(),
+    Container(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +51,76 @@ class _HomePageState extends State<HomePage> {
       buildDealTextContainer(mQuery),
       buildDealTextContainer(mQuery),
     ];
+
+    return Scaffold(
+      body: Stack(
+        children: [
+          buildPage(0), // HomePage content
+          if (_selectedIndex == 3) Donate(), // Overlay DonatePage
+          if (_selectedIndex == 4) WalletPage(), // Overlay WalletPage
+        ],
+      ),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.only(top: mQuery.size.height * 0.007),
+        height: mQuery.size.height * 0.1,
+        child: BottomNavigationBar(
+          backgroundColor: Colors.white,
+          type: BottomNavigationBarType.fixed,
+          currentIndex: _selectedIndex,
+          onTap: (index) {
+            setState(() {
+              _selectedIndex = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/images/home.png",
+                width: mQuery.size.width * 0.075,
+                color: _selectedIndex == 0 ? Colors.cyan : Colors.black,
+              ),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/images/drawer-images/shopping-bag.png",
+                width: mQuery.size.width * 0.075,
+                color: _selectedIndex == 1 ? Colors.cyan : Colors.black,
+              ),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/images/drawer-images/bell.png",
+                width: mQuery.size.width * 0.075,
+                color: _selectedIndex == 2 ? Colors.cyan : Colors.black,
+              ),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/images/drawer-images/heart.png",
+                width: mQuery.size.width * 0.075,
+                color: _selectedIndex == 3 ? Colors.cyan : Colors.black,
+              ),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/images/drawer-images/wallet.png",
+                width: mQuery.size.width * 0.075,
+                color: _selectedIndex == 4 ? Colors.cyan : Colors.black,
+              ),
+              label: "",
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildPage(int index) {
+    var mQuery = MediaQuery.of(context);
 
     return Scaffold(
       body: Container(
@@ -78,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                               },
                               icon: Icon(
                                 Icons.menu,
-                                size: 42,
+                                size: mQuery.size.width*0.1,
                               ),
                               color: Colors.white,
                             );
@@ -86,8 +162,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         SvgPicture.asset(
                           "assets/images/mainlogo.svg",
-                          width: 30,
-                          height: 25,
+                          width: mQuery.size.width*0.33,
                         ),
                         Expanded(child: SizedBox()),
                         GestureDetector(
@@ -120,7 +195,7 @@ class _HomePageState extends State<HomePage> {
                           "Welcome back!",
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: mQuery.size.height*0.0215,
+                            fontSize: mQuery.size.height * 0.0215,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -149,11 +224,11 @@ class _HomePageState extends State<HomePage> {
                     child: Row(
                       children: [
                         Text(
-                          "Shweta",
+                          "$userName",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
-                            fontSize: mQuery.size.height*0.028,
+                            fontSize: mQuery.size.height * 0.025,
                           ),
                         ),
                         Expanded(child: SizedBox()),
@@ -166,7 +241,7 @@ class _HomePageState extends State<HomePage> {
                           "Ongoing Orders",
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: mQuery.size.height*0.019,
+                            fontSize: mQuery.size.height * 0.018,
                           ),
                         )
                       ],
@@ -188,11 +263,12 @@ class _HomePageState extends State<HomePage> {
                         border: InputBorder.none,
                         hintText: "Search",
                         hintStyle: TextStyle(
-                          fontSize: mQuery.size.height*0.023,
+                          fontSize: mQuery.size.height * 0.0215,
                           color: Colors.grey.shade600,
                           fontWeight: FontWeight.w600,
                         ),
-                        suffixIcon: const Icon(Icons.search, color: Colors.grey),
+                        suffixIcon: const Icon(Icons.search,
+                          color: Colors.black54,),
                       ),
                     ),
                   ),
@@ -252,7 +328,7 @@ class _HomePageState extends State<HomePage> {
                               Text(
                                 item["text"],
                                 style: TextStyle(
-                                  fontSize: mQuery.size.height*0.022,
+                                  fontSize: mQuery.size.height * 0.0195,
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
@@ -317,66 +393,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      drawer: const MyDrawer(),
-
-      bottomNavigationBar: Container(
-        padding: EdgeInsets.only(
-            top: mQuery.size.height*0.007
-        ),
-        height: mQuery.size.height * 0.1,
-        child: BottomNavigationBar(
-          backgroundColor: Colors.white,
-          type: BottomNavigationBarType.fixed,
-          currentIndex: _selectedIndex,
-          onTap: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          },
-          items: [
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/images/home.png",
-                width: mQuery.size.width * 0.075,
-                color: _selectedIndex == 0 ? Colors.cyan : Colors.black,
-              ),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/images/drawer-images/shopping-bag.png",
-                width: mQuery.size.width * 0.075,
-                color: _selectedIndex == 1 ? Colors.cyan : Colors.black,
-              ),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/images/drawer-images/bell.png",
-                width: mQuery.size.width * 0.075,
-                color: _selectedIndex == 2 ? Colors.cyan : Colors.black,
-              ),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/images/drawer-images/heart.png",
-                width: mQuery.size.width * 0.075,
-                color: _selectedIndex == 3 ? Colors.cyan : Colors.black,
-              ),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/images/drawer-images/wallet.png",
-                width: mQuery.size.width * 0.075,
-                color: _selectedIndex == 4 ? Colors.cyan : Colors.black,
-              ),
-              label: "",
-            ),
-          ],
-        ),
-      ),
+      drawer: MyDrawer(),
     );
   }
 
@@ -393,7 +410,7 @@ class _HomePageState extends State<HomePage> {
           "Know More",
           style: TextStyle(
               color: Colors.white,
-              fontSize: mQuery.size.height*0.0175,
+              fontSize: mQuery.size.height * 0.0175,
               fontWeight: FontWeight.w800),
         ),
       ),
@@ -414,13 +431,14 @@ class _HomePageState extends State<HomePage> {
         height: mQuery.size.height * 0.04,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: selectedContainerIndex == index ? Colors.green : Colors.grey),
+          border: Border.all(
+              color: selectedContainerIndex == index ? Colors.green : Colors.grey),
         ),
         child: Center(
           child: Text(
             title,
             style: TextStyle(
-                fontSize: mQuery.size.height*0.015,
+                fontSize: mQuery.size.height * 0.015,
                 fontWeight: FontWeight.w600),
           ),
         ),
@@ -428,5 +446,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:cleaneo_user_app/pages/byweight_page.dart';
-import 'package:cleaneo_user_app/pages/quantity_wise_page.dart';
+import 'package:cleaneo_user_app/Dashboard/Wash/byweight_page.dart';
+import 'package:cleaneo_user_app/Dashboard/Wash/quantity_wise_page.dart';
 
 class WashPage extends StatefulWidget {
   const WashPage({Key? key}) : super(key: key);

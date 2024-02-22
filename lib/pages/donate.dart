@@ -87,9 +87,9 @@ class _DonateState extends State<Donate> {
                 child: SingleChildScrollView(
                   child:   Column(
                     children: [
-                      SizedBox(height: mQuery.size.height*0.023,),
+                      SizedBox(height: mQuery.size.height*0.015,),
                       DonateSlider(),
-                      SizedBox(height: mQuery.size.height*0.02,),
+                      SizedBox(height: mQuery.size.height*0.014,),
                       Row(
                         children: [
                           Text(
@@ -117,7 +117,7 @@ class _DonateState extends State<Donate> {
                           ),
                         ],
                       ),
-                      SizedBox(height: mQuery.size.height*0.09,),
+                      SizedBox(height: mQuery.size.height*0.018,),
                       ElevatedButton(
                         onPressed: ()
                         {

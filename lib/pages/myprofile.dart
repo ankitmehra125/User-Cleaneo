@@ -189,7 +189,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                   enabledBorder: InputBorder.none,
                                   hintText: "Enter Full Name",
                                   hintStyle: TextStyle(
-                                    fontSize: mQuery.size.height*0.0215,
+                                    fontSize: mQuery.size.height*0.02,
                                     fontWeight: FontWeight.w600,
                                     color: Color(0xffABAFB1),
                                   ),
@@ -258,12 +258,12 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                       decoration: InputDecoration(
                                         hintText: "Enter Phone Number*",
                                         hintStyle: TextStyle(
-                                          fontSize: mQuery.size.height*0.0215,
+                                          fontSize: mQuery.size.height*0.02,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0xffABAFB1),
                                         ),
                                         contentPadding: EdgeInsets.only(
-                                          top: mQuery.size.height*0.003
+                                          top: mQuery.size.height*0.002
                                         ),
                                         counter: SizedBox.shrink(),
                                         focusedBorder: InputBorder.none,
@@ -306,7 +306,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                   enabledBorder: InputBorder.none,
                                   hintText: "Enter Email",
                                   hintStyle: TextStyle(
-                                    fontSize: mQuery.size.height*0.0215,
+                                    fontSize: mQuery.size.height*0.02,
                                     fontWeight: FontWeight.w600,
                                     color: Color(0xffABAFB1),
                                   ),

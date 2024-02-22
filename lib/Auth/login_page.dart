@@ -138,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                                   decoration: InputDecoration(
                                     hintText: "Enter Phone Number*",
                                     hintStyle: TextStyle(
-                                      fontSize: mQuery.size.height*0.0215,
+                                      fontSize: mQuery.size.height*0.02,
                                       fontWeight: FontWeight.w600,
                                       color: Color(0xffABAFB1),
                                     ),

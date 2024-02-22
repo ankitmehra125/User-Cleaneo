@@ -111,11 +111,13 @@ class _SignUpPageState extends State<SignUpPage> {
                               enabledBorder: InputBorder.none,
                               hintText: "Enter Full Name",
                               hintStyle: TextStyle(
-                                  fontSize: mQuery.size.height*0.0215,
+                                  fontSize: mQuery.size.height*0.02,
                                   fontWeight: FontWeight.w600,
                                   color: Color(0xffABAFB1)
                               ),
-                              contentPadding: EdgeInsets.symmetric(vertical: 12),
+                              contentPadding: EdgeInsets.symmetric(
+                                vertical: mQuery.size.height*0.0175
+                              ),
                             ),
                           ),
                         ),
@@ -184,7 +186,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                   decoration: InputDecoration(
                                     hintText: "Enter Phone Number*",
                                     hintStyle: TextStyle(
-                                      fontSize: mQuery.size.height*0.0215,
+                                      fontSize: mQuery.size.height*0.02,
                                       fontWeight: FontWeight.w600,
                                       color: Color(0xffABAFB1),
                                     ),
@@ -230,11 +232,13 @@ class _SignUpPageState extends State<SignUpPage> {
                               enabledBorder: InputBorder.none,
                               hintText: "Enter Email",
                               hintStyle: TextStyle(
-                                fontSize: mQuery.size.height*0.0215,
+                                fontSize: mQuery.size.height*0.02,
                                   fontWeight: FontWeight.w600,
                                   color: Color(0xffABAFB1),
                               ),
-                              contentPadding: EdgeInsets.symmetric(vertical: 12),
+                              contentPadding: EdgeInsets.symmetric(
+                                  vertical: mQuery.size.height*0.0175
+                              ),
                             ),
                           ),
                         ),

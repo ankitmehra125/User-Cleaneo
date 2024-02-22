@@ -4,9 +4,10 @@ import 'package:cleaneo_user_app/Help/faqs_page.dart';
 import 'package:cleaneo_user_app/Dashboard/home_page.dart';
 import 'package:cleaneo_user_app/Help/privacypolicy_page.dart';
 import 'package:cleaneo_user_app/Help/termsandcondition_page.dart';
-import 'package:cleaneo_user_app/pages/rating_page.dart';
+import 'package:cleaneo_user_app/Dashboard/Notifications/rating_page.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 
 class ReportDisputePage extends StatefulWidget {
@@ -318,70 +319,17 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            DottedBorder(
-                              color: Colors.black54,
-                              borderType: BorderType.RRect,
-                              radius: Radius.circular(12),
-                              child: Container(
-                                width: mQuery.size.width*0.17,
-                                height: mQuery.size.height*0.08,
-                                child: Center(
-                                  child: Icon(Icons.add,
-                                   color: Colors.black54,
-                                   size: mQuery.size.width*0.07,
-                                    opticalSize: 10,
-                                  ),
-                                ),
-                              ),
+                            SvgPicture.asset("assets/images/imagepicker.svg",
+                             height: mQuery.size.height*0.085,
                             ),
-                            DottedBorder(
-                              color: Colors.black54,
-                              borderType: BorderType.RRect,
-                              radius: Radius.circular(12),
-                              child: Container(
-                                width: mQuery.size.width*0.17,
-                                height: mQuery.size.height*0.08,
-                                child: Center(
-                                  child: Icon(Icons.add,
-                                    color: Colors.black54,
-                                    size: mQuery.size.width*0.07,
-                                    opticalSize: 10,
-                                  ),
-                                ),
-                              ),
+                            SvgPicture.asset("assets/images/imagepicker.svg",
+                              height: mQuery.size.height*0.085,
                             ),
-                            DottedBorder(
-                              color: Colors.black54,
-                              borderType: BorderType.RRect,
-                              radius: Radius.circular(12),
-                              child: Container(
-                                width: mQuery.size.width*0.17,
-                                height: mQuery.size.height*0.08,
-                                child: Center(
-                                  child: Icon(Icons.add,
-                                    color: Colors.black54,
-                                    size: mQuery.size.width*0.07,
-                                    opticalSize: 10,
-                                  ),
-                                ),
-                              ),
+                            SvgPicture.asset("assets/images/imagepicker.svg",
+                              height: mQuery.size.height*0.085,
                             ),
-                            DottedBorder(
-                              color: Colors.black54,
-                              borderType: BorderType.RRect,
-                              radius: Radius.circular(12),
-                              child: Container(
-                                width: mQuery.size.width*0.17,
-                                height: mQuery.size.height*0.08,
-                                child: Center(
-                                  child: Icon(Icons.add,
-                                    color: Colors.black54,
-                                    size: mQuery.size.width*0.07,
-                                    opticalSize: 10,
-                                  ),
-                                ),
-                              ),
-                            ),
+                            SvgPicture.asset("assets/images/imagepicker.svg",
+                              height: mQuery.size.height*0.085,)
                           ],
                         )
                       ],

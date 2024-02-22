@@ -1,12 +1,12 @@
 import 'package:cleaneo_user_app/pages/address_page.dart';
 import 'package:cleaneo_user_app/Payment/payment_page.dart';
-import 'package:cleaneo_user_app/pages/quantity_wise_page.dart';
+import 'package:cleaneo_user_app/Dashboard/Wash/quantity_wise_page.dart';
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../Dashboard/home_page.dart';
+import '../home_page.dart';
 
 class ByWeightPage extends StatefulWidget {
   const ByWeightPage({Key? key});

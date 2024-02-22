@@ -1,3 +1,4 @@
+import 'package:cleaneo_user_app/Dashboard/Wallet/wallet_page.dart';
 import 'package:cleaneo_user_app/pages/address_page.dart';
 import 'package:cleaneo_user_app/pages/donate.dart';
 import 'package:cleaneo_user_app/Help/help_page.dart';
@@ -199,13 +200,21 @@ class _MyDrawerState extends State<MyDrawer> {
                           ),),
                         ),
                       ),
-                      ListTile(
-                        leading: Image.asset("assets/images/drawer-images/wallet.png",color: Color(0xff29b2fe),
-                            width: mQuery.size.width*0.06),
-                        title: Text("Wallet",style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                          fontSize: mQuery.size.height*0.0212,
-                        ),),
+                      GestureDetector(
+                        onTap: ()
+                        {
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return WalletPage();
+                          }));
+                        },
+                        child: ListTile(
+                          leading: Image.asset("assets/images/drawer-images/wallet.png",color: Color(0xff29b2fe),
+                              width: mQuery.size.width*0.06),
+                          title: Text("Wallet",style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                            fontSize: mQuery.size.height*0.0212,
+                          ),),
+                        ),
                       ),
                       GestureDetector(
                         onTap: ()
