@@ -14,6 +14,7 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
     var mQuery = MediaQuery.of(context);
     var orderNo = "#1234567890";
     double price = 100.00;
+    var phoneNo = "+91 1234567890";
     return Scaffold(
       backgroundColor: Colors.white,
        body: Padding(
@@ -27,6 +28,7 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
              SizedBox(height: mQuery.size.height*0.018,),
              Text("Today",style: TextStyle(
                  color: Colors.black54,
+                 fontFamily: 'SatoshiRegular',
                  fontSize: mQuery.size.height*0.017
              ),
              ),
@@ -64,12 +66,13 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                            ),
                            SizedBox(width: mQuery.size.width*0.02,),
                            Text("Order $orderNo",style: TextStyle(
-                             fontWeight: FontWeight.w600,
+                               fontFamily: 'SatoshiMedium',
                              fontSize: mQuery.size.height*0.0165
                            ),),
                            Expanded(child: SizedBox()),
                            Text("₹ ${price.toStringAsFixed(2)}",style: TextStyle(
-                             fontWeight: FontWeight.w600
+                             fontFamily: 'SatoshiMedium',
+                               fontSize: mQuery.size.height*0.017
                            ),)
                          ],
                        ),
@@ -88,7 +91,8 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                              children: [
                                Text("ITEMS",style: TextStyle(
                                    color: Colors.black54,
-                                   fontSize: mQuery.size.height*0.017
+                                   fontFamily: 'SatoshiRegular',
+                                   fontSize: mQuery.size.height*0.0165
                                ),
                                ),
                                Text.rich(
@@ -96,14 +100,15 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                                        children: [
                                          TextSpan(
                                              text: "WASH",style: TextStyle(
-                                             fontWeight: FontWeight.w600,
+                                             fontFamily: 'SatoshiMedium',
                                              color: Colors.black,
                                              fontSize: mQuery.size.height*0.0155
                                          )
                                          ),
                                          TextSpan(
                                              text: " - 01 x Shirts (Woman), 02 x T-Shirts (Men)",style: TextStyle(
-                                             fontSize: mQuery.size.height*0.0155
+                                             fontSize: mQuery.size.height*0.0155,
+                                             fontFamily: 'SatoshiRegular'
                                          )
                                          )
                                        ]
@@ -115,7 +120,7 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                                        children: [
                                          TextSpan(
                                              text: "WASH & STREAM IRON",style: TextStyle(
-                                             fontWeight: FontWeight.w600,
+                                             fontFamily: 'SatoshiMedium',
                                              color: Colors.black,
                                              fontSize: mQuery.size.height*0.0155
                                          )
@@ -123,7 +128,8 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                                          TextSpan(
                                              text: " - 02 x Kurta Designer (Men), 01 x "
                                                  "Bed-Sheet Single",style: TextStyle(
-                                             fontSize: mQuery.size.height*0.0155
+                                             fontSize: mQuery.size.height*0.0155,
+                                             fontFamily: 'SatoshiRegular'
                                          )
                                          )
                                        ]
@@ -135,14 +141,15 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                                        children: [
                                          TextSpan(
                                              text: "DRY CLEAN",style: TextStyle(
-                                             fontWeight: FontWeight.w600,
+                                             fontFamily: 'SatoshiMedium',
                                              color: Colors.black,
                                              fontSize: mQuery.size.height*0.0155
                                          )
                                          ),
                                          TextSpan(
                                              text: " - 02 x Bath Mate",style: TextStyle(
-                                             fontSize: mQuery.size.height*0.0155
+                                             fontSize: mQuery.size.height*0.0155,
+                                             fontFamily: 'SatoshiRegular'
                                          )
                                          )
                                        ]
@@ -166,62 +173,68 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                          children: [
                            Text("Rider Details",style: TextStyle(
                                color: Colors.black54,
+                               fontFamily: 'SatoshiRegular',
                                fontSize: mQuery.size.height*0.017
                            ),
                            ),
                            SizedBox(height: mQuery.size.height*0.006,),
-                           Row(
-                             children: [
-                               ProfilePicture(
-                                 name: "",
-                                 radius: mQuery.size.width*0.046,
-                                 fontsize: 10,
-                                 img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA3tt2QdkGYJ1268iokp1HHB3XB6PNaAZD_pssz3zFVg&s",
-                               ),
-                               SizedBox(width: mQuery.size.width*0.02,),
-                               Column(
-                                 children: [
-                                   Row(
-                                     children: [
-                                       Text("Raj(ID 123456)",style: TextStyle(
-                                           fontSize: mQuery.size.height*0.017,
-                                           fontWeight: FontWeight.w600
-                                       ),
-                                       ),
-                                       SizedBox(width: mQuery.size.width*0.3,),
-                                       Container(
-                                         width: mQuery.size.width*0.18,
-                                         height: mQuery.size.height*0.03,
-                                         decoration: BoxDecoration(
-                                             color: Color(0xffffeced),
-                                             borderRadius: BorderRadius.circular(16)
+                           SingleChildScrollView(
+                             scrollDirection: Axis.horizontal,
+                             child: Row(
+                               children: [
+                                 ProfilePicture(
+                                   name: "",
+                                   radius: mQuery.size.width*0.046,
+                                   fontsize: 10,
+                                   img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA3tt2QdkGYJ1268iokp1HHB3XB6PNaAZD_pssz3zFVg&s",
+                                 ),
+                                 SizedBox(width: mQuery.size.width*0.02,),
+                                 Column(
+                                   children: [
+                                     Row(
+                                       children: [
+                                         Text("Raj(ID 123456)",style: TextStyle(
+                                             fontSize: mQuery.size.height*0.017,
+                                             fontFamily: 'SatoshiMedium'
                                          ),
-                                         child: Center(
-                                           child: Text("Picked Up",style: TextStyle(
-                                               color: Colors.red,
-                                               fontSize: mQuery.size.height*0.014,
-                                               fontWeight: FontWeight.w600
-                                           ),),
                                          ),
-                                       )
-                                     ],
-                                   ),
-                                   Row(
-                                     children: [
-                                       Text("+91 1234567890",style: TextStyle(
-                                           fontSize: mQuery.size.height*0.015
-                                       ),
-                                       ),
-                                       SizedBox(width: mQuery.size.width*0.3,),
-                                       Text("Track Order",style: TextStyle(
-                                           color: Color(0xff29b2fe),
-                                           fontSize: mQuery.size.height*0.017
-                                       ),)
-                                     ],
-                                   ),
-                                 ],
-                               )
-                             ],
+                                         SizedBox(width: mQuery.size.width*0.3,),
+                                         Container(
+                                           width: mQuery.size.width*0.18,
+                                           height: mQuery.size.height*0.03,
+                                           decoration: BoxDecoration(
+                                               color: Color(0xffffeced),
+                                               borderRadius: BorderRadius.circular(16)
+                                           ),
+                                           child: Center(
+                                             child: Text("Picked Up",style: TextStyle(
+                                                 color: Colors.red,
+                                                 fontSize: mQuery.size.height*0.014,
+                                               fontFamily: 'SatoshiMedium',
+                                             ),),
+                                           ),
+                                         )
+                                       ],
+                                     ),
+                                     Row(
+                                       children: [
+                                         Text("$phoneNo",style: TextStyle(
+                                             fontSize: mQuery.size.height*0.015,
+                                             fontFamily: 'SatoshiRegular'
+                                         ),
+                                         ),
+                                         SizedBox(width: mQuery.size.width*0.3,),
+                                         Text("Track Order",style: TextStyle(
+                                             color: Color(0xff29b2fe),
+                                             fontSize: mQuery.size.height*0.017,
+                                             fontFamily: 'SatoshiRegular'
+                                         ),)
+                                       ],
+                                     ),
+                                   ],
+                                 )
+                               ],
+                             ),
                            ),
                          ],
                        ),
@@ -234,6 +247,7 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
              SizedBox(height: mQuery.size.height*0.023   ,),
              Text("26 Jun 2021 at 6:00 pm",style: TextStyle(
                  color: Colors.black54,
+                 fontFamily: 'SatoshiRegular',
                  fontSize: mQuery.size.height*0.017
              ),
              ),
@@ -271,12 +285,13 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                            ),
                            SizedBox(width: mQuery.size.width*0.02,),
                            Text("Order $orderNo",style: TextStyle(
-                               fontWeight: FontWeight.w600,
+                               fontFamily: 'SatoshiMedium',
                                fontSize: mQuery.size.height*0.0165
                            ),),
                            Expanded(child: SizedBox()),
                            Text("₹ ${price.toStringAsFixed(2)}",style: TextStyle(
-                               fontWeight: FontWeight.w600
+                             fontFamily: 'SatoshiMedium',
+                             fontSize: mQuery.size.height*0.017
                            ),)
                          ],
                        ),
@@ -295,7 +310,8 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                              children: [
                                Text("ITEMS",style: TextStyle(
                                    color: Colors.black54,
-                                   fontSize: mQuery.size.height*0.017
+                                   fontFamily: 'SatoshiRegular',
+                                   fontSize: mQuery.size.height*0.0165
                                ),
                                ),
                                Text.rich(
@@ -303,14 +319,15 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                                        children: [
                                          TextSpan(
                                              text: "WASH",style: TextStyle(
-                                             fontWeight: FontWeight.w600,
+                                             fontFamily: 'SatoshiMedium',
                                              color: Colors.black,
                                              fontSize: mQuery.size.height*0.0155
                                          )
                                          ),
                                          TextSpan(
                                              text: " - 01 x Shirts (Woman), 02 x T-Shirts (Men)",style: TextStyle(
-                                             fontSize: mQuery.size.height*0.0155
+                                             fontSize: mQuery.size.height*0.0155,
+                                             fontFamily: 'SatoshiRegular'
                                          )
                                          )
                                        ]
@@ -322,7 +339,7 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                                        children: [
                                          TextSpan(
                                              text: "WASH & STREAM IRON",style: TextStyle(
-                                             fontWeight: FontWeight.w600,
+                                             fontFamily: 'SatoshiMedium',
                                              color: Colors.black,
                                              fontSize: mQuery.size.height*0.0155
                                          )
@@ -330,7 +347,8 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                                          TextSpan(
                                              text: " - 02 x Kurta Designer (Men), 01 x "
                                                  "Bed-Sheet Single",style: TextStyle(
-                                             fontSize: mQuery.size.height*0.0155
+                                             fontSize: mQuery.size.height*0.0155,
+                                             fontFamily: 'SatoshiRegular'
                                          )
                                          )
                                        ]
@@ -342,14 +360,15 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                                        children: [
                                          TextSpan(
                                              text: "DRY CLEAN",style: TextStyle(
-                                             fontWeight: FontWeight.w600,
+                                             fontFamily: 'SatoshiMedium',
                                              color: Colors.black,
                                              fontSize: mQuery.size.height*0.0155
                                          )
                                          ),
                                          TextSpan(
                                              text: " - 02 x Bath Mate",style: TextStyle(
-                                             fontSize: mQuery.size.height*0.0155
+                                             fontSize: mQuery.size.height*0.0155,
+                                             fontFamily: 'SatoshiRegular'
                                          )
                                          )
                                        ]
@@ -373,63 +392,69 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                          children: [
                            Text("Rider Details",style: TextStyle(
                                color: Colors.black54,
+                               fontFamily: 'SatoshiRegular',
                                fontSize: mQuery.size.height*0.017
                            ),
                            ),
                            SizedBox(height: mQuery.size.height*0.002,),
-                           Row(
-                             children: [
-                               ProfilePicture(
-                                 name: "",
-                                 radius: mQuery.size.width*0.046,
-                                 fontsize: 10,
-                                 img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA3tt2QdkGYJ1268iokp1HHB3XB6PNaAZD_pssz3zFVg&s",
-                               ),
-                               SizedBox(width: mQuery.size.width*0.02,),
-                               Column(
-                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                 children: [
-                                   Row(
-                                     children: [
-                                       Text("Raj(ID 123456)",style: TextStyle(
+                           SingleChildScrollView(
+                             scrollDirection: Axis.horizontal,
+                             child: Row(
+                               children: [
+                                 ProfilePicture(
+                                   name: "",
+                                   radius: mQuery.size.width*0.046,
+                                   fontsize: 10,
+                                   img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA3tt2QdkGYJ1268iokp1HHB3XB6PNaAZD_pssz3zFVg&s",
+                                 ),
+                                 SizedBox(width: mQuery.size.width*0.02,),
+                                 Column(
+                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                   children: [
+                                     Row(
+                                       children: [
+                                         Text("Raj(ID 123456)",style: TextStyle(
+                                             fontSize: mQuery.size.height*0.017,
+                                             fontFamily: 'SatoshiMedium'
+                                         ),
+                                         ),
+                                         SizedBox(width: mQuery.size.width*0.3,),
+                                         Container(
+                                           width: mQuery.size.width*0.18,
+                                           height: mQuery.size.height*0.03,
+                                           decoration: BoxDecoration(
+                                             color: Color(0xffe9f7ff),
+                                             borderRadius: BorderRadius.circular(16)
+                                           ),
+                                           child: Center(
+                                             child: Text("In Process",style: TextStyle(
+                                               color: Color(0xff29b2fe),
+                                               fontSize: mQuery.size.height*0.014,
+                                               fontFamily: 'SatoshiMedium',
+                                             ),),
+                                           ),
+                                         )
+                                       ],
+                                     ),
+                                     Row(
+                                       children: [
+                                         Text("$phoneNo",style: TextStyle(
+                                             fontSize: mQuery.size.height*0.015,
+                                            fontFamily: 'SatoshiRegular'
+                                         ),
+                                         ),
+                                         SizedBox(width: mQuery.size.width*0.3,),
+                                         Text("Track Order",style: TextStyle(
+                                           color: Color(0xff29b2fe),
                                            fontSize: mQuery.size.height*0.017,
-                                           fontWeight: FontWeight.w600
-                                       ),
-                                       ),
-                                       SizedBox(width: mQuery.size.width*0.3,),
-                                       Container(
-                                         width: mQuery.size.width*0.18,
-                                         height: mQuery.size.height*0.03,
-                                         decoration: BoxDecoration(
-                                           color: Color(0xffe9f7ff),
-                                           borderRadius: BorderRadius.circular(16)
-                                         ),
-                                         child: Center(
-                                           child: Text("In Process",style: TextStyle(
-                                             color: Color(0xff29b2fe),
-                                             fontSize: mQuery.size.height*0.014,
-                                             fontWeight: FontWeight.w600
-                                           ),),
-                                         ),
-                                       )
-                                     ],
-                                   ),
-                                   Row(
-                                     children: [
-                                       Text("+91 1234567890",style: TextStyle(
-                                           fontSize: mQuery.size.height*0.015
-                                       ),
-                                       ),
-                                       SizedBox(width: mQuery.size.width*0.3,),
-                                       Text("Track Order",style: TextStyle(
-                                         color: Color(0xff29b2fe),
-                                         fontSize: mQuery.size.height*0.017
-                                       ),)
-                                     ],
-                                   ),
-                                 ],
-                               )
-                             ],
+                                             fontFamily: 'SatoshiRegular'
+                                         ),)
+                                       ],
+                                     ),
+                                   ],
+                                 )
+                               ],
+                             ),
                            ),
                          ],
                        ),

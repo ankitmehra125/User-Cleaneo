@@ -51,7 +51,7 @@ class _MapPageState extends State<MapPage> {
                     style: TextStyle(
                         fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
-                        fontWeight: FontWeight.w700),
+                        fontFamily: 'SatoshiBold'),
                   )
                 ],
               ),
@@ -69,14 +69,12 @@ class _MapPageState extends State<MapPage> {
                   child: Column(
                     children: [
                       SizedBox(height: mQuery.size.height*0.037),
-                      Text("Allow Cleaneo to use your",style: TextStyle(
+                      Text("Allow Cleaneo to use your \n "
+                          "   location for services.",style: TextStyle(
                           fontSize: mQuery.size.height*0.0215,
-                          fontWeight: FontWeight.w900
+                          fontFamily: 'SatoshiBold'
                       ),),
-                      Text("location for services.",style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold
-                      ),),
+
 
                       SizedBox(height: mQuery.size.height*0.2,),
                       Center(
@@ -106,7 +104,7 @@ class _MapPageState extends State<MapPage> {
                                 style: TextStyle(
                                   fontSize: mQuery.size.height*0.022,
                                   color: Colors.white,
-                                  fontWeight: FontWeight.w800,
+                                  fontFamily: 'SatoshiBold'
                                 ),),
                             ),
                           ),

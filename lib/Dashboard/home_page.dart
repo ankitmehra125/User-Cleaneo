@@ -202,7 +202,7 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: mQuery.size.height * 0.0215,
-                            fontWeight: FontWeight.w500,
+                            fontFamily: 'SatoshiMedium',
                           ),
                         ),
                         Container(
@@ -217,7 +217,7 @@ class _HomePageState extends State<HomePage> {
                               "$orderNo",
                               style: TextStyle(
                                 color: Colors.cyan,
-                                fontWeight: FontWeight.w600,
+                                fontFamily: 'SatoshiBold'
                               ),
                             ),
                           ),
@@ -233,20 +233,22 @@ class _HomePageState extends State<HomePage> {
                           "$userName",
                           style: TextStyle(
                             color: Colors.white,
-                            fontWeight: FontWeight.bold,
+                            fontFamily: 'SatoshiBold',
                             fontSize: mQuery.size.height * 0.025,
                           ),
                         ),
                         Expanded(child: SizedBox()),
-                        const Icon(
+                        Icon(
                           Icons.help_outline,
                           color: Colors.white,
+                          size: mQuery.size.width*0.052,
                         ),
                         SizedBox(width: mQuery.size.width * 0.02),
                         Text(
                           "Ongoing Orders",
                           style: TextStyle(
                             color: Colors.white,
+                            fontFamily: 'SatoshiRegular',
                             fontSize: mQuery.size.height * 0.018,
                           ),
                         )
@@ -271,7 +273,7 @@ class _HomePageState extends State<HomePage> {
                         hintStyle: TextStyle(
                           fontSize: mQuery.size.height * 0.0215,
                           color: Colors.grey.shade600,
-                          fontWeight: FontWeight.w600,
+                          fontFamily: 'SatoshiMedium',
                         ),
                         suffixIcon: const Icon(Icons.search,
                           color: Colors.black54,),
@@ -334,8 +336,8 @@ class _HomePageState extends State<HomePage> {
                               Text(
                                 item["text"],
                                 style: TextStyle(
-                                  fontSize: mQuery.size.height * 0.0195,
-                                  fontWeight: FontWeight.w700,
+                                  fontSize: mQuery.size.height * 0.02,
+                                  fontFamily: 'SatoshiBold'
                                 ),
                               ),
                             ],
@@ -446,7 +448,7 @@ class _HomePageState extends State<HomePage> {
             title,
             style: TextStyle(
                 fontSize: mQuery.size.height * 0.015,
-                fontWeight: FontWeight.w600),
+                fontFamily: 'SatoshiMedium'),
           ),
         ),
       ),

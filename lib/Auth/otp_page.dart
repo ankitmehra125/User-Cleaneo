@@ -16,6 +16,7 @@ class _OTPPageState extends State<OTPPage> {
   late List<TextEditingController> controllers;
   late List<FocusNode> focusNodes;
   int focusedIndex = -1;
+  var phoneNo = "+91 9793878788";
 
   @override
   void initState() {
@@ -93,7 +94,7 @@ class _OTPPageState extends State<OTPPage> {
                     style: TextStyle(
                         fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
-                        fontWeight: FontWeight.w700),
+                        fontFamily: 'SatoshiBold'),
                   )
                 ],
               ),
@@ -118,14 +119,14 @@ class _OTPPageState extends State<OTPPage> {
                           "Enter 4 Digit Code",
                           style: TextStyle(
                               fontSize: mQuery.size.height*0.0215,
-                              fontWeight: FontWeight.w800),
+                              fontFamily: 'SatoshiBold'),
                         ),
-                        SizedBox(height: mQuery.size.height * 0.01),
+                        SizedBox(height: mQuery.size.height * 0.006),
                         Text(
-                          "Sent to +91 9793878788",
+                          "Sent to $phoneNo",
                           style: TextStyle(
-                              fontSize: mQuery.size.height*0.02,
-                              fontWeight: FontWeight.w600,
+                              fontSize: mQuery.size.height*0.018,
+                              fontFamily: 'SatoshiRegular',
                               color: Colors.black87),
                         ),
                         SizedBox(height: mQuery.size.height * 0.04),
@@ -137,23 +138,23 @@ class _OTPPageState extends State<OTPPage> {
                         Text(
                           "Problems receiving the code?",
                           style: TextStyle(
-                              fontSize: mQuery.size.height*0.02,
-                              fontWeight: FontWeight.w600),
+                              fontSize: mQuery.size.height*0.018,
+                              fontFamily: 'SatoshiBold'),
                         ),
                         SizedBox(height: mQuery.size.height * 0.008),
                         Row(
                           children: [
                             Icon(
                               Icons.refresh,
-                              color: Colors.cyan,
+                              color: Color(0xff29b2fe),
                             ),
                             SizedBox(width: mQuery.size.width * 0.015),
                             Text(
                               "RESEND",
                               style: TextStyle(
-                                  color: Colors.cyan,
-                                  fontSize: mQuery.size.height*0.02,
-                                  fontWeight: FontWeight.w600),
+                                  color: Color(0xff29b2fe),
+                                  fontSize: mQuery.size.height*0.018,
+                                  fontFamily: 'SatoshiBold'),
                             )
                           ],
                         ),
@@ -177,7 +178,7 @@ class _OTPPageState extends State<OTPPage> {
                                 style: TextStyle(
                                     fontSize: mQuery.size.height*0.022,
                                     color: Colors.white,
-                                    fontWeight: FontWeight.w600),
+                                    fontFamily: 'SatoshiBold'),
                               ),
                             ),
                           ),

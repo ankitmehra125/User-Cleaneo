@@ -77,7 +77,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                     style: TextStyle(
                         fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
-                        fontWeight: FontWeight.w700),
+                        fontFamily: 'SatoshiBold'),
                   )
                 ],
               ),
@@ -162,7 +162,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                               "Full Name*",
                               style: TextStyle(
                                   fontSize: mQuery.size.height*0.02,
-                                  fontWeight: FontWeight.w600),
+                                  fontFamily: 'SatoshiBold'),
                             ),
                             SizedBox(height: mQuery.size.height * 0.01),
                             Container(
@@ -190,7 +190,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                   hintText: "Enter Full Name",
                                   hintStyle: TextStyle(
                                     fontSize: mQuery.size.height*0.02,
-                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'SatoshiMedium',
                                     color: Color(0xffABAFB1),
                                   ),
                                 ),
@@ -201,7 +201,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                               "Phone Number*",
                               style: TextStyle(
                                   fontSize: mQuery.size.height*0.02,
-                                  fontWeight: FontWeight.w600),
+                                  fontFamily: 'SatoshiBold'),
                             ),
                             SizedBox(height: mQuery.size.height * 0.01),
                             Container(
@@ -259,7 +259,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                         hintText: "Enter Phone Number*",
                                         hintStyle: TextStyle(
                                           fontSize: mQuery.size.height*0.02,
-                                          fontWeight: FontWeight.w600,
+                                          fontFamily: 'SatoshiMedium',
                                           color: Color(0xffABAFB1),
                                         ),
                                         contentPadding: EdgeInsets.only(
@@ -279,7 +279,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                               "Email",
                               style: TextStyle(
                                   fontSize: mQuery.size.height*0.02,
-                                  fontWeight: FontWeight.w600),
+                                  fontFamily: 'SatoshiBold'),
                             ),
                             SizedBox(height: mQuery.size.height * 0.01),
                             Container(
@@ -307,7 +307,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                   hintText: "Enter Email",
                                   hintStyle: TextStyle(
                                     fontSize: mQuery.size.height*0.02,
-                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'SatoshiMedium',
                                     color: Color(0xffABAFB1),
                                   ),
                                 ),
@@ -333,7 +333,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                     style: TextStyle(
                                       fontSize: mQuery.size.height*0.022,
                                       color: Colors.white,
-                                      fontWeight: FontWeight.w600,
+                                      fontFamily: 'SatoshiBold'
                                     ),
                                   ),
                                 ),

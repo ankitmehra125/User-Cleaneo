@@ -46,7 +46,7 @@ class _FAQSPageState extends State<FAQSPage> {
                     style: TextStyle(
                         fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
-                        fontWeight: FontWeight.w700),
+                      fontFamily: 'SatoshiBold',),
                   ),
                 ],
               ),
@@ -126,7 +126,8 @@ class _FAQSPageState extends State<FAQSPage> {
                           Center(
                             child: Text(
                               "I am not getting any emails", // Your Question or Title
-                              style: TextStyle(fontWeight: FontWeight.w600,
+                              style: TextStyle(
+                                  fontFamily: 'SatoshiMedium',
                                   fontSize: mQuery.size.height*0.019),
                             ),
                           ),
@@ -147,7 +148,8 @@ class _FAQSPageState extends State<FAQSPage> {
                               "adipisicing elit. Debitis voluptate dolor "
                               "doloremque amet fuga tempora ad ex molestias soluta non aperiam odio, labore eum",
                           style: TextStyle(
-                              fontSize: mQuery.size.height*0.018
+                              fontSize: mQuery.size.height*0.0178,
+                            fontFamily: 'SatoshiRegular',
                           ),
                         ),
                       ),

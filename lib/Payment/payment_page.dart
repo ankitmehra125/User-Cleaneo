@@ -59,7 +59,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       style: TextStyle(
                           fontSize: mQuery.size.height*0.027,
                           color: Colors.white,
-                          fontWeight: FontWeight.w700),
+                          fontFamily: 'SatoshiBold'),
                     )
                   ],
                 ),
@@ -95,7 +95,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                   "Cleaneo Wallet",
                                   style: TextStyle(
                                       fontSize: mQuery.size.height*0.022,
-                                      fontWeight: FontWeight.w800),
+                                      fontFamily: 'SatoshiBold'),
                                 ),
                                 Row(
                                   children: [
@@ -103,6 +103,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                       "Available balance ",
                                       style: TextStyle(
                                         fontSize: mQuery.size.height*0.0175,
+                                        fontFamily: 'SatoshiMedium'
                                       ),
                                     ),
                                     Text(
@@ -110,7 +111,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                       style: TextStyle(
                                           fontSize: mQuery.size.height*0.0175,
                                           color: Color(0xff29b2fe),
-                                          fontWeight: FontWeight.w600),
+                                          fontFamily: 'SatoshiMedium'),
                                     )
                                   ],
                                 )
@@ -148,7 +149,7 @@ class _PaymentPageState extends State<PaymentPage> {
                         ),
                       ),
                       Divider(),
-                      SizedBox(height: mQuery.size.height * 0.02),
+                      SizedBox(height: mQuery.size.height * 0.015),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Column(
@@ -180,8 +181,8 @@ class _PaymentPageState extends State<PaymentPage> {
                                   Text(
                                     "Cash",
                                     style: TextStyle(
-                                        fontSize: mQuery.size.height*0.0195,
-                                        fontWeight: FontWeight.w600),
+                                        fontSize: mQuery.size.height*0.019,
+                                        fontFamily: 'SatoshiMedium'),
                                   ),
                                   Expanded(child: SizedBox()),
                                   Radio(
@@ -222,7 +223,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                         "Other Wallets/UPI",
                                         style: TextStyle(
                                             fontSize: mQuery.size.height*0.0195,
-                                            fontWeight: FontWeight.w600),
+                                            fontFamily: 'SatoshiMedium'),
                                       ),
                                       Expanded(child: SizedBox()),
                                       Container(
@@ -242,7 +243,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                         style: TextStyle(
                                             fontSize: mQuery.size.height*0.018,
                                             color: Color(0xff29b2fe),
-                                            fontWeight: FontWeight.w600),
+                                            fontFamily: 'SatoshiMedium'),
                                       )
                                     ],
                                   ),
@@ -264,8 +265,8 @@ class _PaymentPageState extends State<PaymentPage> {
                                       Text(
                                         "Paytm",
                                         style: TextStyle(
-                                            fontSize: mQuery.size.height*0.0195,
-                                            fontWeight: FontWeight.w600),
+                                            fontSize: mQuery.size.height*0.019,
+                                            fontFamily: 'SatoshiMedium'),
                                       ),
                                       Expanded(child: SizedBox()),
                                       Radio(
@@ -290,8 +291,8 @@ class _PaymentPageState extends State<PaymentPage> {
                                       Text(
                                         "PhonePe",
                                         style: TextStyle(
-                                            fontSize: mQuery.size.height*0.0195,
-                                            fontWeight: FontWeight.w600),
+                                            fontSize: mQuery.size.height*0.019,
+                                            fontFamily: 'SatoshiMedium'),
                                       ),
                                       Expanded(child: SizedBox()),
                                       Radio(
@@ -316,8 +317,8 @@ class _PaymentPageState extends State<PaymentPage> {
                                       Text(
                                         "GPay",
                                         style: TextStyle(
-                                            fontSize: mQuery.size.height*0.0195,
-                                            fontWeight: FontWeight.w600),
+                                            fontSize: mQuery.size.height*0.019,
+                                            fontFamily: 'SatoshiMedium'),
                                       ),
                                       Expanded(child: SizedBox()),
                                       Radio(
@@ -360,7 +361,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                         "Credit/ Debit Cards",
                                         style: TextStyle(
                                             fontSize: mQuery.size.height*0.02,
-                                            fontWeight: FontWeight.w600),
+                                            fontFamily: 'SatoshiMedium'),
                                       ),
                                       Expanded(child: SizedBox()),
                                       Container(
@@ -380,7 +381,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                         style: TextStyle(
                                             fontSize: mQuery.size.height*0.018,
                                             color: Color(0xff29b2fe),
-                                            fontWeight: FontWeight.w600),
+                                            fontFamily: 'SatoshiMedium'),
                                       )
                                     ],
                                   ),
@@ -402,8 +403,8 @@ class _PaymentPageState extends State<PaymentPage> {
                                       Text(
                                         "6220 XXXX XXXX 4452",
                                         style: TextStyle(
-                                            fontSize: mQuery.size.height*0.0195,
-                                            fontWeight: FontWeight.w600),
+                                            fontSize: mQuery.size.height*0.019,
+                                            fontFamily: 'SatoshiMedium'),
                                       ),
                                       Expanded(child: SizedBox()),
                                       Radio(
@@ -435,8 +436,8 @@ class _PaymentPageState extends State<PaymentPage> {
                                       Text(
                                         "5555 XXXX XXXX 8888",
                                         style: TextStyle(
-                                            fontSize: mQuery.size.height*0.0195,
-                                            fontWeight: FontWeight.w600),
+                                            fontSize: mQuery.size.height*0.019,
+                                            fontFamily: 'SatoshiMedium'),
                                       ),
                                       Expanded(child: SizedBox()),
                                       Radio(
@@ -468,8 +469,8 @@ class _PaymentPageState extends State<PaymentPage> {
                                       Text(
                                         "4111 XXXX XXXX 7777",
                                         style: TextStyle(
-                                            fontSize: mQuery.size.height*0.0195,
-                                            fontWeight: FontWeight.w600),
+                                            fontSize: mQuery.size.height*0.019,
+                                            fontFamily: 'SatoshiMedium'),
                                       ),
                                       Expanded(child: SizedBox()),
                                       Radio(
@@ -489,33 +490,40 @@ class _PaymentPageState extends State<PaymentPage> {
                             ),
                             SizedBox(height: mQuery.size.height*0.025,),
 
-                            GestureDetector(
-                              onTap: ()
-                              {
-                                Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  return HomePage();
-                                }));
-                              },
-                              child: Container(
-                                width: double.infinity,
-                                height: mQuery.size.height*0.054,
-                                decoration: BoxDecoration(
-                                  color: Color(0xff20b2fe),
-                                  borderRadius: BorderRadius.circular(6)
-                                ),
-                                child: Center(
-                                  child: Text("Make Payment ",style: TextStyle(
-                                    color: Colors.white,
-                                      fontSize: mQuery.size.height*0.023,
-                                    fontWeight: FontWeight.w600
-                                  ),),
-                                ),
-                              ),
-                            )
+
                           ],
                         ),
                       ),
                     ],
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              color: Colors.white,
+              child: GestureDetector(
+                onTap: ()
+                {
+                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return HomePage();
+                  }));
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: mQuery.size.height*0.054,
+                  margin: EdgeInsets.symmetric(
+                    horizontal: mQuery.size.width*0.045
+                  ),
+                  decoration: BoxDecoration(
+                      color: Color(0xff20b2fe),
+                      borderRadius: BorderRadius.circular(6)
+                  ),
+                  child: Center(
+                    child: Text("Make Payment ",style: TextStyle(
+                        color: Colors.white,
+                        fontSize: mQuery.size.height*0.023,
+                        fontFamily: 'SatoshiBold'
+                    ),),
                   ),
                 ),
               ),

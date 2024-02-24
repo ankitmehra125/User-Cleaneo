@@ -34,8 +34,11 @@ class _DonateState extends State<Donate> {
           children: [
             SizedBox(height: mQuery.size.height * 0.034),
             Padding(
-              padding: const EdgeInsets.only(
-                  top: 45, left: 16, right: 16, bottom: 20),
+              padding:  EdgeInsets.only(
+                  top: mQuery.size.height*0.056,
+                   left: mQuery.size.width*0.045,
+                   right: mQuery.size.width*0.045,
+                   bottom: mQuery.size.height*0.036),
               child: GestureDetector(
                 child: Row(
                   children: [
@@ -59,7 +62,8 @@ class _DonateState extends State<Donate> {
                       style: TextStyle(
                           fontSize: mQuery.size.height*0.027,
                           color: Colors.white,
-                          fontWeight: FontWeight.w700),
+                          fontFamily: 'SatoshiBold'
+                      ),
                     )
                   ],
                 ),
@@ -96,7 +100,7 @@ class _DonateState extends State<Donate> {
                             "Donate for a better India",
                             style: TextStyle(
                                 fontSize: mQuery.size.height*0.024,
-                                fontWeight: FontWeight.w600
+                                fontFamily: 'SatoshiMedium'
                             ),
                           ),
                         ],
@@ -111,7 +115,8 @@ class _DonateState extends State<Donate> {
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                 color: Color(0xff6d6e73),
-                                fontSize: mQuery.size.height*0.015,
+                                fontSize: mQuery.size.height*0.016,
+                                fontFamily: 'SatoshiRegular'
                               ),
                             ),
                           ),
@@ -134,7 +139,7 @@ class _DonateState extends State<Donate> {
                         ),
                         child: Text('Donate',style: TextStyle(
                             fontSize: mQuery.size.height*0.023,
-                            fontWeight: FontWeight.w600
+                            fontFamily: 'SatoshiBold'
                         ),),
                       ),
                     ],

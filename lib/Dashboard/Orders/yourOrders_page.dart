@@ -71,7 +71,7 @@ class _YourOrdersPageState extends State<YourOrdersPage> with SingleTickerProvid
                                   style: TextStyle(
                                       fontSize: mQuery.size.height*0.027,
                                       color: Colors.white,
-                                      fontWeight: FontWeight.w700),
+                                    fontFamily: 'SatoshiBold',),
                                 ),
                               ],
                             )
@@ -89,14 +89,14 @@ class _YourOrdersPageState extends State<YourOrdersPage> with SingleTickerProvid
                         child: TabBar(
                           controller: _tabController,
                           tabs: [
-                            Tab(text: "Ongoing"),
+                            Tab(text: "Ongoing",),
                             Tab(text: "Previous"),
                           ],
                           labelColor: Color(0xff29b2fe),
                           indicatorColor: Color(0xff29b2fe),
                           labelStyle: TextStyle(
                               fontSize: mQuery.size.height*0.023
-                              , fontWeight: FontWeight.w700),
+                              , fontFamily: 'SatoshiBold',),
                         ),
                       ),
                       Container(

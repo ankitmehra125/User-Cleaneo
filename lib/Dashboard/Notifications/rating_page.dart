@@ -66,7 +66,7 @@ class _RatingPageState extends State<RatingPage> {
                       "Rate Your Experience",
                       style: TextStyle(
                           fontSize: mQuery.size.height * 0.027,
-                          fontWeight: FontWeight.w900,
+                          fontFamily: 'SatoshiBold',
                           color: Colors.white),
                     )
                   ],
@@ -104,7 +104,7 @@ class _RatingPageState extends State<RatingPage> {
                               "experience with us.",
                           style: TextStyle(
                               fontSize: mQuery.size.height * 0.02,
-                              fontWeight: FontWeight.w600),
+                              fontFamily: 'SatoshiMedium'),
                         ),
                         SizedBox(
                           height: mQuery.size.height * 0.055,
@@ -140,7 +140,7 @@ class _RatingPageState extends State<RatingPage> {
                             Text(
                               "Message",
                               style: TextStyle(
-                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'SatoshiMedium',
                                   fontSize: mQuery.size.height * 0.022),
                             ),
                           ],
@@ -172,7 +172,7 @@ class _RatingPageState extends State<RatingPage> {
                                 hintText: "Write message here",
                                 hintStyle: TextStyle(
                                     fontSize: mQuery.size.height * 0.02,
-                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'SatoshiMedium',
                                     color: Colors.black54),
                                 contentPadding:
                                 EdgeInsets.symmetric(horizontal: 8)),
@@ -205,7 +205,7 @@ class _RatingPageState extends State<RatingPage> {
                               child: Text("Report Dispute",style: TextStyle(
                                   fontSize: mQuery.size.height*0.02,
                                   color: Colors.red,
-                                  fontWeight: FontWeight.w600
+                                fontFamily: 'SatoshiMedium',
                               ),),
                             )
                           ],
@@ -227,7 +227,7 @@ class _RatingPageState extends State<RatingPage> {
                                 style: TextStyle(
                                     fontSize: mQuery.size.height * 0.024,
                                     color: Colors.white,
-                                    fontWeight: FontWeight.w600),
+                                  fontFamily: 'SatoshiBold',),
                               ),
                             ),
                           ),
@@ -254,15 +254,15 @@ class _RatingPageState extends State<RatingPage> {
           title: Center(child: Text("Thank You!",
             style: TextStyle(
               color: Color(0xff29b2fe),
-              fontWeight: FontWeight.w600,
+                fontFamily: 'SatoshiBold',
             ),)),
           content: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: mQuery.size.width*0.036
+              horizontal: mQuery.size.width*0.033
             ),
             child: Text("Your review is successfully "
                 "submitted!",style: TextStyle(
-              fontWeight: FontWeight.w600
+              fontFamily: 'SatoshiMedium',
             ),),
           ),
           actions: <Widget>[
@@ -284,7 +284,7 @@ class _RatingPageState extends State<RatingPage> {
                 child: Center(
                   child: Text("Okay",style: TextStyle(
                     color: Colors.white,
-                    fontWeight: FontWeight.w600,
+                      fontFamily: 'SatoshiBold',
                     fontSize: mQuery.size.height*0.024
                   ),),
                 ),

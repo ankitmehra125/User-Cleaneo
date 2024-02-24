@@ -54,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                   Text("Log In", style: TextStyle(
                       fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
-                        fontWeight: FontWeight.w700
+                    fontFamily: 'SatoshiBold',
                     ),),
                 ],
               ),
@@ -80,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(height: mQuery.size.height*0.03,),
                         // PHONE NUMBER
                         Text("Phone Number*", style: TextStyle(
-                            fontWeight: FontWeight.w600,
+                          fontFamily: 'SatoshiBold',
                           fontSize: mQuery.size.height*0.02,
                         ),),
                         SizedBox(height: mQuery.size.height * 0.01,),
@@ -139,7 +139,7 @@ class _LoginPageState extends State<LoginPage> {
                                     hintText: "Enter Phone Number*",
                                     hintStyle: TextStyle(
                                       fontSize: mQuery.size.height*0.02,
-                                      fontWeight: FontWeight.w600,
+                                      fontFamily: 'SatoshiMedium',
                                       color: Color(0xffABAFB1),
                                     ),
                                     focusedBorder: InputBorder.none,
@@ -164,7 +164,7 @@ class _LoginPageState extends State<LoginPage> {
                               },
                               child: Text("Forgot Password?",style: TextStyle(
                                   fontSize: mQuery.size.height*0.02,
-                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'SatoshiMedium',
                                   color: Color(0xff29b2fe)
                               ),),
                             ),
@@ -190,7 +190,7 @@ class _LoginPageState extends State<LoginPage> {
                               child: Text("Log In",style: TextStyle(
                                   fontSize: mQuery.size.height*0.022,
                                   color: Colors.white,
-                                  fontWeight: FontWeight.w600
+                                fontFamily: 'SatoshiBold',
                               ),),
                             ),
                           ),
@@ -201,12 +201,12 @@ class _LoginPageState extends State<LoginPage> {
                           children: [
                             Text("Don't have an account?",style: TextStyle(
                                 fontSize: mQuery.size.height*0.022,
-                                fontWeight: FontWeight.w600
+                                fontFamily: 'SatoshiBold',
                             ),),
                             SizedBox(width: mQuery.size.width*0.02,),
                             Text("Sign Up",style: TextStyle(
                                 fontSize: mQuery.size.height*0.022,
-                                fontWeight: FontWeight.w600,
+                                fontFamily: 'SatoshiBold',
                                 color: Color(0xff29b2fe)
                             ),)
                           ],

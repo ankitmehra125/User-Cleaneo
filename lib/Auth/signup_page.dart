@@ -7,7 +7,8 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 
 class SignUpPage extends StatefulWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+  const
+  SignUpPage({Key? key}) : super(key: key);
 
   @override
   State<SignUpPage> createState() => _SignUpPageState();
@@ -59,7 +60,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   Text("Sign Up", style: TextStyle(
                       fontSize: mQuery.size.height*0.027,
                       color: Colors.white,
-                      fontWeight: FontWeight.w700
+                      fontFamily: 'SatoshiBold'
                   ),)
                 ],
               ),
@@ -75,15 +76,17 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(
-                      left: 16, right: 16, top: 25
+                  padding:  EdgeInsets.only(
+                       left: mQuery.size.width*0.045,
+                        right: mQuery.size.width*0.045,
+                        top: mQuery.size.height*0.025
                   ),
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text("Full Name*", style: TextStyle(
-                            fontWeight: FontWeight.w600,
+                            fontFamily: 'SatoshiBold',
                           fontSize: mQuery.size.height*0.02,
                         ),),
                         SizedBox(height: mQuery.size.height * 0.01,),
@@ -112,7 +115,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               hintText: "Enter Full Name",
                               hintStyle: TextStyle(
                                   fontSize: mQuery.size.height*0.02,
-                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'SatoshiMedium',
                                   color: Color(0xffABAFB1)
                               ),
                               contentPadding: EdgeInsets.symmetric(
@@ -126,7 +129,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         SizedBox(height: mQuery.size.height*0.03,),
                         // PHONE NUMBER
                         Text("Phone Number*", style: TextStyle(
-                            fontWeight: FontWeight.w600,
+                          fontFamily: 'SatoshiBold',
                           fontSize: mQuery.size.height*0.02,
                         ),),
                         SizedBox(height: mQuery.size.height * 0.01,),
@@ -187,7 +190,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                     hintText: "Enter Phone Number*",
                                     hintStyle: TextStyle(
                                       fontSize: mQuery.size.height*0.02,
-                                      fontWeight: FontWeight.w600,
+                                      fontFamily: 'SatoshiMedium',
                                       color: Color(0xffABAFB1),
                                     ),
                                     contentPadding: EdgeInsets.symmetric(vertical: 2),
@@ -204,7 +207,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         SizedBox(height: mQuery.size.height*0.03,),
                         // Email
                         Text("Email", style: TextStyle(
-                            fontWeight: FontWeight.w600,
+                          fontFamily: 'SatoshiBold',
                           fontSize: mQuery.size.height*0.02,
                         ),),
                         SizedBox(height: mQuery.size.height * 0.01,),
@@ -233,7 +236,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               hintText: "Enter Email",
                               hintStyle: TextStyle(
                                 fontSize: mQuery.size.height*0.02,
-                                  fontWeight: FontWeight.w600,
+                                fontFamily: 'SatoshiMedium',
                                   color: Color(0xffABAFB1),
                               ),
                               contentPadding: EdgeInsets.symmetric(
@@ -248,7 +251,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         Text("We'll send a one time 4-digit OTP to your phone or email to verify",
                         style: TextStyle(
                             fontSize: mQuery.size.height*0.0175,
-                          fontWeight: FontWeight.w600
+                          fontFamily: 'SatoshiMedium',
                         ),),
 
                         SizedBox(height: mQuery.size.height*0.217,),
@@ -263,7 +266,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             child: Text("Sign Up",style: TextStyle(
                                 fontSize: mQuery.size.height*0.022,
                               color: Colors.white,
-                              fontWeight: FontWeight.w600
+                              fontFamily: 'SatoshiBold',
                             ),),
                           ),
                         ),
@@ -273,14 +276,14 @@ class _SignUpPageState extends State<SignUpPage> {
                           children: [
                             Text("Already have an account?",style: TextStyle(
                                 fontSize: mQuery.size.height*0.022,
-                              fontWeight: FontWeight.w600
+                              fontFamily: 'SatoshiBold',
                             ),),
 
                             TextButton(
                               child: Text(
                                 "Log In",style: TextStyle(
                                   fontSize: mQuery.size.height*0.022,
-                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'SatoshiBold',
                                   color: Color(0xff29b2fe)
                               ),
                               ),

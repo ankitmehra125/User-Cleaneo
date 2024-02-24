@@ -1,4 +1,4 @@
-import 'package:cleaneo_user_app/pages/address_page.dart';
+import 'package:cleaneo_user_app/Dashboard/Address/address_page.dart';
 import 'package:cleaneo_user_app/Payment/payment_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wash/quantity_wise_page.dart';
 import 'package:dotted_line/dotted_line.dart';

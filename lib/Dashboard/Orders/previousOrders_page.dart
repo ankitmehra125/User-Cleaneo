@@ -28,6 +28,7 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
            SizedBox(height: mQuery.size.height*0.018,),
           Text("04 Jul 2021 at 8:09 pm",style: TextStyle(
               color: Colors.black54,
+              fontFamily: 'SatoshiRegular',
               fontSize: mQuery.size.height*0.017
           ),
           ),
@@ -65,12 +66,13 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                         ),
                         SizedBox(width: mQuery.size.width*0.02,),
                         Text("Order $orderNo",style: TextStyle(
-                            fontWeight: FontWeight.w600,
+                            fontFamily: 'SatoshiMedium',
                             fontSize: mQuery.size.height*0.0165
                         ),),
                         Expanded(child: SizedBox()),
                         Text("₹ ${price.toStringAsFixed(2)}",style: TextStyle(
-                            fontWeight: FontWeight.w600
+                          fontFamily: 'SatoshiMedium',
+                          fontSize: mQuery.size.height*0.017
                         ),)
                       ],
                     ),
@@ -89,7 +91,8 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                           children: [
                             Text("ITEMS",style: TextStyle(
                                 color: Colors.black54,
-                                fontSize: mQuery.size.height*0.017
+                                fontFamily: 'SatoshiRegular',
+                                fontSize: mQuery.size.height*0.0165
                             ),
                             ),
                             Text.rich(
@@ -97,14 +100,15 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                                     children: [
                                       TextSpan(
                                           text: "WASH",style: TextStyle(
-                                          fontWeight: FontWeight.w600,
+                                          fontFamily: 'SatoshiMedium',
                                           color: Colors.black,
                                           fontSize: mQuery.size.height*0.0155
                                       )
                                       ),
                                       TextSpan(
                                           text: " - 01 x Shirts (Woman), 02 x T-Shirts (Men)",style: TextStyle(
-                                          fontSize: mQuery.size.height*0.0155
+                                          fontSize: mQuery.size.height*0.0155,
+                                          fontFamily: 'SatoshiRegular'
                                       )
                                       )
                                     ]
@@ -116,7 +120,7 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                                     children: [
                                       TextSpan(
                                           text: "WASH & STREAM IRON",style: TextStyle(
-                                          fontWeight: FontWeight.w600,
+                                          fontFamily: 'SatoshiMedium',
                                           color: Colors.black,
                                           fontSize: mQuery.size.height*0.0155
                                       )
@@ -124,7 +128,8 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                                       TextSpan(
                                           text: " - 02 x Kurta Designer (Men), 01 x "
                                               "Bed-Sheet Single",style: TextStyle(
-                                          fontSize: mQuery.size.height*0.0155
+                                          fontSize: mQuery.size.height*0.0155,
+                                          fontFamily: 'SatoshiRegular'
                                       )
                                       )
                                     ]
@@ -136,14 +141,15 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                                     children: [
                                       TextSpan(
                                           text: "DRY CLEAN",style: TextStyle(
-                                          fontWeight: FontWeight.w600,
+                                          fontFamily: 'SatoshiMedium',
                                           color: Colors.black,
                                           fontSize: mQuery.size.height*0.0155
                                       )
                                       ),
                                       TextSpan(
                                           text: " - 02 x Bath Mate",style: TextStyle(
-                                          fontSize: mQuery.size.height*0.0155
+                                          fontSize: mQuery.size.height*0.0155,
+                                          fontFamily: 'SatoshiRegular'
                                       )
                                       )
                                     ]
@@ -177,7 +183,7 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                                 child: Text("Delivered",style: TextStyle(
                                     color: Color(0xff009c1a),
                                     fontSize: mQuery.size.height*0.014,
-                                    fontWeight: FontWeight.w600
+                                  fontFamily: 'SatoshiMedium',
                                 ),),
                               ),
                             ),
@@ -188,7 +194,10 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                               0xff29b2fe
                             ),),
                             SizedBox(width: mQuery.size.width*0.01,),
-                            Text("$rating")
+                            Text("$rating",style: TextStyle(
+                              fontFamily: 'SatoshiMedium',
+                              fontSize: mQuery.size.height*0.0155
+                            ),)
                           ],
                         ),
                       ],
@@ -202,6 +211,7 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
           SizedBox(height: mQuery.size.height*0.023,),
           Text("26 Jun 2021 at 6:00 pm",style: TextStyle(
               color: Colors.black54,
+              fontFamily: 'SatoshiRegular',
               fontSize: mQuery.size.height*0.017
           ),
           ),
@@ -239,12 +249,13 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                         ),
                         SizedBox(width: mQuery.size.width*0.02,),
                         Text("Order $orderNo",style: TextStyle(
-                            fontWeight: FontWeight.w600,
+                            fontFamily: 'SatoshiMedium',
                             fontSize: mQuery.size.height*0.0165
                         ),),
                         Expanded(child: SizedBox()),
                         Text("₹ ${price.toStringAsFixed(2)}",style: TextStyle(
-                            fontWeight: FontWeight.w600
+                            fontFamily: 'SatoshiMedium',
+                            fontSize: mQuery.size.height*0.017
                         ),)
                       ],
                     ),
@@ -263,7 +274,8 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                           children: [
                             Text("ITEMS",style: TextStyle(
                                 color: Colors.black54,
-                                fontSize: mQuery.size.height*0.017
+                                fontFamily: 'SatoshiRegular',
+                                fontSize: mQuery.size.height*0.0165
                             ),
                             ),
                             Text.rich(
@@ -271,14 +283,15 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                                     children: [
                                       TextSpan(
                                           text: "WASH",style: TextStyle(
-                                          fontWeight: FontWeight.w600,
+                                          fontFamily: 'SatoshiMedium',
                                           color: Colors.black,
                                           fontSize: mQuery.size.height*0.0155
                                       )
                                       ),
                                       TextSpan(
                                           text: " - 01 x Shirts (Woman), 02 x T-Shirts (Men)",style: TextStyle(
-                                          fontSize: mQuery.size.height*0.0155
+                                          fontSize: mQuery.size.height*0.0155,
+                                          fontFamily: 'SatoshiRegular'
                                       )
                                       )
                                     ]
@@ -290,7 +303,7 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                                     children: [
                                       TextSpan(
                                           text: "WASH & STREAM IRON",style: TextStyle(
-                                          fontWeight: FontWeight.w600,
+                                          fontFamily: 'SatoshiMedium',
                                           color: Colors.black,
                                           fontSize: mQuery.size.height*0.0155
                                       )
@@ -298,7 +311,8 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                                       TextSpan(
                                           text: " - 02 x Kurta Designer (Men), 01 x "
                                               "Bed-Sheet Single",style: TextStyle(
-                                          fontSize: mQuery.size.height*0.0155
+                                          fontSize: mQuery.size.height*0.0155,
+                                          fontFamily: 'SatoshiRegular'
                                       )
                                       )
                                     ]
@@ -310,14 +324,15 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                                     children: [
                                       TextSpan(
                                           text: "DRY CLEAN",style: TextStyle(
-                                          fontWeight: FontWeight.w600,
+                                          fontFamily: 'SatoshiMedium',
                                           color: Colors.black,
                                           fontSize: mQuery.size.height*0.0155
                                       )
                                       ),
                                       TextSpan(
                                           text: " - 02 x Bath Mate",style: TextStyle(
-                                          fontSize: mQuery.size.height*0.0155
+                                          fontSize: mQuery.size.height*0.0155,
+                                          fontFamily: 'SatoshiRegular'
                                       )
                                       )
                                     ]
@@ -351,14 +366,14 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                                 child: Text("Delivered",style: TextStyle(
                                     color: Color(0xff009c1a),
                                     fontSize: mQuery.size.height*0.014,
-                                    fontWeight: FontWeight.w600
+                                  fontFamily: 'SatoshiMedium',
                                 ),),
                               ),
                             ),
                             Expanded(child: SizedBox()),
                             Text("SUBMIT REVIEW",style: TextStyle(
                               color: Color(0xff29b2fe),
-                              fontWeight: FontWeight.w600,
+                                fontFamily: 'SatoshiMedium',
                               fontSize: mQuery.size.height*0.014
                             ),)
                           ],

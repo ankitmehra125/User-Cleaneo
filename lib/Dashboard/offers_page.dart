@@ -65,7 +65,7 @@ class _OffersPageState extends State<OffersPage> {
                     style: TextStyle(
                         fontSize: mQuery.size.height * 0.027,
                         color: Colors.white,
-                        fontWeight: FontWeight.w700),
+                      fontFamily: 'SatoshiBold',),
                   )
                 ],
               ),
@@ -133,15 +133,15 @@ class _OffersPageState extends State<OffersPage> {
                   Text(
                     offer["title"],
                     style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: mQuery.size.height * 0.017),
+                        fontFamily: 'SatoshiBold',
+                        fontSize: mQuery.size.height * 0.0165),
                   ),
                   Expanded(child: SizedBox()),
                   Text(
                     offer["use"],
                     style: TextStyle(
                         color: Color(0xff29b2fe),
-                        fontWeight: FontWeight.w600,
+                        fontFamily: 'SatoshiMedium',
                         fontSize: mQuery.size.height * 0.016),
                   )
                 ],
@@ -159,8 +159,9 @@ class _OffersPageState extends State<OffersPage> {
                       Text(
                         "TERMS & CONDITIONS",
                         style: TextStyle(
+                          fontSize: mQuery.size.height*0.0162,
                             color: Colors.black54,
-                            fontSize: mQuery.size.height * 0.016),
+                          fontFamily: 'SatoshiRegular',),
                       ),
                       SizedBox(height: mQuery.size.height * 0.013),
                       for (var condition in offer["conditions"]) ...[
@@ -191,7 +192,7 @@ class _OffersPageState extends State<OffersPage> {
         Text(
           text,
           style: TextStyle(
-              fontWeight: FontWeight.w600,
+              fontFamily: 'SatoshiMedium',
               fontSize: mQuery.size.height * 0.0145),
         )
       ],

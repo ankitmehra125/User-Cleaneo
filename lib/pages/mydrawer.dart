@@ -2,7 +2,7 @@ import 'package:cleaneo_user_app/Dashboard/Notifications/notification_page.dart'
 import 'package:cleaneo_user_app/Dashboard/Orders/yourOrders_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wallet/wallet_page.dart';
 import 'package:cleaneo_user_app/Dashboard/offers_page.dart';
-import 'package:cleaneo_user_app/pages/address_page.dart';
+import 'package:cleaneo_user_app/Dashboard/Address/address_page.dart';
 import 'package:cleaneo_user_app/pages/donate.dart';
 import 'package:cleaneo_user_app/Help/help_page.dart';
 import 'package:cleaneo_user_app/Dashboard/home_page.dart';
@@ -25,6 +25,8 @@ class _MyDrawerState extends State<MyDrawer> {
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     var versionNo= 1.1;
+    var userName = "Shweta Somaiya";
+    var phoneNo = "(+91) 9978997899";
     return Drawer(
       child: Container(
         width: double.infinity,
@@ -35,80 +37,87 @@ class _MyDrawerState extends State<MyDrawer> {
               color: Color(0xfff3fbff),
               height: mQuery.size.height*0.15,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: mQuery.size.height*0.058),
                   GestureDetector(
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          GestureDetector(
-                            onTap: ()
-                            {
-                              Navigator.push(context, MaterialPageRoute(builder: (context){
-                                return MyProfilePage();
-                              }));
-                            },
-                            child: ProfilePicture(
-                              name: "",
-                              radius: 20,
-                              fontsize: 10,
-                              img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwKKzV4oKveaDEmBr38LXuMWTho1d1-mjOOcjau6XJ1A&s",
-                            ),
-                          ),
-                          SizedBox(width: mQuery.size.width*0.024,),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  SizedBox(height: mQuery.size.height*0.02,),
-                                  Text("Shweta Somaiya",style: TextStyle(
-                                      fontSize: mQuery.size.height*0.022,
-                                      fontWeight: FontWeight.w600
-                                  ),),
-                                  SizedBox(width: mQuery.size.width*0.2,),
-                                  GestureDetector(
-                                      onTap: ()
-                                      {
-                                        Navigator.push(context, MaterialPageRoute(builder: (context){
-                                          return MyProfilePage();
-                                        }));
-                                      },
-                                      child: Image.asset("assets/images/drawer-images/edit.png",color: Color(0xff29b2fe),
-                                          width: mQuery.size.width*0.06),)
-                                ],
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                          left: mQuery.size.width*0.028,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            GestureDetector(
+                              onTap: ()
+                              {
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return MyProfilePage();
+                                }));
+                              },
+                              child: ProfilePicture(
+                                name: "",
+                                radius: 20,
+                                fontsize: 10,
+                                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwKKzV4oKveaDEmBr38LXuMWTho1d1-mjOOcjau6XJ1A&s",
                               ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Icon(Icons.phone_android,
-                                      size: mQuery.size.width*0.05,),
-                                  Text("(+91) 9978997899",style: TextStyle(
-                                    fontSize: mQuery.size.height*0.0195,
-                                  ),),
-                                  SizedBox(width: mQuery.size.width*0.02,),
-                                  Container(
-                                    width: mQuery.size.width*0.04,
-                                    height: mQuery.size.height*0.04,
-                                    decoration: BoxDecoration(
-                                      color: Colors.green,
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Center(
-                                      child: Icon(
-                                        Icons.check,
-                                        color: Colors.white,
-                                        size: 10,
+                            ),
+                            SizedBox(width: mQuery.size.width*0.024,),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    SizedBox(height: mQuery.size.height*0.02,),
+                                    Text("$userName",style: TextStyle(
+                                        fontSize: mQuery.size.height*0.022,
+                                        fontFamily: 'SatoshiBold'
+                                    ),),
+                                    SizedBox(width: mQuery.size.width*0.05,),
+                                    GestureDetector(
+                                        onTap: ()
+                                        {
+                                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                                            return MyProfilePage();
+                                          }));
+                                        },
+                                        child: Image.asset("assets/images/drawer-images/edit.png",color: Color(0xff29b2fe),
+                                            width: mQuery.size.width*0.045),)
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Icon(Icons.phone_android,
+                                        size: mQuery.size.width*0.05,),
+                                    Text("$phoneNo",style: TextStyle(
+                                      fontSize: mQuery.size.height*0.0185,
+                                      fontFamily: 'SatoshiMedium'
+                                    ),),
+                                    SizedBox(width: mQuery.size.width*0.02,),
+                                    Container(
+                                      width: mQuery.size.width*0.04,
+                                      height: mQuery.size.height*0.04,
+                                      decoration: BoxDecoration(
+                                        color: Colors.green,
+                                        shape: BoxShape.circle,
                                       ),
-                                    ),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        ],
+                                      child: Center(
+                                        child: Icon(
+                                          Icons.check,
+                                          color: Colors.white,
+                                          size: 10,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -147,7 +156,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Image.asset("assets/images/drawer-images/dashboard.png",color: Color(0xff29b2fe),
                               width: mQuery.size.width*0.065),
                           title: Text("Dashboard",style: TextStyle(
-                            fontWeight: FontWeight.w600,
+                            fontFamily: 'SatoshiMedium',
                             fontSize: mQuery.size.height*0.0212,
                           ),
                            ),
@@ -165,8 +174,8 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Image.asset("assets/images/drawer-images/shopping-bag.png",color: Color(0xff29b2fe),
                               width: mQuery.size.width*0.06),
                           title: Text("Your Orders",style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: mQuery.size.height*0.0212,
+                            fontFamily: 'SatoshiMedium',
+                            fontSize: mQuery.size.height*0.0212,
                           ),),
                         ),
                       ),
@@ -182,7 +191,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Image.asset("assets/images/drawer-images/location_icon.png",color: Color(0xff29b2fe),
                               width: mQuery.size.width*0.06),
                           title: Text("Address Book",style: TextStyle(
-                              fontWeight: FontWeight.w600,
+                            fontFamily: 'SatoshiMedium',
                             fontSize: mQuery.size.height*0.0212,
                           ),),
                         ),
@@ -198,7 +207,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Image.asset("assets/images/drawer-images/bell.png",color: Color(0xff29b2fe),
                               width: mQuery.size.width*0.06),
                           title: Text("Notifications",style: TextStyle(
-                              fontWeight: FontWeight.w600,
+                            fontFamily: 'SatoshiMedium',
                             fontSize: mQuery.size.height*0.0212,
                           ),),
                         ),
@@ -214,7 +223,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Image.asset("assets/images/drawer-images/heart.png",color: Color(0xff29b2fe),
                               width: mQuery.size.width*0.06),
                           title: Text("Donate",style: TextStyle(
-                              fontWeight: FontWeight.w600,
+                            fontFamily: 'SatoshiMedium',
                             fontSize: mQuery.size.height*0.0212,
                           ),),
                         ),
@@ -230,7 +239,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Image.asset("assets/images/drawer-images/wallet.png",color: Color(0xff29b2fe),
                               width: mQuery.size.width*0.06),
                           title: Text("Wallet",style: TextStyle(
-                              fontWeight: FontWeight.w600,
+                            fontFamily: 'SatoshiMedium',
                             fontSize: mQuery.size.height*0.0212,
                           ),),
                         ),
@@ -246,7 +255,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Image.asset("assets/images/drawer-images/credit-card.png",color: Color(0xff29b2fe),
                               width: mQuery.size.width*0.06),
                           title: Text("Manage Cards",style: TextStyle(
-                              fontWeight: FontWeight.w600,
+                            fontFamily: 'SatoshiMedium',
                             fontSize: mQuery.size.height*0.0212,
                           ),),
                         ),
@@ -262,7 +271,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Image.asset("assets/images/drawer-images/offers.png",color: Color(0xff29b2fe),
                               width: mQuery.size.width*0.06),
                           title: Text("Offers",style: TextStyle(
-                              fontWeight: FontWeight.w600,
+                            fontFamily: 'SatoshiMedium',
                             fontSize: mQuery.size.height*0.0212,
                           ),),
                         ),
@@ -278,7 +287,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Image.asset("assets/images/drawer-images/gift.png",color: Color(0xff29b2fe),
                               width: mQuery.size.width*0.06),
                           title: Text("Refer and Earn",style: TextStyle(
-                              fontWeight: FontWeight.w600,
+                            fontFamily: 'SatoshiMedium',
                             fontSize: mQuery.size.height*0.0212,
                           ),),
                         ),
@@ -294,7 +303,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Image.asset("assets/images/drawer-images/star.png",color: Color(0xff29b2fe),
                               width: mQuery.size.width*0.06),
                           title: Text("Reviews",style: TextStyle(
-                              fontWeight: FontWeight.w600,
+                            fontFamily: 'SatoshiMedium',
                             fontSize: mQuery.size.height*0.0212,
                           ),),
                         ),
@@ -310,7 +319,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           leading: Image.asset("assets/images/drawer-images/help.png",color: Color(0xff29b2fe),
                               width: mQuery.size.width*0.06),
                           title: Text("Help",style: TextStyle(
-                              fontWeight: FontWeight.w600,
+                            fontFamily: 'SatoshiMedium',
                             fontSize: mQuery.size.height*0.0212,
                           ),),
                         ),
@@ -344,7 +353,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: mQuery.size.height*0.02,
-                              fontWeight: FontWeight.bold
+                              fontFamily: 'SatoshiBold'
                           ),),
                       ),
                     ),
@@ -372,7 +381,7 @@ class _MyDrawerState extends State<MyDrawer> {
                                   child: Text("Sign Out",style: TextStyle(
                                       fontSize: mQuery.size.height*0.022,
                                       color: Colors.black,
-                                      fontWeight: FontWeight.w600
+                                      fontFamily: 'SatoshiBold'
                                   ),),
                                 ),
                               ],
@@ -381,7 +390,8 @@ class _MyDrawerState extends State<MyDrawer> {
                         ),
                         SizedBox(height: mQuery.size.height*0.0075,),
                         Text("CLEANEO V$versionNo",style: TextStyle(
-                          fontSize: mQuery.size.height*0.016,
+                          fontSize: mQuery.size.height*0.015,
+                          fontFamily: 'SatoshiRegular'
                         ),),
                       ],
                     ),

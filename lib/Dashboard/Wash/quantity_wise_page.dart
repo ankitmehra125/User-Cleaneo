@@ -1,4 +1,4 @@
-import 'package:cleaneo_user_app/pages/address_page.dart';
+import 'package:cleaneo_user_app/Dashboard/Address/address_page.dart';
 import 'package:cleaneo_user_app/Payment/payment_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -161,7 +161,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                   hintStyle: TextStyle(
                     fontSize: mQuery.size.height*0.022,
                     color: Colors.grey.shade600,
-                    fontWeight: FontWeight.w600,
+                      fontFamily: 'SatoshiMedium'
                   ),
                   suffixIcon: const Icon(Icons.search, color: Colors.grey),
                 ),
@@ -218,7 +218,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                               "Add Clothes",
                               style: TextStyle(
                                 fontSize: mQuery.size.height*0.021,
-                                fontWeight: FontWeight.w900,
+                                  fontFamily: 'SatoshiBold'
                               ),
                             ),
                           ],
@@ -283,7 +283,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                             "Select Add-On",
                             style: TextStyle(
                                 fontSize: mQuery.size.height*0.021,
-                                fontWeight: FontWeight.w900),
+                                fontFamily: 'SatoshiBold'),
                           ),
                         ],
                       ),
@@ -321,7 +321,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                   "Cloth Softener",
                                   style: TextStyle(
                                     fontSize: mQuery.size.height*0.0195,
-                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'SatoshiMedium',
                                   ),
                                 ),
                                 Expanded(child: SizedBox()),
@@ -331,6 +331,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                   "₹ 1 PER KG",
                                   style: TextStyle(
                                       fontSize: mQuery.size.height*0.0195,
+                                      fontFamily: 'SatoshiRegular',
                                       color: Colors.black54),
                                 )
                               ],
@@ -350,7 +351,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                   "Anti-Germs Liquid",
                                   style: TextStyle(
                                     fontSize: mQuery.size.height*0.0195,
-                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'SatoshiMedium',
                                   ),
                                 ),
                                 Expanded(child: SizedBox()),
@@ -360,6 +361,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                   "₹ 1 PER KG",
                                   style: TextStyle(
                                       fontSize: mQuery.size.height*0.0195,
+                                      fontFamily: 'SatoshiRegular',
                                       color: Colors.black54),
                                 )
                               ],
@@ -407,7 +409,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: mQuery.size.height*0.024,
-                                  fontWeight: FontWeight.w800)),
+                                  fontFamily: 'SatoshiMedium')),
                           SizedBox(
                             width: mQuery.size.width * 0.02,
                           ),
@@ -465,7 +467,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
           Text(
             categoryName,
             style: TextStyle(
-                fontWeight: FontWeight.w800,
+                fontFamily: 'SatoshiMedium',
                 fontSize: mQuery.size.height*0.0167,
                 color: selectedType == categoryName
                     ? Color(0xff29b2fe)
@@ -496,14 +498,16 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
             children: [
               Text(
                 itemName,
-                style: TextStyle(fontWeight: FontWeight.w600,
+                style: TextStyle(
+                  fontFamily: 'SatoshiMedium',
                   fontSize: mQuery.size.height*0.02,),
               ),
               Text(
                 itemPrice,
                 style: TextStyle(
-                  fontSize: mQuery.size.height*0.0175,
+                  fontSize: mQuery.size.height*0.017,
                   color: Colors.grey,
+                  fontFamily: 'SatoshiRegular',
                 ),
               ),
             ],
@@ -529,6 +533,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
             "$kgValue",
             style: TextStyle(
               color: Color(0xff29b2fe),
+                fontFamily: 'SatoshiRegular',
                 fontSize: mQuery.size.height*0.024
             ),
           ),
@@ -600,14 +605,14 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                             "Schedule Your Order",
                             style: TextStyle(
                                 fontSize: mQuery.size.height*0.022,
-                                fontWeight: FontWeight.w900),
+                              fontFamily: 'SatoshiBold',),
                           ),
                           Divider(),
                           Text(
                             "Pickup Slot",
                             style: TextStyle(
                                 fontSize: mQuery.size.height*0.019,
-                                fontWeight: FontWeight.w800),
+                              fontFamily: 'SatoshiMedium',),
                           ),
                           SizedBox(height: mQuery.size.height * 0.016),
                           Container(
@@ -634,6 +639,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                   "SELECT PICKUP DATE",
                                   style: TextStyle(
                                       fontSize: mQuery.size.height*0.0173,
+                                      fontFamily: 'SatoshiRegular',
                                       color: Colors.black54),
                                 ),
                                 SizedBox(height: mQuery.size.height * 0.008),
@@ -684,6 +690,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                   "SELECT PICKUP TIME",
                                   style: TextStyle(
                                       fontSize: mQuery.size.height*0.0173,
+                                      fontFamily: 'SatoshiRegular',
                                       color: Colors.black54),
                                 ),
                                 SizedBox(height: mQuery.size.height * 0.008),
@@ -735,7 +742,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                             "Delivery Slot",
                             style: TextStyle(
                                 fontSize: mQuery.size.height*0.019,
-                                fontWeight: FontWeight.w800),
+                              fontFamily: 'SatoshiMedium',),
                           ),
                           SizedBox(height: mQuery.size.height * 0.016),
                           Container(
@@ -762,6 +769,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                 Text(
                                   "SELECT DELIVERY DATE",
                                   style: TextStyle(
+                                      fontFamily: 'SatoshiRegular',
                                       fontSize: mQuery.size.height*0.0173,
                                       color: Colors.black54),
                                 ),
@@ -916,8 +924,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                   "Order Summary",
                                                   style: TextStyle(
                                                       fontSize: mQuery.size.height*0.022,
-                                                      fontWeight:
-                                                          FontWeight.w900),
+                                                    fontFamily: 'SatoshiBold',),
                                                 ),
                                               ),
                                               SizedBox(
@@ -948,8 +955,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                           "Pickup from ${aselectedAddress}",
                                                           style: TextStyle(
                                                             fontSize: mQuery.size.height*0.0183,
-                                                            fontWeight:
-                                                                FontWeight.w700,
+                                                            fontFamily: 'SatoshiMedium',
                                                           ),
                                                         ),
                                                         Expanded(child: SizedBox()),
@@ -980,7 +986,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                               Text("Enter Address Details",
                                                                                   style: TextStyle(
                                                                                       fontSize: mQuery.size.height*0.022,
-                                                                                      fontWeight: FontWeight.w900)
+                                                                                    fontFamily: 'SatoshiBold',)
                                                                               ),
                                                                               Expanded(child: SizedBox()),
                                                                               GestureDetector(
@@ -1002,6 +1008,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                               SizedBox(height: mQuery.size.height * 0.022,),
                                                                               Text("Complete address*",style: TextStyle(
                                                                                   fontSize: mQuery.size.height*0.0183,
+                                                                                  fontFamily: 'SatoshiRegular',
                                                                                   color: Colors.black54
                                                                               ),
                                                                               ),
@@ -1019,7 +1026,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                                       child: TextField(
                                                                                           controller: addressController,
                                                                                           style: TextStyle(
-                                                                                            fontWeight: FontWeight.w600,
+                                                                                              fontFamily: 'SatoshiMedium'
                                                                                           ),
                                                                                           cursorColor: Colors.grey,
                                                                                           decoration: InputDecoration(
@@ -1041,7 +1048,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                                       "CHANGE",
                                                                                       style: TextStyle(
                                                                                         color: Colors.red,
-                                                                                        fontWeight: FontWeight.w700,
+                                                                                        fontFamily: 'SatoshiMedium',
                                                                                         fontSize: mQuery.size.height*0.0173,
                                                                                       ),
                                                                                     ),
@@ -1056,13 +1063,14 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                               ),
                                                                               Text("Floor (Optional)",style: TextStyle(
                                                                                   fontSize: mQuery.size.height*0.0183,
-                                                                                  color: Colors.black54
+                                                                                  color: Colors.black54,
+                                                                                fontFamily: 'SatoshiRegular',
                                                                               ),
                                                                               ),
                                                                               TextField(
                                                                                 controller: floorController,
                                                                                 style: TextStyle(
-                                                                                  fontWeight: FontWeight.w600,
+                                                                                    fontFamily: 'SatoshiMedium'
                                                                                 ),
                                                                                 cursorColor: Colors.grey,
                                                                                 decoration: InputDecoration(
@@ -1083,20 +1091,21 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                               SizedBox(height: mQuery.size.height*0.02,),
                                                                               Text("How to reach (Optional)",style: TextStyle(
                                                                                   fontSize: mQuery.size.height*0.0183,
-                                                                                  color: Colors.black54
+                                                                                  color: Colors.black54,
+                                                                                fontFamily: 'SatoshiRegular',
                                                                               ),
                                                                               ),
                                                                               TextField(
                                                                                 controller: reachController,
                                                                                 style: TextStyle(
-                                                                                  fontWeight: FontWeight.w600,
+                                                                                    fontFamily: 'SatoshiMedium'
                                                                                 ),
                                                                                 cursorColor: Colors.grey,
                                                                                 decoration: InputDecoration(
                                                                                   hintText: "Landmark/ Entry gate/ Street",
                                                                                   hintStyle: TextStyle(
                                                                                       color: Colors.black54,
-                                                                                      fontWeight: FontWeight.w500,
+                                                                                    fontFamily: 'SatoshiRegular',
                                                                                     fontSize: mQuery.size.height*0.0183,
                                                                                   ),
                                                                                   focusColor: Colors.grey,
@@ -1116,7 +1125,8 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                               SizedBox(height: mQuery.size.height*0.032,),
                                                                               Text("Tag this location for later *",style: TextStyle(
                                                                                   fontSize: mQuery.size.height*0.0183,
-                                                                                  color: Colors.black54
+                                                                                  color: Colors.black54,
+                                                                                fontFamily: 'SatoshiRegular',
                                                                               ),
                                                                               ),
                                                                               SizedBox(height: mQuery.size.height*0.02,),
@@ -1184,7 +1194,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                                   child: Center(
                                                                                     child: Text("Save Address",style: TextStyle(
                                                                                         fontSize: mQuery.size.height*0.022,
-                                                                                        fontWeight: FontWeight.w600,
+                                                                                        fontFamily: 'SatoshiBold',
                                                                                         color: Colors.white
                                                                                     ),),
                                                                                   ),
@@ -1204,7 +1214,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                             "CHANGE",
                                                             style: TextStyle(
                                                               color: Colors.red,
-                                                              fontWeight: FontWeight.w700,
+                                                              fontFamily: 'SatoshiMedium',
                                                               fontSize: mQuery.size.height*0.0183,
                                                             ),
                                                           ),
@@ -1219,7 +1229,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                           style: TextStyle(
                                                             color: Colors.black,
                                                             fontSize: mQuery.size.height * 0.0183,
-                                                            fontWeight: FontWeight.w600,
+                                                            fontFamily: 'SatoshiMedium',
                                                           ),
                                                         )
                                                       ],
@@ -1240,8 +1250,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                       "Clothes Detail",
                                                       style: TextStyle(
                                                           fontSize: mQuery.size.height*0.02,
-                                                          fontWeight:
-                                                              FontWeight.w800),
+                                                        fontFamily: 'SatoshiMedium',),
                                                     )
                                                   ],
                                                 ),
@@ -1276,7 +1285,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                               "WASH",
                                                               style: TextStyle(
                                                                 fontSize: mQuery.size.height*0.0173,
-                                                                fontWeight: FontWeight.bold,
+                                                                  fontFamily: 'SatoshiMedium',
                                                                 color: Color(0xff29b2fe),
                                                               ),
                                                             ),
@@ -1317,7 +1326,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                             '₹ ${(totalCost).toStringAsFixed(0)}',
                                                                             style: TextStyle(
                                                                               fontSize: mQuery.size.height*0.0173,
-                                                                              fontWeight: FontWeight.bold,
+                                                                               fontFamily: 'SatoshiMedium',
                                                                               color: Color(0xff29b2fe),
                                                                             ),
                                                                           ),
@@ -1330,7 +1339,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                             ),
                                                           ),
                                                           SizedBox(height: 10),
-                                                          Text("Hello Flutter")
+                                                          Text("Hello Flutter",)
                                                         ],
                                                       ),
                                                     ),
@@ -1351,9 +1360,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                               Text(
                                                                 "Extra Note",
                                                                 style: TextStyle(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w800,
+                                                                  fontFamily: 'SatoshiMedium',
                                                                     fontSize: mQuery.size.height*0.02,)
                                                               ),
                                                             ],
@@ -1414,9 +1421,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                       color: Colors
                                                                           .black54,
                                                                       fontSize: mQuery.size.height*0.02,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600)),
+                                                                      fontFamily: 'SatoshiRegular')),
                                                             ),
                                                           )
                                                         ],
@@ -1454,9 +1459,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                 "Support your Rider",
                                                                 style: TextStyle(
                                                                     fontSize: mQuery.size.height*0.02,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w800),
+                                                                    fontFamily: 'SatoshiMedium'),
                                                               ),
                                                               SizedBox(
                                                                 height: mQuery
@@ -1469,6 +1472,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                 "be transferred to your valet.",
                                                                 style: TextStyle(
                                                                     fontSize: mQuery.size.height*0.0173,
+                                                                    fontFamily: 'SatoshiRegular',
                                                                     color: Colors
                                                                         .black54),
                                                               ),
@@ -1524,7 +1528,8 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                               SizedBox(height: mQuery.size.height * 0.022,),
                                                               Text(
                                                                 "Offers",
-                                                                style: TextStyle(fontWeight: FontWeight.w700,
+                                                                style: TextStyle(
+                                                                  fontFamily: 'SatoshiMedium',
                                                                   fontSize: mQuery.size.height*0.019,),
                                                               ),
                                                               SizedBox(height: mQuery.size.height * 0.0072,),
@@ -1534,7 +1539,8 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                   SizedBox(width: mQuery.size.width * 0.03,),
                                                                   Text(
                                                                     "Select a promo code",
-                                                                    style: TextStyle(fontWeight: FontWeight.w600,
+                                                                    style: TextStyle(
+                                                                      fontFamily: 'SatoshiMedium',
                                                                       fontSize: mQuery.size.height*0.019,),
                                                                   ),
                                                                   Expanded(child: SizedBox()),
@@ -1567,6 +1573,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                               Text(
                                                                 "Item Total",
                                                                 style: TextStyle(
+                                                                  fontFamily: 'SatoshiRegular',
                                                                   fontSize: mQuery.size.height*0.02,
                                                                   color: Colors.black54,
                                                                 ),
@@ -1577,6 +1584,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                 style: TextStyle(
                                                                   fontSize: mQuery.size.height*0.02,
                                                                   color: Colors.black54,
+                                                                  fontFamily: 'SatoshiRegular',
                                                                 ),
                                                               )
                                                             ],
@@ -1601,6 +1609,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                 style: TextStyle(
                                                                   fontSize: mQuery.size.height*0.02,
                                                                   color: Colors.black54,
+                                                                  fontFamily: 'SatoshiRegular',
                                                                 ),
                                                               ),
                                                               Expanded(child: SizedBox()),
@@ -1609,6 +1618,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                 style: TextStyle(
                                                                   fontSize: mQuery.size.height*0.02,
                                                                   color: Colors.black54,
+                                                                  fontFamily: 'SatoshiRegular',
                                                                 ),
                                                               )
                                                             ],
@@ -1632,6 +1642,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                 style: TextStyle(
                                                                   fontSize: mQuery.size.height*0.02,
                                                                   color: Colors.black54,
+                                                                  fontFamily: 'SatoshiRegular',
                                                                 ),
                                                               ),
                                                               Expanded(child: SizedBox(),),
@@ -1640,6 +1651,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                 style: TextStyle(
                                                                   fontSize: mQuery.size.height*0.02,
                                                                   color: Colors.black54,
+                                                                  fontFamily: 'SatoshiRegular',
                                                                 ),
                                                               )
                                                             ],
@@ -1650,7 +1662,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                               Text("Grand Total",
                                                                 style: TextStyle(
                                                                   fontSize: mQuery.size.height*0.022,
-                                                                  fontWeight: FontWeight.w800,
+                                                                    fontFamily: 'SatoshiMedium'
                                                                 ),
                                                               ),
                                                               Expanded(child: SizedBox()),
@@ -1658,7 +1670,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                                 style: TextStyle(
                                                                   fontSize: mQuery.size.height*0.022,
                                                                   color: Color(0xff29b2fe),
-                                                                  fontWeight: FontWeight.w800,
+                                                                    fontFamily: 'SatoshiMedium'
                                                                 ),
                                                               )
                                                             ],
@@ -1694,10 +1706,12 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                           SizedBox(height: mQuery.size.height * 0.012),
                                                           Text("TOTAL",
                                                             style: TextStyle(color: Colors.white,
+                                                              fontFamily: 'SatoshiRegular',
                                                               fontSize: mQuery.size.height*0.02,),
                                                           ),
                                                           Text(totalSum,
                                                             style: TextStyle(color: Colors.white,
+                                                              fontFamily: 'SatoshiRegular',
                                                               fontSize: mQuery.size.height*0.02,),
                                                           )
                                                         ],
@@ -1708,7 +1722,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                                         style: TextStyle(
                                                             color: Colors.white,
                                                             fontSize: mQuery.size.height*0.024,
-                                                            fontWeight: FontWeight.w800),
+                                                            fontFamily: 'SatoshiMedium'),
                                                       ),
                                                       SizedBox(width: mQuery.size.width * 0.02),
                                                       Icon(Icons.arrow_right,
@@ -1741,10 +1755,12 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                       SizedBox(height: mQuery.size.height * 0.012),
                                       Text("ITEMS",
                                         style: TextStyle(color: Colors.white,
+                                            fontFamily: 'SatoshiRegular',
                                           fontSize: mQuery.size.height*0.02),
                                       ),
                                       Text("₹ 1,220 plus taxes",
                                         style: TextStyle(color: Colors.white,
+                                          fontFamily: 'SatoshiRegular',
                                           fontSize: mQuery.size.height*0.02,),
                                       )
                                     ],
@@ -1753,7 +1769,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                   Text("View Cart", style: TextStyle(
                                         color: Colors.white,
                                       fontSize: mQuery.size.height*0.024,
-                                        fontWeight: FontWeight.w800),
+                                      fontFamily: 'SatoshiMedium'),
                                   ),
                                   SizedBox(width: mQuery.size.width * 0.02),
                                   Icon(Icons.arrow_right, color: Colors.white)
@@ -1809,7 +1825,7 @@ class ContainerItem extends StatelessWidget {
           text,
           style: TextStyle(
             color: isSelected ? Colors.white : Colors.black,
-            fontWeight: FontWeight.bold,
+              fontFamily: 'SatoshiMedium'
           ),
         ),
       ),

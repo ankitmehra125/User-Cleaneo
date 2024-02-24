@@ -21,7 +21,7 @@ class _WelcomePageState extends State<WelcomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: mQuery.size.height * 0.33,
+              height: mQuery.size.height * 0.31,
             ),
             Center(
               child: SvgPicture.asset("assets/images/mainlogo.svg"),
@@ -53,7 +53,8 @@ class _WelcomePageState extends State<WelcomePage> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: mQuery.size.height*0.023,
-                                  fontWeight: FontWeight.w700),
+                                  fontFamily: 'SatoshiBold'
+                                  ),
                             )),
                       ),
                     ),
@@ -81,7 +82,8 @@ class _WelcomePageState extends State<WelcomePage> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: mQuery.size.height*0.023,
-                                  fontWeight: FontWeight.w700),
+                                  fontFamily: 'SatoshiBold'
+                              ),
                             )),
                       ),
                     ),
@@ -92,13 +94,14 @@ class _WelcomePageState extends State<WelcomePage> {
                         "By Continuing, you agree to our",
                         style: TextStyle(
                             fontSize: mQuery.size.height*0.02,
-                            color: Colors.white, fontWeight: FontWeight.w700),
+                            color: Colors.white,
+                            fontFamily: 'SatoshiMedium'
+                        ),
                       ),
                     ),
 
                     SizedBox(
-                      height: mQuery.size.height * 0.025,
-                    ),
+                      height: mQuery.size.height * 0.021,),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -112,10 +115,12 @@ class _WelcomePageState extends State<WelcomePage> {
                               style: TextStyle(
                                   fontSize: mQuery.size.height*0.016,
                                   color: Colors.white,
-                                  fontWeight: FontWeight.w600),
+                                  fontFamily: 'SatoshiMedium'
+                                  ),
                             ),
+                            SizedBox(height: mQuery.size.height*0.0015,),
                             Container(
-                              height: 2,
+                              height: mQuery.size.height*0.0018,
                               width: mQuery.size.width*0.25,
                               color: Colors.white,
                             ),
@@ -131,10 +136,11 @@ class _WelcomePageState extends State<WelcomePage> {
                               style: TextStyle(
                                   fontSize: mQuery.size.height*0.016,
                                   color: Colors.white,
-                                  fontWeight: FontWeight.w600),
+                                  fontFamily: 'SatoshiMedium'),
                             ),
+                            SizedBox(height: mQuery.size.height*0.0015,),
                             Container(
-                              height: 2,
+                              height: mQuery.size.height*0.0018,
                               width: mQuery.size.width*0.23,
                               color: Colors.white,
                             ),
@@ -150,10 +156,11 @@ class _WelcomePageState extends State<WelcomePage> {
                               style: TextStyle(
                                   fontSize: mQuery.size.height*0.016,
                                   color: Colors.white,
-                                  fontWeight: FontWeight.w600),
+                                  fontFamily: 'SatoshiMedium'),
                             ),
+                            SizedBox(height: mQuery.size.height*0.0015,),
                             Container(
-                              height: 2,
+                              height: mQuery.size.height*0.0018,
                               width: mQuery.size.width*0.25,
                               color: Colors.white,
                             ),

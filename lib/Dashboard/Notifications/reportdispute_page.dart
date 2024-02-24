@@ -63,7 +63,7 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
                   Text("Report Dispute", style: TextStyle(
                       fontSize: mQuery.size.height*0.027,
                       color: Colors.white,
-                      fontWeight: FontWeight.w700
+                    fontFamily: 'SatoshiBold',
                   ),)
                 ],
               ),
@@ -123,7 +123,7 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
                                },
                              ),
                               Text("Clothes Missing",style: TextStyle(
-                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'SatoshiMedium',
                                   fontSize: mQuery.size.height*0.019
                               ),),
                             ],
@@ -159,7 +159,7 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
                                 },
                               ),
                               Text("Inappropriate behaviour",style: TextStyle(
-                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'SatoshiMedium',
                                   fontSize: mQuery.size.height*0.019
                               ),),
                             ],
@@ -195,7 +195,7 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
                                 },
                               ),
                               Text("Lorem Ipsum is a dummy text",style: TextStyle(
-                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'SatoshiMedium',
                                   fontSize: mQuery.size.height*0.019
                               ),),
                             ],
@@ -231,7 +231,7 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
                                 },
                               ),
                               Text("Lorem Ipsum is a dummy text",style: TextStyle(
-                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'SatoshiMedium',
                                   fontSize: mQuery.size.height*0.019
                               ),),
                             ],
@@ -267,7 +267,7 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
                                 },
                               ),
                               Text("Lorem Ipsum is a dummy text",style: TextStyle(
-                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'SatoshiMedium',
                                   fontSize: mQuery.size.height*0.019
                               ),),
                             ],
@@ -276,8 +276,8 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
                         SizedBox(height: mQuery.size.height*0.03,),
                         Text("Any other dispute/ message?",
                           style: TextStyle(
-                            fontSize: mQuery.size.height*0.02,
-                            fontWeight: FontWeight.w900
+                            fontSize: mQuery.size.height*0.019,
+                            fontFamily: 'SatoshiBold',
                           ),
                         ),
                         SizedBox(height: mQuery.size.height*0.023,),
@@ -303,8 +303,8 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
                                 border: InputBorder.none,
                                 hintText: "Write your issue here",
                                 hintStyle: TextStyle(
-                                    fontSize: mQuery.size.height*0.02,
-                                    fontWeight: FontWeight.w600,
+                                    fontSize: mQuery.size.height*0.019,
+                                    fontFamily: 'SatoshiRegular',
                                     color: Colors.black54
                                 ),
                                 contentPadding: EdgeInsets.symmetric(horizontal: 8)
@@ -313,8 +313,8 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
                         ),
                         SizedBox(height: mQuery.size.height*0.027,),
                         Text("Upload Pictures",style: TextStyle(
-                            fontSize: mQuery.size.height*0.02,
-                            fontWeight: FontWeight.w900
+                            fontSize: mQuery.size.height*0.019,
+                          fontFamily: 'SatoshiBold',
                         ),
                         ),
                         SizedBox(height: mQuery.size.height*0.023,),
@@ -360,7 +360,7 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
                   child: Center(
                     child: Text("Submit",style: TextStyle(
                       color: Colors.white,
-                      fontWeight: FontWeight.w600,
+                        fontFamily: 'SatoshiBold',
                       fontSize: mQuery.size.height*0.023
                     ),),
                   ),
@@ -384,7 +384,7 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
               "your patience!",
             style: TextStyle(
               color: Color(0xff29b2fe),
-              fontWeight: FontWeight.w600,
+                fontFamily: 'SatoshiBold',
               fontSize: mQuery.size.height*0.028
             ),)),
           content: Padding(
@@ -399,7 +399,7 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
                 "         Your dispure ID is: \n"
                 "                 $disputeId"
                 "",style: TextStyle(
-                fontWeight: FontWeight.w600
+              fontFamily: 'SatoshiMedium',
             ),),
           ),
           actions: <Widget>[
@@ -421,7 +421,7 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
                 child: Center(
                   child: Text("Okay",style: TextStyle(
                       color: Colors.white,
-                      fontWeight: FontWeight.w600,
+                      fontFamily: 'SatoshiBold',
                       fontSize: mQuery.size.height*0.024
                   ),),
                 ),

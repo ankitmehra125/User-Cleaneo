@@ -51,7 +51,7 @@ class _CustomerServicePageState extends State<CustomerServicePage> {
                     style: TextStyle(
                         fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
-                        fontWeight: FontWeight.w700),
+                      fontFamily: 'SatoshiBold',),
                   )
                 ],
               ),
@@ -119,7 +119,7 @@ class _CustomerServicePageState extends State<CustomerServicePage> {
                                 style: TextStyle(
                                     fontSize: mQuery.size.height*0.02,
                                     color: Colors.grey,
-                                    fontWeight: FontWeight.w700),
+                                  fontFamily: 'SatoshiMedium',),
                               ),
                               SizedBox(
                                 width: mQuery.size.width * 0.05,
@@ -136,7 +136,8 @@ class _CustomerServicePageState extends State<CustomerServicePage> {
                         SizedBox(height: mQuery.size.height * 0.025),
                         Text(
                           "Write to us",
-                          style: TextStyle(fontWeight: FontWeight.w700,
+                          style: TextStyle(
+                              fontFamily: 'SatoshiMedium',
                               fontSize: mQuery.size.height*0.02),
                         ),
                         SizedBox(height: mQuery.size.height * 0.023),
@@ -170,7 +171,7 @@ class _CustomerServicePageState extends State<CustomerServicePage> {
                             style: TextStyle(
                                 fontSize: mQuery.size.height*0.023,
                                 color: Colors.white,
-                                fontWeight: FontWeight.w600),
+                              fontFamily: 'SatoshiBold',),
                           ),
                         ),
                       ],
@@ -231,7 +232,9 @@ class ContactInfoWidget extends StatelessWidget {
           SizedBox(height: 8), // Adjust the space here
           Text(
             label,
-            style: TextStyle(fontWeight: FontWeight.w700),
+            style: TextStyle(
+              fontFamily: 'SatoshiMedium',
+            ),
           ),
         ],
       ),

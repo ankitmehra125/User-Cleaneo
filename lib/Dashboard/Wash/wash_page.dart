@@ -66,7 +66,7 @@ class _WashPageState extends State<WashPage> with SingleTickerProviderStateMixin
                                   style: TextStyle(
                                       fontSize: mQuery.size.height*0.027,
                                       color: Colors.white,
-                                      fontWeight: FontWeight.w700),
+                                      fontFamily: 'SatoshiBold'),
                                 ),
                                 SizedBox(width: mQuery.size.width*0.02,),
                                 GestureDetector(
@@ -100,7 +100,7 @@ class _WashPageState extends State<WashPage> with SingleTickerProviderStateMixin
                           indicatorColor: Color(0xff29b2fe),
                           labelStyle: TextStyle(
                             fontSize: mQuery.size.height*0.023
-                          , fontWeight: FontWeight.w700),
+                          , fontFamily: 'SatoshiBold'),
                         ),
                       ),
                       Container(
@@ -205,7 +205,7 @@ class _WashPageState extends State<WashPage> with SingleTickerProviderStateMixin
                 text,
                 style: TextStyle(
                   fontSize: mQuery.size.height*0.018,
-                  fontWeight: FontWeight.w600,
+                    fontFamily: 'SatoshiMedium'
                 ),
               ),
             ],

@@ -263,7 +263,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                                 selectedPaymentMethod = value!;
                                               });
                                             },
-                                            activeColor: Colors.cyan,
+                                            activeColor: Color(0xff29b2fe),
                                           ),
                                         ],
                                       ),
@@ -289,7 +289,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                                 selectedPaymentMethod = value!;
                                               });
                                             },
-                                            activeColor: Colors.cyan,
+                                            activeColor: Color(0xff29b2fe),
                                           ),
                                         ],
                                       ),
@@ -315,7 +315,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                                 selectedPaymentMethod = value!;
                                               });
                                             },
-                                            activeColor: Colors.cyan,
+                                            activeColor: Color(0xff29b2fe),
                                           ),
                                         ],
                                       )

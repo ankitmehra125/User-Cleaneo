@@ -50,7 +50,7 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
                     style: TextStyle(
                         fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
-                        fontWeight: FontWeight.w700),
+                      fontFamily: 'SatoshiBold',),
                   )
                 ],
               ),
@@ -63,15 +63,6 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(16),
                       topRight: Radius.circular(16)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 0.3,
-                      blurRadius: 1,
-                      offset:
-                      Offset(3, 3), // changes the position of the shadow
-                    ),
-                  ],
                 ),
                 child: Padding(
                   padding: const EdgeInsets.only(left: 16, right: 16,top: 16),
@@ -80,7 +71,8 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
                           "adipisicing elit. Debitis voluptate dolor "
                           "doloremque amet fuga tempora ad ex molestias soluta non aperiam odio, labore eum ullam excepturi minus libero? Cupiditate laborum mollitia assumenda nnulla doloremque sapiente corporis! Numquam quae voluptates magni suscipit dolores molestiae, deserunt aliquam obcaecati officiis cum eveniet iure architecto nostrum fuga facere incidunt soluta eligendi sed dolorum, quo repellendus distinctio aspernatur consectetur! Beatae repudiandae, consequatur quod hic quae nam blanditiis assumenda placeat necessitatibus dolore nihil est. Expedita delectus."
                   ,style: TextStyle(
-                      fontSize: mQuery.size.height*0.018,
+                      fontSize: mQuery.size.height*0.0178,
+                    fontFamily: 'SatoshiMedium',
                   ),),
                 ),
               ),

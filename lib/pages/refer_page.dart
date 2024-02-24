@@ -52,7 +52,7 @@ class _ReferPageState extends State<ReferPage> {
                     style: TextStyle(
                         fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
-                        fontWeight: FontWeight.w700),
+                      fontFamily: 'SatoshiBold',),
                   )
                 ],
               ),
@@ -65,15 +65,6 @@ class _ReferPageState extends State<ReferPage> {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(16),
                       topRight: Radius.circular(16)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 0.3,
-                      blurRadius: 1,
-                      offset:
-                      Offset(3, 3), // changes the position of the shadow
-                    ),
-                  ],
                 ),
                 child: Padding(
                   padding:  EdgeInsets.only(
@@ -85,21 +76,22 @@ class _ReferPageState extends State<ReferPage> {
                     children: [
                       Text("Refer CLEANEO to a \nfriend & get 10% OFF",
                       style: TextStyle(
-                        fontSize: mQuery.size.height*0.024,
-                        fontWeight: FontWeight.w700
+                        fontSize: mQuery.size.height*0.023,
+                        fontFamily: 'SatoshiMedium',
                       ),),
                       SizedBox(height: mQuery.size.height*0.03,),
                       Text("Invite a friend to CLEANEO & the enjoy \n the discount on any one of your "
                           "orders \n         on 1st order of your friend",
                       style: TextStyle(
                         fontSize: mQuery.size.height*0.018,
-                        color: Colors.black54
+                        color: Colors.black54,
+                        fontFamily: 'SatoshiRegular',
                       ),),
                       Image.asset("assets/images/enjoy.png"),
                       SizedBox(height: mQuery.size.height*0.055,),
                       Text("Share your referal code",style: TextStyle(
                         fontSize: mQuery.size.height*0.02,
-                        fontWeight: FontWeight.w700
+                        fontFamily: 'SatoshiMedium',
                       ),),
                       SizedBox(height: mQuery.size.height*0.08,),
                       Container(
@@ -117,7 +109,7 @@ class _ReferPageState extends State<ReferPage> {
                             Text("$refer",style: TextStyle(
                               color: Colors.white,
                               fontSize: mQuery.size.height*0.024,
-                              fontWeight: FontWeight.w600
+                              fontFamily: 'SatoshiMedium',
                             ),)
                           ],
                         ),

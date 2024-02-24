@@ -83,7 +83,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                   Text("Manage Cards", style: TextStyle(
                       fontSize: mQuery.size.height*0.027,
                       color: Colors.white,
-                      fontWeight: FontWeight.w700
+                      fontFamily: 'SatoshiBold'
                   ),)
                 ],
               ),
@@ -109,7 +109,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                           children: [
                             Text("Credit/Debit Cards", style: TextStyle(
                                 fontSize: mQuery.size.height*0.0212,
-                                fontWeight: FontWeight.w800
+                                fontFamily: 'SatoshiMedium'
                             ),),
                             Expanded(child: SizedBox()),
                             GestureDetector(
@@ -133,7 +133,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                   Text("Add New", style: TextStyle(
                                       fontSize: mQuery.size.height*0.018,
                                       color: Color(0xff29b2fe),
-                                      fontWeight: FontWeight.w600
+                                      fontFamily: 'SatoshiMedium'
                                   ),)
                                 ],
                               ),
@@ -183,13 +183,13 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                                           text: "${cards[i].cardNumber} ", style: TextStyle(
                                                           color: Colors.black,
                                                           fontSize: mQuery.size.height*0.018,
-                                                          fontWeight: FontWeight.w600
+                                                        fontFamily: 'SatoshiMedium',
                                                       )
                                                       ),
                                                       TextSpan(
                                                           text: "${cards[i].cvv}", style: TextStyle(
                                                           color: Colors.black,
-                                                          fontWeight: FontWeight.w600,
+                                                        fontFamily: 'SatoshiMedium',
                                                         fontSize: mQuery.size.height*0.018,
                                                       )
                                                       ),
@@ -224,6 +224,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                         Expanded(child: SizedBox()),
                                         Text("Valid Till ${cards[i].expiryDate}", style: TextStyle(
                                             color: Colors.black54,
+                                          fontFamily: 'SatoshiRegular',
                                           fontSize: mQuery.size.height*0.0145,
                                         ),)
                                       ],
@@ -240,7 +241,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                     child: Text("No Credit/debit \n  cards added ",
                                       style: TextStyle(
                                           fontSize: mQuery.size.height*0.025,
-                                        fontWeight: FontWeight.w700,
+                                          fontFamily: 'SatoshiBold',
                                         color: Colors.black54
                                       ),),
                                   ),
@@ -303,7 +304,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                             "Add Debit/Credit Card",
                             style: TextStyle(
                               fontSize: mQuery.size.height*0.024,
-                              fontWeight: FontWeight.w700,
+                                fontFamily: 'SatoshiMedium'
                             ),
                           ),
                           Expanded(child: SizedBox()),
@@ -471,7 +472,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                   hintText: "Card Number",
                                   hintStyle: TextStyle(
                                     fontSize: mQuery.size.height*0.02,
-                                    fontWeight: FontWeight.w600,
+                                      fontFamily: 'SatoshiRegular',
                                     color: Color(0xffABAFB1),
                                   ),
                                   contentPadding: EdgeInsets.symmetric(
@@ -510,7 +511,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                       hintText: "MM/YY",
                                       hintStyle: TextStyle(
                                         fontSize: mQuery.size.height*0.02,
-                                        fontWeight: FontWeight.w600,
+                                        fontFamily: 'SatoshiRegular',
                                         color: Color(0xffABAFB1),
                                       ),
                                       contentPadding: EdgeInsets.symmetric(
@@ -550,7 +551,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                       hintText: "CVV",
                                       hintStyle: TextStyle(
                                         fontSize: mQuery.size.height*0.02,
-                                        fontWeight: FontWeight.w600,
+                                        fontFamily: 'SatoshiRegular',
                                         color: Color(0xffABAFB1),
                                       ),
                                       contentPadding: EdgeInsets.symmetric(
@@ -588,7 +589,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                   hintText: "Name",
                                   hintStyle: TextStyle(
                                     fontSize: mQuery.size.height*0.02,
-                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'SatoshiRegular',
                                     color: Color(0xffABAFB1),
                                   ),
                                   contentPadding: EdgeInsets.symmetric(
@@ -619,7 +620,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                         style: TextStyle(
                                             fontSize: mQuery.size.height*0.02,
                                             color: Colors.white,
-                                            fontWeight: FontWeight.w800),
+                                          fontFamily: 'SatoshiBold',),
                                       ),
                                     ),
                                   ),
@@ -645,7 +646,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                         content: Text(
                                             "All fields are required to add a card",style: TextStyle(
                                           color: Colors.red,
-                                          fontWeight: FontWeight.w700,
+                                            fontFamily: 'SatoshiBold',
                                           fontSize: mQuery.size.height*0.022
                                         ),),
                                       ));
@@ -690,7 +691,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                                         style: TextStyle(
                                             fontSize: mQuery.size.height*0.02,
                                             color: Colors.white,
-                                            fontWeight: FontWeight.w800),
+                                          fontFamily: 'SatoshiBold',),
                                       ),
                                     ),
                                   ),
@@ -735,7 +736,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                     children: [
                       Text("Delete Card",style: TextStyle(
                           fontSize: mQuery.size.height*0.024,
-                          fontWeight: FontWeight.w700
+                        fontFamily: 'SatoshiBold',
                       ),),
                       Expanded(child: SizedBox()),
                       GestureDetector(
@@ -754,7 +755,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                     "   delete this card?",
                  style: TextStyle(
                      fontSize: mQuery.size.height*0.02,
-                   fontWeight: FontWeight.w600
+                   fontFamily: 'SatoshiMedium',
                  ),),
                 SizedBox(height: mQuery.size.height*0.04),
                 Padding(
@@ -776,7 +777,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                             child: Text("Cancel", style: TextStyle(
                                 fontSize: mQuery.size.height*0.02,
                                 color: Colors.white,
-                                fontWeight: FontWeight.w800
+                              fontFamily: 'SatoshiBold',
                             ),),
                           ),
                         ),
@@ -799,7 +800,7 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
                             child: Text("Delete", style: TextStyle(
                                 color: Colors.white,
                                 fontSize: mQuery.size.height*0.02,
-                                fontWeight: FontWeight.w800
+                              fontFamily: 'SatoshiBold',
                             ),),
                           ),
                         ),

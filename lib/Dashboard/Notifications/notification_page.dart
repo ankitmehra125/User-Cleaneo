@@ -55,13 +55,13 @@ class _NotificationsPageState extends State<NotificationsPage> {
                     style: TextStyle(
                         fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
-                        fontWeight: FontWeight.w700),
+                        fontFamily: 'SatoshiBold',),
                   ),
                   Expanded(child: SizedBox()),
                   Text("Clear All",style: TextStyle(
                     color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    fontSize: mQuery.size.height*0.018
+                      fontFamily: 'SatoshiMedium',
+                    fontSize: mQuery.size.height*0.0175
                   ),)
                 ],
               ),
@@ -95,7 +95,8 @@ class _NotificationsPageState extends State<NotificationsPage> {
                     children: [
                       Text("Today",style: TextStyle(
                         color: Colors.black54,
-                        fontSize: mQuery.size.height*0.017
+                        fontSize: mQuery.size.height*0.017,
+                          fontFamily: 'SatoshiRegular'
                       ),
                       ),
                       SizedBox(height: mQuery.size.height*0.014,),
@@ -126,7 +127,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                                   children: [
                                     Text("Delivery Successful",style: TextStyle(
                                       color: Color(0xff29b2fe),
-                                      fontWeight: FontWeight.w600,
+                                        fontFamily: 'SatoshiBold',
                                       fontSize: mQuery.size.height*0.018
                                     ),
                                     ),
@@ -144,7 +145,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                                     "30th June 2020 at 5:00pm by our rider",
                                 style: TextStyle(
                                   fontSize: mQuery.size.height*0.016,
-                                  fontWeight: FontWeight.w600,
+                                    fontFamily: 'SatoshiRegular',
                                 ),),
                               ),
                               SizedBox(height: mQuery.size.height*0.01,),
@@ -165,11 +166,12 @@ class _NotificationsPageState extends State<NotificationsPage> {
                                       children: [
                                         Text("Raj(ID 123456)",style: TextStyle(
                                           fontSize: mQuery.size.height*0.017,
-                                          fontWeight: FontWeight.w600
+                                          fontFamily: 'SatoshiMedium',
                                         ),
                                         ),
-                                        Text("+91 1234567890",style: TextStyle(
-                                          fontSize: mQuery.size.height*0.015
+                                        Text("$mobileNo",style: TextStyle(
+                                          fontSize: mQuery.size.height*0.015,
+                                          fontFamily: 'SatoshiRegular'
                                         ),
                                         ),
                                       ],
@@ -189,7 +191,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                                       SizedBox(height: mQuery.size.height*0.007,),
                                       Text("Please share your valuable feedback with us.",style: TextStyle(
                                         fontSize: mQuery.size.height*0.016,
-                                        fontWeight: FontWeight.w600
+                                        fontFamily: 'SatoshiMedium',
                                       ),
                                       ),
                                       SizedBox(height: mQuery.size.height*0.007,),
@@ -210,8 +212,8 @@ class _NotificationsPageState extends State<NotificationsPage> {
                                           child: Center(
                                             child: Text("SUBMIT REVIEW",style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: mQuery.size.height*0.013,
-                                              fontWeight: FontWeight.w600
+                                              fontSize: mQuery.size.height*0.0127,
+                                              fontFamily: 'SatoshiBold',
                                             ),),
                                           ),
                                         ),
@@ -230,7 +232,8 @@ class _NotificationsPageState extends State<NotificationsPage> {
                                   children: [
                                     Text("05:05 PM",style: TextStyle(
                                       color: Colors.black54,
-                                      fontSize: mQuery.size.height*0.0165
+                                        fontFamily: 'SatoshiRegular',
+                                      fontSize: mQuery.size.height*0.0155
                                     ),),
                                   ],
                                 ),
@@ -268,7 +271,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                                   children: [
                                     Text("Order Ready",style: TextStyle(
                                         color: Color(0xff29b2fe),
-                                        fontWeight: FontWeight.w600,
+                                        fontFamily: 'SatoshiBold',
                                         fontSize: mQuery.size.height*0.018
                                     ),
                                     ),
@@ -286,7 +289,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                                     "today(30th June 2020) at 5:00pm by our rider",
                                   style: TextStyle(
                                     fontSize: mQuery.size.height*0.016,
-                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'SatoshiRegular',
                                   ),),
                               ),
                               SizedBox(height: mQuery.size.height*0.01,),
@@ -310,26 +313,27 @@ class _NotificationsPageState extends State<NotificationsPage> {
                                           children: [
                                             Text("Raj(ID 123456)",style: TextStyle(
                                                 fontSize: mQuery.size.height*0.017,
-                                                fontWeight: FontWeight.w600
+                                              fontFamily: 'SatoshiMedium',
                                             ),
                                             ),
                                             SizedBox(width: mQuery.size.width*0.2,),
                                             Text("Verification Code",style: TextStyle(
                                               fontSize: mQuery.size.height*0.016,
-                                              fontWeight: FontWeight.w600
+                                              fontFamily: 'SatoshiMedium'
                                             ),)
                                           ],
                                         ),
                                         Row(
                                           children: [
                                             Text("$mobileNo",style: TextStyle(
-                                                fontSize: mQuery.size.height*0.015
+                                                fontSize: mQuery.size.height*0.015,
+                                                fontFamily: 'SatoshiRegular'
                                             ),
                                             ),
                                             SizedBox(width: mQuery.size.width*0.3,),
                                             Text("$vCode",style: TextStyle(
                                               color: Color(0xff29b2fe),
-                                              fontWeight: FontWeight.w600,
+                                                fontFamily: 'SatoshiMedium',
                                               fontSize: mQuery.size.height*0.016
                                             ),)
                                           ],
@@ -350,7 +354,8 @@ class _NotificationsPageState extends State<NotificationsPage> {
                                   children: [
                                     Text("02:05 PM",style: TextStyle(
                                         color: Colors.black54,
-                                        fontSize: mQuery.size.height*0.0165
+                                        fontFamily: 'SatoshiRegular',
+                                        fontSize: mQuery.size.height*0.0155
                                     ),),
                                   ],
                                 ),

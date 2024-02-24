@@ -49,7 +49,7 @@ class _HelpPageState extends State<HelpPage> {
                   Text("Help", style: TextStyle(
                       fontSize: mQuery.size.height*0.027,
                       color: Colors.white,
-                      fontWeight: FontWeight.w700
+                    fontFamily: 'SatoshiBold',
                   ),)
                 ],
               ),
@@ -108,10 +108,10 @@ class _HelpPageState extends State<HelpPage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Center(child: Text("About Us",style: TextStyle(
-                                  fontWeight: FontWeight.w600,
+                                    fontFamily: 'SatoshiMedium',
                                     fontSize: mQuery.size.height*0.019
                                 ),)),
-                                Icon(Icons.navigate_next)
+                                Icon(Icons.arrow_right)
                               ],
                             ),
                           ),
@@ -145,10 +145,10 @@ class _HelpPageState extends State<HelpPage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Center(child: Text("Privacy Policy",style: TextStyle(
-                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'SatoshiMedium',
                                     fontSize: mQuery.size.height*0.019
                                 ),)),
-                                Icon(Icons.navigate_next)
+                                Icon(Icons.arrow_right)
                               ],
                             ),
                           ),
@@ -182,10 +182,10 @@ class _HelpPageState extends State<HelpPage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Center(child: Text("Terms & Conditions",style: TextStyle(
-                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'SatoshiMedium',
                                     fontSize: mQuery.size.height*0.019
                                 ),)),
-                                Icon(Icons.navigate_next)
+                                Icon(Icons.arrow_right)
                               ],
                             ),
                           ),
@@ -219,10 +219,10 @@ class _HelpPageState extends State<HelpPage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Center(child: Text("FAQs",style: TextStyle(
-                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'SatoshiMedium',
                                     fontSize: mQuery.size.height*0.019
                                 ),)),
-                                Icon(Icons.navigate_next)
+                                Icon(Icons.arrow_right)
                               ],
                             ),
                           ),
@@ -256,10 +256,10 @@ class _HelpPageState extends State<HelpPage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Center(child: Text("Customer Service",style: TextStyle(
-                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'SatoshiMedium',
                                     fontSize: mQuery.size.height*0.019
                                 ),)),
-                                Icon(Icons.navigate_next)
+                                Icon(Icons.arrow_right)
                               ],
                             ),
                           ),

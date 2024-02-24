@@ -65,7 +65,7 @@ class _ReviewPageState extends State<ReviewPage> {
                     style: TextStyle(
                         fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
-                        fontWeight: FontWeight.w700
+                      fontFamily: 'SatoshiBold',
                     ),
                   ),
                 ],
@@ -129,7 +129,7 @@ class _ReviewPageState extends State<ReviewPage> {
                                       reviews[index]['username'],
                                       style: TextStyle(
                                           fontSize: mQuery.size.height*0.02,
-                                          fontWeight: FontWeight.w600
+                                        fontFamily: 'SatoshiMedium',
                                       ),
                                     ),
                                     Expanded(child: SizedBox()),
@@ -143,7 +143,7 @@ class _ReviewPageState extends State<ReviewPage> {
                                       "${reviews[index]['ratingPoint']}",
                                       style: TextStyle(
                                           fontSize: mQuery.size.height*0.02,
-                                          fontWeight: FontWeight.w600
+                                        fontFamily: 'SatoshiMedium',
                                       ),
                                     )
                                   ],
@@ -161,7 +161,7 @@ class _ReviewPageState extends State<ReviewPage> {
                                         reviews[index]['reviewText'],
                                         style: TextStyle(
                                             fontSize: mQuery.size.height*0.018,
-                                            fontWeight: FontWeight.w600
+                                          fontFamily: 'SatoshiRegular',
                                         ),
                                       ),
                                     ],
