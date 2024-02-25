@@ -92,10 +92,10 @@ class _LoginPageState extends State<LoginPage> {
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 0,
-                                blurRadius: 10,
-                                offset: Offset(0, 0), // changes the position of the shadow
+                                color: Colors.grey.withOpacity(0.3),
+                                spreadRadius: 1,
+                                blurRadius: 3,
+                                offset: Offset(0, 0),
                               ),
                             ],
                           ),

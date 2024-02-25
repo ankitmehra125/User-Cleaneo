@@ -118,7 +118,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
               "Add Clothes",
               style: TextStyle(
                   fontSize: mQuery.size.height*0.021,
-                  fontWeight: FontWeight.w900),
+                  fontFamily: 'SatoshiBold'),
             ),
             SizedBox(height: mQuery.size.height * 0.022),
             Container(
@@ -151,7 +151,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                       Text(
                         "Tentative KG",
                         style: TextStyle(
-                          fontWeight: FontWeight.w700,
+                          fontFamily: 'SatoshiMedium',
                           fontSize: mQuery.size.height*0.02,
                         ),
                       ),
@@ -180,6 +180,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                         "$kg",
                         style: TextStyle(
                           color: Color(0xff29b2fe),
+                          fontFamily: 'SatoshiRegular',
                           fontSize: mQuery.size.height*0.027,
                         ),
                       ),
@@ -227,7 +228,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                       Text(
                         "Number of clothes, in total",
                         style: TextStyle(
-                          fontWeight: FontWeight.w700,
+                          fontFamily: 'SatoshiMedium',
                           fontSize: mQuery.size.height*0.02,
                         ),
                       ),
@@ -282,12 +283,14 @@ class _ByWeightPageState extends State<ByWeightPage> {
                         "Heavy items and dry cleaning items are not included in weight "
                         "category. To add those items go to ",
                     style: TextStyle(color: Colors.black54,
+                        fontFamily: 'SatoshiRegular',
                       fontSize: mQuery.size.height*0.018),
                   ),
                   TextSpan(
                     text: "'SEARCH'",
                     style: TextStyle(color: Color(0xff29b2fe,
-                      ),fontSize: mQuery.size.height*0.019,),
+                      ),fontSize: mQuery.size.height*0.019,
+                      fontFamily: 'SatoshiRegular',),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
                         Navigator.push(
@@ -307,7 +310,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
             SizedBox(height: mQuery.size.height*0.05,),
             Text("Select Add-On",
                 style: TextStyle(fontSize: mQuery.size.height*0.021,
-                    fontWeight: FontWeight.w900)
+                    fontFamily: 'SatoshiBold')
             ),
             SizedBox(height: mQuery.size.height*0.02,),
             Container(
@@ -342,8 +345,8 @@ class _ByWeightPageState extends State<ByWeightPage> {
                       Text(
                         "Cloth Softener",
                         style: TextStyle(
-                            fontSize: mQuery.size.height*0.0195,
-                            fontWeight: FontWeight.w600
+                          fontSize: mQuery.size.height*0.0195,
+                          fontFamily: 'SatoshiMedium',
                         ),
                       ),
                       Expanded(child: SizedBox()),
@@ -351,6 +354,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                       SizedBox(width: mQuery.size.width*0.04,),
                       Text("₹ 5 PER KG",style: TextStyle(
                           color: Colors.black54,
+                        fontFamily: 'SatoshiRegular',
                         fontSize: mQuery.size.height*0.0195,
                       ),)
                     ],
@@ -370,8 +374,8 @@ class _ByWeightPageState extends State<ByWeightPage> {
                       Text(
                         "Anti-Germs Liquid",
                         style: TextStyle(
-                            fontSize: mQuery.size.height*0.0195,
-                            fontWeight: FontWeight.w600
+                          fontSize: mQuery.size.height*0.0195,
+                          fontFamily: 'SatoshiMedium',
                         ),
                       ),
                       Expanded(child: SizedBox()),
@@ -379,6 +383,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                       SizedBox(width: mQuery.size.width*0.04,),
                       Text("₹ 5 PER KG",style: TextStyle(
                           color: Colors.black54,
+                        fontFamily: 'SatoshiRegular',
                         fontSize: mQuery.size.height*0.0195,
                       ),)
                     ],
@@ -408,10 +413,12 @@ class _ByWeightPageState extends State<ByWeightPage> {
                         SizedBox(height: mQuery.size.height*0.012,),
                         Text("$noCloths ITEMS",style: TextStyle(
                             color: Colors.white,
+                          fontFamily: 'SatoshiMedium',
                           fontSize: mQuery.size.height*0.0195,
                         ),),
                         Text("₹ 1,500 plus taxes",style: TextStyle(
                             color: Colors.white,
+                          fontFamily: 'SatoshiMedium',
                           fontSize: mQuery.size.height*0.0195,
                         ))
                       ],
@@ -420,7 +427,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                     Text("Proceed",style: TextStyle(
                         color: Colors.white,
                         fontSize: mQuery.size.height*0.024,
-                        fontWeight: FontWeight.w800
+                      fontFamily: 'SatoshiMedium',
                     )),
                     SizedBox(width: mQuery.size.width*0.02,),
                     Icon(Icons.arrow_right,color: Colors.white,)
@@ -473,8 +480,9 @@ class _ByWeightPageState extends State<ByWeightPage> {
                           Text(
                             "Schedule Your Order",
                             style: TextStyle(
-                                fontSize: mQuery.size.height*0.022,
-                                fontWeight: FontWeight.w900),
+                              fontSize: mQuery.size.height*0.022,
+                              fontFamily: 'SatoshiBold',
+                            ),
                           ),
                           Expanded(child: SizedBox()),
                           GestureDetector(
@@ -495,8 +503,9 @@ class _ByWeightPageState extends State<ByWeightPage> {
                           Text(
                             "Pickup Slot",
                             style: TextStyle(
-                                fontSize: mQuery.size.height*0.019,
-                                fontWeight: FontWeight.w800),
+                              fontSize: mQuery.size.height*0.019,
+                              fontFamily: 'SatoshiMedium',
+                            ),
                           ),
                           SizedBox(height: mQuery.size.height * 0.016),
                           Container(
@@ -624,8 +633,9 @@ class _ByWeightPageState extends State<ByWeightPage> {
                           Text(
                             "Delivery Slot",
                             style: TextStyle(
-                                fontSize: mQuery.size.height*0.019,
-                                fontWeight: FontWeight.w800),
+                              fontSize: mQuery.size.height*0.019,
+                              fontFamily: 'SatoshiMedium',
+                            ),
                           ),
                           SizedBox(height: mQuery.size.height * 0.016),
                           Container(
@@ -758,6 +768,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                 TextSpan(
                                   text: "Note: ",
                                   style: TextStyle(color: Colors.red,
+                                    fontFamily: 'SatoshiMedium',
                                     fontSize: mQuery.size.height*0.0185,),
                                 ),
                                 TextSpan(
@@ -765,6 +776,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                   "Delivery of heavy and dry clean items may be delayed.",
                                   style: TextStyle(
                                       color: Colors.black54,
+                                    fontFamily: 'SatoshiRegular',
                                     fontSize: mQuery.size.height*0.0165,),
                                 )
                               ],
@@ -803,9 +815,9 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                 child: Text(
                                                   "Order Summary",
                                                   style: TextStyle(
-                                                      fontSize: mQuery.size.height*0.022,
-                                                      fontWeight:
-                                                      FontWeight.w900),
+                                                    fontSize: mQuery.size.height*0.022,
+                                                    fontFamily: 'SatoshiBold',
+                                                  ),
                                                 ),
                                               ),
                                               SizedBox(
@@ -847,8 +859,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                           "Pickup from $address",
                                                           style: TextStyle(
                                                             fontSize: mQuery.size.height*0.0183,
-                                                            fontWeight:
-                                                            FontWeight.w700,
+                                                            fontFamily: 'SatoshiMedium',
                                                           ),
                                                         ),
                                                         Expanded(
@@ -879,8 +890,8 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                                             children: [
                                                                               Text("Enter Address Details",
                                                                                   style: TextStyle(
-                                                                                      fontSize: mQuery.size.height*0.022,
-                                                                                      fontWeight: FontWeight.w900)
+                                                                                    fontSize: mQuery.size.height*0.022,
+                                                                                    fontFamily: 'SatoshiBold',)
                                                                               ),
                                                                               Expanded(child: SizedBox()),
                                                                               GestureDetector(
@@ -919,7 +930,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                                                       child: TextField(
                                                                                         controller: addressController,
                                                                                         style: TextStyle(
-                                                                                          fontWeight: FontWeight.w600,
+                                                                                            fontFamily: 'SatoshiMedium'
                                                                                         ),
                                                                                         cursorColor: Colors.grey,
                                                                                         decoration: InputDecoration(
@@ -941,7 +952,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                                                       "CHANGE",
                                                                                       style: TextStyle(
                                                                                         color: Colors.red,
-                                                                                        fontWeight: FontWeight.w700,
+                                                                                        fontFamily: 'SatoshiMedium',
                                                                                         fontSize: mQuery.size.height*0.0173,
                                                                                       ),
                                                                                     ),
@@ -962,7 +973,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                                               TextField(
                                                                                 controller: floorController,
                                                                                 style: TextStyle(
-                                                                                  fontWeight: FontWeight.w600,
+                                                                                    fontFamily: 'SatoshiMedium'
                                                                                 ),
                                                                                 cursorColor: Colors.grey,
                                                                                 decoration: InputDecoration(
@@ -989,14 +1000,14 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                                               TextField(
                                                                                 controller: reachController,
                                                                                 style: TextStyle(
-                                                                                  fontWeight: FontWeight.w600,
+                                                                                    fontFamily: 'SatoshiMedium'
                                                                                 ),
                                                                                 cursorColor: Colors.grey,
                                                                                 decoration: InputDecoration(
                                                                                   hintText: "Landmark/ Entry gate/ Street",
                                                                                   hintStyle: TextStyle(
                                                                                       color: Colors.black54,
-                                                                                      fontWeight: FontWeight.w500,
+                                                                                    fontFamily: 'SatoshiRegular',
                                                                                     fontSize: mQuery.size.height*0.0183,
                                                                                   ),
                                                                                   focusColor: Colors.grey,
@@ -1084,7 +1095,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                                                   child: Center(
                                                                                     child: Text("Save Address",style: TextStyle(
                                                                                         fontSize: mQuery.size.height*0.022,
-                                                                                        fontWeight: FontWeight.w600,
+                                                                                        fontFamily: 'SatoshiBold',
                                                                                         color: Colors.white
                                                                                     ),),
                                                                                   ),
@@ -1104,9 +1115,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                             "CHANGE",
                                                             style: TextStyle(
                                                               color: Colors.red,
-                                                              fontWeight:
-                                                              FontWeight
-                                                                  .w700,
+                                                              fontFamily: 'SatoshiMedium',
                                                               fontSize: mQuery.size.height*0.0183,
                                                             ),
                                                           ),
@@ -1123,9 +1132,8 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                         Text(
                                                           "$caddress",
                                                           style: TextStyle(
-                                                            fontSize: mQuery.size.height*0.0183,
-                                                            fontWeight:
-                                                            FontWeight.w600,
+                                                            fontSize: mQuery.size.height * 0.0183,
+                                                            fontFamily: 'SatoshiMedium',
                                                           ),
                                                         )
                                                       ],
@@ -1145,9 +1153,8 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                     Text(
                                                       "Clothes Detail",
                                                       style: TextStyle(
-                                                          fontSize: mQuery.size.height*0.02,
-                                                          fontWeight:
-                                                          FontWeight.w800),
+                                                        fontSize: mQuery.size.height*0.02,
+                                                        fontFamily: 'SatoshiMedium',),
                                                     )
                                                   ],
                                                 ),
@@ -1182,7 +1189,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                               "WASH",
                                                               style: TextStyle(
                                                                 fontSize: mQuery.size.height*0.0173,
-                                                                fontWeight: FontWeight.bold,
+                                                                fontFamily: 'SatoshiMedium',
                                                                 color: Color(0xff29b2fe),
                                                               ),
                                                             ),
@@ -1223,7 +1230,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                                             '₹ ${(totalCost).toStringAsFixed(0)}',
                                                                             style: TextStyle(
                                                                               fontSize: mQuery.size.height*0.0173,
-                                                                              fontWeight: FontWeight.bold,
+                                                                              fontFamily: 'SatoshiMedium',
                                                                               color: Color(0xff29b2fe),
                                                                             ),
                                                                           ),
@@ -1257,9 +1264,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                               Text(
                                                                 "Extra Note",
                                                                 style: TextStyle(
-                                                                    fontWeight:
-                                                                    FontWeight
-                                                                        .w800,
+                                                                  fontFamily: 'SatoshiMedium',
                                                                   fontSize: mQuery.size.height*0.02,),
                                                               ),
                                                             ],
@@ -1320,9 +1325,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                                       color: Colors
                                                                           .black54,
                                                                       fontSize: mQuery.size.height*0.02,
-                                                                      fontWeight:
-                                                                      FontWeight
-                                                                          .w600)),
+                                                                      fontFamily: 'SatoshiRegular')),
                                                             ),
                                                           )
                                                         ],
@@ -1360,9 +1363,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                                 "Support your Rider",
                                                                 style: TextStyle(
                                                                     fontSize: mQuery.size.height*0.02,
-                                                                    fontWeight:
-                                                                    FontWeight
-                                                                        .w800),
+                                                                    fontFamily: 'SatoshiMedium'),
                                                               ),
                                                               SizedBox(
                                                                 height: mQuery
@@ -1436,8 +1437,9 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                               SizedBox(height: mQuery.size.height * 0.022,),
                                                               Text(
                                                                 "Offers",
-                                                                style: TextStyle(fontSize: mQuery.size.height*0.019
-                                                                ,fontWeight: FontWeight.w700),
+                                                                style: TextStyle(
+                                                                  fontFamily: 'SatoshiMedium',
+                                                                  fontSize: mQuery.size.height*0.019,),
                                                               ),
                                                               SizedBox(height: mQuery.size.height * 0.0072,),
                                                               Row(
@@ -1447,8 +1449,8 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                                   Text(
                                                                     "Select a promo code",
                                                                     style: TextStyle(
-                                                                      fontSize: mQuery.size.height*0.019,
-                                                                      fontWeight: FontWeight.w600,),
+                                                                      fontFamily: 'SatoshiMedium',
+                                                                      fontSize: mQuery.size.height*0.019,),
                                                                   ),
                                                                   Expanded(child: SizedBox()),
                                                                   GestureDetector(
@@ -1562,16 +1564,16 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                             children: [
                                                               Text("Grand Total",
                                                                 style: TextStyle(
-                                                                  fontSize: mQuery.size.height*0.022,
-                                                                  fontWeight: FontWeight.w800,
+                                                                    fontSize: mQuery.size.height*0.022,
+                                                                    fontFamily: 'SatoshiMedium'
                                                                 ),
                                                               ),
                                                               Expanded(child: SizedBox()),
                                                               Text(totalSum,
                                                                 style: TextStyle(
-                                                                  fontSize: mQuery.size.height*0.022,
-                                                                  color: Color(0xff29b2fe),
-                                                                  fontWeight: FontWeight.w800,
+                                                                    fontSize: mQuery.size.height*0.022,
+                                                                    color: Color(0xff29b2fe),
+                                                                    fontFamily: 'SatoshiMedium'
                                                                 ),
                                                               )
                                                             ],
@@ -1622,7 +1624,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                         style: TextStyle(
                                                             color: Colors.white,
                                                             fontSize: mQuery.size.height*0.024,
-                                                            fontWeight: FontWeight.w800),
+                                                            fontFamily: 'SatoshiMedium'),
                                                       ),
                                                       SizedBox(width: mQuery.size.width * 0.02),
                                                       Icon(Icons.arrow_right,
@@ -1672,7 +1674,8 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: mQuery.size.height*0.024,
-                                        fontWeight: FontWeight.w800),
+                                        fontFamily: 'SatoshiMedium'
+                                    ),
                                   ),
                                   SizedBox(width: mQuery.size.width * 0.02),
                                   Icon(Icons.arrow_right, color: Colors.white)
@@ -1713,12 +1716,17 @@ class _ByWeightPageState extends State<ByWeightPage> {
             children: [
               Text(
                 itemName,
-                style: TextStyle(fontWeight: FontWeight.w600),
+                style: TextStyle(
+                  fontFamily: 'SatoshiMedium',
+                  fontSize: mQuery.size.height*0.02,
+                ),
               ),
               Text(
                 itemPrice,
                 style: TextStyle(
-                  color: Colors.grey,
+                    fontSize: mQuery.size.height*0.017,
+                    color: Colors.grey,
+                    fontFamily: 'SatoshiRegular'
                 ),
               ),
             ],

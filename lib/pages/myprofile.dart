@@ -142,10 +142,9 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                 shape: BoxShape.circle,
                               ),
                               child: IconButton(
-                                icon: Icon(
-                                  Icons.edit,
-                                  color: Colors.white,
-                                ),
+                                icon: Image.asset("assets/images/drawer-images/edit.png",
+                                width: mQuery.size.width*0.06,
+                                color: Colors.white,),
                                 onPressed: _pickImage,
                               ),
                             ),

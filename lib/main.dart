@@ -6,6 +6,7 @@ import 'package:cleaneo_user_app/Dashboard/Orders/yourOrders_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wallet/addMoney_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wallet/wallet_page.dart';
 import 'package:cleaneo_user_app/Dashboard/offers_page.dart';
+import 'package:cleaneo_user_app/Extra%20Pages/dpVerificatino_page.dart';
 import 'package:cleaneo_user_app/pages/Donateslider.dart';
 import 'package:cleaneo_user_app/Dashboard/Address/address_page.dart';
 import 'package:cleaneo_user_app/Help/customer_service_page.dart';
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: SplashScreen()
     );
   }
 }

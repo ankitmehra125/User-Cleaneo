@@ -63,7 +63,8 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                     style: TextStyle(
                         fontSize: mQuery.size.height * 0.027,
                         color: Colors.white,
-                        fontWeight: FontWeight.w700),
+                        fontFamily: 'SatoshiBold'
+                    ),
                   )
                 ],
               ),
@@ -76,14 +77,6 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(16),
                       topRight: Radius.circular(16)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 0.3,
-                      blurRadius: 1,
-                      offset: Offset(3, 3), // changes the position of the shadow
-                    ),
-                  ],
                 ),
                 child: Padding(
                   padding: EdgeInsets.only(
@@ -97,7 +90,8 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                             "Wallet Bal : ₹ $balance",
                             style: TextStyle(
                                 fontSize: mQuery.size.height * 0.022,
-                                fontWeight: FontWeight.w600),
+                                fontFamily: 'SatoshiMedium'
+                            ),
                           ),
                         ),
                         Divider(),
@@ -126,7 +120,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                     '₹ $selectedAmount',
                                     style: TextStyle(
                                       fontSize: mQuery.size.height * 0.022,
-                                      fontWeight: FontWeight.w600,
+                                        fontFamily: 'SatoshiMedium'
                                     ),
                                   ),
                                 ),
@@ -137,7 +131,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                   "Most Popular",
                                   style: TextStyle(
                                       color: Color(0xff29b2fe),
-                                      fontWeight: FontWeight.w600),
+                                      fontFamily: 'SatoshiMedium'),
                                 ),
                               ),
                               SizedBox(height: mQuery.size.height * 0.02),
@@ -208,7 +202,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                             "Other Wallets/UPI",
                                             style: TextStyle(
                                                 fontSize: mQuery.size.height*0.0195,
-                                                fontWeight: FontWeight.w600),
+                                                fontFamily: 'SatoshiMedium'),
                                           ),
                                           Expanded(child: SizedBox()),
                                           Container(
@@ -228,7 +222,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                             style: TextStyle(
                                                 fontSize: mQuery.size.height*0.018,
                                                 color: Color(0xff29b2fe),
-                                                fontWeight: FontWeight.w600),
+                                                fontFamily: 'SatoshiMedium'),
                                           )
                                         ],
                                       ),
@@ -251,8 +245,8 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                           Text(
                                             "Paytm",
                                             style: TextStyle(
-                                                fontSize: mQuery.size.height*0.0195,
-                                                fontWeight: FontWeight.w600),
+                                                fontSize: mQuery.size.height*0.0182,
+                                                fontFamily: 'SatoshiMedium'),
                                           ),
                                           Expanded(child: SizedBox()),
                                           Radio(
@@ -277,8 +271,8 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                           Text(
                                             "PhonePe",
                                             style: TextStyle(
-                                                fontSize: mQuery.size.height*0.0195,
-                                                fontWeight: FontWeight.w600),
+                                                fontSize: mQuery.size.height*0.0182,
+                                                fontFamily: 'SatoshiMedium'),
                                           ),
                                           Expanded(child: SizedBox()),
                                           Radio(
@@ -303,8 +297,8 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                           Text(
                                             "GPay",
                                             style: TextStyle(
-                                                fontSize: mQuery.size.height*0.0195,
-                                                fontWeight: FontWeight.w600),
+                                                fontSize: mQuery.size.height*0.0182,
+                                                fontFamily: 'SatoshiMedium'),
                                           ),
                                           Expanded(child: SizedBox()),
                                           Radio(
@@ -351,7 +345,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                             "Credit/ Debit Cards",
                                             style: TextStyle(
                                                 fontSize: mQuery.size.height*0.02,
-                                                fontWeight: FontWeight.w600),
+                                                fontFamily: 'SatoshiMedium'),
                                           ),
                                           Expanded(child: SizedBox()),
                                           Container(
@@ -371,7 +365,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                             style: TextStyle(
                                                 fontSize: mQuery.size.height*0.018,
                                                 color: Color(0xff29b2fe),
-                                                fontWeight: FontWeight.w600),
+                                                fontFamily: 'SatoshiMedium'),
                                           )
                                         ],
                                       ),
@@ -393,8 +387,8 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                           Text(
                                             "6220 XXXX XXXX 4452",
                                             style: TextStyle(
-                                                fontSize: mQuery.size.height*0.0195,
-                                                fontWeight: FontWeight.w600),
+                                                fontSize: mQuery.size.height*0.0182,
+                                                fontFamily: 'SatoshiMedium'),
                                           ),
                                           Expanded(child: SizedBox()),
                                           Radio(
@@ -426,8 +420,8 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                           Text(
                                             "5555 XXXX XXXX 8888",
                                             style: TextStyle(
-                                                fontSize: mQuery.size.height*0.0195,
-                                                fontWeight: FontWeight.w600),
+                                                fontSize: mQuery.size.height*0.0182,
+                                                fontFamily: 'SatoshiMedium'),
                                           ),
                                           Expanded(child: SizedBox()),
                                           Radio(
@@ -459,8 +453,8 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                           Text(
                                             "4111 XXXX XXXX 7777",
                                             style: TextStyle(
-                                                fontSize: mQuery.size.height*0.0195,
-                                                fontWeight: FontWeight.w600),
+                                                fontSize: mQuery.size.height*0.0182,
+                                                fontFamily: 'SatoshiMedium'),
                                           ),
                                           Expanded(child: SizedBox()),
                                           Radio(
@@ -515,7 +509,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                           style: TextStyle(
                               fontSize: mQuery.size.height*0.02,
                               color: Colors.white,
-                              fontWeight: FontWeight.w800),
+                              fontFamily: 'SatoshiBold'),
                         ),
                       ),
                     ),
@@ -541,7 +535,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                           style: TextStyle(
                               fontSize: mQuery.size.height*0.02,
                               color: Colors.white,
-                              fontWeight: FontWeight.w800),
+                              fontFamily: 'SatoshiBold'),
                         ),
                       ),
                     ),
@@ -583,13 +577,14 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                 TextSpan(
                   text: "₹",
                   style: TextStyle(
+                      fontFamily: 'SatoshiMedium',
                       color: isSelected ? Colors.white : Colors.black),
                 ),
                 TextSpan(
                   text: amount,
                   style: TextStyle(
                       fontSize: mQuery.size.height * 0.022,
-                      fontWeight: FontWeight.w600,
+                      fontFamily: 'SatoshiBold',
                       color: isSelected ? Colors.white : Colors.black),
                 )
               ],

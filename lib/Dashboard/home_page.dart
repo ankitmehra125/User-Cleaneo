@@ -192,6 +192,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
+                  SizedBox(height: mQuery.size.height*0.023,),
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 16),
                     child: Row(
@@ -206,8 +207,8 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         Container(
-                          width: mQuery.size.width * 0.06,
-                          height: mQuery.size.height * 0.06,
+                          width: mQuery.size.width * 0.08,
+                          height: mQuery.size.height * 0.025,
                           decoration: const BoxDecoration(
                             color: Colors.white,
                             shape: BoxShape.circle,
@@ -216,7 +217,7 @@ class _HomePageState extends State<HomePage> {
                             child: Text(
                               "$orderNo",
                               style: TextStyle(
-                                color: Colors.cyan,
+                                color: Color(0xff29b2fe),
                                 fontFamily: 'SatoshiBold'
                               ),
                             ),

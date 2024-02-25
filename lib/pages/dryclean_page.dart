@@ -127,7 +127,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                         style: TextStyle(
                             fontSize: mQuery.size.height*0.027,
                             color: Colors.white,
-                            fontWeight: FontWeight.w700),
+                            fontFamily: 'SatoshiBold'),
                       ),
                       SizedBox(width: mQuery.size.width * 0.02),
                       GestureDetector(
@@ -176,6 +176,9 @@ class _DryCleanPageState extends State<DryCleanPage> {
                             ),
                             child: TextField(
                               cursorColor: Colors.grey,
+                              style: TextStyle(
+                                  fontFamily: 'SatoshiMedium'
+                              ),
                               controller: searchController,
                               decoration: InputDecoration(
                                 border: InputBorder.none,
@@ -183,7 +186,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                 hintStyle: TextStyle(
                                   fontSize: mQuery.size.height*0.021,
                                   color: Colors.grey.shade600,
-                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'SatoshiMedium'
                                 ),
                                 suffixIcon: const Icon(Icons.search, color: Colors.grey),
                               ),
@@ -195,8 +198,8 @@ class _DryCleanPageState extends State<DryCleanPage> {
                               horizontal: mQuery.size.width*0.045
                             ),
                             child: Text("Clothes Detail",style: TextStyle(
-                                fontSize: mQuery.size.height*0.0195,
-                                fontWeight: FontWeight.w800
+                                fontSize: mQuery.size.height*0.0192,
+                                fontFamily: 'SatoshiBold'
                             ),),
                           ),
                           SizedBox(height: mQuery.size.height*0.02,),
@@ -227,8 +230,8 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                       child: Text(
                                         "WASH",
                                         style: TextStyle(
-                                          fontSize: mQuery.size.height*0.0173,
-                                          fontWeight: FontWeight.bold,
+                                          fontSize: mQuery.size.height*0.017,
+                                            fontFamily: 'SatoshiMedium',
                                           color: Color(0xff29b2fe),
                                         ),
                                       ),
@@ -272,7 +275,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                         '₹ ${(totalCost).toStringAsFixed(0)}',
                                                         style: TextStyle(
                                                           fontSize: mQuery.size.height*0.0173,
-                                                          fontWeight: FontWeight.bold,
+                                                            fontFamily: 'SatoshiMedium',
                                                           color: Color(0xff29b2fe),
                                                         ),
                                                       ),
@@ -305,45 +308,50 @@ class _DryCleanPageState extends State<DryCleanPage> {
                     _openBottomSheet(context);
                   },
                   child: Container(
-                    width: double.infinity,
-                    height: mQuery.size.height * 0.08,
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    decoration: BoxDecoration(
-                        color: Color(0xff29b2fe),
-                        borderRadius: BorderRadius.circular(6)),
-                    child: Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: mQuery.size.height * 0.012,
-                            ),
-                            Text("${totalKgValue.toInt()} ITEMS",
-                                style: TextStyle(
-                                  fontSize: mQuery.size.height*0.0195,
-                                  color: Colors.white,
-                                )),
-                            Text("₹ 1,220 plus taxes",
-                                style: TextStyle(
+                    color: Colors.white,
+                    child: Container(
+                      width: double.infinity,
+                      height: mQuery.size.height * 0.08,
+                      margin: EdgeInsets.symmetric(horizontal: 16),
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      decoration: BoxDecoration(
+                          color: Color(0xff29b2fe),
+                          borderRadius: BorderRadius.circular(6)),
+                      child: Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                height: mQuery.size.height * 0.012,
+                              ),
+                              Text("${totalKgValue.toInt()} ITEMS",
+                                  style: TextStyle(
                                     fontSize: mQuery.size.height*0.0195,
-                                    color: Colors.white))
-                          ],
-                        ),
-                        Expanded(child: SizedBox()),
-                        Text("Proceed",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: mQuery.size.height*0.024,
-                                fontWeight: FontWeight.w800)),
-                        SizedBox(
-                          width: mQuery.size.width * 0.02,
-                        ),
-                        Icon(
-                          Icons.arrow_right,
-                          color: Colors.white,
-                        )
-                      ],
+                                    color: Colors.white,
+                                  )),
+                              Text("₹ 1,220 plus taxes",
+                                  style: TextStyle(
+                                    fontFamily: 'SatoshiRegular',
+                                      fontSize: mQuery.size.height*0.0195,
+                                      color: Colors.white))
+                            ],
+                          ),
+                          Expanded(child: SizedBox()),
+                          Text("Proceed",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: mQuery.size.height*0.024,
+                                  fontFamily: 'SatoshiMedium')),
+                          SizedBox(
+                            width: mQuery.size.width * 0.02,
+                          ),
+                          Icon(
+                            Icons.arrow_right,
+                            color: Colors.white,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -431,8 +439,8 @@ class _DryCleanPageState extends State<DryCleanPage> {
               Text(
                 text,
                 style: TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
+                  fontFamily: 'SatoshiMedium',
+                  fontSize: mQuery.size.height*0.018,
                 ),
               ),
             ],
@@ -462,14 +470,17 @@ class _DryCleanPageState extends State<DryCleanPage> {
             children: [
               Text(
                 itemName,
-                style: TextStyle(fontWeight: FontWeight.w600,
-                  fontSize: mQuery.size.height*0.02,),
+                style: TextStyle(
+                  fontFamily: 'SatoshiMedium',
+                  fontSize: mQuery.size.height*0.02,
+                ),
               ),
               Text(
                 itemPrice,
                 style: TextStyle(
-                  fontSize: mQuery.size.height*0.0175,
-                  color: Colors.grey,
+                  fontSize: mQuery.size.height*0.017,
+                  color: Colors.black54,
+                  fontFamily: 'SatoshiRegular',
                 ),
               ),
             ],
@@ -564,15 +575,16 @@ class _DryCleanPageState extends State<DryCleanPage> {
                           Text(
                             "Schedule Your Order",
                             style: TextStyle(
-                                fontSize: mQuery.size.height*0.022,
-                                fontWeight: FontWeight.w900),
+                              fontSize: mQuery.size.height*0.022,
+                              fontFamily: 'SatoshiBold',
+                            ),
                           ),
                           Divider(),
                           Text(
                             "Pickup Slot",
                             style: TextStyle(
-                                fontSize: mQuery.size.height*0.019,
-                                fontWeight: FontWeight.w800),
+                              fontSize: mQuery.size.height*0.019,
+                              fontFamily: 'SatoshiMedium',),
                           ),
                           SizedBox(height: mQuery.size.height * 0.016),
                           Container(
@@ -598,6 +610,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                 Text(
                                   "SELECT PICKUP DATE",
                                   style: TextStyle(
+                                      fontFamily: 'SatoshiRegular',
                                       fontSize: mQuery.size.height*0.0173,
                                       color: Colors.black54),
                                 ),
@@ -632,6 +645,8 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                             child: Text(
                                               dates[i],
                                               style: TextStyle(
+                                                fontFamily: 'SatoshiRegular',
+                                                fontSize: mQuery.size.height*0.0172,
                                                 color: selectedDateIndex == i
                                                     ? Colors.white
                                                     : Colors.black,
@@ -648,6 +663,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                 Text(
                                   "SELECT PICKUP TIME",
                                   style: TextStyle(
+                                      fontFamily: 'SatoshiRegular',
                                       fontSize: mQuery.size.height*0.0173,
                                       color: Colors.black54),
                                 ),
@@ -680,7 +696,8 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                             child: Text(
                                               times[i],
                                               style: TextStyle(
-                                                  fontSize: mQuery.size.height*0.0176,
+                                                  fontFamily: 'SatoshiRegular',
+                                                  fontSize: mQuery.size.height*0.0165,
                                                   color: selectedTimeIndex == i
                                                       ? Colors.white
                                                       : Colors.black),
@@ -700,7 +717,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                             "Delivery Slot",
                             style: TextStyle(
                                 fontSize: mQuery.size.height*0.019,
-                                fontWeight: FontWeight.w800),
+                                fontFamily: 'SatoshiMedium',),
                           ),
                           SizedBox(height: mQuery.size.height * 0.016),
                           Container(
@@ -727,6 +744,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                 Text(
                                   "SELECT DELIVERY DATE",
                                   style: TextStyle(
+                                      fontFamily: 'SatoshiRegular',
                                       fontSize: mQuery.size.height*0.0173,
                                       color: Colors.black54),
                                 ),
@@ -761,7 +779,8 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                             child: Text(
                                               dates2[i],
                                               style: TextStyle(
-                                                fontSize: mQuery.size.height*0.0176,
+                                                fontFamily: 'SatoshiRegular',
+                                                fontSize: mQuery.size.height*0.0172,
                                                 color: selectedDateIndex2 == i
                                                     ? Colors.white
                                                     : Colors.black,
@@ -778,6 +797,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                 Text(
                                   "SELECT DELIVERY TIME",
                                   style: TextStyle(
+                                      fontFamily: 'SatoshiRegular',
                                       fontSize: mQuery.size.height*0.0173,
                                       color: Colors.black54),
                                 ),
@@ -812,7 +832,8 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                             child: Text(
                                               times2[i],
                                               style: TextStyle(
-                                                fontSize: mQuery.size.height*0.0176,
+                                                fontFamily: 'SatoshiRegular',
+                                                fontSize: mQuery.size.height*0.0165,
                                                 color: selectedTimeIndex2 == i
                                                     ? Colors.white
                                                     : Colors.black,
@@ -834,7 +855,9 @@ class _DryCleanPageState extends State<DryCleanPage> {
                               children: [
                                 TextSpan(
                                   text: "Note: ",
-                                  style: TextStyle(color: Colors.red,
+                                  style: TextStyle(
+                                    fontFamily: 'SatoshiMedium',
+                                    color: Colors.red,
                                     fontSize: mQuery.size.height*0.0185,),
                                 ),
                                 TextSpan(
@@ -842,6 +865,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                   "Delivery of heavy and dry clean items may be delayed.",
                                   style: TextStyle(
                                     color: Colors.black54,
+                                    fontFamily: 'SatoshiRegular',
                                     fontSize: mQuery.size.height*0.0165,),
                                 )
                               ],
@@ -881,8 +905,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                   "Order Summary",
                                                   style: TextStyle(
                                                       fontSize: mQuery.size.height*0.022,
-                                                      fontWeight:
-                                                      FontWeight.w900),
+                                                      fontFamily: 'SatoshiBold',),
                                                 ),
                                               ),
                                               SizedBox(
@@ -913,8 +936,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                           "Pickup from ${aselectedAddress}",
                                                           style: TextStyle(
                                                             fontSize: mQuery.size.height*0.0183,
-                                                            fontWeight:
-                                                            FontWeight.w700,
+                                                            fontFamily: 'SatoshiMedium',
                                                           ),
                                                         ),
                                                         Expanded(child: SizedBox()),
@@ -944,8 +966,8 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                                             children: [
                                                                               Text("Enter Address Details",
                                                                                   style: TextStyle(
-                                                                                      fontSize: mQuery.size.height*0.022,
-                                                                                      fontWeight: FontWeight.w900)
+                                                                                    fontSize: mQuery.size.height*0.022,
+                                                                                    fontFamily: 'SatoshiBold',)
                                                                               ),
                                                                               Expanded(child: SizedBox()),
                                                                               GestureDetector(
@@ -984,7 +1006,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                                                       child: TextField(
                                                                                         controller: addressController,
                                                                                         style: TextStyle(
-                                                                                          fontWeight: FontWeight.w600,
+                                                                                          fontFamily: 'SatoshiMedium'
                                                                                         ),
                                                                                         cursorColor: Colors.grey,
                                                                                         decoration: InputDecoration(
@@ -1006,7 +1028,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                                                       "CHANGE",
                                                                                       style: TextStyle(
                                                                                         color: Colors.red,
-                                                                                        fontWeight: FontWeight.w700,
+                                                                                        fontFamily: 'SatoshiMedium',
                                                                                         fontSize: mQuery.size.height*0.0173,
                                                                                       ),
                                                                                     ),
@@ -1027,7 +1049,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                                               TextField(
                                                                                 controller: floorController,
                                                                                 style: TextStyle(
-                                                                                  fontWeight: FontWeight.w600,
+                                                                                    fontFamily: 'SatoshiMedium'
                                                                                 ),
                                                                                 cursorColor: Colors.grey,
                                                                                 decoration: InputDecoration(
@@ -1054,14 +1076,14 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                                               TextField(
                                                                                 controller: reachController,
                                                                                 style: TextStyle(
-                                                                                  fontWeight: FontWeight.w600,
+                                                                                    fontFamily: 'SatoshiMedium'
                                                                                 ),
                                                                                 cursorColor: Colors.grey,
                                                                                 decoration: InputDecoration(
                                                                                   hintText: "Landmark/ Entry gate/ Street",
                                                                                   hintStyle: TextStyle(
                                                                                     color: Colors.black54,
-                                                                                    fontWeight: FontWeight.w500,
+                                                                                    fontFamily: 'SatoshiRegular',
                                                                                     fontSize: mQuery.size.height*0.0183,
                                                                                   ),
                                                                                   focusColor: Colors.grey,
@@ -1149,7 +1171,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                                                   child: Center(
                                                                                     child: Text("Save Address",style: TextStyle(
                                                                                         fontSize: mQuery.size.height*0.022,
-                                                                                        fontWeight: FontWeight.w600,
+                                                                                        fontFamily: 'SatoshiBold',
                                                                                         color: Colors.white
                                                                                     ),),
                                                                                   ),
@@ -1169,7 +1191,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                             "CHANGE",
                                                             style: TextStyle(
                                                               color: Colors.red,
-                                                              fontWeight: FontWeight.w700,
+                                                              fontFamily: 'SatoshiMedium',
                                                               fontSize: mQuery.size.height*0.0183,
                                                             ),
                                                           ),
@@ -1184,7 +1206,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                           style: TextStyle(
                                                             color: Colors.black,
                                                             fontSize: mQuery.size.height * 0.0183,
-                                                            fontWeight: FontWeight.w600,
+                                                            fontFamily: 'SatoshiMedium',
                                                           ),
                                                         )
                                                       ],
@@ -1203,9 +1225,8 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                     Text(
                                                       "Clothes Detail",
                                                       style: TextStyle(
-                                                          fontSize: mQuery.size.height*0.02,
-                                                          fontWeight:
-                                                          FontWeight.w800),
+                                                        fontSize: mQuery.size.height*0.02,
+                                                        fontFamily: 'SatoshiMedium',),
                                                     )
                                                   ],
                                                 ),
@@ -1240,7 +1261,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                               "WASH",
                                                               style: TextStyle(
                                                                 fontSize: mQuery.size.height*0.0173,
-                                                                fontWeight: FontWeight.bold,
+                                                                fontFamily: 'SatoshiMedium',
                                                                 color: Color(0xff29b2fe),
                                                               ),
                                                             ),
@@ -1281,7 +1302,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                                             '₹ ${(totalCost).toStringAsFixed(0)}',
                                                                             style: TextStyle(
                                                                               fontSize: mQuery.size.height*0.0173,
-                                                                              fontWeight: FontWeight.bold,
+                                                                              fontFamily: 'SatoshiMedium',
                                                                               color: Color(0xff29b2fe),
                                                                             ),
                                                                           ),
@@ -1315,9 +1336,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                               Text(
                                                                   "Extra Note",
                                                                   style: TextStyle(
-                                                                    fontWeight:
-                                                                    FontWeight
-                                                                        .w800,
+                                                                    fontFamily: 'SatoshiMedium',
                                                                     fontSize: mQuery.size.height*0.02,)
                                                               ),
                                                             ],
@@ -1375,12 +1394,10 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                                       right:
                                                                       6),
                                                                   hintStyle: TextStyle(
-                                                                      color: Colors
-                                                                          .black54,
-                                                                      fontSize: mQuery.size.height*0.02,
-                                                                      fontWeight:
-                                                                      FontWeight
-                                                                          .w600)),
+                                                                      color: Colors.black54,
+                                                                    fontFamily: 'SatoshiMedium',
+                                                                    fontSize: mQuery.size.height*0.02,
+                                                                  )),
                                                             ),
                                                           )
                                                         ],
@@ -1418,9 +1435,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                                 "Support your Rider",
                                                                 style: TextStyle(
                                                                     fontSize: mQuery.size.height*0.02,
-                                                                    fontWeight:
-                                                                    FontWeight
-                                                                        .w800),
+                                                                    fontFamily: 'SatoshiMedium'),
                                                               ),
                                                               SizedBox(
                                                                 height: mQuery
@@ -1488,8 +1503,10 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                               SizedBox(height: mQuery.size.height * 0.022,),
                                                               Text(
                                                                 "Offers",
-                                                                style: TextStyle(fontWeight: FontWeight.w700,
-                                                                  fontSize: mQuery.size.height*0.019,),
+                                                                style: TextStyle(
+                                                                    fontFamily: 'SatoshiMedium',
+                                                                    fontSize: mQuery.size.height*0.019
+                                                                ),
                                                               ),
                                                               SizedBox(height: mQuery.size.height * 0.0072,),
                                                               Row(
@@ -1498,8 +1515,10 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                                   SizedBox(width: mQuery.size.width * 0.03,),
                                                                   Text(
                                                                     "Select a promo code",
-                                                                    style: TextStyle(fontWeight: FontWeight.w600,
-                                                                      fontSize: mQuery.size.height*0.019,),
+                                                                    style: TextStyle(
+                                                                      fontFamily: 'SatoshiMedium',
+                                                                      fontSize: mQuery.size.height*0.019,
+                                                                    ),
                                                                   ),
                                                                   Expanded(child: SizedBox()),
                                                                   GestureDetector(
@@ -1509,6 +1528,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                                     child: Text(
                                                                       "View Offers",
                                                                       style: TextStyle(
+                                                                          fontFamily: 'SatoshiMedium',
                                                                           fontSize: mQuery.size.height*0.0183,
                                                                           color:
                                                                           Colors.red),
@@ -1531,6 +1551,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                               Text(
                                                                 "Item Total",
                                                                 style: TextStyle(
+                                                                  fontFamily: 'SatoshiRegular',
                                                                   fontSize: mQuery.size.height*0.02,
                                                                   color: Colors.black54,
                                                                 ),
@@ -1539,6 +1560,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                               Text(
                                                                 "₹ ${prices["Item Total"]?.toStringAsFixed(2)}",
                                                                 style: TextStyle(
+                                                                  fontFamily: 'SatoshiRegular',
                                                                   fontSize: mQuery.size.height*0.02,
                                                                   color: Colors.black54,
                                                                 ),
@@ -1565,6 +1587,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                                 style: TextStyle(
                                                                   fontSize: mQuery.size.height*0.02,
                                                                   color: Colors.black54,
+                                                                  fontFamily: 'SatoshiRegular',
                                                                 ),
                                                               ),
                                                               Expanded(child: SizedBox()),
@@ -1573,6 +1596,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                                 style: TextStyle(
                                                                   fontSize: mQuery.size.height*0.02,
                                                                   color: Colors.black54,
+                                                                  fontFamily: 'SatoshiRegular',
                                                                 ),
                                                               )
                                                             ],
@@ -1596,6 +1620,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                                 style: TextStyle(
                                                                   fontSize: mQuery.size.height*0.02,
                                                                   color: Colors.black54,
+                                                                  fontFamily: 'SatoshiRegular',
                                                                 ),
                                                               ),
                                                               Expanded(child: SizedBox(),),
@@ -1603,6 +1628,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                                 "₹ ${prices["Tax"]?.toStringAsFixed(2)}",
                                                                 style: TextStyle(
                                                                   fontSize: mQuery.size.height*0.02,
+                                                                  fontFamily: 'SatoshiRegular',
                                                                   color: Colors.black54,
                                                                 ),
                                                               )
@@ -1613,8 +1639,8 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                             children: [
                                                               Text("Grand Total",
                                                                 style: TextStyle(
-                                                                  fontSize: mQuery.size.height*0.022,
-                                                                  fontWeight: FontWeight.w800,
+                                                                    fontSize: mQuery.size.height*0.022,
+                                                                    fontFamily: 'SatoshiMedium'
                                                                 ),
                                                               ),
                                                               Expanded(child: SizedBox()),
@@ -1622,7 +1648,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                                 style: TextStyle(
                                                                   fontSize: mQuery.size.height*0.022,
                                                                   color: Color(0xff29b2fe),
-                                                                  fontWeight: FontWeight.w800,
+                                                                    fontFamily: 'SatoshiMedium'
                                                                 ),
                                                               )
                                                             ],
@@ -1672,7 +1698,8 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                         style: TextStyle(
                                                             color: Colors.white,
                                                             fontSize: mQuery.size.height*0.024,
-                                                            fontWeight: FontWeight.w800),
+                                                            fontFamily: 'SatoshiMedium'
+                                                        ),
                                                       ),
                                                       SizedBox(width: mQuery.size.width * 0.02),
                                                       Icon(Icons.arrow_right,
@@ -1705,10 +1732,12 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                       SizedBox(height: mQuery.size.height * 0.012),
                                       Text("ITEMS",
                                         style: TextStyle(color: Colors.white,
+                                            fontFamily: 'SatoshiRegular',
                                             fontSize: mQuery.size.height*0.02),
                                       ),
                                       Text("₹ 1,220 plus taxes",
                                         style: TextStyle(color: Colors.white,
+                                          fontFamily: 'SatoshiRegular',
                                           fontSize: mQuery.size.height*0.02,),
                                       )
                                     ],
@@ -1717,7 +1746,8 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                   Text("View Cart", style: TextStyle(
                                       color: Colors.white,
                                       fontSize: mQuery.size.height*0.024,
-                                      fontWeight: FontWeight.w800),
+                                      fontFamily: 'SatoshiMedium'
+                                  ),
                                   ),
                                   SizedBox(width: mQuery.size.width * 0.02),
                                   Icon(Icons.arrow_right, color: Colors.white)
@@ -1773,7 +1803,7 @@ class ContainerItem extends StatelessWidget {
           text,
           style: TextStyle(
             color: isSelected ? Colors.white : Colors.black,
-            fontWeight: FontWeight.bold,
+              fontFamily: 'SatoshiMedium'
           ),
         ),
       ),
