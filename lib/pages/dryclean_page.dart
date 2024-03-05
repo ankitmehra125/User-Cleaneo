@@ -289,7 +289,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                       ),
                                     ),
                                     SizedBox(height: 10),
-                                    Text("Hello Flutter")
+                                    //////    Text("Hello Flutter") /////
                                   ],
                                 ),
                               ),
@@ -303,56 +303,64 @@ class _DryCleanPageState extends State<DryCleanPage> {
                   ),
                 ),
 
-                GestureDetector(
-                  onTap: () {
-                    _openBottomSheet(context);
-                  },
-                  child: Container(
-                    color: Colors.white,
-                    child: Container(
-                      width: double.infinity,
-                      height: mQuery.size.height * 0.08,
-                      margin: EdgeInsets.symmetric(horizontal: 16),
-                      padding: EdgeInsets.symmetric(horizontal: 16),
-                      decoration: BoxDecoration(
-                          color: Color(0xff29b2fe),
-                          borderRadius: BorderRadius.circular(6)),
-                      child: Row(
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: mQuery.size.height * 0.012,
-                              ),
-                              Text("${totalKgValue.toInt()} ITEMS",
-                                  style: TextStyle(
-                                    fontSize: mQuery.size.height*0.0195,
-                                    color: Colors.white,
-                                  )),
-                              Text("₹ 1,220 plus taxes",
-                                  style: TextStyle(
-                                    fontFamily: 'SatoshiRegular',
-                                      fontSize: mQuery.size.height*0.0195,
-                                      color: Colors.white))
-                            ],
-                          ),
-                          Expanded(child: SizedBox()),
-                          Text("Proceed",
-                              style: TextStyle(
+                Container(
+                  color: Colors.white,
+                  child: Column(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          _openBottomSheet(context);
+                        },
+                        child: Container(
+                          color: Colors.white,
+                          child: Container(
+                            width: double.infinity,
+                            height: mQuery.size.height * 0.08,
+                            margin: EdgeInsets.symmetric(horizontal: 16),
+                            padding: EdgeInsets.symmetric(horizontal: 16),
+                            decoration: BoxDecoration(
+                                color: Color(0xff29b2fe),
+                                borderRadius: BorderRadius.circular(6)),
+                            child: Row(
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: mQuery.size.height * 0.012,
+                                    ),
+                                    Text("${totalKgValue.toInt()} ITEMS",
+                                        style: TextStyle(
+                                          fontSize: mQuery.size.height*0.0195,
+                                          color: Colors.white,
+                                        )),
+                                    Text("₹ 1,220 plus taxes",
+                                        style: TextStyle(
+                                          fontFamily: 'SatoshiRegular',
+                                            fontSize: mQuery.size.height*0.0195,
+                                            color: Colors.white))
+                                  ],
+                                ),
+                                Expanded(child: SizedBox()),
+                                Text("Proceed",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: mQuery.size.height*0.024,
+                                        fontFamily: 'SatoshiMedium')),
+                                SizedBox(
+                                  width: mQuery.size.width * 0.02,
+                                ),
+                                Icon(
+                                  Icons.arrow_right,
                                   color: Colors.white,
-                                  fontSize: mQuery.size.height*0.024,
-                                  fontFamily: 'SatoshiMedium')),
-                          SizedBox(
-                            width: mQuery.size.width * 0.02,
+                                )
+                              ],
+                            ),
                           ),
-                          Icon(
-                            Icons.arrow_right,
-                            color: Colors.white,
-                          )
-                        ],
+                        ),
                       ),
-                    ),
+                      SizedBox(height: mQuery.size.height*0.016)
+                    ],
                   ),
                 ),
               ],
@@ -472,13 +480,13 @@ class _DryCleanPageState extends State<DryCleanPage> {
                 itemName,
                 style: TextStyle(
                   fontFamily: 'SatoshiMedium',
-                  fontSize: mQuery.size.height*0.02,
+                  fontSize: mQuery.size.height*0.0165,
                 ),
               ),
               Text(
                 itemPrice,
                 style: TextStyle(
-                  fontSize: mQuery.size.height*0.017,
+                  fontSize: mQuery.size.height*0.0165,
                   color: Colors.black54,
                   fontFamily: 'SatoshiRegular',
                 ),

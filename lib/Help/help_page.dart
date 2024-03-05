@@ -4,6 +4,7 @@ import 'package:cleaneo_user_app/Help/faqs_page.dart';
 import 'package:cleaneo_user_app/Dashboard/home_page.dart';
 import 'package:cleaneo_user_app/Help/privacypolicy_page.dart';
 import 'package:cleaneo_user_app/Help/termsandcondition_page.dart';
+import 'package:cleaneo_user_app/pages/mydrawer.dart';
 import 'package:flutter/material.dart';
 
 
@@ -16,11 +17,13 @@ class HelpPage extends StatefulWidget {
 
 class _HelpPageState extends State<HelpPage> {
 
-
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: MyDrawer(),
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -39,12 +42,12 @@ class _HelpPageState extends State<HelpPage> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: ()
-                      {    Navigator.push(context,MaterialPageRoute(builder: (context){
-                          return HomePage();
-                        }));
-                      },
-                      child: Icon(Icons.arrow_back, color: Colors.white,)),
+                    onTap: () {
+                      _scaffoldKey.currentState!.openDrawer();
+                    },
+                    child: Icon(Icons.menu, color: Colors.white,
+                      size: mQuery.size.height*0.04,),
+                  ),
                   SizedBox(width: mQuery.size.width * 0.045,),
                   Text("Help", style: TextStyle(
                       fontSize: mQuery.size.height*0.027,

@@ -1,5 +1,6 @@
 import 'package:cleaneo_user_app/Dashboard/home_page.dart';
 import 'package:cleaneo_user_app/Help/help_page.dart';
+import 'package:cleaneo_user_app/pages/mydrawer.dart';
 import 'package:flutter/material.dart';
 
 class OffersPage extends StatefulWidget {
@@ -10,6 +11,7 @@ class OffersPage extends StatefulWidget {
 }
 
 class _OffersPageState extends State<OffersPage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final List<Map<String, dynamic>> offers = [
     {
       "title": "CLEANEO 1234",
@@ -28,6 +30,8 @@ class _OffersPageState extends State<OffersPage> {
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: MyDrawer(),
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -47,15 +51,10 @@ class _OffersPageState extends State<OffersPage> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                            return HomePage();
-                          }));
+                      _scaffoldKey.currentState!.openDrawer();
                     },
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
-                    ),
+                    child: Icon(Icons.menu, color: Colors.white,
+                      size: mQuery.size.height*0.04,),
                   ),
                   SizedBox(
                     width: mQuery.size.width * 0.045,
@@ -180,22 +179,25 @@ class _OffersPageState extends State<OffersPage> {
   }
 
   Widget _buildConditionRow(MediaQueryData mQuery, String text) {
-    return Row(
-      children: [
-        Container(
-          width: mQuery.size.width * 0.03,
-          height: mQuery.size.height * 0.013,
-          decoration: BoxDecoration(
-              shape: BoxShape.circle, color: Color(0xff29b2fe)),
-        ),
-        SizedBox(width: mQuery.size.width * 0.006),
-        Text(
-          text,
-          style: TextStyle(
-              fontFamily: 'SatoshiMedium',
-              fontSize: mQuery.size.height * 0.0145),
-        )
-      ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          Container(
+            width: mQuery.size.width * 0.03,
+            height: mQuery.size.height * 0.013,
+            decoration: BoxDecoration(
+                shape: BoxShape.circle, color: Color(0xff29b2fe)),
+          ),
+          SizedBox(width: mQuery.size.width * 0.006),
+          Text(
+            text,
+            style: TextStyle(
+                fontFamily: 'SatoshiMedium',
+                fontSize: mQuery.size.height * 0.0137),
+          )
+        ],
+      ),
     );
   }
 }

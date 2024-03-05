@@ -247,6 +247,7 @@ class _MyDrawerState extends State<MyDrawer> {
                       GestureDetector(
                         onTap: ()
                         {
+                          Navigator.pop(context);
                           Navigator.push(context, MaterialPageRoute(builder: (context){
                             return ManageCardsPage();
                           }));
@@ -295,6 +296,7 @@ class _MyDrawerState extends State<MyDrawer> {
                       GestureDetector(
                         onTap: ()
                         {
+                          Navigator.pop(context);
                           Navigator.push(context, MaterialPageRoute(builder: (context){
                             return ReviewPage();
                           }));
@@ -343,7 +345,7 @@ class _MyDrawerState extends State<MyDrawer> {
                     ),
                     child: Container(
                       decoration: BoxDecoration(
-                          color: Colors.cyan,
+                          color: Color(0xff29b2fe),
                           borderRadius: BorderRadius.circular(8)
                       ),
                       width: double.infinity,

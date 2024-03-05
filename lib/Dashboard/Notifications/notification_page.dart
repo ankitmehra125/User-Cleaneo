@@ -1,6 +1,7 @@
 import 'package:cleaneo_user_app/Dashboard/Notifications/rating_page.dart';
 import 'package:cleaneo_user_app/Dashboard/home_page.dart';
 import 'package:cleaneo_user_app/Help/help_page.dart';
+import 'package:cleaneo_user_app/pages/mydrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 
@@ -12,12 +13,15 @@ class NotificationsPage extends StatefulWidget {
 }
 
 class _NotificationsPageState extends State<NotificationsPage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     var mobileNo = "+91 1234567890";
     var vCode = "CL123456";
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: MyDrawer(),
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -37,15 +41,10 @@ class _NotificationsPageState extends State<NotificationsPage> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                            return HomePage();
-                          }));
+                      _scaffoldKey.currentState!.openDrawer();
                     },
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
-                    ),
+                    child: Icon(Icons.menu, color: Colors.white,
+                      size: mQuery.size.height*0.04,),
                   ),
                   SizedBox(
                     width: mQuery.size.width * 0.045,
@@ -165,7 +164,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                                     Column(
                                       children: [
                                         Text("Raj(ID 123456)",style: TextStyle(
-                                          fontSize: mQuery.size.height*0.017,
+                                          fontSize: mQuery.size.height*0.016,
                                           fontFamily: 'SatoshiMedium',
                                         ),
                                         ),
@@ -246,7 +245,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                       SizedBox(height: mQuery.size.height*0.03,),
                       Container(
                         width: double.infinity,
-                        height: mQuery.size.height*0.21,
+                        height: mQuery.size.height*0.22,
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(6),
@@ -297,50 +296,56 @@ class _NotificationsPageState extends State<NotificationsPage> {
                                 padding: EdgeInsets.symmetric(
                                     horizontal: mQuery.size.width*0.033
                                 ),
-                                child: Row(
-                                  children: [
-                                    ProfilePicture(
-                                      name: "",
-                                      radius: mQuery.size.width*0.046,
-                                      fontsize: 10,
-                                      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA3tt2QdkGYJ1268iokp1HHB3XB6PNaAZD_pssz3zFVg&s",
-                                    ),
-                                    SizedBox(width: mQuery.size.width*0.02,),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Text("Raj(ID 123456)",style: TextStyle(
-                                                fontSize: mQuery.size.height*0.017,
-                                              fontFamily: 'SatoshiMedium',
+                                child: SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
+                                    children: [
+                                      ProfilePicture(
+                                        name: "",
+                                        radius: mQuery.size.width*0.046,
+                                        fontsize: 10,
+                                        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA3tt2QdkGYJ1268iokp1HHB3XB6PNaAZD_pssz3zFVg&s",
+                                      ),
+                                      SizedBox(width: mQuery.size.width*0.02,),
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          SingleChildScrollView(
+                                            scrollDirection: Axis.horizontal,
+                                            child: Row(
+                                              children: [
+                                                Text("Raj(ID 123456)",style: TextStyle(
+                                                    fontSize: mQuery.size.height*0.016,
+                                                  fontFamily: 'SatoshiMedium',
+                                                ),
+                                                ),
+                                                SizedBox(width: mQuery.size.width*0.19,),
+                                                Text("Verification Code",style: TextStyle(
+                                                  fontSize: mQuery.size.height*0.016,
+                                                  fontFamily: 'SatoshiMedium'
+                                                ),)
+                                              ],
                                             ),
-                                            ),
-                                            SizedBox(width: mQuery.size.width*0.2,),
-                                            Text("Verification Code",style: TextStyle(
-                                              fontSize: mQuery.size.height*0.016,
-                                              fontFamily: 'SatoshiMedium'
-                                            ),)
-                                          ],
-                                        ),
-                                        Row(
-                                          children: [
-                                            Text("$mobileNo",style: TextStyle(
-                                                fontSize: mQuery.size.height*0.015,
-                                                fontFamily: 'SatoshiRegular'
-                                            ),
-                                            ),
-                                            SizedBox(width: mQuery.size.width*0.3,),
-                                            Text("$vCode",style: TextStyle(
-                                              color: Color(0xff29b2fe),
-                                                fontFamily: 'SatoshiMedium',
-                                              fontSize: mQuery.size.height*0.016
-                                            ),)
-                                          ],
-                                        ),
-                                      ],
-                                    )
-                                  ],
+                                          ),
+                                          Row(
+                                            children: [
+                                              Text("$mobileNo",style: TextStyle(
+                                                  fontSize: mQuery.size.height*0.015,
+                                                  fontFamily: 'SatoshiRegular'
+                                              ),
+                                              ),
+                                              SizedBox(width: mQuery.size.width*0.29,),
+                                              Text("$vCode",style: TextStyle(
+                                                color: Color(0xff29b2fe),
+                                                  fontFamily: 'SatoshiMedium',
+                                                fontSize: mQuery.size.height*0.016
+                                              ),)
+                                            ],
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                               SizedBox(height: mQuery.size.height*0.01,),

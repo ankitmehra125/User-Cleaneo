@@ -1,6 +1,7 @@
 import 'package:cleaneo_user_app/Dashboard/Orders/ongoingOrders_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Orders/previousOrders_page.dart';
 import 'package:cleaneo_user_app/Dashboard/home_page.dart';
+import 'package:cleaneo_user_app/pages/mydrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:cleaneo_user_app/Dashboard/Wash/byweight_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wash/quantity_wise_page.dart';
@@ -13,6 +14,7 @@ class YourOrdersPage extends StatefulWidget {
 }
 
 class _YourOrdersPageState extends State<YourOrdersPage> with SingleTickerProviderStateMixin {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   late TabController _tabController;
   bool _isDropdownOpen = false;
   int _selectedRowIndex = -1;
@@ -33,6 +35,8 @@ class _YourOrdersPageState extends State<YourOrdersPage> with SingleTickerProvid
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: MyDrawer(),
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -57,11 +61,10 @@ class _YourOrdersPageState extends State<YourOrdersPage> with SingleTickerProvid
                           children: [
                             GestureDetector(
                               onTap: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  return HomePage();
-                                }));// Navigate back to previous page
+                                _scaffoldKey.currentState!.openDrawer();
                               },
-                              child: Icon(Icons.arrow_back, color: Colors.white),
+                              child: Icon(Icons.menu, color: Colors.white,
+                               size: mQuery.size.height*0.04,),
                             ),
                             SizedBox(width: mQuery.size.width * 0.045),
                             Row(

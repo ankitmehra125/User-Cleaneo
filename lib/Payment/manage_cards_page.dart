@@ -1,3 +1,4 @@
+import 'package:cleaneo_user_app/pages/mydrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -27,6 +28,8 @@ class ManageCardsPage extends StatefulWidget {
 }
 
 class _ManageCardsPageState extends State<ManageCardsPage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   List<CardData> cards = [];
   TextEditingController cardNoController = TextEditingController();
   TextEditingController mmyyController = TextEditingController();
@@ -61,6 +64,8 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
     var mQuery = MediaQuery.of(context);
 
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: MyDrawer(),
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -75,10 +80,12 @@ class _ManageCardsPageState extends State<ManageCardsPage> {
               child: Row(
                 children: [
                   GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Icon(Icons.arrow_back, color: Colors.white,)),
+                    onTap: () {
+                      _scaffoldKey.currentState!.openDrawer();
+                    },
+                    child: Icon(Icons.menu, color: Colors.white,
+                      size: mQuery.size.height*0.04,),
+                  ),
                   SizedBox(width: mQuery.size.width * 0.045,),
                   Text("Manage Cards", style: TextStyle(
                       fontSize: mQuery.size.height*0.027,

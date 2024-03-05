@@ -172,9 +172,9 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                 color: Colors.white,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 2,
-                                    blurRadius: 10,
+                                    color: Colors.grey.withOpacity(0.3),
+                                    spreadRadius: 1,
+                                    blurRadius: 3,
                                     offset: Offset(0, 0),
                                   ),
                                 ],
@@ -183,6 +183,9 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                 cursorColor: Colors.grey,
                                 controller: nameController,
                                 decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.symmetric(
+                                    vertical: mQuery.size.height*0.0155
+                                  ),
                                   prefixIcon: Icon(Icons.person),
                                   focusedBorder: InputBorder.none,
                                   enabledBorder: InputBorder.none,
@@ -211,9 +214,9 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                 color: Colors.white,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 2,
-                                    blurRadius: 10,
+                                    color: Colors.grey.withOpacity(0.3),
+                                    spreadRadius: 1,
+                                    blurRadius: 3,
                                     offset: Offset(0, 0),
                                   ),
                                 ],
@@ -262,7 +265,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                           color: Color(0xffABAFB1),
                                         ),
                                         contentPadding: EdgeInsets.only(
-                                          top: mQuery.size.height*0.002
+                                          top: mQuery.size.height*0.00005
                                         ),
                                         counter: SizedBox.shrink(),
                                         focusedBorder: InputBorder.none,
@@ -289,9 +292,9 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                 color: Colors.white,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 2,
-                                    blurRadius: 10,
+                                    color: Colors.grey.withOpacity(0.3),
+                                    spreadRadius: 1,
+                                    blurRadius: 3,
                                     offset: Offset(0, 0),
                                   ),
                                 ],
@@ -300,6 +303,9 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                 cursorColor: Colors.grey,
                                 controller: emailController,
                                 decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.symmetric(
+                                      vertical: mQuery.size.height*0.014
+                                  ),
                                   prefixIcon: Icon(Icons.email_outlined),
                                   focusedBorder: InputBorder.none,
                                   enabledBorder: InputBorder.none,

@@ -1,6 +1,7 @@
 import 'package:cleaneo_user_app/Dashboard/Address/deliveryInstructions_page.dart';
 import 'package:cleaneo_user_app/Help/help_page.dart';
 import 'package:cleaneo_user_app/Dashboard/home_page.dart';
+import 'package:cleaneo_user_app/pages/mydrawer.dart';
 import 'package:flutter/material.dart';
 
 class AddressPage extends StatefulWidget {
@@ -11,6 +12,7 @@ class AddressPage extends StatefulWidget {
 }
 
 class _AddressPageState extends State<AddressPage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
@@ -19,6 +21,8 @@ class _AddressPageState extends State<AddressPage> {
         "PDPU Crossroad , Beside Pulse Mall, Seventh \n "
         "Floor , Kudasan, Gujrat, India";
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: MyDrawer(),
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -34,33 +38,26 @@ class _AddressPageState extends State<AddressPage> {
                   left: mQuery.size.width*0.045,
                   right: mQuery.size.width*0.045,
                 ),
-              child: GestureDetector(
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                              return HomePage();
-                            }));
-                      },
-                      child: Icon(
-                        Icons.arrow_back,
+              child: Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      _scaffoldKey.currentState!.openDrawer();
+                    },
+                    child: Icon(Icons.menu, color: Colors.white,
+                      size: mQuery.size.height*0.04,),
+                  ),
+                  SizedBox(
+                    width: mQuery.size.width * 0.045,
+                  ),
+                  Text(
+                    "My Addresses",
+                    style: TextStyle(
+                        fontSize: mQuery.size.height*0.027,
                         color: Colors.white,
-                      ),
-                    ),
-                    SizedBox(
-                      width: mQuery.size.width * 0.045,
-                    ),
-                    Text(
-                      "My Addresses",
-                      style: TextStyle(
-                          fontSize: mQuery.size.height*0.027,
-                          color: Colors.white,
-                          fontFamily: 'SatoshiBold'),
-                    )
-                  ],
-                ),
+                        fontFamily: 'SatoshiBold'),
+                  )
+                ],
               ),
             ),
             Expanded(
@@ -226,36 +223,46 @@ class _AddressPageState extends State<AddressPage> {
 
               ),
             ),
-            GestureDetector(
-              onTap: ()
-              {
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return HomePage();
-                }));
-              },
-              child: Container(
-                width: double.infinity,
-                height: mQuery.size.height*0.06,
-                color: Colors.white,
-                child: Container(
-                  width: double.infinity,
-                  height: double.infinity,
-                  margin: EdgeInsets.symmetric(
-                    horizontal: mQuery.size.width*0.045
+            Container(
+              color: Colors.white,
+              child: Column(
+                children: [
+                  GestureDetector(
+                    onTap: ()
+                    {
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return HomePage();
+                      }));
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      height: mQuery.size.height*0.06,
+                      color: Colors.white,
+                      child: Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        margin: EdgeInsets.symmetric(
+                          horizontal: mQuery.size.width*0.045
+                        ),
+                        decoration: BoxDecoration(
+                            color: Color(0xff29b2fe),
+                          borderRadius: BorderRadius.circular(6)
+                        ),
+                        child: Center(
+                          child: Text("Save Address",
+                           style: TextStyle(
+                             fontSize: mQuery.size.height*0.022,
+                             color: Colors.white,
+                               fontFamily: 'SatoshiBold'
+                           ),),
+                        ),
+                      ),
+                    ),
                   ),
-                  decoration: BoxDecoration(
-                      color: Color(0xff29b2fe),
-                    borderRadius: BorderRadius.circular(6)
+                  SizedBox(
+                    height: mQuery.size.height * 0.02,
                   ),
-                  child: Center(
-                    child: Text("Save Address",
-                     style: TextStyle(
-                       fontSize: mQuery.size.height*0.022,
-                       color: Colors.white,
-                         fontFamily: 'SatoshiBold'
-                     ),),
-                  ),
-                ),
+                ],
               ),
             )
           ],

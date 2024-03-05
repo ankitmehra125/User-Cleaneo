@@ -475,7 +475,8 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                               ),
                             ],
                           ),
-                        )
+                        ),
+                        SizedBox(height: mQuery.size.height*0.02,)
                       ],
                     ),
                   ),
@@ -483,63 +484,73 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
               ),
             ),
             Container(
-              width: double.infinity,
               color: Colors.white,
-              padding: EdgeInsets.symmetric(
-                horizontal: mQuery.size.width*0.045
-              ),
-              child:  Row(
+              child: Column(
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return WalletPage();
-                      }));
-                    },
-                    child: Container(
-                      width: mQuery.size.width * 0.43,
-                      height: mQuery.size.height * 0.055,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        color: Color(0xff004c91),
-                      ),
-                      child: Center(
-                        child: Text(
-                          "Cancel",
-                          style: TextStyle(
-                              fontSize: mQuery.size.height*0.02,
-                              color: Colors.white,
-                              fontFamily: 'SatoshiBold'),
+                  Container(
+                    width: double.infinity,
+                    color: Colors.white,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: mQuery.size.width*0.045
+                    ),
+                    child:  Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return WalletPage();
+                            }));
+                          },
+                          child: Container(
+                            width: mQuery.size.width * 0.43,
+                            height: mQuery.size.height * 0.055,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(6),
+                              color: Color(0xff004c91),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Cancel",
+                                style: TextStyle(
+                                    fontSize: mQuery.size.height*0.02,
+                                    color: Colors.white,
+                                    fontFamily: 'SatoshiBold'),
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
+                        Expanded(child: SizedBox()),
+                        GestureDetector(
+                          onTap: ()
+                          {
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return WalletPage();
+                            }));
+                          },
+                          child: Container(
+                            width: mQuery.size.width * 0.43,
+                            height: mQuery.size.height * 0.055,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(6),
+                              color: Color(0xff29b2fe),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Add",
+                                style: TextStyle(
+                                    fontSize: mQuery.size.height*0.02,
+                                    color: Colors.white,
+                                    fontFamily: 'SatoshiBold'),
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
                     ),
                   ),
-                  Expanded(child: SizedBox()),
-                  GestureDetector(
-                    onTap: ()
-                    {
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return WalletPage();
-                      }));
-                    },
-                    child: Container(
-                      width: mQuery.size.width * 0.43,
-                      height: mQuery.size.height * 0.055,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        color: Color(0xff29b2fe),
-                      ),
-                      child: Center(
-                        child: Text(
-                          "Add",
-                          style: TextStyle(
-                              fontSize: mQuery.size.height*0.02,
-                              color: Colors.white,
-                              fontFamily: 'SatoshiBold'),
-                        ),
-                      ),
-                    ),
-                  )
+                  SizedBox(
+                    height: mQuery.size.height * 0.02,
+                  ),
                 ],
               ),
             )

@@ -1,5 +1,8 @@
 import 'package:cleaneo_user_app/Auth/login_page.dart';
 import 'package:cleaneo_user_app/Auth/signup_page.dart';
+import 'package:cleaneo_user_app/Welcome/CP_page.dart';
+import 'package:cleaneo_user_app/Welcome/PP_page.dart';
+import 'package:cleaneo_user_app/Welcome/TS_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -73,7 +76,7 @@ class _WelcomePageState extends State<WelcomePage> {
                         width: double.infinity,
                         height: mQuery.size.height * 0.06,
                         decoration: BoxDecoration(
-                            color: const Color(0xff29b3fe),
+                            color: const Color(0xff29b2fe),
                             border: Border.all(color: Colors.white),
                             borderRadius: BorderRadius.circular(6)),
                         child: Center(
@@ -100,75 +103,96 @@ class _WelcomePageState extends State<WelcomePage> {
                       ),
                     ),
 
-                    SizedBox(
-                      height: mQuery.size.height * 0.021,),
+                    SizedBox(height: mQuery.size.height * 0.021,),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Terms of services
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Terms of Service",
-                              style: TextStyle(
-                                  fontSize: mQuery.size.height*0.016,
-                                  color: Colors.white,
-                                  fontFamily: 'SatoshiMedium'
-                                  ),
-                            ),
-                            SizedBox(height: mQuery.size.height*0.0015,),
-                            Container(
-                              height: mQuery.size.height*0.0018,
-                              width: mQuery.size.width*0.25,
-                              color: Colors.white,
-                            ),
-                          ],
+                        GestureDetector(
+                          onTap : ()
+                          {
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return TS();
+                            }));
+                          },
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Terms of Service",
+                                style: TextStyle(
+                                    fontSize: mQuery.size.height*0.016,
+                                    color: Colors.white,
+                                    fontFamily: 'SatoshiMedium'
+                                    ),
+                              ),
+                              SizedBox(height: mQuery.size.height*0.0015,),
+                              Container(
+                                height: mQuery.size.height*0.0018,
+                                width: mQuery.size.width*0.25,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
                         ),
 
                         // privacy policy
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Privacy Policy",
-                              style: TextStyle(
-                                  fontSize: mQuery.size.height*0.016,
-                                  color: Colors.white,
-                                  fontFamily: 'SatoshiMedium'),
-                            ),
-                            SizedBox(height: mQuery.size.height*0.0015,),
-                            Container(
-                              height: mQuery.size.height*0.0018,
-                              width: mQuery.size.width*0.23,
-                              color: Colors.white,
-                            ),
-                          ],
+                        GestureDetector(
+                          onTap : ()
+                          {
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return PP();
+                            }));
+                          },
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Privacy Policy",
+                                style: TextStyle(
+                                    fontSize: mQuery.size.height*0.016,
+                                    color: Colors.white,
+                                    fontFamily: 'SatoshiMedium'),
+                              ),
+                              SizedBox(height: mQuery.size.height*0.0015,),
+                              Container(
+                                height: mQuery.size.height*0.0018,
+                                width: mQuery.size.width*0.23,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
                         ),
 
                         // content policies
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                             Text(
-                              "Content Policies",
-                              style: TextStyle(
-                                  fontSize: mQuery.size.height*0.016,
-                                  color: Colors.white,
-                                  fontFamily: 'SatoshiMedium'),
-                            ),
-                            SizedBox(height: mQuery.size.height*0.0015,),
-                            Container(
-                              height: mQuery.size.height*0.0018,
-                              width: mQuery.size.width*0.25,
-                              color: Colors.white,
-                            ),
-                          ],
+                        GestureDetector(
+                          onTap : ()
+                          {
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return CP();
+                            }));
+                          },
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                               Text(
+                                "Content Policies",
+                                style: TextStyle(
+                                    fontSize: mQuery.size.height*0.016,
+                                    color: Colors.white,
+                                    fontFamily: 'SatoshiMedium'),
+                              ),
+                              SizedBox(height: mQuery.size.height*0.0015,),
+                              Container(
+                                height: mQuery.size.height*0.0018,
+                                width: mQuery.size.width*0.25,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
                         )
                       ],
                     ),
-
                     // Divider Row
                   ],
                 ),
@@ -180,3 +204,6 @@ class _WelcomePageState extends State<WelcomePage> {
     );
   }
 }
+
+
+

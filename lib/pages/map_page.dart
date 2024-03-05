@@ -102,7 +102,7 @@ class _MapPageState extends State<MapPage> {
                             child: Center(
                               child: Text("Enable Location Services",
                                 style: TextStyle(
-                                  fontSize: mQuery.size.height*0.022,
+                                  fontSize: mQuery.size.height*0.023,
                                   color: Colors.white,
                                   fontFamily: 'SatoshiBold'
                                 ),),

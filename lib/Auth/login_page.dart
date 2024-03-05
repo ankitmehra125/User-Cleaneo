@@ -1,4 +1,5 @@
 
+import 'package:cleaneo_user_app/Auth/signup_page.dart';
 import 'package:cleaneo_user_app/Auth/welcome_page.dart';
 import 'package:cleaneo_user_app/Auth/otp_page.dart';
 import 'package:flutter/material.dart';
@@ -124,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                                   color: Colors.grey,
                                 ),
                               ),
-                              SizedBox(width: mQuery.size.width*0.02),
+                              SizedBox(width: mQuery.size.width*0.01),
                               // Phone number input
                               Expanded(
                                 child: TextField(
@@ -133,7 +134,7 @@ class _LoginPageState extends State<LoginPage> {
                                   controller: phonenoController,
                                   maxLength: 10,
                                   inputFormatters: <TextInputFormatter>[
-                                    FilteringTextInputFormatter.digitsOnly // Allow only numeric input
+                                    FilteringTextInputFormatter.digitsOnly
                                   ],
                                   decoration: InputDecoration(
                                     hintText: "Enter Phone Number*",
@@ -153,25 +154,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
 
-
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            TextButton(
-                              onPressed: ()
-                              {
-
-                              },
-                              child: Text("Forgot Password?",style: TextStyle(
-                                  fontSize: mQuery.size.height*0.02,
-                                  fontFamily: 'SatoshiMedium',
-                                  color: Color(0xff29b2fe)
-                              ),),
-                            ),
-                          ],
-                        ),
-
-                        SizedBox(height: mQuery.size.height*0.49,),
+                        SizedBox(height: mQuery.size.height*0.53,),
                         GestureDetector(
                           onTap: ()
                           {
@@ -188,7 +171,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             child: Center(
                               child: Text("Log In",style: TextStyle(
-                                  fontSize: mQuery.size.height*0.022,
+                                  fontSize: mQuery.size.height*0.023,
                                   color: Colors.white,
                                 fontFamily: 'SatoshiBold',
                               ),),
@@ -204,11 +187,19 @@ class _LoginPageState extends State<LoginPage> {
                                 fontFamily: 'SatoshiBold',
                             ),),
                             SizedBox(width: mQuery.size.width*0.02,),
-                            Text("Sign Up",style: TextStyle(
-                                fontSize: mQuery.size.height*0.022,
-                                fontFamily: 'SatoshiBold',
-                                color: Color(0xff29b2fe)
-                            ),)
+                            GestureDetector(
+                              onTap: ()
+                              {
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return SignUpPage();
+                                }));
+                              },
+                              child: Text("Sign Up",style: TextStyle(
+                                  fontSize: mQuery.size.height*0.022,
+                                  fontFamily: 'SatoshiBold',
+                                  color: Color(0xff29b2fe)
+                              ),),
+                            )
                           ],
                         )
                       ],

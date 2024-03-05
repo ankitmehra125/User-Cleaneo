@@ -53,7 +53,7 @@ class _OTPPageState extends State<OTPPage> {
       ),
       textStyle: TextStyle(
         fontSize: mQuery.size.height*0.04,
-        fontWeight: FontWeight.w700
+        fontFamily: 'SatoshiBold'
       )
     );
     return Scaffold(
@@ -176,7 +176,7 @@ class _OTPPageState extends State<OTPPage> {
                               child: Text(
                                 "Verify",
                                 style: TextStyle(
-                                    fontSize: mQuery.size.height*0.022,
+                                    fontSize: mQuery.size.height*0.023,
                                     color: Colors.white,
                                     fontFamily: 'SatoshiBold'),
                               ),

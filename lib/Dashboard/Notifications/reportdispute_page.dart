@@ -333,7 +333,10 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
                             SvgPicture.asset("assets/images/imagepicker.svg",
                               height: mQuery.size.height*0.085,)
                           ],
-                        )
+                        ),
+                        SizedBox(
+                          height: mQuery.size.height * 0.02,
+                        ),
                       ],
                     ),
                   ),
@@ -341,30 +344,40 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
               ),
             ),
             Container(
-              width: double.infinity,
               color: Colors.white,
-              padding: EdgeInsets.symmetric(
-                horizontal: mQuery.size.width*0.045
-              ),
-              child: GestureDetector(
-                onTap: () {
-                  _showConfirmationDialog();
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: mQuery.size.height*0.06,
-                  decoration: BoxDecoration(
-                    color: Color(0xff29b2fe),
-                    borderRadius: BorderRadius.circular(6)
+              child: Column(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    color: Colors.white,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: mQuery.size.width*0.045
+                    ),
+                    child: GestureDetector(
+                      onTap: () {
+                        _showConfirmationDialog();
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: mQuery.size.height*0.06,
+                        decoration: BoxDecoration(
+                          color: Color(0xff29b2fe),
+                          borderRadius: BorderRadius.circular(6)
+                        ),
+                        child: Center(
+                          child: Text("Submit",style: TextStyle(
+                            color: Colors.white,
+                              fontFamily: 'SatoshiBold',
+                            fontSize: mQuery.size.height*0.023
+                          ),),
+                        ),
+                      ),
+                    ),
                   ),
-                  child: Center(
-                    child: Text("Submit",style: TextStyle(
-                      color: Colors.white,
-                        fontFamily: 'SatoshiBold',
-                      fontSize: mQuery.size.height*0.023
-                    ),),
+                  SizedBox(
+                    height: mQuery.size.height * 0.02,
                   ),
-                ),
+                ],
               ),
             )
           ],
@@ -389,15 +402,15 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
             ),)),
           content: Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: mQuery.size.width*0.036
+                horizontal: mQuery.size.width*0.056
             ),
             child: Text("We are extremely sorry for the "
-                "\n inconvenience caused. Our \n"
-                "support team will enquire more \n "
+                "inconvenience caused. Our"
+                "support team will enquire more"
                 "about the issue and get back to "
-                "you as soon as possible. \n \n "
-                "         Your dispure ID is: \n"
-                "                 $disputeId"
+                "you as soon as possible. \n "
+                "     Your dispure ID is: \n"
+                "            $disputeId"
                 "",style: TextStyle(
               fontFamily: 'SatoshiMedium',
             ),),

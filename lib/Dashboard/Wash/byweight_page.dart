@@ -345,7 +345,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                       Text(
                         "Cloth Softener",
                         style: TextStyle(
-                          fontSize: mQuery.size.height*0.0195,
+                          fontSize: mQuery.size.height*0.017,
                           fontFamily: 'SatoshiMedium',
                         ),
                       ),
@@ -355,7 +355,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                       Text("₹ 5 PER KG",style: TextStyle(
                           color: Colors.black54,
                         fontFamily: 'SatoshiRegular',
-                        fontSize: mQuery.size.height*0.0195,
+                        fontSize: mQuery.size.height*0.017,
                       ),)
                     ],
                   ),
@@ -374,7 +374,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                       Text(
                         "Anti-Germs Liquid",
                         style: TextStyle(
-                          fontSize: mQuery.size.height*0.0195,
+                          fontSize: mQuery.size.height*0.017,
                           fontFamily: 'SatoshiMedium',
                         ),
                       ),
@@ -384,7 +384,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                       Text("₹ 5 PER KG",style: TextStyle(
                           color: Colors.black54,
                         fontFamily: 'SatoshiRegular',
-                        fontSize: mQuery.size.height*0.0195,
+                        fontSize: mQuery.size.height*0.017,
                       ),)
                     ],
                   ),
@@ -1243,7 +1243,8 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                             ),
                                                           ),
                                                           SizedBox(height: 10),
-                                                          Text("Hello Flutter")
+
+                                                          ////////    Text("Hello Flutter")   ///////
                                                         ],
                                                       ),
                                                     ),
@@ -1482,7 +1483,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                               Text(
                                                                 "Item Total",
                                                                 style: TextStyle(
-                                                                  fontSize: mQuery.size.height*0.02,
+                                                                  fontSize: mQuery.size.height*0.017,
                                                                   color: Colors.black54,
                                                                 ),
                                                               ),
@@ -1490,7 +1491,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                               Text(
                                                                 "₹ ${prices["Item Total"]?.toStringAsFixed(2)}",
                                                                 style: TextStyle(
-                                                                  fontSize: mQuery.size.height*0.02,
+                                                                  fontSize: mQuery.size.height*0.017,
                                                                   color: Colors.black54,
                                                                 ),
                                                               )
@@ -1514,7 +1515,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                               Text(
                                                                 "Delivery Charges",
                                                                 style: TextStyle(
-                                                                  fontSize: mQuery.size.height*0.02,
+                                                                  fontSize: mQuery.size.height*0.017,
                                                                   color: Colors.black54,
                                                                 ),
                                                               ),
@@ -1522,7 +1523,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                               Text(
                                                                 "₹ ${prices["Delivery Charges"]?.toStringAsFixed(2)}",
                                                                 style: TextStyle(
-                                                                  fontSize: mQuery.size.height*0.02,
+                                                                  fontSize: mQuery.size.height*0.017,
                                                                   color: Colors.black54,
                                                                 ),
                                                               )
@@ -1545,7 +1546,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                             children: [
                                                               Text("Tax",
                                                                 style: TextStyle(
-                                                                  fontSize: mQuery.size.height*0.02,
+                                                                  fontSize: mQuery.size.height*0.017,
                                                                   color: Colors.black54,
                                                                 ),
                                                               ),
@@ -1553,7 +1554,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                               Text(
                                                                 "₹ ${prices["Tax"]?.toStringAsFixed(2)}",
                                                                 style: TextStyle(
-                                                                  fontSize: mQuery.size.height*0.02,
+                                                                  fontSize: mQuery.size.height*0.017,
                                                                   color: Colors.black54,
                                                                 ),
                                                               )
@@ -1564,14 +1565,14 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                             children: [
                                                               Text("Grand Total",
                                                                 style: TextStyle(
-                                                                    fontSize: mQuery.size.height*0.022,
+                                                                    fontSize: mQuery.size.height*0.02,
                                                                     fontFamily: 'SatoshiMedium'
                                                                 ),
                                                               ),
                                                               Expanded(child: SizedBox()),
                                                               Text(totalSum,
                                                                 style: TextStyle(
-                                                                    fontSize: mQuery.size.height*0.022,
+                                                                    fontSize: mQuery.size.height*0.02,
                                                                     color: Color(0xff29b2fe),
                                                                     fontFamily: 'SatoshiMedium'
                                                                 ),
@@ -1584,54 +1585,61 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                   ],
                                                 ),
                                               ),
-                                              SizedBox(height: mQuery.size.height * 0.06,),
-                                              GestureDetector(
-                                                onTap: () {
-                                                  Navigator.push(context,
-                                                      MaterialPageRoute(
-                                                          builder: (context) {
-                                                            return PaymentPage();
-                                                          }));
-                                                },
-                                                child: Container(
-                                                  width: double.infinity,
-                                                  height: mQuery.size.height * 0.08,
-                                                  margin: EdgeInsets.symmetric(horizontal: 16),
-                                                  padding: EdgeInsets.symmetric(horizontal: 16),
-                                                  decoration: BoxDecoration(
-                                                      color: Color(0xff29b2fe),
-                                                      borderRadius: BorderRadius.circular(6)),
-                                                  child: Row(
-                                                    children: [
-                                                      Column(
-                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                              SizedBox(height: mQuery.size.height * 0.02,),
+                                              Column(
+                                                children: [
+                                                  GestureDetector(
+                                                    onTap: () {
+                                                      Navigator.push(context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) {
+                                                                return PaymentPage();
+                                                              }));
+                                                    },
+                                                    child: Container(
+                                                      width: double.infinity,
+                                                      height: mQuery.size.height * 0.08,
+                                                      margin: EdgeInsets.symmetric(horizontal: 16),
+                                                      padding: EdgeInsets.symmetric(horizontal: 16),
+                                                      decoration: BoxDecoration(
+                                                          color: Color(0xff29b2fe),
+                                                          borderRadius: BorderRadius.circular(6)),
+                                                      child: Row(
                                                         children: [
-                                                          SizedBox(height: mQuery.size.height * 0.012),
-                                                          Text("TOTAL",
-                                                            style: TextStyle(
-                                                                fontSize: mQuery.size.height*0.02,
-                                                                color: Colors.white),
+                                                          Column(
+                                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                                            children: [
+                                                              SizedBox(height: mQuery.size.height * 0.012),
+                                                              Text("TOTAL",
+                                                                style: TextStyle(
+                                                                    fontSize: mQuery.size.height*0.02,
+                                                                    color: Colors.white),
+                                                              ),
+                                                              Text(totalSum,
+                                                                style: TextStyle(color: Colors.white,
+                                                                  fontSize: mQuery.size.height*0.02,),
+                                                              )
+                                                            ],
                                                           ),
-                                                          Text(totalSum,
-                                                            style: TextStyle(color: Colors.white,
-                                                              fontSize: mQuery.size.height*0.02,),
-                                                          )
+                                                          Expanded(child: SizedBox()),
+                                                          Text(
+                                                            "Make Payment",
+                                                            style: TextStyle(
+                                                                color: Colors.white,
+                                                                fontSize: mQuery.size.height*0.024,
+                                                                fontFamily: 'SatoshiMedium'),
+                                                          ),
+                                                          SizedBox(width: mQuery.size.width * 0.02),
+                                                          Icon(Icons.arrow_right,
+                                                              color: Colors.white)
                                                         ],
                                                       ),
-                                                      Expanded(child: SizedBox()),
-                                                      Text(
-                                                        "Make Payment",
-                                                        style: TextStyle(
-                                                            color: Colors.white,
-                                                            fontSize: mQuery.size.height*0.024,
-                                                            fontFamily: 'SatoshiMedium'),
-                                                      ),
-                                                      SizedBox(width: mQuery.size.width * 0.02),
-                                                      Icon(Icons.arrow_right,
-                                                          color: Colors.white)
-                                                    ],
+                                                    ),
                                                   ),
-                                                ),
+                                                  SizedBox(
+                                                    height: mQuery.size.height * 0.02,
+                                                  ),
+                                                ],
                                               ),
                                             ],
                                           ),
@@ -1642,45 +1650,52 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                 },
                               );
                             },
-                            child: Container(
-                              width: double.infinity,
-                              height: mQuery.size.height * 0.08,
-                              padding: EdgeInsets.symmetric(horizontal: 16),
-                              decoration: BoxDecoration(
-                                  color: Color(0xff29b2fe),
-                                  borderRadius: BorderRadius.circular(6)),
-                              child: Row(
-                                children: [
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: double.infinity,
+                                  height: mQuery.size.height * 0.08,
+                                  padding: EdgeInsets.symmetric(horizontal: 16),
+                                  decoration: BoxDecoration(
+                                      color: Color(0xff29b2fe),
+                                      borderRadius: BorderRadius.circular(6)),
+                                  child: Row(
                                     children: [
-                                      SizedBox(height: mQuery.size.height * 0.012),
-                                      Text(
-                                        "$noCloths ITEMS",
-                                        style: TextStyle(
-                                            fontSize: mQuery.size.height*0.02,
-                                            color: Colors.white),
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          SizedBox(height: mQuery.size.height * 0.012),
+                                          Text(
+                                            "$noCloths ITEMS",
+                                            style: TextStyle(
+                                                fontSize: mQuery.size.height*0.02,
+                                                color: Colors.white),
+                                          ),
+                                          Text(
+                                            "₹ 1,220 plus taxes",
+                                            style: TextStyle(color: Colors.white,
+                                              fontSize: mQuery.size.height*0.02,),
+                                          )
+                                        ],
                                       ),
+                                      Expanded(child: SizedBox()),
                                       Text(
-                                        "₹ 1,220 plus taxes",
-                                        style: TextStyle(color: Colors.white,
-                                          fontSize: mQuery.size.height*0.02,),
-                                      )
+                                        "View Cart",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: mQuery.size.height*0.024,
+                                            fontFamily: 'SatoshiMedium'
+                                        ),
+                                      ),
+                                      SizedBox(width: mQuery.size.width * 0.02),
+                                      Icon(Icons.arrow_right, color: Colors.white)
                                     ],
                                   ),
-                                  Expanded(child: SizedBox()),
-                                  Text(
-                                    "View Cart",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: mQuery.size.height*0.024,
-                                        fontFamily: 'SatoshiMedium'
-                                    ),
-                                  ),
-                                  SizedBox(width: mQuery.size.width * 0.02),
-                                  Icon(Icons.arrow_right, color: Colors.white)
-                                ],
-                              ),
+                                ),
+                                SizedBox(
+                                  height: mQuery.size.height * 0.02,
+                                ),
+                              ],
                             ),
                           ),
                         ],
@@ -1718,13 +1733,13 @@ class _ByWeightPageState extends State<ByWeightPage> {
                 itemName,
                 style: TextStyle(
                   fontFamily: 'SatoshiMedium',
-                  fontSize: mQuery.size.height*0.02,
+                  fontSize: mQuery.size.height*0.017,
                 ),
               ),
               Text(
                 itemPrice,
                 style: TextStyle(
-                    fontSize: mQuery.size.height*0.017,
+                    fontSize: mQuery.size.height*0.0155,
                     color: Colors.grey,
                     fontFamily: 'SatoshiRegular'
                 ),

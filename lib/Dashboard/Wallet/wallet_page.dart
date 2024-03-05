@@ -1,5 +1,6 @@
 import 'package:cleaneo_user_app/Dashboard/Wallet/addMoney_page.dart';
 import 'package:cleaneo_user_app/Dashboard/home_page.dart';
+import 'package:cleaneo_user_app/pages/mydrawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,7 @@ class WalletPage extends StatefulWidget {
 }
 
 class _WalletPageState extends State<WalletPage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   // Define a map to store the transactions data
   final List<Map<String, dynamic>> transactions = [
     {
@@ -47,6 +49,8 @@ class _WalletPageState extends State<WalletPage> {
     var balance = 500.00;
 
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: MyDrawer(),
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -66,15 +70,10 @@ class _WalletPageState extends State<WalletPage> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                            return HomePage();
-                          }));
+                      _scaffoldKey.currentState!.openDrawer();
                     },
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
-                    ),
+                    child: Icon(Icons.menu, color: Colors.white,
+                      size: mQuery.size.height*0.04,),
                   ),
                   SizedBox(
                     width: mQuery.size.width * 0.045,
@@ -242,9 +241,7 @@ class _WalletPageState extends State<WalletPage> {
                                                         0.019,
                                                     fontFamily: 'SatoshiMedium'),
                                               ),
-                                              SizedBox(
-                                                  width: mQuery.size.width *
-                                                      0.04),
+                                              SizedBox(width: mQuery.size.width * 0.06),    /////////////// FOR SPACE
                                               Text(
                                                 transaction['amount'] >= 0
                                                     ? "+ ₹ ${transaction['amount'].abs().toStringAsFixed(2)}"

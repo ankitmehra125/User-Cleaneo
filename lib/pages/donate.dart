@@ -2,6 +2,7 @@ import 'package:cleaneo_user_app/pages/Donateslider.dart';
 import 'package:cleaneo_user_app/Help/help_page.dart';
 import 'package:cleaneo_user_app/Dashboard/home_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wash/wash_page.dart';
+import 'package:cleaneo_user_app/pages/mydrawer.dart';
 import 'package:flutter/material.dart';
 
 class Donate extends StatefulWidget {
@@ -21,10 +22,13 @@ class Donate extends StatefulWidget {
 }
 
 class _DonateState extends State<Donate> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: MyDrawer(),
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -42,17 +46,12 @@ class _DonateState extends State<Donate> {
               child: GestureDetector(
                 child: Row(
                   children: [
-                    InkWell(
-                      onTap: ()
-                      {
-                        Navigator.push(context, MaterialPageRoute(builder: (context){
-                          return HomePage();
-                        }));
+                    GestureDetector(
+                      onTap: () {
+                        _scaffoldKey.currentState!.openDrawer();
                       },
-                      child: Icon(
-                        Icons.arrow_back,
-                        color: Colors.white,
-                      ),
+                      child: Icon(Icons.menu, color: Colors.white,
+                        size: mQuery.size.height*0.04,),
                     ),
                     SizedBox(
                       width: mQuery.size.width * 0.045,

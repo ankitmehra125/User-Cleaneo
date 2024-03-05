@@ -1,5 +1,6 @@
 import 'package:cleaneo_user_app/Help/help_page.dart';
 import 'package:cleaneo_user_app/Dashboard/home_page.dart';
+import 'package:cleaneo_user_app/pages/mydrawer.dart';
 import 'package:flutter/material.dart';
 
 class ReferPage extends StatefulWidget {
@@ -10,11 +11,14 @@ class ReferPage extends StatefulWidget {
 }
 
 class _ReferPageState extends State<ReferPage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     var refer = "CLEANEO12345678";
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: MyDrawer(),
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -34,15 +38,10 @@ class _ReferPageState extends State<ReferPage> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                            return HomePage();
-                          }));
+                      _scaffoldKey.currentState!.openDrawer();
                     },
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
-                    ),
+                    child: Icon(Icons.menu, color: Colors.white,
+                      size: mQuery.size.height*0.04,),
                   ),
                   SizedBox(
                     width: mQuery.size.width * 0.045,
@@ -94,24 +93,32 @@ class _ReferPageState extends State<ReferPage> {
                         fontFamily: 'SatoshiMedium',
                       ),),
                       SizedBox(height: mQuery.size.height*0.08,),
-                      Container(
-                        width: double.infinity,
-                        height: mQuery.size.height*0.06,
-                        decoration: BoxDecoration(
-                          color: Color(0xff29b2fe),
-                          borderRadius: BorderRadius.circular(6)
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.share,color: Colors.white,),
-                            SizedBox(width: mQuery.size.width*0.035,),
-                            Text("$refer",style: TextStyle(
-                              color: Colors.white,
-                              fontSize: mQuery.size.height*0.024,
-                              fontFamily: 'SatoshiMedium',
-                            ),)
-                          ],
+                      GestureDetector(
+                        onTap: ()
+                        {
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return HomePage();
+                          }));
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: mQuery.size.height*0.06,
+                          decoration: BoxDecoration(
+                            color: Color(0xff29b2fe),
+                            borderRadius: BorderRadius.circular(6)
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.share,color: Colors.white,),
+                              SizedBox(width: mQuery.size.width*0.035,),
+                              Text("$refer",style: TextStyle(
+                                color: Colors.white,
+                                fontSize: mQuery.size.height*0.024,
+                                fontFamily: 'SatoshiMedium',
+                              ),)
+                            ],
+                          ),
                         ),
                       )
                     ],

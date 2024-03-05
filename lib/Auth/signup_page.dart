@@ -1,4 +1,5 @@
 import 'package:cleaneo_user_app/Auth/login_page.dart';
+import 'package:cleaneo_user_app/Auth/otp_page.dart';
 import 'package:cleaneo_user_app/Auth/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -49,12 +50,12 @@ class _SignUpPageState extends State<SignUpPage> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap:()
-                    {
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return WelcomePage();
-                      }));
-                    },
+                      onTap:()
+                      {
+                        Navigator.push(context, MaterialPageRoute(builder: (context){
+                          return WelcomePage();
+                        }));
+                      },
                       child: Icon(Icons.arrow_back, color: Colors.white,)),
                   SizedBox(width: mQuery.size.width * 0.045,),
                   Text("Sign Up", style: TextStyle(
@@ -71,22 +72,22 @@ class _SignUpPageState extends State<SignUpPage> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(16),
-                    topRight: Radius.circular(16)
+                      topLeft: Radius.circular(16),
+                      topRight: Radius.circular(16)
                   ),
                 ),
                 child: Padding(
                   padding:  EdgeInsets.only(
-                       left: mQuery.size.width*0.045,
-                        right: mQuery.size.width*0.045,
-                        top: mQuery.size.height*0.025
+                      left: mQuery.size.width*0.045,
+                      right: mQuery.size.width*0.045,
+                      top: mQuery.size.height*0.025
                   ),
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text("Full Name*", style: TextStyle(
-                            fontFamily: 'SatoshiBold',
+                          fontFamily: 'SatoshiBold',
                           fontSize: mQuery.size.height*0.02,
                         ),),
                         SizedBox(height: mQuery.size.height * 0.01,),
@@ -119,7 +120,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                   color: Color(0xffABAFB1)
                               ),
                               contentPadding: EdgeInsets.symmetric(
-                                vertical: mQuery.size.height*0.0175
+                                  vertical: mQuery.size.height*0.0175
                               ),
                             ),
                           ),
@@ -175,7 +176,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                   color: Colors.grey,
                                 ),
                               ),
-                              SizedBox(width: mQuery.size.width*0.02),
+                              SizedBox(width: mQuery.size.width*0.01),
                               // Phone number input
                               Expanded(
                                 child: TextField(
@@ -203,7 +204,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             ],
                           ),
                         ),
-                        
+
                         SizedBox(height: mQuery.size.height*0.03,),
                         // Email
                         Text("Email", style: TextStyle(
@@ -237,7 +238,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               hintStyle: TextStyle(
                                 fontSize: mQuery.size.height*0.02,
                                 fontFamily: 'SatoshiMedium',
-                                  color: Color(0xffABAFB1),
+                                color: Color(0xffABAFB1),
                               ),
                               contentPadding: EdgeInsets.symmetric(
                                   vertical: mQuery.size.height*0.0175
@@ -249,25 +250,33 @@ class _SignUpPageState extends State<SignUpPage> {
 
                         SizedBox(height: mQuery.size.height*0.05,),
                         Text("We'll send a one time 4-digit OTP to your phone or email to verify",
-                        style: TextStyle(
+                          style: TextStyle(
                             fontSize: mQuery.size.height*0.0175,
-                          fontFamily: 'SatoshiMedium',
-                        ),),
+                            fontFamily: 'SatoshiMedium',
+                          ),),
 
                         SizedBox(height: mQuery.size.height*0.217,),
-                        Container(
-                          width: double.infinity,
-                          height: mQuery.size.height*0.06,
-                          decoration: BoxDecoration(
-                            color: Color(0xff29b2fe),
-                            borderRadius: BorderRadius.circular(6)
-                          ),
-                          child: Center(
-                            child: Text("Sign Up",style: TextStyle(
-                                fontSize: mQuery.size.height*0.022,
-                              color: Colors.white,
-                              fontFamily: 'SatoshiBold',
-                            ),),
+                        GestureDetector(
+                          onTap: ()
+                          {
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return OTPPage();
+                            }));
+                          },
+                          child: Container(
+                            width: double.infinity,
+                            height: mQuery.size.height*0.06,
+                            decoration: BoxDecoration(
+                                color: Color(0xff29b2fe),
+                                borderRadius: BorderRadius.circular(6)
+                            ),
+                            child: Center(
+                              child: Text("Sign Up",style: TextStyle(
+                                fontSize: mQuery.size.height*0.023,
+                                color: Colors.white,
+                                fontFamily: 'SatoshiBold',
+                              ),),
+                            ),
                           ),
                         ),
                         SizedBox(height: mQuery.size.height*0.01,),
@@ -275,7 +284,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text("Already have an account?",style: TextStyle(
-                                fontSize: mQuery.size.height*0.022,
+                              fontSize: mQuery.size.height*0.022,
                               fontFamily: 'SatoshiBold',
                             ),),
 

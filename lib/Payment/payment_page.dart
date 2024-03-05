@@ -120,29 +120,23 @@ class _PaymentPageState extends State<PaymentPage> {
                             Expanded(child: SizedBox()),
                             Row(
                               children: [
-                                Stack(
-                                  children: [
-                                    Container(
-                                      width: mQuery.size.width * 0.06,
-                                      height: 39,
+                                Container(
+                                  width: mQuery.size.width * 0.06,
+                                  height: 39,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                          color: Color(0xff29b2fe)),
+                                      shape: BoxShape.circle),
+                                  child: Center(
+                                    child: Container(
+                                      width: mQuery.size.width * 0.035,
+                                      height: mQuery.size.height * 0.02,
                                       decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: Color(0xff29b2fe)),
+                                          color: Color(0xff29b2fe),
                                           shape: BoxShape.circle),
                                     ),
-                                    Positioned(
-                                      top: mQuery.size.height * 0.0165,
-                                      left: mQuery.size.width * 0.012,
-                                      child: Container(
-                                        width: mQuery.size.width * 0.035,
-                                        height: mQuery.size.height * 0.02,
-                                        decoration: BoxDecoration(
-                                            color: Color(0xff29b2fe),
-                                            shape: BoxShape.circle),
-                                      ),
-                                    )
-                                  ],
-                                )
+                                  ),
+                                ),
                               ],
                             )
                           ],
@@ -490,7 +484,6 @@ class _PaymentPageState extends State<PaymentPage> {
                             ),
                             SizedBox(height: mQuery.size.height*0.025,),
 
-
                           ],
                         ),
                       ),
@@ -501,31 +494,39 @@ class _PaymentPageState extends State<PaymentPage> {
             ),
             Container(
               color: Colors.white,
-              child: GestureDetector(
-                onTap: ()
-                {
-                  Navigator.push(context, MaterialPageRoute(builder: (context){
-                    return HomePage();
-                  }));
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: mQuery.size.height*0.054,
-                  margin: EdgeInsets.symmetric(
-                    horizontal: mQuery.size.width*0.045
+              child: Column(
+                children: [
+                  Container(
+                    color: Colors.white,
+                    child: GestureDetector(
+                      onTap: ()
+                      {
+                        Navigator.push(context, MaterialPageRoute(builder: (context){
+                          return HomePage();
+                        }));
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: mQuery.size.height*0.054,
+                        margin: EdgeInsets.symmetric(
+                          horizontal: mQuery.size.width*0.045
+                        ),
+                        decoration: BoxDecoration(
+                            color: Color(0xff20b2fe),
+                            borderRadius: BorderRadius.circular(6)
+                        ),
+                        child: Center(
+                          child: Text("Make Payment ",style: TextStyle(
+                              color: Colors.white,
+                              fontSize: mQuery.size.height*0.023,
+                              fontFamily: 'SatoshiBold'
+                          ),),
+                        ),
+                      ),
+                    ),
                   ),
-                  decoration: BoxDecoration(
-                      color: Color(0xff20b2fe),
-                      borderRadius: BorderRadius.circular(6)
-                  ),
-                  child: Center(
-                    child: Text("Make Payment ",style: TextStyle(
-                        color: Colors.white,
-                        fontSize: mQuery.size.height*0.023,
-                        fontFamily: 'SatoshiBold'
-                    ),),
-                  ),
-                ),
+                  SizedBox(height: mQuery.size.height*0.02,)
+                ],
               ),
             )
           ],
