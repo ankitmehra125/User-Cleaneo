@@ -1,3 +1,4 @@
+import 'package:cleaneo_user_app/Auth/welcome_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Notifications/notification_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Orders/yourOrders_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wallet/wallet_page.dart';
@@ -101,7 +102,7 @@ class _MyDrawerState extends State<MyDrawer> {
                                       width: mQuery.size.width*0.04,
                                       height: mQuery.size.height*0.04,
                                       decoration: BoxDecoration(
-                                        color: Colors.green,
+                                        color: Color(0xff009c1a),
                                         shape: BoxShape.circle,
                                       ),
                                       child: Center(
@@ -378,7 +379,9 @@ class _MyDrawerState extends State<MyDrawer> {
                                 GestureDetector(
                                   onTap : ()
                                   {
-
+                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+                                      return const WelcomePage();
+                                    }));
                                   },
                                   child: Text("Sign Out",style: TextStyle(
                                       fontSize: mQuery.size.height*0.022,

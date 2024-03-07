@@ -71,57 +71,60 @@ class _ReferPageState extends State<ReferPage> {
                     left: mQuery.size.width*0.045,
                     right: mQuery.size.width*0.045,
                   ),
-                  child: Column(
-                    children: [
-                      Text("Refer CLEANEO to a \nfriend & get 10% OFF",
-                      style: TextStyle(
-                        fontSize: mQuery.size.height*0.023,
-                        fontFamily: 'SatoshiMedium',
-                      ),),
-                      SizedBox(height: mQuery.size.height*0.03,),
-                      Text("Invite a friend to CLEANEO & the enjoy \n the discount on any one of your "
-                          "orders \n         on 1st order of your friend",
-                      style: TextStyle(
-                        fontSize: mQuery.size.height*0.018,
-                        color: Colors.black54,
-                        fontFamily: 'SatoshiRegular',
-                      ),),
-                      Image.asset("assets/images/enjoy.png"),
-                      SizedBox(height: mQuery.size.height*0.055,),
-                      Text("Share your referal code",style: TextStyle(
-                        fontSize: mQuery.size.height*0.02,
-                        fontFamily: 'SatoshiMedium',
-                      ),),
-                      SizedBox(height: mQuery.size.height*0.08,),
-                      GestureDetector(
-                        onTap: ()
-                        {
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
-                            return HomePage();
-                          }));
-                        },
-                        child: Container(
-                          width: double.infinity,
-                          height: mQuery.size.height*0.06,
-                          decoration: BoxDecoration(
-                            color: Color(0xff29b2fe),
-                            borderRadius: BorderRadius.circular(6)
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(Icons.share,color: Colors.white,),
-                              SizedBox(width: mQuery.size.width*0.035,),
-                              Text("$refer",style: TextStyle(
-                                color: Colors.white,
-                                fontSize: mQuery.size.height*0.024,
-                                fontFamily: 'SatoshiMedium',
-                              ),)
-                            ],
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Text("Refer CLEANEO to a \nfriend & get 10% OFF",
+                        style: TextStyle(
+                          fontSize: mQuery.size.height*0.023,
+                          fontFamily: 'SatoshiMedium',
+                        ),),
+                        SizedBox(height: mQuery.size.height*0.03,),
+                        Text("Invite a friend to CLEANEO & the enjoy \n the discount on any one of your "
+                            "orders \n         on 1st order of your friend",
+                        style: TextStyle(
+                          fontSize: mQuery.size.height*0.018,
+                          color: Colors.black54,
+                          fontFamily: 'SatoshiRegular',
+                        ),),
+                        Image.asset("assets/images/enjoy.png"),
+                        SizedBox(height: mQuery.size.height*0.055,),
+                        Text("Share your referal code",style: TextStyle(
+                          fontSize: mQuery.size.height*0.02,
+                          fontFamily: 'SatoshiMedium',
+                        ),),
+                        SizedBox(height: mQuery.size.height*0.05,),
+                        GestureDetector(
+                          onTap: ()
+                          {
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return HomePage();
+                            }));
+                          },
+                          child: Container(
+                            width: double.infinity,
+                            height: mQuery.size.height*0.06,
+                            decoration: BoxDecoration(
+                              color: Color(0xff29b2fe),
+                              borderRadius: BorderRadius.circular(6)
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.share,color: Colors.white,),
+                                SizedBox(width: mQuery.size.width*0.035,),
+                                Text("$refer",style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: mQuery.size.height*0.024,
+                                  fontFamily: 'SatoshiMedium',
+                                ),)
+                              ],
+                            ),
                           ),
                         ),
-                      )
-                    ],
+                        SizedBox(height: mQuery.size.height*0.02 ,)
+                      ],
+                    ),
                   ),
                 ),
               ),

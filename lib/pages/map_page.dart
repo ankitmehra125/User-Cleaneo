@@ -88,9 +88,9 @@ class _MapPageState extends State<MapPage> {
                         child: GestureDetector(
                           onTap: ()
                           {
-                            Navigator.push(context, MaterialPageRoute(builder: (context){
-                              return HomePage();
-                            }));
+                           Navigator.push(context, MaterialPageRoute(builder: (context){
+                             return HomePage();
+                           }));
                           },
                           child: Container(
                             width: double.infinity,

@@ -1,3 +1,4 @@
+import 'package:cleaneo_user_app/Dashboard/Wash/Select%20Vendor/chooseVendor_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cleaneo_user_app/Dashboard/Wash/byweight_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wash/quantity_wise_page.dart';
@@ -54,7 +55,9 @@ class _WashPageState extends State<WashPage> with SingleTickerProviderStateMixin
                           children: [
                             GestureDetector(
                               onTap: () {
-                                Navigator.pop(context); // Navigate back to previous page
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return ChooseVendorPage();
+                                }));
                               },
                               child: Icon(Icons.arrow_back, color: Colors.white),
                             ),

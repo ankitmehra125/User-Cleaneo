@@ -41,7 +41,7 @@ class _WalletPageState extends State<WalletPage> {
     },
   ];
 
-  int selectedIndex = -1; // Index of the selected circular container
+  int selectedIndex = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -215,61 +215,54 @@ class _WalletPageState extends State<WalletPage> {
                                     ),
                                   ],
                                 ),
-                                child: SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  child: Row(
-                                    children: [
-                                      Image.asset(transaction['image'],
-                                        color: Color(0xff29b2fe),
-                                        width: mQuery.size.width * 0.065,
-                                      ),
-                                      SizedBox(width: mQuery.size.width * 0.02),
-                                      Column(
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                        children: [
-                                          SizedBox(
-                                              height:
-                                              mQuery.size.height * 0.01),
-                                          Row(
-                                            children: [
-                                              Text(
-                                                transaction['title'],
-                                                style: TextStyle(
-                                                    fontSize:
-                                                    mQuery.size.height *
-                                                        0.019,
-                                                    fontFamily: 'SatoshiMedium'),
-                                              ),
-                                              SizedBox(width: mQuery.size.width * 0.06),    /////////////// FOR SPACE
-                                              Text(
-                                                transaction['amount'] >= 0
-                                                    ? "+ ₹ ${transaction['amount'].abs().toStringAsFixed(2)}"
-                                                    : "- ₹ ${transaction['amount'].abs().toStringAsFixed(2)}",
-                                                style: TextStyle(
-                                                    color: transaction['amount'] >=
-                                                        0
-                                                        ? Colors.green
-                                                        : Colors.red,
-                                                    fontFamily: 'SatoshiMedium',
-                                                    fontSize: mQuery.size.height*0.017),
-                                              )
-                                            ],
-                                          ),
-                                          SizedBox(
-                                              height:
-                                              mQuery.size.height * 0.0035),
-                                          Text(
-                                            transaction['time'],
-                                            style: TextStyle(
-                                                fontSize:
-                                                mQuery.size.height * 0.0155,
-                                              fontFamily: 'SatoshiRegular'),
-                                          )
-                                        ],
-                                      ),
-                                    ],
-                                  ),
+                                child: Row(
+                                  children: [
+                                    Image.asset(transaction['image'],
+                                      color: Color(0xff29b2fe),
+                                      width: mQuery.size.width * 0.06,
+                                    ),
+                                    SizedBox(width: mQuery.size.width * 0.02),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(height: mQuery.size.height * 0.015),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              transaction['title'],
+                                              style: TextStyle(
+                                                  fontSize: mQuery.size.height * 0.017,
+                                                  fontFamily: 'SatoshiMedium'),
+                                            ),
+                                            // SizedBox(width: mQuery.size.width * 0.06),
+                                            ///////////// FOR SPACE
+
+                                          ],
+                                        ),
+                                        SizedBox(height: mQuery.size.height * 0.0035),
+                                        Text(
+                                          transaction['time'],
+                                          style: TextStyle(
+                                              fontSize:
+                                              mQuery.size.height * 0.0155,
+                                            fontFamily: 'SatoshiRegular'),
+                                        )
+                                      ],
+                                    ),
+                                    Expanded(child: SizedBox()),
+                                    Text(
+                                      transaction['amount'] >= 0
+                                          ? "+ ₹ ${transaction['amount'].abs().toStringAsFixed(2)}"
+                                          : "- ₹ ${transaction['amount'].abs().toStringAsFixed(2)}",
+                                      style: TextStyle(
+                                          color: transaction['amount'] >=
+                                              0
+                                              ? Colors.green
+                                              : Colors.red,
+                                          fontFamily: 'SatoshiMedium',
+                                          fontSize: mQuery.size.height*0.015),
+                                    )
+                                  ],
                                 ),
                               ),
                               SizedBox(height: mQuery.size.height * 0.03),

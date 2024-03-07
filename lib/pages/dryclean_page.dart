@@ -1323,7 +1323,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                             ),
                                                           ),
                                                           SizedBox(height: 10),
-                                                          Text("Hello Flutter")
+                                                          // Text("Hello Flutter")
                                                         ],
                                                       ),
                                                     ),
@@ -1716,6 +1716,8 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                                   ),
                                                 ),
                                               ),
+                                              SizedBox(height: mQuery.size.height * 0.036,),
+
                                             ],
                                           ),
                                         ),

@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Hero(
-        tag: 'logoTag', // Use the same tag for the Hero widget in the login page
+        tag: 'logoTag', 
         child: Container(
           height: double.infinity,
           width: double.infinity,

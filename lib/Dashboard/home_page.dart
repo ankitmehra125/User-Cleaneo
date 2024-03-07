@@ -2,6 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cleaneo_user_app/Dashboard/Notifications/notification_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Orders/yourOrders_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wallet/wallet_page.dart';
+import 'package:cleaneo_user_app/Dashboard/Wash/Select%20Vendor/chooseVendor_page.dart';
+import 'package:cleaneo_user_app/Dashboard/Wash/Select%20Vendor/vendorDetails_page.dart';
 import 'package:cleaneo_user_app/pages/donate.dart';
 import 'package:cleaneo_user_app/pages/dryclean_page.dart';
 import 'package:cleaneo_user_app/pages/mydrawer.dart';
@@ -21,7 +23,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   var orderNo = 3;
-  int selectedContainerIndex = 0;
+  int selectedContainerIndex = 1;
   String userName = "Shweta";
 
   TextEditingController searchController = TextEditingController();
@@ -129,66 +131,64 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         children: [
           buildPage(0, imageLists[selectedContainerIndex]),
+
           if (_selectedIndex == 1) const YourOrdersPage(),
           if (_selectedIndex == 2) const NotificationsPage(),
           if (_selectedIndex == 3) Donate(),
           if (_selectedIndex == 4) const WalletPage(),
         ],
       ),
-      bottomNavigationBar: Container(
-        height: mQuery.size.height * 0.1,
-        child: BottomNavigationBar(
-          backgroundColor: Colors.white,
-          type: BottomNavigationBarType.fixed,
-          currentIndex: _selectedIndex,
-          onTap: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          },
-          items: [
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/images/home.png",
-                width: mQuery.size.width * 0.075,
-                color: _selectedIndex == 0 ? const Color(0xff29b2fe) : Colors.black,
-              ),
-              label: "",
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _selectedIndex,
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              "assets/images/home.png",
+              width: mQuery.size.width * 0.075,
+              color: _selectedIndex == 0 ? const Color(0xff29b2fe) : Colors.black,
             ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/images/drawer-images/shopping-bag.png",
-                width: mQuery.size.width * 0.075,
-                color: _selectedIndex == 1 ? const Color(0xff29b2fe) : Colors.black,
-              ),
-              label: "",
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              "assets/images/drawer-images/shopping-bag.png",
+              width: mQuery.size.width * 0.075,
+              color: _selectedIndex == 1 ? const Color(0xff29b2fe) : Colors.black,
             ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/images/drawer-images/bell.png",
-                width: mQuery.size.width * 0.075,
-                color: _selectedIndex == 2 ? const Color(0xff29b2fe) : Colors.black,
-              ),
-              label: "",
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              "assets/images/drawer-images/bell.png",
+              width: mQuery.size.width * 0.075,
+              color: _selectedIndex == 2 ? const Color(0xff29b2fe) : Colors.black,
             ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/images/drawer-images/heart.png",
-                width: mQuery.size.width * 0.075,
-                color: _selectedIndex == 3 ? const Color(0xff29b2fe) : Colors.black,
-              ),
-              label: "",
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              "assets/images/drawer-images/heart.png",
+              width: mQuery.size.width * 0.075,
+              color: _selectedIndex == 3 ? const Color(0xff29b2fe) : Colors.black,
             ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/images/drawer-images/wallet.png",
-                width: mQuery.size.width * 0.075,
-                color: _selectedIndex == 4 ? const Color(0xff29b2fe) : Colors.black,
-              ),
-              label: "",
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              "assets/images/drawer-images/wallet.png",
+              width: mQuery.size.width * 0.075,
+              color: _selectedIndex == 4 ? const Color(0xff29b2fe) : Colors.black,
             ),
-          ],
-        ),
+            label: "",
+          ),
+        ],
       ),
     );
   }
@@ -311,20 +311,28 @@ class _HomePageState extends State<HomePage> {
                             fontFamily: 'SatoshiMedium',
                           ),
                         ),
-                        Container(
-                          width: mQuery.size.width * 0.08,
-                          height: mQuery.size.height * 0.025,
-                          decoration: const BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Center(
-                            child: Text(
-                              "$orderNo",
-                              style: TextStyle(
-                                  color: Color(0xff29b2fe),
-                                  fontSize: mQuery.size.height*0.015,
-                                  fontFamily: 'SatoshiBold'
+                        GestureDetector(
+                          onTap: ()
+                          {
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return YourOrdersPage();
+                            }));
+                          },
+                          child: Container(
+                            width: mQuery.size.width * 0.08,
+                            height: mQuery.size.height * 0.025,
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Center(
+                              child: Text(
+                                "$orderNo",
+                                style: TextStyle(
+                                    color: Color(0xff29b2fe),
+                                    fontSize: mQuery.size.height*0.015,
+                                    fontFamily: 'SatoshiBold'
+                                ),
                               ),
                             ),
                           ),
@@ -410,10 +418,10 @@ class _HomePageState extends State<HomePage> {
                               context,
                               MaterialPageRoute(builder: (context) => DryCleanPage()),
                             );
-                          } else {
+                          } else if (item['text'] == 'Wash') {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => WashPage()),
+                              MaterialPageRoute(builder: (context) => ChooseVendorPage()),
                             );
                           }
                         },
@@ -512,6 +520,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   SizedBox(height: mQuery.size.height*0.03,),
+
+
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Padding(
@@ -522,16 +532,24 @@ class _HomePageState extends State<HomePage> {
                           padding:  EdgeInsets.only(
                               right: mQuery.size.width*0.035
                           ),
-                          child: Container(
-                            width: mQuery.size.width * 0.22,
-                            height: mQuery.size.height * 0.1,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                    image['url']!),
-                                fit: BoxFit.cover,
-                              ),),
+                          child: GestureDetector(
+                            onTap: ()
+                            {
+                              Navigator.push(context, MaterialPageRoute(builder: (context){
+                                return VendorDetailsPage();
+                              }));
+                            },
+                            child: Container(
+                              width: mQuery.size.width * 0.22,
+                              height: mQuery.size.height * 0.1,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                      image['url']!),
+                                  fit: BoxFit.cover,
+                                ),),
+                            ),
                           ),
                         ),)
                             .toList(),

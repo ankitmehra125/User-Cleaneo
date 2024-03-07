@@ -304,69 +304,71 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                             ),
                           ],
                         ),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Checkbox(
-                                  value: clothSoftenerSelected,
-                                  activeColor: Color(0xff29b2fe),
-                                  onChanged: (value) {
-                                    setState(() {
-                                      clothSoftenerSelected = value!;
-                                    });
-                                  },
-                                ),
-                                Text(
-                                  "Cloth Softener",
-                                  style: TextStyle(
-                                    fontSize: mQuery.size.height*0.017,
-                                    fontFamily: 'SatoshiMedium',
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Checkbox(
+                                    value: clothSoftenerSelected,
+                                    activeColor: Color(0xff29b2fe),
+                                    onChanged: (value) {
+                                      setState(() {
+                                        clothSoftenerSelected = value!;
+                                      });
+                                    },
                                   ),
-                                ),
-                                Expanded(child: SizedBox()),
-                                Icon(Icons.add, color: Colors.black54, size: 18),
-                                SizedBox(width: mQuery.size.width * 0.04),
-                                Text(
-                                  "₹ 1 PER KG",
-                                  style: TextStyle(
+                                  Text(
+                                    "Cloth Softener",
+                                    style: TextStyle(
                                       fontSize: mQuery.size.height*0.017,
-                                      fontFamily: 'SatoshiRegular',
-                                      color: Colors.black54),
-                                )
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Checkbox(
-                                  value: antigermsSelected,
-                                  activeColor: Color(0xff29b2f2),
-                                  onChanged: (value) {
-                                    setState(() {
-                                      antigermsSelected = value!;
-                                    });
-                                  },
-                                ),
-                                Text(
-                                  "Anti-Germs Liquid",
-                                  style: TextStyle(
-                                    fontSize: mQuery.size.height*0.017,
-                                    fontFamily: 'SatoshiMedium',
+                                      fontFamily: 'SatoshiMedium',
+                                    ),
                                   ),
-                                ),
-                                Expanded(child: SizedBox()),
-                                Icon(Icons.add, color: Colors.black54, size: 18),
-                                SizedBox(width: mQuery.size.width * 0.04),
-                                Text(
-                                  "₹ 1 PER KG",
-                                  style: TextStyle(
+                                  Expanded(child: SizedBox()),
+                                  Icon(Icons.add, color: Colors.black54, size: 18),
+                                  SizedBox(width: mQuery.size.width * 0.04),
+                                  Text(
+                                    "₹ 1 PER KG",
+                                    style: TextStyle(
+                                        fontSize: mQuery.size.height*0.017,
+                                        fontFamily: 'SatoshiRegular',
+                                        color: Colors.black54),
+                                  )
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Checkbox(
+                                    value: antigermsSelected,
+                                    activeColor: Color(0xff29b2f2),
+                                    onChanged: (value) {
+                                      setState(() {
+                                        antigermsSelected = value!;
+                                      });
+                                    },
+                                  ),
+                                  Text(
+                                    "Anti-Germs Liquid",
+                                    style: TextStyle(
                                       fontSize: mQuery.size.height*0.017,
-                                      fontFamily: 'SatoshiRegular',
-                                      color: Colors.black54),
-                                )
-                              ],
-                            ),
-                          ],
+                                      fontFamily: 'SatoshiMedium',
+                                    ),
+                                  ),
+                                  Expanded(child: SizedBox()),
+                                  Icon(Icons.add, color: Colors.black54, size: 18),
+                                  SizedBox(width: mQuery.size.width * 0.04),
+                                  Text(
+                                    "₹ 1 PER KG",
+                                    style: TextStyle(
+                                        fontSize: mQuery.size.height*0.017,
+                                        fontFamily: 'SatoshiRegular',
+                                        color: Colors.black54),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -729,7 +731,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                               times[i],
                                               style: TextStyle(
                                                   fontFamily: 'SatoshiRegular',
-                                                  fontSize: mQuery.size.height*0.0165,
+                                                  fontSize: mQuery.size.height*0.0156,
                                                   color: selectedTimeIndex == i
                                                       ? Colors.white
                                                       : Colors.black),
@@ -865,7 +867,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                               times2[i],
                                               style: TextStyle(
                                                 fontFamily: 'SatoshiRegular',
-                                                fontSize: mQuery.size.height*0.0165,
+                                                fontSize: mQuery.size.height*0.0156,
                                                 color: selectedTimeIndex2 == i
                                                     ? Colors.white
                                                     : Colors.black,

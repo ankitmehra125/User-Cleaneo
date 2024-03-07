@@ -48,200 +48,188 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                      )
                    ]
                ),
-               child: SingleChildScrollView(
-                 child: Column(
-                   crossAxisAlignment: CrossAxisAlignment.start,
-                   children: [
-                     Container(
-                       width: double.infinity,
-                       height: mQuery.size.height*0.05,
-                       padding: EdgeInsets.symmetric(
-                         horizontal: mQuery.size.width*0.033
-                       ),
-                       color: Color(0xffe9f7ff),
-                       child: Row(
-                         children: [
-                           Image.asset("assets/images/drawer-images/shopping-bag.png",color: Color(0xff29b2fe),
-                           width: mQuery.size.width*0.06,
-                           ),
-                           SizedBox(width: mQuery.size.width*0.02,),
-                           Text("Order $orderNo",style: TextStyle(
-                               fontFamily: 'SatoshiMedium',
-                             fontSize: mQuery.size.height*0.0165
-                           ),),
-                           Expanded(child: SizedBox()),
-                           Text("₹ ${price.toStringAsFixed(2)}",style: TextStyle(
-                             fontFamily: 'SatoshiMedium',
-                               fontSize: mQuery.size.height*0.017
-                           ),)
-                         ],
-                       ),
-                     ),
-                     SizedBox(height: mQuery.size.height*0.01,),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                Container(
+                width: double.infinity,
+                height: mQuery.size.height*0.05,
+                padding: EdgeInsets.symmetric(horizontal: mQuery.size.width*0.033),
+                  color: Color(0xffe9f7ff),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Image.asset("assets/images/drawer-images/shopping-bag.png",color: Color(0xff29b2fe),
+                            width: mQuery.size.width*0.06,
+                          ),
+                          SizedBox(width: mQuery.size.width*0.02,),
+                          Text("Order $orderNo",style: TextStyle(
+                              fontFamily: 'SatoshiMedium',
+                              fontSize: mQuery.size.height*0.0165
+                          ),),
+                          Expanded(child: SizedBox()),
+                          Text("₹ ${price.toStringAsFixed(2)}",style: TextStyle(
+                              fontFamily: 'SatoshiMedium',
+                              fontSize: mQuery.size.height*0.017
+                          ),)
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                  SizedBox(height: mQuery.size.height*0.01,),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: mQuery.size.width*0.033
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("ITEMS",style: TextStyle(
+                            color: Colors.black54,
+                            fontFamily: 'SatoshiRegular',
+                            fontSize: mQuery.size.height*0.0165
+                        ),
+                        ),
+                        Text.rich(
+                            TextSpan(
+                                children: [
+                                  TextSpan(
+                                      text: "WASH",style: TextStyle(
+                                      fontFamily: 'SatoshiMedium',
+                                      color: Colors.black,
+                                      fontSize: mQuery.size.height*0.0155
+                                  )
+                                  ),
+                                  TextSpan(
+                                      text: " - 01 x Shirts (Woman), 02 x T-Shirts (Men)",style: TextStyle(
+                                      fontSize: mQuery.size.height*0.0155,
+                                      fontFamily: 'SatoshiRegular'
+                                  )
+                                  )
+                                ]
+                            )
+                        ),
 
-                     Column(
-                       crossAxisAlignment: CrossAxisAlignment.start,
-                       children: [
-                         Padding(
-                           padding: EdgeInsets.symmetric(
-                             horizontal: mQuery.size.width*0.033
-                           ),
-                           child: Column(
-                             crossAxisAlignment: CrossAxisAlignment.start,
-                             children: [
-                               Text("ITEMS",style: TextStyle(
-                                   color: Colors.black54,
-                                   fontFamily: 'SatoshiRegular',
-                                   fontSize: mQuery.size.height*0.0165
-                               ),
-                               ),
-                               Text.rich(
-                                   TextSpan(
-                                       children: [
-                                         TextSpan(
-                                             text: "WASH",style: TextStyle(
-                                             fontFamily: 'SatoshiMedium',
-                                             color: Colors.black,
-                                             fontSize: mQuery.size.height*0.0155
-                                         )
-                                         ),
-                                         TextSpan(
-                                             text: " - 01 x Shirts (Woman), 02 x T-Shirts (Men)",style: TextStyle(
-                                             fontSize: mQuery.size.height*0.0155,
-                                             fontFamily: 'SatoshiRegular'
-                                         )
-                                         )
-                                       ]
-                                   )
-                               ),
-                               SizedBox(height: mQuery.size.height*0.0045,),
-                               Text.rich(
-                                   TextSpan(
-                                       children: [
-                                         TextSpan(
-                                             text: "WASH & STREAM IRON",style: TextStyle(
-                                             fontFamily: 'SatoshiMedium',
-                                             color: Colors.black,
-                                             fontSize: mQuery.size.height*0.0155
-                                         )
-                                         ),
-                                         TextSpan(
-                                             text: " - 02 x Kurta Designer (Men), 01 x "
-                                                 "Bed-Sheet Single",style: TextStyle(
-                                             fontSize: mQuery.size.height*0.0155,
-                                             fontFamily: 'SatoshiRegular'
-                                         )
-                                         )
-                                       ]
-                                   )
-                               ),
-                               SizedBox(height: mQuery.size.height*0.0045,),
-                               Text.rich(
-                                   TextSpan(
-                                       children: [
-                                         TextSpan(
-                                             text: "DRY CLEAN",style: TextStyle(
-                                             fontFamily: 'SatoshiMedium',
-                                             color: Colors.black,
-                                             fontSize: mQuery.size.height*0.0155
-                                         )
-                                         ),
-                                         TextSpan(
-                                             text: " - 02 x Bath Mate",style: TextStyle(
-                                             fontSize: mQuery.size.height*0.0155,
-                                             fontFamily: 'SatoshiRegular'
-                                         )
-                                         )
-                                       ]
-                                   )
-                               ),
-                             ],
-                           ),
-                         ),
+                        SizedBox(height: mQuery.size.height*0.0045,),
+                        Text.rich(
+                            TextSpan(
+                                children: [
+                                  TextSpan(
+                                      text: "WASH & STREAM IRON",style: TextStyle(
+                                      fontFamily: 'SatoshiMedium',
+                                      color: Colors.black,
+                                      fontSize: mQuery.size.height*0.0155
+                                  )
+                                  ),
+                                  TextSpan(
+                                      text: " - 02 x Kurta Designer (Men), 01 x "
+                                          "Bed-Sheet Single",style: TextStyle(
+                                      fontSize: mQuery.size.height*0.0155,
+                                      fontFamily: 'SatoshiRegular'
+                                  )
+                                  )
+                                ]
+                            )
+                        ),
 
-                         Divider()
+                        SizedBox(height: mQuery.size.height*0.0045,),
+                        Text.rich(
+                            TextSpan(
+                                children: [
+                                  TextSpan(
+                                      text: "DRY CLEAN",style: TextStyle(
+                                      fontFamily: 'SatoshiMedium',
+                                      color: Colors.black,
+                                      fontSize: mQuery.size.height*0.0155
+                                  )
+                                  ),
+                                  TextSpan(
+                                      text: " - 02 x Bath Mate",style: TextStyle(
+                                      fontSize: mQuery.size.height*0.0155,
+                                      fontFamily: 'SatoshiRegular'
+                                  )
+                                  )
+                                ]
+                            )
+                        ),
 
-                       ],
-                     ),
-
-                     Padding(
-                       padding: EdgeInsets.symmetric(
-                           horizontal: mQuery.size.width*0.033
-                       ),
-                       child: Column(
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                         children: [
-                           Text("Rider Details",style: TextStyle(
-                               color: Colors.black54,
-                               fontFamily: 'SatoshiRegular',
-                               fontSize: mQuery.size.height*0.017
-                           ),
-                           ),
-                           SizedBox(height: mQuery.size.height*0.006,),
-                           SingleChildScrollView(
-                             scrollDirection: Axis.horizontal,
-                             child: Row(
-                               children: [
-                                 ProfilePicture(
-                                   name: "",
-                                   radius: mQuery.size.width*0.046,
-                                   fontsize: 10,
-                                   img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA3tt2QdkGYJ1268iokp1HHB3XB6PNaAZD_pssz3zFVg&s",
-                                 ),
-                                 SizedBox(width: mQuery.size.width*0.02,),
-                                 Column(
-                                   children: [
-                                     Row(
-                                       children: [
-                                         Text("Raj(ID 123456)",style: TextStyle(
-                                             fontSize: mQuery.size.height*0.017,
-                                             fontFamily: 'SatoshiMedium'
-                                         ),
-                                         ),
-                                         SizedBox(width: mQuery.size.width*0.3,),
-                                         Container(
-                                           width: mQuery.size.width*0.18,
-                                           height: mQuery.size.height*0.03,
-                                           decoration: BoxDecoration(
-                                               color: Color(0xffffeced),
-                                               borderRadius: BorderRadius.circular(16)
-                                           ),
-                                           child: Center(
-                                             child: Text("Picked Up",style: TextStyle(
-                                                 color: Colors.red,
-                                                 fontSize: mQuery.size.height*0.014,
-                                               fontFamily: 'SatoshiMedium',
-                                             ),),
-                                           ),
-                                         )
-                                       ],
-                                     ),
-                                     Row(
-                                       children: [
-                                         Text("$phoneNo",style: TextStyle(
-                                             fontSize: mQuery.size.height*0.015,
-                                             fontFamily: 'SatoshiRegular'
-                                         ),
-                                         ),
-                                         SizedBox(width: mQuery.size.width*0.3,),
-                                         Text("Track Order",style: TextStyle(
-                                             color: Color(0xff29b2fe),
-                                             fontSize: mQuery.size.height*0.017,
-                                             fontFamily: 'SatoshiRegular'
-                                         ),)
-                                       ],
-                                     ),
-                                   ],
-                                 )
-                               ],
-                             ),
-                           ),
-                         ],
-                       ),
-                     ),
-                   ],
-                 ),
-               ),
+                      ],
+                    ),
+                  ),
+                  Divider(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: mQuery.size.width*0.033
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Rider Details",style: TextStyle(
+                            color: Colors.black54,
+                            fontFamily: 'SatoshiRegular',
+                            fontSize: mQuery.size.height*0.017
+                        ),
+                        ),
+                        Row(
+                          children: [
+                            ProfilePicture(
+                              name: "",
+                              radius: mQuery.size.width*0.046,
+                              fontsize: 10,
+                              img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA3tt2QdkGYJ1268iokp1HHB3XB6PNaAZD_pssz3zFVg&s",
+                            ),
+                            SizedBox(width: mQuery.size.width*0.015,),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Raj(ID 123456)",style: TextStyle(
+                                    fontSize: mQuery.size.height*0.017,
+                                    fontFamily: 'SatoshiMedium'
+                                ),
+                                ),
+                                Text("$phoneNo",style: TextStyle(
+                                    fontSize: mQuery.size.height*0.015,
+                                    fontFamily: 'SatoshiRegular'
+                                ),
+                                ),
+                              ],
+                            ),
+                            Expanded(child: SizedBox()),
+                            Column(
+                              children: [
+                                Container(
+                                  width: mQuery.size.width*0.18,
+                                  height: mQuery.size.height*0.03,
+                                  decoration: BoxDecoration(
+                                      color: Color(0xffffeced),
+                                      borderRadius: BorderRadius.circular(16)
+                                  ),
+                                  child: Center(
+                                    child: Text("Picked Up",style: TextStyle(
+                                      color: Colors.red,
+                                      fontSize: mQuery.size.height*0.014,
+                                      fontFamily: 'SatoshiMedium',
+                                    ),),
+                                  ),
+                                ),
+                                Text("Track Order",style: TextStyle(
+                                    color: Color(0xff29b2fe),
+                                    fontSize: mQuery.size.height*0.017,
+                                    fontFamily: 'SatoshiRegular'
+                                ),)
+                              ],
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
              ),
 
              SizedBox(height: mQuery.size.height*0.023   ,),
@@ -267,200 +255,187 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                      )
                    ]
                ),
-               child: SingleChildScrollView(
-                 child: Column(
-                   crossAxisAlignment: CrossAxisAlignment.start,
-                   children: [
-                     Container(
-                       width: double.infinity,
-                       height: mQuery.size.height*0.05,
-                       padding: EdgeInsets.symmetric(
-                           horizontal: mQuery.size.width*0.033
-                       ),
-                       color: Color(0xffe9f7ff),
-                       child: Row(
-                         children: [
-                           Image.asset("assets/images/drawer-images/shopping-bag.png",color: Color(0xff29b2fe),
-                             width: mQuery.size.width*0.06,
-                           ),
-                           SizedBox(width: mQuery.size.width*0.02,),
-                           Text("Order $orderNo",style: TextStyle(
-                               fontFamily: 'SatoshiMedium',
-                               fontSize: mQuery.size.height*0.0165
-                           ),),
-                           Expanded(child: SizedBox()),
-                           Text("₹ ${price.toStringAsFixed(2)}",style: TextStyle(
-                             fontFamily: 'SatoshiMedium',
-                             fontSize: mQuery.size.height*0.017
-                           ),)
-                         ],
-                       ),
-                     ),
-                     SizedBox(height: mQuery.size.height*0.01,),
-
-                     Column(
+               child: Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                 children: [
+                   Container(
+                     width: double.infinity,
+                     height: mQuery.size.height*0.05,
+                     padding: EdgeInsets.symmetric(horizontal: mQuery.size.width*0.033),
+                     color: Color(0xffe9f7ff),
+                     child: Column(
+                       mainAxisAlignment: MainAxisAlignment.center,
                        crossAxisAlignment: CrossAxisAlignment.start,
                        children: [
-                         Padding(
-                           padding: EdgeInsets.symmetric(
-                               horizontal: mQuery.size.width*0.033
-                           ),
-                           child: Column(
-                             crossAxisAlignment: CrossAxisAlignment.start,
-                             children: [
-                               Text("ITEMS",style: TextStyle(
-                                   color: Colors.black54,
-                                   fontFamily: 'SatoshiRegular',
-                                   fontSize: mQuery.size.height*0.0165
-                               ),
-                               ),
-                               Text.rich(
+                         Row(
+                           children: [
+                             Image.asset("assets/images/drawer-images/shopping-bag.png",color: Color(0xff29b2fe),
+                               width: mQuery.size.width*0.06,
+                             ),
+                             SizedBox(width: mQuery.size.width*0.02,),
+                             Text("Order $orderNo",style: TextStyle(
+                                 fontFamily: 'SatoshiMedium',
+                                 fontSize: mQuery.size.height*0.0165
+                             ),),
+                             Expanded(child: SizedBox()),
+                             Text("₹ ${price.toStringAsFixed(2)}",style: TextStyle(
+                                 fontFamily: 'SatoshiMedium',
+                                 fontSize: mQuery.size.height*0.017
+                             ),)
+                           ],
+                         ),
+                       ],
+                     ),
+                   ),
+                   SizedBox(height: mQuery.size.height*0.01,),
+                   Padding(
+                     padding: EdgeInsets.symmetric(
+                         horizontal: mQuery.size.width*0.033
+                     ),
+                     child: Column(
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: [
+                         Text("ITEMS",style: TextStyle(
+                             color: Colors.black54,
+                             fontFamily: 'SatoshiRegular',
+                             fontSize: mQuery.size.height*0.0165
+                         ),
+                         ),
+                         Text.rich(
+                             TextSpan(
+                                 children: [
                                    TextSpan(
-                                       children: [
-                                         TextSpan(
-                                             text: "WASH",style: TextStyle(
-                                             fontFamily: 'SatoshiMedium',
-                                             color: Colors.black,
-                                             fontSize: mQuery.size.height*0.0155
-                                         )
-                                         ),
-                                         TextSpan(
-                                             text: " - 01 x Shirts (Woman), 02 x T-Shirts (Men)",style: TextStyle(
-                                             fontSize: mQuery.size.height*0.0155,
-                                             fontFamily: 'SatoshiRegular'
-                                         )
-                                         )
-                                       ]
+                                       text: "WASH",style: TextStyle(
+                                       fontFamily: 'SatoshiMedium',
+                                       color: Colors.black,
+                                       fontSize: mQuery.size.height*0.0155
                                    )
-                               ),
-                               SizedBox(height: mQuery.size.height*0.0045,),
-                               Text.rich(
+                                   ),
                                    TextSpan(
-                                       children: [
-                                         TextSpan(
-                                             text: "WASH & STREAM IRON",style: TextStyle(
-                                             fontFamily: 'SatoshiMedium',
-                                             color: Colors.black,
-                                             fontSize: mQuery.size.height*0.0155
-                                         )
-                                         ),
-                                         TextSpan(
-                                             text: " - 02 x Kurta Designer (Men), 01 x "
-                                                 "Bed-Sheet Single",style: TextStyle(
-                                             fontSize: mQuery.size.height*0.0155,
-                                             fontFamily: 'SatoshiRegular'
-                                         )
-                                         )
-                                       ]
+                                       text: " - 01 x Shirts (Woman), 02 x T-Shirts (Men)",style: TextStyle(
+                                       fontSize: mQuery.size.height*0.0155,
+                                       fontFamily: 'SatoshiRegular'
                                    )
-                               ),
-                               SizedBox(height: mQuery.size.height*0.0045,),
-                               Text.rich(
-                                   TextSpan(
-                                       children: [
-                                         TextSpan(
-                                             text: "DRY CLEAN",style: TextStyle(
-                                             fontFamily: 'SatoshiMedium',
-                                             color: Colors.black,
-                                             fontSize: mQuery.size.height*0.0155
-                                         )
-                                         ),
-                                         TextSpan(
-                                             text: " - 02 x Bath Mate",style: TextStyle(
-                                             fontSize: mQuery.size.height*0.0155,
-                                             fontFamily: 'SatoshiRegular'
-                                         )
-                                         )
-                                       ]
                                    )
-                               ),
-                             ],
-                           ),
+                                 ]
+                             )
                          ),
 
-                         Divider()
+                         SizedBox(height: mQuery.size.height*0.0045,),
+                         Text.rich(
+                             TextSpan(
+                                 children: [
+                                   TextSpan(
+                                       text: "WASH & STREAM IRON",style: TextStyle(
+                                       fontFamily: 'SatoshiMedium',
+                                       color: Colors.black,
+                                       fontSize: mQuery.size.height*0.0155
+                                   )
+                                   ),
+                                   TextSpan(
+                                       text: " - 02 x Kurta Designer (Men), 01 x "
+                                           "Bed-Sheet Single",style: TextStyle(
+                                       fontSize: mQuery.size.height*0.0155,
+                                       fontFamily: 'SatoshiRegular'
+                                   )
+                                   )
+                                 ]
+                             )
+                         ),
+
+                         SizedBox(height: mQuery.size.height*0.0045,),
+                         Text.rich(
+                             TextSpan(
+                                 children: [
+                                   TextSpan(
+                                       text: "DRY CLEAN",style: TextStyle(
+                                       fontFamily: 'SatoshiMedium',
+                                       color: Colors.black,
+                                       fontSize: mQuery.size.height*0.0155
+                                   )
+                                   ),
+                                   TextSpan(
+                                       text: " - 02 x Bath Mate",style: TextStyle(
+                                       fontSize: mQuery.size.height*0.0155,
+                                       fontFamily: 'SatoshiRegular'
+                                   )
+                                   )
+                                 ]
+                             )
+                         ),
 
                        ],
                      ),
-
-                     Padding(
-                       padding: EdgeInsets.symmetric(
-                           horizontal: mQuery.size.width*0.033
-                       ),
-                       child: Column(
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                         children: [
-                           Text("Rider Details",style: TextStyle(
-                               color: Colors.black54,
-                               fontFamily: 'SatoshiRegular',
-                               fontSize: mQuery.size.height*0.017
-                           ),
-                           ),
-                           SizedBox(height: mQuery.size.height*0.002,),
-                           SingleChildScrollView(
-                             scrollDirection: Axis.horizontal,
-                             child: Row(
+                   ),
+                   Divider(),
+                   Padding(
+                     padding: EdgeInsets.symmetric(
+                         horizontal: mQuery.size.width*0.033
+                     ),
+                     child: Column(
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: [
+                         Text("Rider Details",style: TextStyle(
+                             color: Colors.black54,
+                             fontFamily: 'SatoshiRegular',
+                             fontSize: mQuery.size.height*0.017
+                         ),
+                         ),
+                         Row(
+                           children: [
+                             ProfilePicture(
+                               name: "",
+                               radius: mQuery.size.width*0.046,
+                               fontsize: 10,
+                               img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA3tt2QdkGYJ1268iokp1HHB3XB6PNaAZD_pssz3zFVg&s",
+                             ),
+                             SizedBox(width: mQuery.size.width*0.015,),
+                             Column(
+                               crossAxisAlignment: CrossAxisAlignment.start,
                                children: [
-                                 ProfilePicture(
-                                   name: "",
-                                   radius: mQuery.size.width*0.046,
-                                   fontsize: 10,
-                                   img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA3tt2QdkGYJ1268iokp1HHB3XB6PNaAZD_pssz3zFVg&s",
+                                 Text("Raj(ID 123456)",style: TextStyle(
+                                     fontSize: mQuery.size.height*0.017,
+                                     fontFamily: 'SatoshiMedium'
                                  ),
-                                 SizedBox(width: mQuery.size.width*0.02,),
-                                 Column(
-                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                   children: [
-                                     Row(
-                                       children: [
-                                         Text("Raj(ID 123456)",style: TextStyle(
-                                             fontSize: mQuery.size.height*0.017,
-                                             fontFamily: 'SatoshiMedium'
-                                         ),
-                                         ),
-                                         SizedBox(width: mQuery.size.width*0.3,),
-                                         Container(
-                                           width: mQuery.size.width*0.18,
-                                           height: mQuery.size.height*0.03,
-                                           decoration: BoxDecoration(
-                                             color: Color(0xffe9f7ff),
-                                             borderRadius: BorderRadius.circular(16)
-                                           ),
-                                           child: Center(
-                                             child: Text("In Process",style: TextStyle(
-                                               color: Color(0xff29b2fe),
-                                               fontSize: mQuery.size.height*0.014,
-                                               fontFamily: 'SatoshiMedium',
-                                             ),),
-                                           ),
-                                         )
-                                       ],
-                                     ),
-                                     Row(
-                                       children: [
-                                         Text("$phoneNo",style: TextStyle(
-                                             fontSize: mQuery.size.height*0.015,
-                                            fontFamily: 'SatoshiRegular'
-                                         ),
-                                         ),
-                                         SizedBox(width: mQuery.size.width*0.3,),
-                                         Text("Track Order",style: TextStyle(
-                                           color: Color(0xff29b2fe),
-                                           fontSize: mQuery.size.height*0.017,
-                                             fontFamily: 'SatoshiRegular'
-                                         ),)
-                                       ],
-                                     ),
-                                   ],
-                                 )
+                                 ),
+                                 Text("$phoneNo",style: TextStyle(
+                                     fontSize: mQuery.size.height*0.015,
+                                     fontFamily: 'SatoshiRegular'
+                                 ),
+                                 ),
                                ],
                              ),
-                           ),
-                         ],
-                       ),
+                             Expanded(child: SizedBox()),
+                             Column(
+                               children: [
+                                 Container(
+                                   width: mQuery.size.width*0.18,
+                                   height: mQuery.size.height*0.03,
+                                   decoration: BoxDecoration(
+                                       color: Color(0xffe9f7ff),
+                                       borderRadius: BorderRadius.circular(16)
+                                   ),
+                                   child: Center(
+                                     child: Text("In Process",style: TextStyle(
+                                       color: Color(0xff29b2fe),
+                                       fontSize: mQuery.size.height*0.014,
+                                       fontFamily: 'SatoshiMedium',
+                                     ),),
+                                   ),
+                                 ),
+                                 Text("Track Order",style: TextStyle(
+                                     color: Color(0xff29b2fe),
+                                     fontSize: mQuery.size.height*0.017,
+                                     fontFamily: 'SatoshiRegular'
+                                 ),)
+                               ],
+                             )
+                           ],
+                         )
+                       ],
                      ),
-                   ],
-                 ),
+                   ),
+                 ],
                ),
              ),
            ],
