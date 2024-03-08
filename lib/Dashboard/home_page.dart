@@ -23,7 +23,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   var orderNo = 3;
-  int selectedContainerIndex = 1;
+  int selectedContainerIndex = 0;
   String userName = "Shweta";
 
   TextEditingController searchController = TextEditingController();
