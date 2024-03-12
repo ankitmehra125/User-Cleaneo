@@ -48,76 +48,76 @@ class _MyDrawerState extends State<MyDrawer> {
                         padding: EdgeInsets.only(
                           left: mQuery.size.width*0.028,
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            GestureDetector(
-                              onTap: ()
-                              {
-                                Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  return MyProfilePage();
-                                }));
-                              },
-                              child: ProfilePicture(
+                        child: GestureDetector(
+                          onTap: ()
+                          {
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return MyProfilePage();
+                            }));
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              ProfilePicture(
                                 name: "",
                                 radius: 20,
                                 fontsize: 10,
                                 img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwKKzV4oKveaDEmBr38LXuMWTho1d1-mjOOcjau6XJ1A&s",
                               ),
-                            ),
-                            SizedBox(width: mQuery.size.width*0.024,),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    SizedBox(height: mQuery.size.height*0.02,),
-                                    Text("$userName",style: TextStyle(
-                                        fontSize: mQuery.size.height*0.022,
-                                        fontFamily: 'SatoshiBold'
-                                    ),),
-                                    SizedBox(width: mQuery.size.width*0.05,),
-                                    GestureDetector(
-                                        onTap: ()
-                                        {
-                                          Navigator.push(context, MaterialPageRoute(builder: (context){
-                                            return MyProfilePage();
-                                          }));
-                                        },
-                                        child: Image.asset("assets/images/drawer-images/edit.png",color: Color(0xff29b2fe),
-                                            width: mQuery.size.width*0.045),)
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Icon(Icons.phone_android,
-                                        size: mQuery.size.width*0.05,),
-                                    Text("$phoneNo",style: TextStyle(
-                                      fontSize: mQuery.size.height*0.0185,
-                                      fontFamily: 'SatoshiMedium'
-                                    ),),
-                                    SizedBox(width: mQuery.size.width*0.02,),
-                                    Container(
-                                      width: mQuery.size.width*0.04,
-                                      height: mQuery.size.height*0.04,
-                                      decoration: BoxDecoration(
-                                        color: Color(0xff009c1a),
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: Center(
-                                        child: Icon(
-                                          Icons.check,
-                                          color: Colors.white,
-                                          size: 10,
+                              SizedBox(width: mQuery.size.width*0.024,),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      SizedBox(height: mQuery.size.height*0.02,),
+                                      Text("$userName",style: TextStyle(
+                                          fontSize: mQuery.size.height*0.022,
+                                          fontFamily: 'SatoshiBold'
+                                      ),),
+                                      SizedBox(width: mQuery.size.width*0.05,),
+                                      GestureDetector(
+                                          onTap: ()
+                                          {
+                                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                                              return MyProfilePage();
+                                            }));
+                                          },
+                                          child: Image.asset("assets/images/drawer-images/edit.png",color: Color(0xff29b2fe),
+                                              width: mQuery.size.width*0.045),)
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(Icons.phone_android,
+                                          size: mQuery.size.width*0.05,),
+                                      Text("$phoneNo",style: TextStyle(
+                                        fontSize: mQuery.size.height*0.0185,
+                                        fontFamily: 'SatoshiMedium'
+                                      ),),
+                                      SizedBox(width: mQuery.size.width*0.02,),
+                                      Container(
+                                        width: mQuery.size.width*0.04,
+                                        height: mQuery.size.height*0.04,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xff009c1a),
+                                          shape: BoxShape.circle,
                                         ),
-                                      ),
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                          ],
+                                        child: Center(
+                                          child: Icon(
+                                            Icons.check,
+                                            color: Colors.white,
+                                            size: 10,
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

@@ -111,6 +111,50 @@ class _HomePageState extends State<HomePage> {
     },
   ];
 
+  final List<Map<String, String>> recommendedVImages = [
+    {
+      'url':
+      'https://www.dhobilite.com/images-v2/blog/process-folowed-in-laundry.webp'
+    },
+    {
+      'url':
+      'https://media.istockphoto.com/id/459292777/photo/laundry-service.jpg?s=612x612&w=0&k=20&c=V-fCS_ZhDA8_sqySt4-twQhovKdDrB9b71WBE_M6k1Q='
+    },
+    {
+      'url': 'https://soji.us/wp-content/uploads/2022/12/Professional-Laundry-Services.jpg'
+    },
+    {
+      'url':
+      'https://www.laundryfirst.sg/images/post/featured-image/8e0b3b3f526bfc0e2a71f60402d6b1c4d7e9136a5fd8b99c4767a633e2ac2c7dbf11e716.jpg'
+    },
+    {
+      'url':
+      'https://rjkool.com/wp-content/uploads/2021/09/laundry-services.jpg'
+    },
+  ];
+
+  final List<Map<String, String>> averagePriceImages = [
+    {
+      'url':
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvrpdxz4rW_dAnnc9wun0BG7MBFFW3wxRXXFX79rKrsPoFi1SwsBbvgrcOoJuNvnUbaA0&usqp=CAU'
+    },
+    {
+      'url':
+      'https://i.pinimg.com/474x/d2/63/6b/d2636b0241f780ede164db2d462cb3bf.jpg'
+    },
+    {
+      'url': 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/laundry-service-price-list-design-template-394da5c4081c9d4a9160ca4ad05f7812_screen.jpg?ts=1705300306'
+    },
+    {
+      'url':
+      'https://images.jdmagicbox.com/comp/delhi/q1/011pxx11.xx11.220915153544.a8q1/catalogue/dryclean-zone-ghaziabad-city-ghaziabad-6irb9dutlo.jpg'
+    },
+    {
+      'url':
+      'https://marketplace.canva.com/EAFzNOeeFZM/1/0/900w/canva-blue-and-white-illustrative-laundry-price-list-bcDPcdGMsrU.jpg'
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
@@ -124,6 +168,8 @@ class _HomePageState extends State<HomePage> {
       topRatingImages,
       premiumImages,
       nearImages,
+      recommendedVImages,
+      averagePriceImages
     ];
 
     return Scaffold(
@@ -513,6 +559,10 @@ class _HomePageState extends State<HomePage> {
                             buildCategoryContainer("Premium vendors", 1),
                             SizedBox(width: mQuery.size.width * 0.026),
                             buildCategoryContainer("Vendors near you", 2),
+                            SizedBox(width: mQuery.size.width * 0.026),
+                            buildCategoryContainer("Recommended vendors", 3),
+                            SizedBox(width: mQuery.size.width * 0.026),
+                            buildCategoryContainer("Average Priced Vendors", 4),
                           ],
                         ),
                       ),
@@ -596,7 +646,7 @@ class _HomePageState extends State<HomePage> {
         });
       },
       child: Container(
-        width: mQuery.size.width * 0.35,
+        width: mQuery.size.width * 0.4,
         height: mQuery.size.height * 0.04,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),

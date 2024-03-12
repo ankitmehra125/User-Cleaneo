@@ -85,23 +85,23 @@ class _VendorDetailsPageState extends State<VendorDetailsPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          width: mQuery.size.width*0.3,
-                          height: mQuery.size.height*0.04,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(6),
-                            border: Border.all(
-                              color: Color(0xff29b2fe)
-                            ),
-                          ),
-                          child: Center(
-                            child: Text("Show All",style: TextStyle(
-                              color: Color(0xff29b2fe),
-                              fontSize: mQuery.size.height * 0.017,
-                              fontFamily: 'SatoshiBold',
-                            ),),
-                          ),
-                        ),
+                        // Container(
+                        //   width: mQuery.size.width*0.3,
+                        //   height: mQuery.size.height*0.04,
+                        //   decoration: BoxDecoration(
+                        //     borderRadius: BorderRadius.circular(6),
+                        //     border: Border.all(
+                        //       color: Color(0xff29b2fe)
+                        //     ),
+                        //   ),
+                        //   child: Center(
+                        //     child: Text("Show All",style: TextStyle(
+                        //       color: Color(0xff29b2fe),
+                        //       fontSize: mQuery.size.height * 0.017,
+                        //       fontFamily: 'SatoshiBold',
+                        //     ),),
+                        //   ),
+                        // ),
                         SizedBox(height: mQuery.size.height*0.03,),
                         Container(
                           width: double.infinity,
