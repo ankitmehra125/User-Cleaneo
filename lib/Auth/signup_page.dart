@@ -285,14 +285,14 @@ class _SignUpPageState extends State<SignUpPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text("Already have an account?",style: TextStyle(
-                              fontSize: mQuery.size.height*0.022,
+                              fontSize: mQuery.size.height*0.02,
                               fontFamily: 'SatoshiBold',
                             ),),
 
                             TextButton(
                               child: Text(
                                 "Log In",style: TextStyle(
-                                  fontSize: mQuery.size.height*0.022,
+                                  fontSize: mQuery.size.height*0.02,
                                   fontFamily: 'SatoshiBold',
                                   color: Color(0xff29b2fe)
                               ),

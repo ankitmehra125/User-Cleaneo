@@ -96,6 +96,7 @@ class _YourOrdersPageState extends State<YourOrdersPage> with SingleTickerProvid
                             Tab(text: "Previous"),
                           ],
                           labelColor: Color(0xff29b2fe),
+                          unselectedLabelColor: Colors.grey,
                           indicatorColor: Color(0xff29b2fe),
                           labelStyle: TextStyle(
                               fontSize: mQuery.size.height*0.023

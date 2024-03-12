@@ -1,3 +1,5 @@
+import 'package:cleaneo_user_app/Payment/payment_page.dart';
+import 'package:cleaneo_user_app/Welcome/TS_page.dart';
 import 'package:cleaneo_user_app/pages/Donateslider.dart';
 import 'package:cleaneo_user_app/Help/help_page.dart';
 import 'package:cleaneo_user_app/Dashboard/home_page.dart';
@@ -6,14 +8,14 @@ import 'package:cleaneo_user_app/pages/mydrawer.dart';
 import 'package:flutter/material.dart';
 
 class Donate extends StatefulWidget {
-  final List<String> imageAssetPaths = [
-    'assets/images/flag.jpg',
-    'assets/images/flag.jpg',
-    'assets/images/flag.jpg',
-    'assets/images/flag.jpg',
-    'assets/images/flag.jpg',
-    'assets/images/flag.jpg',
-  ];
+  // final List<String> imageAssetPaths = [
+  //   'assets/images/flag.jpg',
+  //   'assets/images/flag.jpg',
+  //   'assets/images/flag.jpg',
+  //   'assets/images/flag.jpg',
+  //   'assets/images/flag.jpg',
+  //   'assets/images/flag.jpg',
+  // ];
 
   Donate({Key? key}) : super(key: key);
 
@@ -57,7 +59,8 @@ class _DonateState extends State<Donate> {
                       width: mQuery.size.width * 0.045,
                     ),
                     Text(
-                      "Donate",
+                      // "Donate",
+                      "Impact",
                       style: TextStyle(
                           fontSize: mQuery.size.height*0.027,
                           color: Colors.white,
@@ -90,42 +93,109 @@ class _DonateState extends State<Donate> {
                 child: SingleChildScrollView(
                   child:   Column(
                     children: [
-                      SizedBox(height: mQuery.size.height*0.015,),
-                      DonateSlider(),
-                      SizedBox(height: mQuery.size.height*0.014,),
-                      Row(
-                        children: [
-                          Text(
-                            "Donate for a better India",
-                            style: TextStyle(
-                                fontSize: mQuery.size.height*0.024,
-                                fontFamily: 'SatoshiMedium'
-                            ),
-                          ),
-                        ],
-                      ),
+                      // SizedBox(height: mQuery.size.height*0.015,),
+                      // DonateSlider(),
+                      // SizedBox(height: mQuery.size.height*0.014,),
+                      // Row(
+                      //   children: [
+                      //     Text(
+                      //       "Donate for a better India",
+                      //       style: TextStyle(
+                      //           fontSize: mQuery.size.height*0.024,
+                      //           fontFamily: 'SatoshiMedium'
+                      //       ),
+                      //     ),
+                      //   ],
+                      // ),
+                      // SizedBox(height: mQuery.size.height*0.02,),
+                      // Row(
+                      //   children: [
+                      //     Container(
+                      //       width: mQuery.size.width*0.9,
+                      //       child: Text(
+                      //         "Welcome to Donete, your gateway to impactful giving! Discover a diverse array of causes, from education to environmental conservation, all within our intuitive and secure platform. Easily track the real-time impact of your donations, connect with like-minded individuals, and engage in dynamic fundraising campaigns. Donete is more than a donation platform; it's a community fostering positive change. Join us today and make a lasting impact on the causes that matter most to you!",
+                      //         textAlign: TextAlign.start,
+                      //         style: TextStyle(
+                      //           color: Color(0xff6d6e73),
+                      //           fontSize: mQuery.size.height*0.016,
+                      //           fontFamily: 'SatoshiRegular'
+                      //         ),
+                      //       ),
+                      //     ),
+                      //   ],
+                      // ),
+                      SizedBox(height: mQuery.size.height*0.023,),
+                      Text("Life of Laundryman",style: TextStyle(
+                        fontSize: mQuery.size.height*0.023,
+                        fontFamily: 'SatoshiMedium'
+                      ),),
                       SizedBox(height: mQuery.size.height*0.02,),
-                      Row(
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                            width: mQuery.size.width*0.9,
-                            child: Text(
-                              "Welcome to Donete, your gateway to impactful giving! Discover a diverse array of causes, from education to environmental conservation, all within our intuitive and secure platform. Easily track the real-time impact of your donations, connect with like-minded individuals, and engage in dynamic fundraising campaigns. Donete is more than a donation platform; it's a community fostering positive change. Join us today and make a lasting impact on the causes that matter most to you!",
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                color: Color(0xff6d6e73),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text("The Struggle of Laundrymen",style: TextStyle(
                                 fontSize: mQuery.size.height*0.016,
-                                fontFamily: 'SatoshiRegular'
-                              ),
-                            ),
+                                fontFamily: 'SatoshiMedium'
+                              ),),
+                            ],
                           ),
+                          SizedBox(height: mQuery.size.height*0.01,),
+                          Text("In every city, amidst the towering skyscrapers and busy streets, lies a silent workforce often overlooked—the laundrymen. These unsung heroes work tirelessly to clean and press our clothes, yet their struggles are rarely recognized. This essay explores the challenges they face, shedding light on their resilience and perseverance.",style: TextStyle(
+                            fontSize: mQuery.size.height*0.0145,
+                            fontFamily: 'SatoshiRegular'
+                          ),),
+                          SizedBox(height: mQuery.size.height*0.02,),
+                          Text("Current Challenges:",style: TextStyle(
+                              fontSize: mQuery.size.height*0.016,
+                              fontFamily: 'SatoshiMedium'
+                          ),),
+                          SizedBox(height: mQuery.size.height*0.01,),
+                          Text("In today's world, laundrymen grapple with a host of issues, from paltry wages to unstable work environments. Due to narrow profit margins, laundry facilities frequently implement cost-saving measures, resulting in inadequate compensation for workers. Additionally, the repetitive nature of their tasks can lead to physical ailments like musculoskeletal injuries and chronic pain, further exacerbating their challenges",style: TextStyle(
+                            fontSize: mQuery.size.height*0.0145,
+                            fontFamily: 'SatoshiRegular'
+                          ),),
+                          SizedBox(height: mQuery.size.height*0.02,),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                             Container(
+                               width: mQuery.size.width*0.3,
+                               height: mQuery.size.height*0.18,
+                               decoration: BoxDecoration(
+                                 borderRadius: BorderRadius.circular(20)
+                               ),
+                               child: Image.network("https://i.pinimg.com/474x/21/a8/3c/21a83c30e5431f3c89d172fe268ba3cc.jpg"),
+                             ),
+                              Container(
+                                width: mQuery.size.width*0.3,
+                                height: mQuery.size.height*0.18,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20)
+                                ),
+                                child: Image.network("https://cdn.pixabay.com/photo/2015/10/15/07/48/dhobi-989046_1280.jpg"),
+                              ),
+                              Container(
+                                width: mQuery.size.width*0.3,
+                                height: mQuery.size.height*0.18,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20)
+                                ),
+                                child: Image.network("https://i.pinimg.com/474x/b4/0d/36/b40d36688bd2e4ae36742e39f905da08.jpg"),
+                              )
+                            ],
+                          )
                         ],
                       ),
-                      SizedBox(height: mQuery.size.height*0.018,),
+                      SizedBox(height: mQuery.size.height*0.036,),
                       ElevatedButton(
                         onPressed: ()
                         {
-                          print('Button Pressed!');
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return PaymentPage();
+                          }));
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Color(0xFF009C1A),
@@ -141,6 +211,7 @@ class _DonateState extends State<Donate> {
                             fontFamily: 'SatoshiBold'
                         ),),
                       ),
+                      SizedBox(height: mQuery.size.height*0.02)
                     ],
                   ),
                 ),

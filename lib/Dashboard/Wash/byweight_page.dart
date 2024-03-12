@@ -63,19 +63,19 @@ class _ByWeightPageState extends State<ByWeightPage> {
   }
 
   List<Map<String, dynamic>> itemList = [
-    {"name": "Shirts", "price": "₹ 10 PER KG"},
-    {"name": "Blouse Designer", "price": "₹ 30 PER KG"},
-    {"name": "Lehenga Suit (Heavy)", "price": "₹ 180 PER KG"},
-    {"name": "Evening Dress (Heavy Work)", "price": "₹ 190 PER KG"},
-    {"name": "Night Suit", "price": "₹ 45 PER KG"},
-    {"name": "Waistcoat", "price": "₹ 50 PER KG"},
-    {"name": "Short", "price": "₹ 25 PER KG"},
-    {"name": "Skirt", "price": "₹ 25 PER KG"},
-    {"name": "Swimming Costume", "price": "₹ 30 PER KG"},
-    {"name": "Inner wear", "price": "₹ 15 PER KG"},
-    {"name": "Socks/Stocking", "price": "₹ 10 PER KG"},
-    {"name": "Frock", "price": "₹ 35 PER KG"},
-    {"name": "Jump Suits", "price": "₹ 50 PER KG"},
+    {"name": "Shirts", "price": "₹ 10 PER KG(200gm-400gm)"},
+    {"name": "Blouse Designer", "price": "₹ 30 PER KG(100gm-300gm)"},
+    {"name": "Lehenga Suit (Heavy)", "price": "₹ 180 PER KG(2kg-5kg)"},
+    {"name": "Evening Dress (Heavy Work)", "price": "₹ 190 PER KG(500gm-800gm)"},
+    {"name": "Night Suit", "price": "₹ 45 PER KG(200gm-500gm)"},
+    {"name": "Waistcoat", "price": "₹ 50 PER KG(300gm-900gm)"},
+    {"name": "Short", "price": "₹ 25 PER KG(100gm-300gm)"},
+    {"name": "Skirt", "price": "₹ 25 PER KG(300gm-800gm)"},
+    {"name": "Swimming Costume", "price": "₹ 30 PER KG(300gm-700gm)"},
+    {"name": "Inner wear", "price": "₹ 15 PER KG(200gm-600gm)"},
+    {"name": "Socks/Stocking", "price": "₹ 10 PER KG(20gm-80gm)"},
+    {"name": "Frock", "price": "₹ 35 PER KG(500gm-1kg)"},
+    {"name": "Jump Suits", "price": "₹ 50 PER KG(700gm-1600gm)"},
   ];
 
   var address = "Home";
@@ -1119,10 +1119,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                       ),
                                                       Row(
                                                         children: [
-                                                          SizedBox(
-                                                            width: mQuery
-                                                                .size.width *
-                                                                0.065,
+                                                          SizedBox(width: mQuery.size.width * 0.065,
                                                           ),
                                                           Text(
                                                             "$caddress",
@@ -1245,15 +1242,9 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                       ),
                                                     ),
 
-                                                    SizedBox(
-                                                      height:
-                                                      mQuery.size.height *
-                                                          0.02,
-                                                    ),
+                                                    SizedBox(height: mQuery.size.height * 0.02,),
                                                     Padding(
-                                                      padding: const EdgeInsets
-                                                          .symmetric(
-                                                          horizontal: 16),
+                                                      padding: const EdgeInsets.symmetric(horizontal: 16),
                                                       child: Column(
                                                         children: [
                                                           Row(
@@ -1313,14 +1304,8 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                                   hintText:
                                                                   "Write message here",
                                                                   contentPadding:
-                                                                  EdgeInsets.only(
-                                                                      left:
-                                                                      16,
-                                                                      right:
-                                                                      6),
-                                                                  hintStyle: TextStyle(
-                                                                      color: Colors
-                                                                          .black54,
+                                                                  EdgeInsets.only(left: 16, right: 6),
+                                                                  hintStyle: TextStyle(color: Colors.black54,
                                                                       fontSize: mQuery.size.height*0.02,
                                                                       fontFamily: 'SatoshiRegular')),
                                                             ),
@@ -1328,34 +1313,21 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                         ],
                                                       ),
                                                     ),
-                                                    SizedBox(
-                                                      height:
-                                                      mQuery.size.height *
-                                                          0.025,
-                                                    ),
+                                                    SizedBox(height: mQuery.size.height * 0.025,),
                                                     Container(
                                                       width: double.infinity,
-                                                      height:
-                                                      mQuery.size.height *
-                                                          0.27,
+                                                      height: mQuery.size.height * 0.27,
                                                       color: Color(0xfff8feff),
                                                       child: Padding(
-                                                        padding: EdgeInsets
-                                                            .symmetric(
-                                                            horizontal: 16),
+                                                        padding: EdgeInsets.symmetric(horizontal: 16),
                                                         child:
                                                         SingleChildScrollView(
                                                           child: Column(
                                                             crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
+                                                            CrossAxisAlignment.start,
                                                             children: [
                                                               SizedBox(
-                                                                height: mQuery
-                                                                    .size
-                                                                    .height *
-                                                                    0.016,
-                                                              ),
+                                                                height: mQuery.size.height * 0.016,),
                                                               Text(
                                                                 "Support your Rider",
                                                                 style: TextStyle(
@@ -1363,10 +1335,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                                     fontFamily: 'SatoshiMedium'),
                                                               ),
                                                               SizedBox(
-                                                                height: mQuery
-                                                                    .size
-                                                                    .height *
-                                                                    0.007,
+                                                                height: mQuery.size.height * 0.007,
                                                               ),
                                                               Text(
                                                                 "Support your valet and make their day! 100% of your tip will "
@@ -1376,12 +1345,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                                     color: Colors
                                                                         .black54),
                                                               ),
-                                                              SizedBox(
-                                                                height: mQuery
-                                                                    .size
-                                                                    .height *
-                                                                    0.02,
-                                                              ),
+                                                              SizedBox(height: mQuery.size.height * 0.02,),
                                                               Row(
                                                                 children: [
                                                                   ContainerItem(
@@ -1398,11 +1362,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                                           });
                                                                     },
                                                                   ),
-                                                                  SizedBox(
-                                                                      width: mQuery
-                                                                          .size
-                                                                          .width *
-                                                                          0.036),
+                                                                  SizedBox(width: mQuery.size.width * 0.036),
                                                                   ContainerItem(
                                                                     text:
                                                                     "+ ₹ 20",
@@ -1735,7 +1695,7 @@ class _ByWeightPageState extends State<ByWeightPage> {
               Text(
                 itemPrice,
                 style: TextStyle(
-                    fontSize: mQuery.size.height*0.0155,
+                    fontSize: mQuery.size.height*0.014,
                     color: Colors.grey,
                     fontFamily: 'SatoshiRegular'
                 ),
@@ -1784,5 +1744,4 @@ class _ByWeightPageState extends State<ByWeightPage> {
       ),
     );
   }
-
 }

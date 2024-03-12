@@ -223,7 +223,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         child: ListTile(
                           leading: Image.asset("assets/images/drawer-images/heart.png",color: Color(0xff29b2fe),
                               width: mQuery.size.width*0.06),
-                          title: Text("Donate",style: TextStyle(
+                          title: Text("Impact",style: TextStyle(
                             fontFamily: 'SatoshiMedium',
                             fontSize: mQuery.size.height*0.0212,
                           ),),
@@ -379,9 +379,9 @@ class _MyDrawerState extends State<MyDrawer> {
                                 GestureDetector(
                                   onTap : ()
                                   {
-                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
-                                      return const WelcomePage();
-                                    }));
+                                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+                                       return WelcomePage();
+                                     }));
                                   },
                                   child: Text("Sign Out",style: TextStyle(
                                       fontSize: mQuery.size.height*0.022,
@@ -410,3 +410,4 @@ class _MyDrawerState extends State<MyDrawer> {
     );
   }
 }
+

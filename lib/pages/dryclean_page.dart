@@ -149,14 +149,6 @@ class _DryCleanPageState extends State<DryCleanPage> {
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(16),
                           topRight: Radius.circular(16)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 0.3,
-                          blurRadius: 1,
-                          offset: Offset(3, 3), // changes the position of the shadow
-                        ),
-                      ],
                     ),
                     child: SingleChildScrollView(
                       child: Column(
@@ -236,7 +228,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(height: mQuery.size.height * 0.012),
+                                    SizedBox(height: mQuery.size.height * 0.01),
                                     Expanded(
                                       child: ListView.builder(
                                         itemCount: itemList.length,

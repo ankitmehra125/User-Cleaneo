@@ -1,3 +1,4 @@
+import 'package:cleaneo_user_app/Welcome/TS_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pinput/pinput.dart';
@@ -14,10 +15,13 @@ class DPVerificationPage extends StatefulWidget {
 }
 
 class _DPVerificationPageState extends State<DPVerificationPage> {
+  TextEditingController issueController = TextEditingController();
   late List<TextEditingController> controllers;
   late List<FocusNode> focusNodes;
   int focusedIndex = -1;
-  bool isChecked = false;
+  bool isChecked1 = false;
+  bool isChecked2 = false;
+  bool isChecked3 = false;
 
   @override
   void initState() {
@@ -132,7 +136,7 @@ class _DPVerificationPageState extends State<DPVerificationPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          GestureDetector(
+                          InkWell(
                             onTap: () {
                               _showReportDisputeBottomSheet(context);
                             },
@@ -142,7 +146,7 @@ class _DPVerificationPageState extends State<DPVerificationPage> {
                             ),
                           ),
                           SizedBox(width: mQuery.size.width * 0.033),
-                          GestureDetector(
+                          InkWell(
                             onTap: () {
                               _showReportDisputeBottomSheet(context);
                             },
@@ -201,155 +205,254 @@ class _DPVerificationPageState extends State<DPVerificationPage> {
       isScrollControlled: true,
       builder: (BuildContext context) {
         var mQuery = MediaQuery.of(context);
-        return Container(
-          height: mQuery.size.height * 0.85,
-          width: double.infinity,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
+        return StatefulBuilder(
+          builder: (BuildContext context, StateSetter setState) {
+            return Container(
+              height: mQuery.size.height * 0.85,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(16),
-                  topRight: Radius.circular(16))),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: mQuery.size.height * 0.03),
-              Padding(
-                padding:
-                EdgeInsets.symmetric(horizontal: mQuery.size.width * 0.045),
-                child: Text(
-                  "Raise Concern",
-                  style: TextStyle(
-                      fontFamily: 'SatoshiBold',
-                      fontSize: mQuery.size.height * 0.025),
+                  topRight: Radius.circular(16),
                 ),
               ),
-              Divider(),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: mQuery.size.width * 0.045,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "There is a problem with code",
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: mQuery.size.height * 0.03),
+                  Padding(
+                    padding:
+                    EdgeInsets.symmetric(horizontal: mQuery.size.width * 0.045),
+                    child: Text(
+                      "Raise Concern",
                       style: TextStyle(
-                          fontFamily: 'SatoshiMedium',
-                          fontSize: mQuery.size.height * 0.022),
-                    ),
-                    SizedBox(height: mQuery.size.height * 0.023),
-                    Container(
-                      width: double.infinity,
-                      height: mQuery.size.height * 0.05,
-                      padding: EdgeInsets.only(left: mQuery.size.height * 0.02),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 0,
-                                blurRadius: 10,
-                                offset: Offset(0, 0))
-                          ]),
-                      child: Row(
-                        children: [
-                          Checkbox(
-                              activeColor: Color(0xff29b2fe),
-                              value: isChecked,
-                              onChanged: (value) {
-                                setState(() {
-                                  isChecked = value!;
-                                });
-                              }),
-                          Text(
-                            "The code doesn't match",
-                            style: TextStyle(
-                                fontSize: mQuery.size.height * 0.017,
-                                fontFamily: 'SatoshiMedium'),
-                          ),
-                        ],
+                        fontFamily: 'SatoshiBold',
+                        fontSize: mQuery.size.height * 0.025,
                       ),
                     ),
-                    SizedBox(height: mQuery.size.height * 0.024),
-                    Container(
-                      width: double.infinity,
-                      height: mQuery.size.height * 0.05,
-                      padding: EdgeInsets.only(left: mQuery.size.height * 0.02),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
+                  ),
+                  Divider(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: mQuery.size.width * 0.045,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "There is a problem with code",
+                          style: TextStyle(
+                            fontFamily: 'SatoshiMedium',
+                            fontSize: mQuery.size.height * 0.022,
+                          ),
+                        ),
+                        SizedBox(height: mQuery.size.height * 0.023),
+                        Container(
+                          width: double.infinity,
+                          height: mQuery.size.height * 0.05,
+                          padding: EdgeInsets.only(left: mQuery.size.height * 0.02),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
                                 color: Colors.grey.withOpacity(0.5),
                                 spreadRadius: 0,
                                 blurRadius: 10,
-                                offset: Offset(0, 0))
-                          ]),
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: [
-                            Checkbox(
+                                offset: Offset(0, 0),
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            children: [
+                              Checkbox(
                                 activeColor: Color(0xff29b2fe),
-                                value: isChecked,
+                                value: isChecked1,
                                 onChanged: (value) {
                                   setState(() {
-                                    isChecked = value!;
+                                    isChecked1 = value!;
                                   });
-                                }),
-                            Text(
-                              "The delivery partner hasn't received the code",
-                              style: TextStyle(
+                                },
+                              ),
+                              Text(
+                                "The code doesn't match",
+                                style: TextStyle(
                                   fontSize: mQuery.size.height * 0.017,
-                                  fontFamily: 'SatoshiMedium'),
-                            )
-                          ],
+                                  fontFamily: 'SatoshiMedium',
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ),
-                    SizedBox(height: mQuery.size.height * 0.024),
-                    Container(
-                      width: double.infinity,
-                      height: mQuery.size.height * 0.05,
-                      padding: EdgeInsets.only(left: mQuery.size.height * 0.02),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
+                        SizedBox(height: mQuery.size.height * 0.024),
+                        Container(
+                          width: double.infinity,
+                          height: mQuery.size.height * 0.05,
+                          padding: EdgeInsets.only(left: mQuery.size.height * 0.02),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
                                 color: Colors.grey.withOpacity(0.5),
                                 spreadRadius: 0,
                                 blurRadius: 10,
-                                offset: Offset(0, 0))
-                          ]),
-                      child: Row(
-                        children: [
-                          Checkbox(
-                            activeColor: Color(0xff29b2fe),
-                              value: isChecked,
-                              onChanged: (value) {
-                                setState(() {
-                                  isChecked = value!;
-                                });
-                              }),
-                          Text(
-                            "Wrong Code",
-                            style: TextStyle(
-                                fontSize: mQuery.size.height * 0.017,
-                                fontFamily: 'SatoshiMedium'),
-                          )
-                        ],
-                      ),
+                                offset: Offset(0, 0),
+                              ),
+                            ],
+                          ),
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: [
+                                Checkbox(
+                                  activeColor: Color(0xff29b2fe),
+                                  value: isChecked2,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      isChecked2 = value!;
+                                    });
+                                  },
+                                ),
+                                Text(
+                                  "The delivery partner hasn't received the code",
+                                  style: TextStyle(
+                                    fontSize: mQuery.size.height * 0.017,
+                                    fontFamily: 'SatoshiMedium',
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: mQuery.size.height * 0.024),
+                        Container(
+                          width: double.infinity,
+                          height: mQuery.size.height * 0.05,
+                          padding: EdgeInsets.only(left: mQuery.size.height * 0.02),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 0,
+                                blurRadius: 10,
+                                offset: Offset(0, 0),
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            children: [
+                              Checkbox(
+                                activeColor: Color(0xff29b2fe),
+                                value: isChecked3,
+                                onChanged: (value) {
+                                  setState(() {
+                                    isChecked3 = value!;
+                                  });
+                                },
+                              ),
+                              Text(
+                                "Wrong Code",
+                                style: TextStyle(
+                                  fontSize: mQuery.size.height * 0.017,
+                                  fontFamily: 'SatoshiMedium',
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: mQuery.size.height * 0.025),
+                        Divider(),
+                        SizedBox(height: mQuery.size.height * 0.025),
+                        Text("Any other message?",
+                          style: TextStyle(
+                            fontSize: mQuery.size.height*0.019,
+                            fontFamily: 'SatoshiBold',
+                          ),
+                        ),
+                        SizedBox(height: mQuery.size.height*0.023,),
+                        Container(
+                          width: double.infinity,
+                          height: mQuery.size.height*0.135,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 0.3,
+                                blurRadius: 10,
+                                offset: Offset(0,0), // changes the position of the shadow
+                              ),
+                            ],
+                          ),
+                          child: TextField(
+                            controller: issueController,
+                            cursorColor: Colors.black54,
+                            maxLines: null,
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: "Write your message here",
+                                hintStyle: TextStyle(
+                                    fontSize: mQuery.size.height*0.019,
+                                    fontFamily: 'SatoshiRegular',
+                                    color: Colors.black54
+                                ),
+                                contentPadding: EdgeInsets.symmetric(horizontal: 8)
+                            ),
+                          ),
+                        ),
+
+                        SizedBox(height: mQuery.size.height*0.055,),
+                        GestureDetector(
+                          onTap: ()
+                          {
+                            Navigator.pop(context);
+                          },
+                          child: Center(
+                            child: Text("Enter Code",style: TextStyle(
+                              color: Color(0xff29b2fe),
+                              fontFamily: 'SatoshiMedium',
+                              fontSize: mQuery.size.height*0.021
+                            ),),
+                          ),
+                        ),
+                        SizedBox(height: mQuery.size.height*0.042,),
+                        GestureDetector(
+                          onTap: ()
+                          {
+                            Navigator.pop(context);
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+                              return HomePage();
+                            }));
+                          },
+                          child: Container(
+                            width: double.infinity,
+                            height: mQuery.size.height*0.06,
+                            decoration: BoxDecoration(
+                                color: Color(0xff29b2fe),
+                                borderRadius: BorderRadius.circular(8)
+                            ),
+                            child: Center(
+                              child: Text("Done",style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'SatoshiBold',
+                                  fontSize: mQuery.size.height*0.024
+                              ),),
+                            ),
+                          ),
+                        )
+                      ],
                     ),
-                    SizedBox(height: mQuery.size.height * 0.025),
-                    Divider(),
-                  ],
-                ),
-              )
-            ],
-          ),
+                  ),
+                ],
+              ),
+            );
+          },
         );
       },
     );
   }
+
 }
 
 class OTPBox extends StatelessWidget {
@@ -357,10 +460,7 @@ class OTPBox extends StatelessWidget {
   final FocusNode focusNode;
   final bool isFocused;
 
-  OTPBox(
-      {required this.controller,
-        required this.focusNode,
-        required this.isFocused});
+  OTPBox({required this.controller, required this.focusNode, required this.isFocused});
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,12 @@
 import 'package:cleaneo_user_app/Auth/login_page.dart';
 import 'package:cleaneo_user_app/Auth/signup_page.dart';
+import 'package:cleaneo_user_app/Dashboard/home_page.dart';
 import 'package:cleaneo_user_app/Welcome/CP_page.dart';
 import 'package:cleaneo_user_app/Welcome/PP_page.dart';
 import 'package:cleaneo_user_app/Welcome/TS_page.dart';
+import 'package:cleaneo_user_app/pages/map_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart'; // Import for HapticFeedback
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:io'; // Import dart:io for exit function
 
@@ -32,7 +35,7 @@ class _WelcomePageState extends State<WelcomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: mQuery.size.height * 0.31,
+                height: mQuery.size.height * 0.29,
               ),
               Center(
                 child: SvgPicture.asset("assets/images/mainlogo.svg"),
@@ -47,6 +50,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     children: [
                       GestureDetector(
                         onTap: () {
+                          HapticFeedback.heavyImpact(); // Heavy haptic feedback
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
                                 return SignUpPage();
@@ -59,13 +63,15 @@ class _WelcomePageState extends State<WelcomePage> {
                               border: Border.all(color: Colors.white),
                               borderRadius: BorderRadius.circular(6)),
                           child: Center(
-                              child: Text(
-                                "Sign Up",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: mQuery.size.height * 0.023,
-                                    fontFamily: 'SatoshiBold'),
-                              )),
+                            child: Text(
+                              "Sign Up",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: mQuery.size.height * 0.023,
+                                fontFamily: 'SatoshiBold',
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -73,6 +79,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       ),
                       GestureDetector(
                         onTap: () {
+                          HapticFeedback.heavyImpact(); // Heavy haptic feedback
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
                                 return LoginPage();
@@ -83,26 +90,86 @@ class _WelcomePageState extends State<WelcomePage> {
                           height: mQuery.size.height * 0.06,
                           decoration: BoxDecoration(
                               color: const Color(0xff29b2fe),
-                              border: Border.all(color: Colors.white),
                               borderRadius: BorderRadius.circular(6)),
                           child: Center(
-                              child: Text(
-                                "Log in",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: mQuery.size.height * 0.023,
-                                    fontFamily: 'SatoshiBold'),
-                              )),
+                            child: Text(
+                              "Log in",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: mQuery.size.height * 0.023,
+                                fontFamily: 'SatoshiBold',
+                              ),
+                            ),
+                          ),
                         ),
                       ),
-                      SizedBox(height: mQuery.size.height * 0.24,),
+
+                      SizedBox(height: mQuery.size.height * 0.043,),
+                      Row(
+                        children: [
+                          const Expanded(
+                            child: Divider(
+                              thickness: 2,
+                              color: Colors.white,
+                            ),
+                          ),
+                          SizedBox(
+                            width: mQuery.size.width * 0.036,
+                          ),
+                          Text(
+                            "OR",
+                            style: TextStyle(
+                                color: Colors.white,
+                            fontFamily: 'SatoshiBold',
+                            fontSize: mQuery.size.height*0.02),
+                          ),
+                          SizedBox(
+                            width: mQuery.size.width * 0.036,
+                          ),
+                          const Expanded(
+                            child: Divider(
+                              thickness: 2,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: mQuery.size.height*0.03,),
+                      GestureDetector(
+                        onTap: () {
+                          HapticFeedback.heavyImpact(); // Heavy haptic feedback
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                                return MapPage();
+                              }));
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: mQuery.size.height * 0.06,
+                          decoration: BoxDecoration(
+                              color: const Color(0xff29b2fe),
+                              borderRadius: BorderRadius.circular(6)),
+                          child: Center(
+                            child: Text(
+                              "View as Guest",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: mQuery.size.height * 0.023,
+                                fontFamily: 'SatoshiBold',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: mQuery.size.height * 0.1,),
                       Center(
                         child: Text(
                           "By Continuing, you agree to our",
                           style: TextStyle(
-                              fontSize: mQuery.size.height * 0.02,
-                              color: Colors.white,
-                              fontFamily: 'SatoshiMedium'),
+                            fontSize: mQuery.size.height * 0.02,
+                            color: Colors.white,
+                            fontFamily: 'SatoshiMedium',
+                          ),
                         ),
                       ),
                       SizedBox(height: mQuery.size.height * 0.021,),
@@ -112,6 +179,7 @@ class _WelcomePageState extends State<WelcomePage> {
                         children: [
                           GestureDetector(
                             onTap: () {
+                              HapticFeedback.heavyImpact(); // Heavy haptic feedback
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
                                     return TS();
@@ -123,9 +191,10 @@ class _WelcomePageState extends State<WelcomePage> {
                                 Text(
                                   "Terms of Service",
                                   style: TextStyle(
-                                      fontSize: mQuery.size.height * 0.016,
-                                      color: Colors.white,
-                                      fontFamily: 'SatoshiMedium'),
+                                    fontSize: mQuery.size.height * 0.016,
+                                    color: Colors.white,
+                                    fontFamily: 'SatoshiMedium',
+                                  ),
                                 ),
                                 SizedBox(height: mQuery.size.height * 0.0015,),
                                 Container(
@@ -138,6 +207,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           ),
                           GestureDetector(
                             onTap: () {
+                              HapticFeedback.heavyImpact(); // Heavy haptic feedback
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
                                     return PP();
@@ -149,9 +219,10 @@ class _WelcomePageState extends State<WelcomePage> {
                                 Text(
                                   "Privacy Policy",
                                   style: TextStyle(
-                                      fontSize: mQuery.size.height * 0.016,
-                                      color: Colors.white,
-                                      fontFamily: 'SatoshiMedium'),
+                                    fontSize: mQuery.size.height * 0.016,
+                                    color: Colors.white,
+                                    fontFamily: 'SatoshiMedium',
+                                  ),
                                 ),
                                 SizedBox(height: mQuery.size.height * 0.0015,),
                                 Container(
@@ -164,6 +235,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           ),
                           GestureDetector(
                             onTap: () {
+                              HapticFeedback.heavyImpact(); // Heavy haptic feedback
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
                                     return CP();
@@ -175,9 +247,10 @@ class _WelcomePageState extends State<WelcomePage> {
                                 Text(
                                   "Content Policies",
                                   style: TextStyle(
-                                      fontSize: mQuery.size.height * 0.016,
-                                      color: Colors.white,
-                                      fontFamily: 'SatoshiMedium'),
+                                    fontSize: mQuery.size.height * 0.016,
+                                    color: Colors.white,
+                                    fontFamily: 'SatoshiMedium',
+                                  ),
                                 ),
                                 SizedBox(height: mQuery.size.height * 0.0015,),
                                 Container(

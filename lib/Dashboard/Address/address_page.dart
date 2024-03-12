@@ -75,26 +75,32 @@ class _AddressPageState extends State<AddressPage> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: Row(
-                          children: [
-                            Container(
-                              width: mQuery.size.width * 0.045,
-                              height: mQuery.size.height * 0.05,
-                              decoration: BoxDecoration(
-                                  color: Color(0xff29b2fe),
-                                  shape: BoxShape.circle),
-                              child: Center(
-                                child: Icon(Icons.add,
-                                    color: Colors.white,
-                                    size: mQuery.size.width*0.04,),
+                        child: GestureDetector(
+                          onTap: ()
+                          {
+                           Navigator.pop(context);
+                          },
+                          child: Row(
+                            children: [
+                              Container(
+                                width: mQuery.size.width * 0.045,
+                                height: mQuery.size.height * 0.05,
+                                decoration: BoxDecoration(
+                                    color: Color(0xff29b2fe),
+                                    shape: BoxShape.circle),
+                                child: Center(
+                                  child: Icon(Icons.add,
+                                      color: Colors.white,
+                                      size: mQuery.size.width*0.04,),
+                                ),
                               ),
-                            ),
-                            SizedBox(width: mQuery.size.width*0.02,),
-                            Text("Add Address",style: TextStyle(
-                              fontSize: mQuery.size.height*0.0195,
-                              fontFamily: 'SatoshiBold'
-                            ),)
-                          ],
+                              SizedBox(width: mQuery.size.width*0.02,),
+                              Text("Add Address",style: TextStyle(
+                                fontSize: mQuery.size.height*0.0195,
+                                fontFamily: 'SatoshiBold'
+                              ),)
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(height: mQuery.size.height*0.02,),

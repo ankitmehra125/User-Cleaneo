@@ -185,7 +185,7 @@ class _LoginPageState extends State<LoginPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text("Don't have an account?",style: TextStyle(
-                                fontSize: mQuery.size.height*0.022,
+                                fontSize: mQuery.size.height*0.02,
                                 fontFamily: 'SatoshiBold',
                             ),),
                             SizedBox(width: mQuery.size.width*0.02,),
@@ -197,7 +197,7 @@ class _LoginPageState extends State<LoginPage> {
                                 }));
                               },
                               child: Text("Sign Up",style: TextStyle(
-                                  fontSize: mQuery.size.height*0.022,
+                                  fontSize: mQuery.size.height*0.02,
                                   fontFamily: 'SatoshiBold',
                                   color: Color(0xff29b2fe)
                               ),),

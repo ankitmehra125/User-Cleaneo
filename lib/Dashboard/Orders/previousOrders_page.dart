@@ -92,7 +92,7 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                             Text("ITEMS",style: TextStyle(
                                 color: Colors.black54,
                                 fontFamily: 'SatoshiRegular',
-                                fontSize: mQuery.size.height*0.0165
+                                fontSize: mQuery.size.height*0.016
                             ),
                             ),
                             Text.rich(
@@ -275,7 +275,7 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
                             Text("ITEMS",style: TextStyle(
                                 color: Colors.black54,
                                 fontFamily: 'SatoshiRegular',
-                                fontSize: mQuery.size.height*0.0165
+                                fontSize: mQuery.size.height*0.016
                             ),
                             ),
                             Text.rich(
@@ -385,8 +385,6 @@ class _PreviousOrdersPageState extends State<PreviousOrdersPage> {
               ),
             ),
           ),
-
-
        ]
      ),
     )

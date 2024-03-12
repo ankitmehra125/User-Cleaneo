@@ -1,3 +1,4 @@
+import 'package:cleaneo_user_app/Welcome/TS_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 
@@ -66,17 +67,28 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                             width: mQuery.size.width*0.06,
                           ),
                           SizedBox(width: mQuery.size.width*0.02,),
-                          Text("Order $orderNo",style: TextStyle(
-                              fontFamily: 'SatoshiMedium',
-                              fontSize: mQuery.size.height*0.0165
-                          ),),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Order $orderNo",style: TextStyle(
+                                  fontFamily: 'SatoshiMedium',
+                                  fontSize: mQuery.size.height*0.0165
+                              ),),
+                              Text("Order Type : Online Paid",style: TextStyle(
+                                  fontFamily: 'SatoshiRegular',
+                                  fontSize: mQuery.size.height*0.013
+                              ),)
+                            ],
+                          ),
                           Expanded(child: SizedBox()),
                           Text("₹ ${price.toStringAsFixed(2)}",style: TextStyle(
                               fontFamily: 'SatoshiMedium',
                               fontSize: mQuery.size.height*0.017
-                          ),)
+                          ),),
+
                         ],
                       ),
+
                     ],
                   ),
                 ),
@@ -91,7 +103,7 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                         Text("ITEMS",style: TextStyle(
                             color: Colors.black54,
                             fontFamily: 'SatoshiRegular',
-                            fontSize: mQuery.size.height*0.0165
+                            fontSize: mQuery.size.height*0.016
                         ),
                         ),
                         Text.rich(
@@ -273,10 +285,19 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                                width: mQuery.size.width*0.06,
                              ),
                              SizedBox(width: mQuery.size.width*0.02,),
-                             Text("Order $orderNo",style: TextStyle(
-                                 fontFamily: 'SatoshiMedium',
-                                 fontSize: mQuery.size.height*0.0165
-                             ),),
+                             Column(
+                               crossAxisAlignment: CrossAxisAlignment.start,
+                               children: [
+                                 Text("Order $orderNo",style: TextStyle(
+                                     fontFamily: 'SatoshiMedium',
+                                     fontSize: mQuery.size.height*0.0165
+                                 ),),
+                                 Text("Order Type : Cash On Delivery",style: TextStyle(
+                                   fontFamily: 'SatoshiRegular',
+                                     fontSize: mQuery.size.height*0.013
+                                 ),)
+                               ],
+                             ),
                              Expanded(child: SizedBox()),
                              Text("₹ ${price.toStringAsFixed(2)}",style: TextStyle(
                                  fontFamily: 'SatoshiMedium',
@@ -298,7 +319,7 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                          Text("ITEMS",style: TextStyle(
                              color: Colors.black54,
                              fontFamily: 'SatoshiRegular',
-                             fontSize: mQuery.size.height*0.0165
+                             fontSize: mQuery.size.height*0.016
                          ),
                          ),
                          Text.rich(

@@ -124,7 +124,7 @@ class _VendorDetailsPageState extends State<VendorDetailsPage> {
                               children: [
                                 Container(
                                   width: double.infinity,
-                                  height: mQuery.size.height*0.1,
+                                  height: mQuery.size.height*0.08,
                                   color: Color(0xffe9f8ff),
                                   child: SingleChildScrollView(
                                     scrollDirection: Axis.horizontal,
@@ -150,10 +150,6 @@ class _VendorDetailsPageState extends State<VendorDetailsPage> {
                                                 fontFamily: 'SatoshiBold',
                                                 fontSize: mQuery.size.height*0.02
                                               ),),
-                                              Text("$ownerName",style: TextStyle(
-                                                color: Colors.black54,
-                                                fontFamily: 'SatoshiMedium'
-                                              ),)
                                             ],
                                           ),
                                         )
@@ -211,12 +207,30 @@ class _VendorDetailsPageState extends State<VendorDetailsPage> {
                                       ),
                                       // Address
                                       SizedBox(height: mQuery.size.height*0.02,),
-                                      Text("Address",style: TextStyle(
+                                      Text("Price Ranges",style: TextStyle(
                                           fontSize: mQuery.size.height*0.017,
                                           fontFamily: 'SatoshiMedium'
                                       ),),
                                       SizedBox(height: mQuery.size.height*0.005,),
-                                      Text("$address",style: TextStyle(
+                                      Text("Wash Price (₹30-100)",style: TextStyle(
+                                          fontSize: mQuery.size.height*0.016,
+                                          fontFamily: 'SatoshiMedium',
+                                          color: Colors.black54
+                                      ),
+                                      ),
+                                      Text("Iron Price (₹10-40)",style: TextStyle(
+                                          fontSize: mQuery.size.height*0.016,
+                                          fontFamily: 'SatoshiMedium',
+                                          color: Colors.black54
+                                      ),
+                                      ),
+                                      Text("Dry Clean Price (₹80-200)",style: TextStyle(
+                                          fontSize: mQuery.size.height*0.016,
+                                          fontFamily: 'SatoshiMedium',
+                                          color: Colors.black54
+                                      ),
+                                      ),
+                                      Text("Premium Wash Price (₹100-250)",style: TextStyle(
                                           fontSize: mQuery.size.height*0.016,
                                           fontFamily: 'SatoshiMedium',
                                           color: Colors.black54
@@ -351,8 +365,9 @@ class _VendorDetailsPageState extends State<VendorDetailsPage> {
                                                   SizedBox(height: mQuery.size.height*0.009,),
                                                   Image.asset("assets/images/vendor Detail Images/premium1.png",width: mQuery.size.width*0.07,),
                                                   SizedBox(height: mQuery.size.height*0.004,),
-                                                  Text("Premium",style: TextStyle(
-                                                      color: Color(0xffc44970)
+                                                  Text("Dry Clean",style: TextStyle(
+                                                      color: Color(0xffc44970),
+                                                    fontSize: mQuery.size.height*0.017
                                                   ),)                                            ],
                                               ),
                                             ),

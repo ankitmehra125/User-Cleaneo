@@ -8,7 +8,6 @@ import 'package:cleaneo_user_app/pages/donate.dart';
 import 'package:cleaneo_user_app/pages/dryclean_page.dart';
 import 'package:cleaneo_user_app/pages/mydrawer.dart';
 import 'package:cleaneo_user_app/pages/myprofile.dart';
-import 'package:cleaneo_user_app/Dashboard/Wash/wash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -195,7 +194,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget buildPage(int index, List<Map<String, String>> images) {
     var mQuery = MediaQuery.of(context);
-    
+
 
     List<Map<String, dynamic>> sortedGridItems = List.from(gridItems);
     sortedGridItems.sort((a, b) => a['text'].compareTo(b['text']));

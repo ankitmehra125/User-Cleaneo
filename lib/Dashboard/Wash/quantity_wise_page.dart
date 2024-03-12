@@ -238,8 +238,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                       color: Colors.grey.withOpacity(0.5),
                                       spreadRadius: 0.2,
                                       blurRadius: 7,
-                                      offset: Offset(0,
-                                          0), // changes the position of the shadow
+                                      offset: Offset(0, 0), // changes the position of the shadow
                                     ),
                                   ],
                                 ),

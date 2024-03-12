@@ -1,4 +1,5 @@
 import 'package:cleaneo_user_app/Dashboard/Wash/Select%20Vendor/chooseVendor_page.dart';
+import 'package:cleaneo_user_app/pages/dryclean_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cleaneo_user_app/Dashboard/Wash/byweight_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wash/quantity_wise_page.dart';
@@ -102,8 +103,8 @@ class _WashPageState extends State<WashPage> with SingleTickerProviderStateMixin
                           labelColor: Color(0xff29b2fe),
                           indicatorColor: Color(0xff29b2fe),
                           labelStyle: TextStyle(
-                            fontSize: mQuery.size.height*0.023
-                          , fontFamily: 'SatoshiBold'),
+                              fontSize: mQuery.size.height*0.023
+                              , fontFamily: 'SatoshiBold'),
                         ),
                       ),
                       Container(
@@ -184,6 +185,11 @@ class _WashPageState extends State<WashPage> with SingleTickerProviderStateMixin
           _selectedRowIndex = index;
           _isDropdownOpen = false;
         });
+        if (index == 2) { // If "Dry Clean" is tapped
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return DryCleanPage(); // Navigate to DrycleanPage
+          }));
+        }
       },
       child: Container(
         color: _selectedRowIndex == index ? Color(0xffd4f0ff) : Colors.transparent,
@@ -207,7 +213,7 @@ class _WashPageState extends State<WashPage> with SingleTickerProviderStateMixin
               Text(
                 text,
                 style: TextStyle(
-                  fontSize: mQuery.size.height*0.018,
+                    fontSize: mQuery.size.height*0.018,
                     fontFamily: 'SatoshiMedium'
                 ),
               ),
