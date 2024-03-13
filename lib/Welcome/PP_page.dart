@@ -1,7 +1,9 @@
+import 'package:cleaneo_user_app/Auth/welcome_page.dart';
+import 'package:cleaneo_user_app/Help/help_page.dart';
 import 'package:flutter/material.dart';
 
 class PP extends StatefulWidget {
-  const PP({super.key});
+  const PP({Key? key}) : super(key: key);
 
   @override
   State<PP> createState() => _PPState();
@@ -12,51 +14,92 @@ class _PPState extends State<PP> {
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     return Scaffold(
-      appBar: AppBar(
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Icon(Icons.arrow_back_ios_rounded),
+      body: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Color(0xff006acb),
         ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(height: mQuery.size.height * 0.03),
-            Text(
-              "Privacy Policy",
-              style: TextStyle(
-                  fontSize: mQuery.size.height*0.028,
-                  fontFamily: 'SatoshiBold'
+          children: [
+            SizedBox(height: mQuery.size.height * 0.034),
+            Padding(
+              padding: EdgeInsets.only(
+                top: mQuery.size.height*0.058,
+                bottom: mQuery.size.height*0.03,
+                left: mQuery.size.width*0.045,
+                right: mQuery.size.width*0.045,
+              ),
+              child: Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                            return WelcomePage();
+                          }));
+                    },
+                    child: Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(
+                    width: mQuery.size.width * 0.045,
+                  ),
+                  Text(
+                    "Privacy Policy",
+                    style: TextStyle(
+                      fontSize: mQuery.size.height*0.027,
+                      color: Colors.white,
+                      fontFamily: 'SatoshiBold',),
+                  )
+                ],
               ),
             ),
-            SizedBox(height: mQuery.size.height * 0.02),
-            Text(
-              "Welcome to our demo service! Before you begin using our platform, please read the following Terms of Service carefully. By accessing or using our service, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our service.",
-              style: TextStyle(
-                  fontSize: mQuery.size.height*0.0165,
-                  fontFamily: 'SatoshiMedium'
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(16),
+                      topRight: Radius.circular(16)),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    top: mQuery.size.height*0.028,
+                    left: mQuery.size.width*0.045,
+                    right: mQuery.size.width*0.045,
+                  ),
+                  child: Column(
+                    children: [
+                      Text(
+                        "Welcome to our demo service! Before you begin using our platform, please read the following Terms of Service carefully. By accessing or using our service, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our service.",
+                        style: TextStyle(
+                            fontSize: mQuery.size.height*0.0165,
+                            fontFamily: 'SatoshiMedium'
+                        ),
+                      ),
+                      SizedBox(height: mQuery.size.height * 0.01),
+                      Text(
+                        "Welcome to our demo service! Before you begin using our platform, please read the following Terms of Service carefully. By accessing or using our service, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our service.",
+                        style: TextStyle(
+                            fontSize: mQuery.size.height*0.0165,
+                            fontFamily: 'SatoshiMedium'
+                        ),
+                      ),
+                      SizedBox(height: mQuery.size.height * 0.01),
+                      Text(
+                        "Welcome to our demo service! Before you begin using our platform, please read the following Terms of Service carefully. By accessing or using our service, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our service.",
+                        style: TextStyle(
+                            fontSize: mQuery.size.height*0.0165,
+                            fontFamily: 'SatoshiMedium'
+                        ),)
+                    ],
+                  ),
+                ),
               ),
-            ),
-            SizedBox(height: mQuery.size.height * 0.01),
-            Text(
-              "Welcome to our demo service! Before you begin using our platform, please read the following Terms of Service carefully. By accessing or using our service, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our service.",
-              style: TextStyle(
-                  fontSize: mQuery.size.height*0.0165,
-                  fontFamily: 'SatoshiMedium'
-              ),
-            ),
-            SizedBox(height: mQuery.size.height * 0.01),
-            Text(
-              "Welcome to our demo service! Before you begin using our platform, please read the following Terms of Service carefully. By accessing or using our service, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our service.",
-              style: TextStyle(
-                  fontSize: mQuery.size.height*0.0165,
-                  fontFamily: 'SatoshiMedium'
-              ),
-            ),
+            )
           ],
         ),
       ),

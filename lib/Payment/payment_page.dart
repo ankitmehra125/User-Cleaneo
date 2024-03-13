@@ -195,7 +195,8 @@ class _PaymentPageState extends State<PaymentPage> {
                             SizedBox(height: mQuery.size.height * 0.028),
                             Container(
                               width: double.infinity,
-                              height: mQuery.size.height * 0.28,
+                              height: mQuery.size.height * 0.22,
+                              // height: mQuery.size.height * 0.28,
                               padding: EdgeInsets.symmetric(horizontal: 16),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(6),
@@ -242,39 +243,39 @@ class _PaymentPageState extends State<PaymentPage> {
                                       ],
                                     ),
                                     Divider(),
-                                    Row(
-                                      children: [
-                                        Container(
-                                          width: mQuery.size.width * 0.13,
-                                          height: mQuery.size.height * 0.04,
-                                          decoration: BoxDecoration(
-                                              border: Border.all(
-                                                color: Colors.grey,
-                                              ),
-                                              borderRadius: BorderRadius.circular(6)),
-                                          child: SvgPicture.asset(
-                                              "assets/images/paytm.svg"),
-                                        ),
-                                        SizedBox(width: mQuery.size.width * 0.03),
-                                        Text(
-                                          "Paytm",
-                                          style: TextStyle(
-                                              fontSize: mQuery.size.height*0.019,
-                                              fontFamily: 'SatoshiMedium'),
-                                        ),
-                                        Expanded(child: SizedBox()),
-                                        Radio(
-                                          value: 1,
-                                          groupValue: selectedPaymentMethod,
-                                          onChanged: (int? value) {
-                                            setState(() {
-                                              selectedPaymentMethod = value!;
-                                            });
-                                          },
-                                          activeColor: Colors.cyan,
-                                        ),
-                                      ],
-                                    ),
+                                    // Row(
+                                    //   children: [
+                                    //     Container(
+                                    //       width: mQuery.size.width * 0.13,
+                                    //       height: mQuery.size.height * 0.04,
+                                    //       decoration: BoxDecoration(
+                                    //           border: Border.all(
+                                    //             color: Colors.grey,
+                                    //           ),
+                                    //           borderRadius: BorderRadius.circular(6)),
+                                    //       child: SvgPicture.asset(
+                                    //           "assets/images/paytm.svg"),
+                                    //     ),
+                                    //     SizedBox(width: mQuery.size.width * 0.03),
+                                    //     Text(
+                                    //       "Paytm",
+                                    //       style: TextStyle(
+                                    //           fontSize: mQuery.size.height*0.019,
+                                    //           fontFamily: 'SatoshiMedium'),
+                                    //     ),
+                                    //     Expanded(child: SizedBox()),
+                                    //     Radio(
+                                    //       value: 1,
+                                    //       groupValue: selectedPaymentMethod,
+                                    //       onChanged: (int? value) {
+                                    //         setState(() {
+                                    //           selectedPaymentMethod = value!;
+                                    //         });
+                                    //       },
+                                    //       activeColor: Colors.cyan,
+                                    //     ),
+                                    //   ],
+                                    // ),
                                     Row(
                                       children: [
                                         Image.asset(

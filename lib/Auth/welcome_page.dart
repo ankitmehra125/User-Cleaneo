@@ -151,7 +151,7 @@ class _WelcomePageState extends State<WelcomePage> {
                               borderRadius: BorderRadius.circular(6)),
                           child: Center(
                             child: Text(
-                              "View as Guest",
+                              "Continue as Guest",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: mQuery.size.height * 0.023,

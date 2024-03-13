@@ -4,6 +4,7 @@ import 'package:cleaneo_user_app/Dashboard/Orders/yourOrders_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wallet/wallet_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wash/Select%20Vendor/chooseVendor_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wash/Select%20Vendor/vendorDetails_page.dart';
+import 'package:cleaneo_user_app/Welcome/TS_page.dart';
 import 'package:cleaneo_user_app/pages/donate.dart';
 import 'package:cleaneo_user_app/pages/dryclean_page.dart';
 import 'package:cleaneo_user_app/pages/mydrawer.dart';
@@ -159,10 +160,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
 
-    List<Widget> dealTexts = [
-      buildDealTextContainer(mQuery),
-      buildDealTextContainer(mQuery),
-    ];
+
 
     List<List<Map<String, String>>> imageLists = [
       topRatingImages,
@@ -527,20 +525,47 @@ class _HomePageState extends State<HomePage> {
                     items: dealImages.map((imageName) {
                       return Builder(
                         builder: (BuildContext context) {
-                          return Container(
-                            width: mQuery.size.width * 0.935,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16),
-                              image: DecorationImage(
-                                image: NetworkImage(imageName),
-                                fit: BoxFit.fill,
+                          return Stack(
+                            children: [
+                              // Image
+                              Container(
+                                width: mQuery.size.width * 0.935,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
+                                  image: DecorationImage(
+                                    image: NetworkImage(imageName),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
                               ),
-                            ),
+
+                              // Blue Container
+                              Positioned(
+                                bottom: mQuery.size.height*0.015,
+                                right: mQuery.size.width*0.07,
+                                child: Container(
+                                  height: mQuery.size.height * 0.035,
+                                  width: mQuery.size.width*0.3,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(6),
+                                    color: Color(0xff29b2fe)
+                                  ),
+                                  child: Center(
+                                    child: Text("Know More",style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: 'SatoshiBold',
+                                      fontSize: mQuery.size.height*0.016
+                                    ),),
+                                  ),
+                                ),
+                              ),
+                            ],
                           );
                         },
                       );
                     }).toList(),
                   ),
+
 
 
                   SizedBox(height: mQuery.size.height * 0.035),
@@ -616,25 +641,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget buildDealTextContainer(MediaQueryData mQuery) {
-    return Container(
-      width: mQuery.size.width * 0.3,
-      height: mQuery.size.height * 0.04,
-      decoration: BoxDecoration(
-        color: Color(0xff29befe),
-        borderRadius: BorderRadius.circular(4),
-      ),
-      child: Center(
-        child: Text(
-          "Know More",
-          style: TextStyle(
-              color: Colors.white,
-              fontSize: mQuery.size.height * 0.0175,
-              fontWeight: FontWeight.w800),
-        ),
-      ),
-    );
-  }
+
 
   Widget buildCategoryContainer(String title, int index) {
     var mQuery = MediaQuery.of(context);
