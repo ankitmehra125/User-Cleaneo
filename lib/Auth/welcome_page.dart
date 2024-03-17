@@ -67,7 +67,7 @@ class _WelcomePageState extends State<WelcomePage> {
                               "Sign Up",
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: mQuery.size.height * 0.023,
+                                fontSize: mQuery.size.height * 0.02,
                                 fontFamily: 'SatoshiBold',
                               ),
                             ),
@@ -96,7 +96,7 @@ class _WelcomePageState extends State<WelcomePage> {
                               "Log in",
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: mQuery.size.height * 0.023,
+                                fontSize: mQuery.size.height * 0.02,
                                 fontFamily: 'SatoshiBold',
                               ),
                             ),
@@ -154,7 +154,7 @@ class _WelcomePageState extends State<WelcomePage> {
                               "Continue as Guest",
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: mQuery.size.height * 0.023,
+                                fontSize: mQuery.size.height * 0.02,
                                 fontFamily: 'SatoshiBold',
                               ),
                             ),
@@ -166,7 +166,7 @@ class _WelcomePageState extends State<WelcomePage> {
                         child: Text(
                           "By Continuing, you agree to our",
                           style: TextStyle(
-                            fontSize: mQuery.size.height * 0.02,
+                            fontSize: mQuery.size.height * 0.018,
                             color: Colors.white,
                             fontFamily: 'SatoshiMedium',
                           ),
@@ -191,7 +191,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                 Text(
                                   "Terms of Service",
                                   style: TextStyle(
-                                    fontSize: mQuery.size.height * 0.016,
+                                    fontSize: mQuery.size.height * 0.015,
                                     color: Colors.white,
                                     fontFamily: 'SatoshiMedium',
                                   ),
@@ -219,7 +219,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                 Text(
                                   "Privacy Policy",
                                   style: TextStyle(
-                                    fontSize: mQuery.size.height * 0.016,
+                                    fontSize: mQuery.size.height * 0.015,
                                     color: Colors.white,
                                     fontFamily: 'SatoshiMedium',
                                   ),
@@ -247,7 +247,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                 Text(
                                   "Content Policies",
                                   style: TextStyle(
-                                    fontSize: mQuery.size.height * 0.016,
+                                    fontSize: mQuery.size.height * 0.015,
                                     color: Colors.white,
                                     fontFamily: 'SatoshiMedium',
                                   ),

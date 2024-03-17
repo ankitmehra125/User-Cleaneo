@@ -244,6 +244,7 @@ class _RatingPageState extends State<RatingPage> {
     );
   }
 
+
   void _showConfirmationDialog() {
     showDialog(
       context: context,
@@ -251,42 +252,62 @@ class _RatingPageState extends State<RatingPage> {
         var mQuery = MediaQuery.of(context);
         return AlertDialog(
           backgroundColor: Colors.white,
-          title: Center(child: Text("Thank You!",
-            style: TextStyle(
-              color: Color(0xff29b2fe),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10)
+          ),
+          title: Center(
+            child: Text(
+              "Thank You!",
+              style: TextStyle(
+                color: Color(0xff29b2fe),
                 fontFamily: 'SatoshiBold',
-            ),)),
-          content: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: mQuery.size.width*0.033
+              ),
             ),
-            child: Text("Your review is successfully "
-                "submitted!",style: TextStyle(
-              fontFamily: 'SatoshiMedium',
-            ),),
+          ),
+          content: Container(
+            height: mQuery.size.height*0.06,
+            padding: EdgeInsets.symmetric(horizontal: mQuery.size.width * 0.033),
+            child: Column(
+              children: [
+                Text(
+                  "Your review is successfully ",
+                  style: TextStyle(
+                    fontFamily: 'SatoshiMedium',
+                  ),
+                ),
+                Text(
+                  "submitted!",
+                  style: TextStyle(
+                    fontFamily: 'SatoshiMedium',
+                  ),
+                ),
+              ],
+            ),
           ),
           actions: <Widget>[
             GestureDetector(
-              onTap: ()
-              {
+              onTap: () {
                 Navigator.pop(context);
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
                   return HomePage();
                 }));
               },
               child: Container(
                 width: double.infinity,
-                height: mQuery.size.height*0.06,
+                height: mQuery.size.height * 0.06,
                 decoration: BoxDecoration(
                   color: Color(0xff29b2fe),
-                  borderRadius: BorderRadius.circular(8)
+                  borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
-                  child: Text("Okay",style: TextStyle(
-                    color: Colors.white,
+                  child: Text(
+                    "Okay",
+                    style: TextStyle(
+                      color: Colors.white,
                       fontFamily: 'SatoshiBold',
-                    fontSize: mQuery.size.height*0.024
-                  ),),
+                      fontSize: mQuery.size.height * 0.024,
+                    ),
+                  ),
                 ),
               ),
             )
@@ -295,4 +316,5 @@ class _RatingPageState extends State<RatingPage> {
       },
     );
   }
+
 }

@@ -1134,113 +1134,110 @@ class _ByWeightPageState extends State<ByWeightPage> {
                                                   ),
                                                 ),
                                               ),
-                                              SizedBox(
-                                                height:
-                                                mQuery.size.height * 0.015,
-                                              ),
+
                                               Padding(
                                                 padding: EdgeInsets.symmetric(
                                                     horizontal: 16),
                                                 child: Column(
                                                   children: [
-                                                    Text(
-                                                      "Clothes Detail",
-                                                      style: TextStyle(
-                                                        fontSize: mQuery.size.height*0.02,
-                                                        fontFamily: 'SatoshiMedium',),
-                                                    )
+                                                    // Text(
+                                                    //   "Clothes Detail",
+                                                    //   style: TextStyle(
+                                                    //     fontSize: mQuery.size.height*0.02,
+                                                    //     fontFamily: 'SatoshiMedium',),
+                                                    // )
                                                   ],
                                                 ),
                                               ),
-                                              SizedBox(height: mQuery.size.height * 0.02,),
+
                                               SingleChildScrollView(
                                                 child: Column(
                                                   children: [
-                                                    Container(
-                                                      width: double.infinity,
-                                                      height: mQuery.size.height * 0.4,
-                                                      margin: EdgeInsets.symmetric(horizontal: 16),
-                                                      decoration: BoxDecoration(
-                                                        borderRadius: BorderRadius.circular(6),
-                                                        color: Colors.white,
-                                                        boxShadow: [
-                                                          BoxShadow(
-                                                            color: Colors.grey.withOpacity(0.5),
-                                                            spreadRadius: 0.2,
-                                                            blurRadius: 7,
-                                                            offset: Offset(0, 0),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      child: Column(
-                                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                          SizedBox(height: mQuery.size.height * 0.015),
-                                                          Padding(
-                                                            padding: const EdgeInsets.only(left: 16),
-                                                            child: Text(
-                                                              "WASH",
-                                                              style: TextStyle(
-                                                                fontSize: mQuery.size.height*0.0173,
-                                                                fontFamily: 'SatoshiMedium',
-                                                                color: Color(0xff29b2fe),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          SizedBox(height: mQuery.size.height * 0.012),
-                                                          Expanded(
-                                                            child: ListView.builder(
-                                                              itemCount: itemList.length,
-                                                              itemBuilder: (BuildContext context, int index) {
-                                                                double pricePerKg = double.parse(itemList[index]["price"].split(" ")[1]);
-                                                                double totalCost = kgValues[index] * pricePerKg;
-
-                                                                return Column(
-                                                                  children: [
-                                                                    buildItemContainer(
-                                                                      mQuery,
-                                                                      itemList[index]["name"],
-                                                                      itemList[index]["price"],
-                                                                      kgValues[index],
-                                                                          () {
-                                                                        setState(() {
-                                                                          kgValues[index] = kgValues[index] > 0 ? kgValues[index] - 1 : 0;
-                                                                        });
-                                                                      },
-                                                                          () {
-                                                                        setState(() {
-                                                                          kgValues[index]++;
-                                                                          calculateTotalKgValue();
-                                                                        });
-                                                                      },
-                                                                    ),
-                                                                    Container(
-                                                                      padding: EdgeInsets.only(right: 28),
-                                                                      child: Row(
-                                                                        mainAxisAlignment: MainAxisAlignment.end,
-                                                                        children: [
-                                                                          Text(
-                                                                            '₹ ${(totalCost).toStringAsFixed(0)}',
-                                                                            style: TextStyle(
-                                                                              fontSize: mQuery.size.height*0.0173,
-                                                                              fontFamily: 'SatoshiMedium',
-                                                                              color: Color(0xff29b2fe),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                );
-                                                              },
-                                                            ),
-                                                          ),
-                                                          SizedBox(height: 10),
-
-                                                          ////////    Text("Hello Flutter")   ///////
-                                                        ],
-                                                      ),
-                                                    ),
+                                                    // Container(
+                                                    //   width: double.infinity,
+                                                    //   height: mQuery.size.height * 0.4,
+                                                    //   margin: EdgeInsets.symmetric(horizontal: 16),
+                                                    //   decoration: BoxDecoration(
+                                                    //     borderRadius: BorderRadius.circular(6),
+                                                    //     color: Colors.white,
+                                                    //     boxShadow: [
+                                                    //       BoxShadow(
+                                                    //         color: Colors.grey.withOpacity(0.5),
+                                                    //         spreadRadius: 0.2,
+                                                    //         blurRadius: 7,
+                                                    //         offset: Offset(0, 0),
+                                                    //       ),
+                                                    //     ],
+                                                    //   ),
+                                                    //   child: Column(
+                                                    //     crossAxisAlignment: CrossAxisAlignment.start,
+                                                    //     children: [
+                                                    //       SizedBox(height: mQuery.size.height * 0.015),
+                                                    //       Padding(
+                                                    //         padding: const EdgeInsets.only(left: 16),
+                                                    //         child: Text(
+                                                    //           "WASH",
+                                                    //           style: TextStyle(
+                                                    //             fontSize: mQuery.size.height*0.0173,
+                                                    //             fontFamily: 'SatoshiMedium',
+                                                    //             color: Color(0xff29b2fe),
+                                                    //           ),
+                                                    //         ),
+                                                    //       ),
+                                                    //       SizedBox(height: mQuery.size.height * 0.012),
+                                                    //       Expanded(
+                                                    //         child: ListView.builder(
+                                                    //           itemCount: itemList.length,
+                                                    //           itemBuilder: (BuildContext context, int index) {
+                                                    //             double pricePerKg = double.parse(itemList[index]["price"].split(" ")[1]);
+                                                    //             double totalCost = kgValues[index] * pricePerKg;
+                                                    //
+                                                    //             return Column(
+                                                    //               children: [
+                                                    //                 buildItemContainer(
+                                                    //                   mQuery,
+                                                    //                   itemList[index]["name"],
+                                                    //                   itemList[index]["price"],
+                                                    //                   kgValues[index],
+                                                    //                       () {
+                                                    //                     setState(() {
+                                                    //                       kgValues[index] = kgValues[index] > 0 ? kgValues[index] - 1 : 0;
+                                                    //                     });
+                                                    //                   },
+                                                    //                       () {
+                                                    //                     setState(() {
+                                                    //                       kgValues[index]++;
+                                                    //                       calculateTotalKgValue();
+                                                    //                     });
+                                                    //                   },
+                                                    //                 ),
+                                                    //                 Container(
+                                                    //                   padding: EdgeInsets.only(right: 28),
+                                                    //                   child: Row(
+                                                    //                     mainAxisAlignment: MainAxisAlignment.end,
+                                                    //                     children: [
+                                                    //                       Text(
+                                                    //                         '₹ ${(totalCost).toStringAsFixed(0)}',
+                                                    //                         style: TextStyle(
+                                                    //                           fontSize: mQuery.size.height*0.0173,
+                                                    //                           fontFamily: 'SatoshiMedium',
+                                                    //                           color: Color(0xff29b2fe),
+                                                    //                         ),
+                                                    //                       ),
+                                                    //                     ],
+                                                    //                   ),
+                                                    //                 ),
+                                                    //               ],
+                                                    //             );
+                                                    //           },
+                                                    //         ),
+                                                    //       ),
+                                                    //       SizedBox(height: 10),
+                                                    //
+                                                    //       ////////    Text("Hello Flutter")   ///////
+                                                    //     ],
+                                                    //   ),
+                                                    // ),
 
                                                     SizedBox(height: mQuery.size.height * 0.02,),
                                                     Padding(

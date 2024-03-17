@@ -1,8 +1,8 @@
-import 'package:cleaneo_user_app/Help/help_page.dart';
 import 'package:cleaneo_user_app/Dashboard/home_page.dart';
-import 'package:cleaneo_user_app/Dashboard/Wash/wash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:package_info/package_info.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PaymentPage extends StatefulWidget {
   const PaymentPage({Key? key}) : super(key: key);
@@ -12,14 +12,21 @@ class PaymentPage extends StatefulWidget {
 }
 
 class _PaymentPageState extends State<PaymentPage> {
-  int selectedPaymentMethod = -1;
 
-  List<Map<String, String>> cardDetails = [
-    {"type": "Visa", "number": "6220 XXXX XXXX 4452"},
-    {"type": "Mastercard", "number": "5555 XXXX XXXX 8888"},
-    {"type": "Amex", "number": "4111 XXXX XXXX 7777"},
-    // Add more card details here as needed
-  ];
+  void _launchURL() async {
+    const String googlePayPackageName = 'com.google.android.apps.walletnfcrel';
+
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    String packageName = packageInfo.packageName;
+
+    if (await canLaunch('https://pay.google.com') && packageName == googlePayPackageName) {
+      await launch('https://pay.google.com');
+    } else {
+      throw 'Could not launch Google Pay';
+    }
+  }
+
+  int selectedPaymentMethod = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -41,10 +48,7 @@ class _PaymentPageState extends State<PaymentPage> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                              return WashPage();
-                            }));
+                        Navigator.pop(context); // Use pop to go back
                       },
                       child: Icon(
                         Icons.arrow_back,
@@ -57,7 +61,7 @@ class _PaymentPageState extends State<PaymentPage> {
                     Text(
                       "Payment",
                       style: TextStyle(
-                          fontSize: mQuery.size.height*0.027,
+                          fontSize: mQuery.size.height * 0.027,
                           color: Colors.white,
                           fontFamily: 'SatoshiBold'),
                     )
@@ -94,7 +98,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 Text(
                                   "Cleaneo Wallet",
                                   style: TextStyle(
-                                      fontSize: mQuery.size.height*0.022,
+                                      fontSize: mQuery.size.height * 0.022,
                                       fontFamily: 'SatoshiBold'),
                                 ),
                                 Row(
@@ -102,14 +106,13 @@ class _PaymentPageState extends State<PaymentPage> {
                                     Text(
                                       "Available balance ",
                                       style: TextStyle(
-                                        fontSize: mQuery.size.height*0.0175,
-                                        fontFamily: 'SatoshiMedium'
-                                      ),
+                                          fontSize: mQuery.size.height * 0.0175,
+                                          fontFamily: 'SatoshiMedium'),
                                     ),
                                     Text(
                                       "ADD MONEY",
                                       style: TextStyle(
-                                          fontSize: mQuery.size.height*0.0175,
+                                          fontSize: mQuery.size.height * 0.0175,
                                           color: Color(0xff29b2fe),
                                           fontFamily: 'SatoshiMedium'),
                                     )
@@ -175,7 +178,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                   Text(
                                     "Cash",
                                     style: TextStyle(
-                                        fontSize: mQuery.size.height*0.019,
+                                        fontSize: mQuery.size.height * 0.019,
                                         fontFamily: 'SatoshiMedium'),
                                   ),
                                   Expanded(child: SizedBox()),
@@ -218,7 +221,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                         Text(
                                           "Other Wallets/UPI",
                                           style: TextStyle(
-                                              fontSize: mQuery.size.height*0.0195,
+                                              fontSize: mQuery.size.height * 0.0195,
                                               fontFamily: 'SatoshiMedium'),
                                         ),
                                         Expanded(child: SizedBox()),
@@ -236,46 +239,13 @@ class _PaymentPageState extends State<PaymentPage> {
                                         SizedBox(width: mQuery.size.width * 0.026),
                                         Text("Add New",
                                           style: TextStyle(
-                                              fontSize: mQuery.size.height*0.018,
+                                              fontSize: mQuery.size.height * 0.018,
                                               color: Color(0xff29b2fe),
                                               fontFamily: 'SatoshiMedium'),
                                         )
                                       ],
                                     ),
                                     Divider(),
-                                    // Row(
-                                    //   children: [
-                                    //     Container(
-                                    //       width: mQuery.size.width * 0.13,
-                                    //       height: mQuery.size.height * 0.04,
-                                    //       decoration: BoxDecoration(
-                                    //           border: Border.all(
-                                    //             color: Colors.grey,
-                                    //           ),
-                                    //           borderRadius: BorderRadius.circular(6)),
-                                    //       child: SvgPicture.asset(
-                                    //           "assets/images/paytm.svg"),
-                                    //     ),
-                                    //     SizedBox(width: mQuery.size.width * 0.03),
-                                    //     Text(
-                                    //       "Paytm",
-                                    //       style: TextStyle(
-                                    //           fontSize: mQuery.size.height*0.019,
-                                    //           fontFamily: 'SatoshiMedium'),
-                                    //     ),
-                                    //     Expanded(child: SizedBox()),
-                                    //     Radio(
-                                    //       value: 1,
-                                    //       groupValue: selectedPaymentMethod,
-                                    //       onChanged: (int? value) {
-                                    //         setState(() {
-                                    //           selectedPaymentMethod = value!;
-                                    //         });
-                                    //       },
-                                    //       activeColor: Colors.cyan,
-                                    //     ),
-                                    //   ],
-                                    // ),
                                     Row(
                                       children: [
                                         Image.asset(
@@ -286,7 +256,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                         Text(
                                           "PhonePe",
                                           style: TextStyle(
-                                              fontSize: mQuery.size.height*0.019,
+                                              fontSize: mQuery.size.height * 0.019,
                                               fontFamily: 'SatoshiMedium'),
                                         ),
                                         Expanded(child: SizedBox()),
@@ -312,7 +282,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                         Text(
                                           "GPay",
                                           style: TextStyle(
-                                              fontSize: mQuery.size.height*0.019,
+                                              fontSize: mQuery.size.height * 0.019,
                                               fontFamily: 'SatoshiMedium'),
                                         ),
                                         Expanded(child: SizedBox()),
@@ -357,7 +327,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                         Text(
                                           "Credit/ Debit Cards",
                                           style: TextStyle(
-                                              fontSize: mQuery.size.height*0.02,
+                                              fontSize: mQuery.size.height * 0.02,
                                               fontFamily: 'SatoshiMedium'),
                                         ),
                                         Expanded(child: SizedBox()),
@@ -376,7 +346,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                         Text(
                                           "Add New",
                                           style: TextStyle(
-                                              fontSize: mQuery.size.height*0.018,
+                                              fontSize: mQuery.size.height * 0.018,
                                               color: Color(0xff29b2fe),
                                               fontFamily: 'SatoshiMedium'),
                                         )
@@ -400,7 +370,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                         Text(
                                           "6220 XXXX XXXX 4452",
                                           style: TextStyle(
-                                              fontSize: mQuery.size.height*0.019,
+                                              fontSize: mQuery.size.height * 0.019,
                                               fontFamily: 'SatoshiMedium'),
                                         ),
                                         Expanded(child: SizedBox()),
@@ -433,7 +403,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                         Text(
                                           "5555 XXXX XXXX 8888",
                                           style: TextStyle(
-                                              fontSize: mQuery.size.height*0.019,
+                                              fontSize: mQuery.size.height * 0.019,
                                               fontFamily: 'SatoshiMedium'),
                                         ),
                                         Expanded(child: SizedBox()),
@@ -466,7 +436,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                         Text(
                                           "4111 XXXX XXXX 7777",
                                           style: TextStyle(
-                                              fontSize: mQuery.size.height*0.019,
+                                              fontSize: mQuery.size.height * 0.019,
                                               fontFamily: 'SatoshiMedium'),
                                         ),
                                         Expanded(child: SizedBox()),
@@ -486,8 +456,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 ),
                               ),
                             ),
-                            SizedBox(height: mQuery.size.height*0.025,),
-
+                            SizedBox(height: mQuery.size.height * 0.025,),
                           ],
                         ),
                       ),
@@ -499,7 +468,7 @@ class _PaymentPageState extends State<PaymentPage> {
 
             Container(
               color: Colors.white,
-              height: mQuery.size.height*0.02,),
+              height: mQuery.size.height * 0.02,),
             Container(
               color: Colors.white,
               child: Column(
@@ -511,33 +480,72 @@ class _PaymentPageState extends State<PaymentPage> {
                         Container(
                           color: Colors.white,
                           child: GestureDetector(
-                            onTap: ()
-                            {
-                              Navigator.push(context, MaterialPageRoute(builder: (context){
-                                return HomePage();
-                              }));
+                            onTap: () {
+                              if (selectedPaymentMethod == -1) {
+                                // Show alert if no payment option is selected
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      backgroundColor: Colors.white,
+                                      title: Text("Choose Payment Option", style: TextStyle(
+                                          fontSize: mQuery.size.height * 0.02,
+                                          fontFamily: 'SatoshiBold'
+                                      ),),
+                                      content: Container(
+                                        height: mQuery.size.height * 0.06,
+                                        child: Column(
+                                          children: [
+                                            SizedBox(height: mQuery.size.height * 0.01,),
+                                            Text(
+                                                "Please select your payment option."),
+                                          ],
+                                        ),
+                                      ),
+                                      actions: <Widget>[
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text("OK"),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              } else {
+                                // Navigate to the next page only if payment option is selected
+                                if (selectedPaymentMethod == 3) {
+                                  // Launch Google Pay
+                                  _launchURL();
+                                } else {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                                    return HomePage();
+                                  }));
+                                }
+                              }
                             },
                             child: Container(
                               width: double.infinity,
-                              height: mQuery.size.height*0.054,
+                              height: mQuery.size.height * 0.054,
                               margin: EdgeInsets.symmetric(
-                                horizontal: mQuery.size.width*0.045
+                                  horizontal: mQuery.size.width * 0.045
                               ),
                               decoration: BoxDecoration(
                                   color: Color(0xff20b2fe),
                                   borderRadius: BorderRadius.circular(6)
                               ),
                               child: Center(
-                                child: Text("Make Payment ",style: TextStyle(
+                                child: Text("Make Payment ", style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: mQuery.size.height*0.023,
+                                    fontSize: mQuery.size.height * 0.023,
                                     fontFamily: 'SatoshiBold'
                                 ),),
                               ),
                             ),
                           ),
                         ),
-                        SizedBox(height: mQuery.size.height*0.02,)
+                        SizedBox(height: mQuery.size.height * 0.02,)
                       ],
                     ),
                   ),
@@ -549,4 +557,5 @@ class _PaymentPageState extends State<PaymentPage> {
       ),
     );
   }
+
 }

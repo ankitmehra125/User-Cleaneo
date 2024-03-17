@@ -386,6 +386,7 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
     );
   }
 
+
   void _showConfirmationDialog() {
     showDialog(
       context: context,
@@ -393,50 +394,97 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
         var mQuery = MediaQuery.of(context);
         return AlertDialog(
           backgroundColor: Colors.white,
-          title: Center(child: Text("Thank You for\n "
-              "your patience!",
-            style: TextStyle(
-              color: Color(0xff29b2fe),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10)
+          ),
+          title: Center(
+            child: Text(
+              "Thank You for\nyour patience!",
+              style: TextStyle(
+                color: Color(0xff29b2fe),
                 fontFamily: 'SatoshiBold',
-              fontSize: mQuery.size.height*0.028
-            ),)),
-          content: Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: mQuery.size.width*0.056
+                fontSize: mQuery.size.height * 0.028,
+              ),
             ),
-            child: Text("We are extremely sorry for the "
-                "inconvenience caused. Our"
-                "support team will enquire more"
-                "about the issue and get back to "
-                "you as soon as possible. \n "
-                "     Your dispure ID is: \n"
-                "            $disputeId"
-                "",style: TextStyle(
-              fontFamily: 'SatoshiMedium',
-            ),),
+          ),
+          content: SizedBox(
+            height: mQuery.size.height*0.25,
+            child: Column(
+              children: [
+                Text(
+                  "We are extremely sorry for the",
+                  style: TextStyle(
+                    fontFamily: 'SatoshiMedium',
+                  ),
+                ),
+                Text(
+                  "inconvenience caused. Our",
+                  style: TextStyle(
+                    fontFamily: 'SatoshiMedium',
+                  ),
+                ),
+                Text(
+                  "support team will enquire more",
+                  style: TextStyle(
+                    fontFamily: 'SatoshiMedium',
+                  ),
+                ),
+                Text(
+                  "about the issue and get back to",
+                  style: TextStyle(
+                    fontFamily: 'SatoshiMedium',
+                  ),
+                ),
+                Text(
+                  "you as soon as possible.",
+                  style: TextStyle(
+                    fontFamily: 'SatoshiMedium',
+                  ),
+                ),
+
+                SizedBox(height: mQuery.size.height*0.023,),
+                Text(
+                  "Your dispute ID is:",
+                  style: TextStyle(
+                    fontFamily: 'SatoshiMedium',
+                  ),
+                ),
+                Text(
+                  "$disputeId",
+                  style: TextStyle(
+                    fontFamily: 'SatoshiMedium',
+                  ),
+                ),
+              ],
+            ),
           ),
           actions: <Widget>[
             GestureDetector(
-              onTap: ()
-              {
+              onTap: () {
                 Navigator.pop(context);
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
-                  return HomePage();
-                }));
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return HomePage();
+                  }),
+                );
               },
               child: Container(
                 width: double.infinity,
-                height: mQuery.size.height*0.06,
+                height: mQuery.size.height * 0.06,
                 decoration: BoxDecoration(
-                    color: Color(0xff29b2fe),
-                    borderRadius: BorderRadius.circular(8)
+                  color: Color(0xff29b2fe),
+                  borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
-                  child: Text("Okay",style: TextStyle(
+                  child: Text(
+                    "Okay",
+                    style: TextStyle(
                       color: Colors.white,
                       fontFamily: 'SatoshiBold',
-                      fontSize: mQuery.size.height*0.024
-                  ),),
+                      fontSize: mQuery.size.height * 0.024,
+                    ),
+                  ),
                 ),
               ),
             )
@@ -445,6 +493,7 @@ class _ReportDisputePageState extends State<ReportDisputePage> {
       },
     );
   }
+
 }
 
 

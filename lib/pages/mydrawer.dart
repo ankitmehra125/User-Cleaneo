@@ -33,28 +33,28 @@ class _MyDrawerState extends State<MyDrawer> {
         width: double.infinity,
         child: Column(
           children: [
-            Container(
-              width: double.infinity,
-              color: Color(0xfff3fbff),
-              height: mQuery.size.height*0.15,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: mQuery.size.height*0.058),
-                  GestureDetector(
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                          left: mQuery.size.width*0.028,
-                        ),
-                        child: GestureDetector(
-                          onTap: ()
-                          {
-                            Navigator.push(context, MaterialPageRoute(builder: (context){
-                              return MyProfilePage();
-                            }));
-                          },
+            GestureDetector(
+              onTap: ()
+              {
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return MyProfilePage();
+                }));
+              },
+              child: Container(
+                width: double.infinity,
+                color: Color(0xfff3fbff),
+                height: mQuery.size.height*0.15,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: mQuery.size.height*0.058),
+                    GestureDetector(
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            left: mQuery.size.width*0.028,
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
@@ -121,9 +121,9 @@ class _MyDrawerState extends State<MyDrawer> {
                         ),
                       ),
                     ),
-                  ),
 
-                ],
+                  ],
+                ),
               ),
             ),
             Expanded(

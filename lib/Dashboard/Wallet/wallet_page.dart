@@ -281,234 +281,269 @@ class _WalletPageState extends State<WalletPage> {
     );
   }
 
+
   void _openTransactionBottomSheet(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     showModalBottomSheet(
-        context: context,
-        isScrollControlled: true,
-        builder: (BuildContext context) {
-          return StatefulBuilder(
-            builder: (BuildContext context, StateSetter setState) {
-              return Container(
-                width: double.infinity,
-                height: mQuery.size.height * 0.82,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(12),
-                        topRight: Radius.circular(12))),
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(height: mQuery.size.height * 0.03),
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: mQuery.size.width * 0.045),
-                        child: Text(
-                          "Filter Transactions",
-                          style: TextStyle(
-                              fontSize: mQuery.size.height * 0.023,
-                              fontFamily: 'SatoshiBold'),
+      context: context,
+      isScrollControlled: true,
+      builder: (BuildContext context) {
+        return StatefulBuilder(
+          builder: (BuildContext context, StateSetter setState) {
+            return Container(
+              width: double.infinity,
+              height: mQuery.size.height * 0.82,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(12),
+                  topRight: Radius.circular(12),
+                ),
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: mQuery.size.height * 0.03),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: mQuery.size.width * 0.045,
+                      ),
+                      child: Text(
+                        "Filter Transactions",
+                        style: TextStyle(
+                          fontSize: mQuery.size.height * 0.023,
+                          fontFamily: 'SatoshiBold',
                         ),
                       ),
-                      SizedBox(height: mQuery.size.height * 0.0075),
-                      Divider(),
-                      SizedBox(height: mQuery.size.height*0.016,),
-                      Column(
-                        children: [
-                          _buildRadioButton(
-                              mQuery, setState, 0, "All", Icons.check),
-                          SizedBox(height: mQuery.size.height * 0.025),
-                          _buildRadioButton(
-                              mQuery, setState, 1, "Debited", Icons.check),
-                          SizedBox(height: mQuery.size.height * 0.025),
-                          _buildRadioButton(
-                              mQuery, setState, 2, "Credited", Icons.check),
-                          SizedBox(height: mQuery.size.height*0.023,),
-                          Divider(),
-                          SizedBox(height: mQuery.size.height*0.02,),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: mQuery.size.width * 0.045),
-                            child: Row(
-                              children: [
-                                Text("Filter by Date",style: TextStyle(
-                                  fontSize: mQuery.size.height*0.0175,
-                                  color: Colors.black54,
-                                    fontFamily: 'SatoshiRegular'
-                                ),
-                                ),
-                              ],
-                            ),
+                    ),
+                    SizedBox(height: mQuery.size.height * 0.0075),
+                    Divider(),
+                    SizedBox(height: mQuery.size.height * 0.016),
+                    Column(
+                      children: [
+                        _buildRadioButton(
+                          mQuery,
+                          setState,
+                          0,
+                          "All",
+                          Icons.check,
+                        ),
+                        SizedBox(height: mQuery.size.height * 0.025),
+                        _buildRadioButton(
+                          mQuery,
+                          setState,
+                          1,
+                          "Debited",
+                          Icons.check,
+                        ),
+                        SizedBox(height: mQuery.size.height * 0.025),
+                        _buildRadioButton(
+                          mQuery,
+                          setState,
+                          2,
+                          "Credited",
+                          Icons.check,
+                        ),
+                        SizedBox(height: mQuery.size.height * 0.023),
+                        Divider(),
+                        SizedBox(height: mQuery.size.height * 0.02),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: mQuery.size.width * 0.045,
                           ),
-                          SizedBox(height: mQuery.size.height*0.021,),
-                          Row(
+                          child: Row(
                             children: [
-                              Column(
-                                children: [
-                                  Text("FROM",style: TextStyle(
-                                    fontSize: mQuery.size.height*0.018,
-                                      fontFamily: 'SatoshiMedium'
-                                  ),),
-                                  SizedBox(height: mQuery.size.height*0.018,),
-                                  Container(
-                                    width: mQuery.size.width * 0.42,
-                                    height: mQuery.size.height * 0.2,
-                                    margin: EdgeInsets.only(left: mQuery.size.width * 0.045),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(8),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.grey.withOpacity(0.5),
-                                          spreadRadius: 0,
-                                          blurRadius: 7,
-                                          offset: Offset(0, 0),
-                                        ),
-                                      ],
-                                    ),
-                                    child: Center(
-                                      child: RotatedBox(
-                                        quarterTurns: 0,
-                                        child: Container(
-                                          child: Center(
-                                            child: Transform.scale(
-                                              scale: 0.8, // Adjust scale factor as needed to reduce the size
-                                              child: CupertinoDatePicker(
-                                                mode: CupertinoDatePickerMode.date,
-                                                initialDateTime: DateTime.now(),
-                                                onDateTimeChanged: (DateTime newDateTime) {
-                                                  // Do something when the date is changed
-                                                },
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-
-
-                                ],
-                              ),
-
-                              Expanded(child: SizedBox()),
-                              Column(
-                                children: [
-                                  Text("TO",style: TextStyle(
-                                      fontSize: mQuery.size.height*0.018,
-                                      fontFamily: 'SatoshiMedium'
-                                  ),),
-                                  SizedBox(height: mQuery.size.height*0.018,),
-                                  Container(
-                                    width: mQuery.size.width * 0.42,
-                                    height: mQuery.size.height * 0.2,
-                                    margin: EdgeInsets.only(left: mQuery.size.width * 0.045),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(8),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.grey.withOpacity(0.5),
-                                          spreadRadius: 0,
-                                          blurRadius: 7,
-                                          offset: Offset(0, 0),
-                                        ),
-                                      ],
-                                    ),
-                                    child: Center(
-                                      child: RotatedBox(
-                                        quarterTurns: 0,
-                                        child: Container(
-                                          child: Center(
-                                            child: Transform.scale(
-                                              scale: 0.8, // Adjust scale factor as needed to reduce the size
-                                              child: CupertinoDatePicker(
-                                                mode: CupertinoDatePickerMode.date,
-                                                initialDateTime: DateTime.now(),
-                                                onDateTimeChanged: (DateTime newDateTime) {
-                                                  // Do something when the date is changed
-                                                },
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                              Text(
+                                "Filter by Date",
+                                style: TextStyle(
+                                  fontSize: mQuery.size.height * 0.0175,
+                                  color: Colors.black54,
+                                  fontFamily: 'SatoshiRegular',
+                                ),
                               ),
                             ],
                           ),
-
-                          SizedBox(height: mQuery.size.height*0.083,),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: mQuery.size.width*0.045
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                GestureDetector(
-                                  onTap: ()
-                                  {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context){
-                                      return WalletPage();
-                                    }));
-                                  },
-                                  child: Container(
-                                    width: mQuery.size.width*0.42,
-                                    height: mQuery.size.height*0.057,
+                        ),
+                        SizedBox(height: mQuery.size.height * 0.021),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Text(
+                                    "FROM",
+                                    style: TextStyle(
+                                      fontSize: mQuery.size.height * 0.018,
+                                      fontFamily: 'SatoshiMedium',
+                                    ),
+                                  ),
+                                  SizedBox(height: mQuery.size.height * 0.018),
+                                  Container(
+                                    width: mQuery.size.width * 0.42,
+                                    height: mQuery.size.height * 0.25,
+                                    // margin: EdgeInsets.only(
+                                    //   left: mQuery.size.width * 0.045,
+                                    // ),
                                     decoration: BoxDecoration(
-                                      color: Color(0xff004c91),
-                                      borderRadius: BorderRadius.circular(6)
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(8),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.5),
+                                          spreadRadius: 0,
+                                          blurRadius: 7,
+                                          offset: Offset(0, 0),
+                                        ),
+                                      ],
                                     ),
                                     child: Center(
-                                      child: Text("Cancel",style: TextStyle(
+                                      child: RotatedBox(
+                                        quarterTurns: 0,
+                                        child: Container(
+                                          child: Transform.scale(
+                                            scale: 0.75, // Adjust scale factor as needed to reduce the size
+                                            child: CupertinoDatePicker(
+                                              mode: CupertinoDatePickerMode.date,
+                                              initialDateTime: DateTime.now(),
+                                              onDateTimeChanged: (DateTime newDateTime) {
+                                                // Do something when the date is changed
+                                              },
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            // SizedBox(width: mQuery.size.width * 0.05),
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Text(
+                                    "TO",
+                                    style: TextStyle(
+                                      fontSize: mQuery.size.height * 0.018,
+                                      fontFamily: 'SatoshiMedium',
+                                    ),
+                                  ),
+                                  SizedBox(height: mQuery.size.height * 0.018),
+                                  Container(
+                                    width: mQuery.size.width * 0.42,
+                                    height: mQuery.size.height * 0.25,
+                                    // margin: EdgeInsets.only(
+                                    //   right: mQuery.size.width * 0.045,
+                                    // ),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(8),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.5),
+                                          spreadRadius: 0,
+                                          blurRadius: 7,
+                                          offset: Offset(0, 0),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Center(
+                                      child: RotatedBox(
+                                        quarterTurns: 0,
+                                        child: Container(
+                                          child: Transform.scale(
+                                            scale: 0.75, // Adjust scale factor as needed to reduce the size
+                                            child: CupertinoDatePicker(
+                                              mode: CupertinoDatePickerMode.date,
+                                              initialDateTime: DateTime.now(),
+                                              onDateTimeChanged: (DateTime newDateTime) {
+                                                // Do something when the date is changed
+                                              },
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: mQuery.size.height * 0.083),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: mQuery.size.width * 0.045,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                    return WalletPage();
+                                  }));
+                                },
+                                child: Container(
+                                  width: mQuery.size.width * 0.42,
+                                  height: mQuery.size.height * 0.057,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xff004c91),
+                                    borderRadius: BorderRadius.circular(6),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "Cancel",
+                                      style: TextStyle(
                                         color: Colors.white,
-                                          fontFamily: 'SatoshiBold',
-                                        fontSize: mQuery.size.height*0.022
-                                      ),),
+                                        fontFamily: 'SatoshiBold',
+                                        fontSize: mQuery.size.height * 0.022,
+                                      ),
                                     ),
                                   ),
                                 ),
-                                GestureDetector(
-                                  onTap: ()
-                                  {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context){
-                                      return WalletPage();
-                                    }));
-                                  },
-                                  child: Container(
-                                    width: mQuery.size.width*0.42,
-                                    height: mQuery.size.height*0.057,
-                                    decoration: BoxDecoration(
-                                        color: Color(0xff29b2fe),
-                                        borderRadius: BorderRadius.circular(6)
-                                    ),
-                                    child: Center(
-                                      child: Text("Apply",style: TextStyle(
-                                          color: Colors.white,
-                                          fontFamily: 'SatoshiBold',
-                                          fontSize: mQuery.size.height*0.022
-                                      ),),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                    return WalletPage();
+                                  }));
+                                },
+                                child: Container(
+                                  width: mQuery.size.width * 0.42,
+                                  height: mQuery.size.height * 0.057,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xff29b2fe),
+                                    borderRadius: BorderRadius.circular(6),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "Apply",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontFamily: 'SatoshiBold',
+                                        fontSize: mQuery.size.height * 0.022,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-              );
-            },
-          );
-        });
+              ),
+            );
+          },
+        );
+      },
+    );
   }
+
 
   Widget _buildRadioButton(
       MediaQueryData mQuery, Function setState, int index, String text, IconData iconData) {

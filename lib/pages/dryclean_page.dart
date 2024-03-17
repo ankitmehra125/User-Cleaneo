@@ -538,7 +538,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
         List<String> dates = ["25 June", "26 June", "27 June"];
         List<String> times = ["10am - 12pm", "02pm - 04pm", "06pm - 08pm"];
 
-        List<String> dates2 = ["25 June", "28 June", "29 June"];
+        List<String> dates2 = ["26 June", "28 June", "29 June"];
         List<String> times2 = ["10am - 12pm", "02pm - 04pm", "06pm - 08pm"];
 
 
@@ -547,8 +547,7 @@ class _DryCleanPageState extends State<DryCleanPage> {
         int? selectedDateIndex2; // Track the selected date index for delivery
         int? selectedTimeIndex2;
 
-        bool showSecondDropdown =
-        false; // Variable to control second dropdown visibility
+        bool showSecondDropdown = false; // Variable to control second dropdown visibility
 
         return StatefulBuilder(
           builder: (context, setState) {

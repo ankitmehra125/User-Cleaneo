@@ -173,7 +173,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             child: Center(
                               child: Text("Log In",style: TextStyle(
-                                  fontSize: mQuery.size.height*0.023,
+                                  fontSize: mQuery.size.height*0.02,
                                   color: Colors.white,
                                 fontFamily: 'SatoshiBold',
                               ),),

@@ -80,15 +80,6 @@ class _DonateState extends State<Donate> {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(16),
                       topRight: Radius.circular(16)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 0.3,
-                      blurRadius: 1,
-                      offset:
-                      Offset(3, 3), // changes the position of the shadow
-                    ),
-                  ],
                 ),
                 child: SingleChildScrollView(
                   child:   Column(
@@ -189,13 +180,11 @@ class _DonateState extends State<Donate> {
                           )
                         ],
                       ),
-                      SizedBox(height: mQuery.size.height*0.036,),
+                      SizedBox(height: mQuery.size.height*0.046,),
                       ElevatedButton(
                         onPressed: ()
                         {
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
-                            return PaymentPage();
-                          }));
+                          _openDonateBottomSheet(context);
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Color(0xFF009C1A),
@@ -206,7 +195,7 @@ class _DonateState extends State<Donate> {
                           elevation: 0,
                           minimumSize: Size(400.0, 50.0),
                         ),
-                        child: Text('Donate',style: TextStyle(
+                        child: Text('Continue',style: TextStyle(
                             fontSize: mQuery.size.height*0.023,
                             fontFamily: 'SatoshiBold'
                         ),),
@@ -220,6 +209,103 @@ class _DonateState extends State<Donate> {
           ],
         ),
       ),
+    );
+  }
+
+  void _openDonateBottomSheet(BuildContext context)
+  {
+    var mQuery = MediaQuery.of(context);
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (BuildContext context)
+        {
+          return Container(
+            width: double.infinity,
+            height: mQuery.size.height*0.45,
+            padding: EdgeInsets.symmetric(
+              horizontal: mQuery.size.width*0.04
+            ),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12)
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: mQuery.size.height*0.023,),
+                  Text("Our efforts for donation",style: TextStyle(
+                    fontSize: mQuery.size.height*0.023,
+                    fontFamily: 'SatoshiBold'
+                  ),),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        width: mQuery.size.width*0.275,
+                        height: mQuery.size.height*0.18,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20)
+                        ),
+                        child: Image.network("https://thumbs.dreamstime.com/b/noida-uttar-pradesh-india-november-group-young-people-ngo-distributing-food-to-poor-children-slum-pandemic-giving-203881336.jpg"),
+                      ),
+                      Container(
+                        width: mQuery.size.width*0.275,
+                        height: mQuery.size.height*0.18,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20)
+                        ),
+                        child: Image.network("https://www.indiaspend.com/h-upload/old_images/1600x960_342945-charity1440.jpg"),
+                      ),
+                      Container(
+                        width: mQuery.size.width*0.275,
+                        height: mQuery.size.height*0.18,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20)
+                        ),
+                        child: Image.network("https://sc0.blr1.cdn.digitaloceanspaces.com/article/159247-xyzhgbnqzz-1621481357.jpg"),
+                      )
+                    ],
+                  ),
+                  SizedBox(height: mQuery.size.height*0.026,),
+                  Center(
+                    child: Column(
+                      children: [
+                        Text("\"We make a living by what we get, but we make"),
+                        Text("\a life by what we give\""),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: mQuery.size.height*0.026,),
+                  GestureDetector(
+                    onTap: ()
+                    {
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return PaymentPage();
+                      }));
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      height: mQuery.size.height*0.065,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF009C1A),
+                        borderRadius: BorderRadius.circular(8)
+                      ),
+                      child: Center(
+                        child: Text("Dontate",style: TextStyle(
+                            fontSize: mQuery.size.height*0.023,
+                            fontFamily: 'SatoshiBold',
+                            color: Colors.white
+                        ),),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        }
     );
   }
 }

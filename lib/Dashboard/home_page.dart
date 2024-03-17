@@ -3,8 +3,6 @@ import 'package:cleaneo_user_app/Dashboard/Notifications/notification_page.dart'
 import 'package:cleaneo_user_app/Dashboard/Orders/yourOrders_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wallet/wallet_page.dart';
 import 'package:cleaneo_user_app/Dashboard/Wash/Select%20Vendor/chooseVendor_page.dart';
-import 'package:cleaneo_user_app/Dashboard/Wash/Select%20Vendor/vendorDetails_page.dart';
-import 'package:cleaneo_user_app/Welcome/TS_page.dart';
 import 'package:cleaneo_user_app/pages/donate.dart';
 import 'package:cleaneo_user_app/pages/dryclean_page.dart';
 import 'package:cleaneo_user_app/pages/mydrawer.dart';
@@ -12,6 +10,8 @@ import 'package:cleaneo_user_app/pages/myprofile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'bottomNavigationBar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,6 +21,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   int _selectedIndex = 0;
   var orderNo = 3;
   int selectedContainerIndex = 0;
@@ -46,134 +47,60 @@ class _HomePageState extends State<HomePage> {
     Container(),
   ];
 
-  final List<Map<String, String>> topRatingImages = [
-    {
-      'url':
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0EYoY-H9MMIQshuoWF2SvIdPzKM-T2qTmiAR3iWMOYWtxMfyyrOxed5bhRMQ9RL4sIL8&usqp=CAU'
-    },
-    {
-      'url':
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNNHJCY1c6nVDOhZ9Z6FFbRe0wp1eTSLg6_3QSGrzMk1fn6kaef8mCvl9guXkmuaHgoVc&usqp=CAU'
-    },
-    {
-      'url': 'https://www.alldoneasiatic.com/images/franchise2.jpeg'
-    },
-    {
-      'url':
-      'https://5.imimg.com/data5/IOS/Default/2022/6/HB/GN/LB/13960705/product-jpeg-500x500.png'
-    },
-    {
-      'url':
-      'https://5.imimg.com/data5/SELLER/Default/2023/6/320929198/OB/XU/OK/8658564/laundry-dry-cleaning-service-500x500.jpg'
-    },
-  ];
+  Map<String, Map<String, String>> topRatingVendors = {
+    'Angels Laundry': {'imageUrl': 'https://soji.us/wp-content/uploads/2022/12/Professional-Laundry-Services.jpg', 'distance': '0.5Km'},
+    'Clean Sweep': {'imageUrl': 'https://rjkool.com/wp-content/uploads/2021/09/laundry-services.jpg', 'distance': '0.6Km'},
+    'Rapid Wash': {'imageUrl': 'https://media.istockphoto.com/id/459292777/photo/laundry-service.jpg?s=612x612&w=0&k=20&c=V-fCS_ZhDA8_sqySt4-twQhovKdDrB9b71WBE_M6k1Q=', 'distance': '1.3Km'}
+  };
 
-  final List<Map<String, String>> premiumImages = [
-    {
-      'url':
-      'https://i0.wp.com/www.fabonow.com/wp-content/uploads/2023/09/Best-DryCleaning-Services.webp?fit=800%2C533&ssl=1'
-    },
-    {
-      'url':
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIJSKITE8dokBnWF2P3QkFW6g3sCRnfYdWid0dA2CJTaL53pjM7RMFoCIw6vxDJhG-tho&usqp=CAU'
-    },
-    {
-      'url': 'https://media-cldnry.s-nbcnews.com/image/upload/newscms/2023_05/1963367/230201-laundry-stripping-kb-2x1.jpg'
-    },
-    {
-      'url':
-      'https://reviewed-com-res.cloudinary.com/image/fetch/s--WtXrjxpt--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_972/https://reviewed-production.s3.amazonaws.com/1631217092181/tipslaundryhero.png'
-    },
-    {
-      'url':
-      'https://media.cnn.com/api/v1/images/stellar/prod/210915133905-how-to-do-laundry-lead.jpg?q=w_1601,h_901,x_0,y_0,c_fill'
-    },
-  ];
+  Map<String, Map<String, String>> premiumVendors= {
+    'EzeeWash': {'imageUrl': 'https://dafgr1y3h3vlw.cloudfront.net/blogimages/1633346616.jpg', 'distance': '1.5Km'},
+    'UClean': {'imageUrl': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReLnHHaWj52OqZuombhIZtYd8jSN86XhfnPdDvU7c7CfJQnF1zWgVL_-KUPqIHmX11Ej0&usqp=CAU', 'distance': '1.6Km'},
+    'WashApp': {'imageUrl': 'https://prestodrycleaners.com.sg/wp-content/uploads/2020/05/s1-sm-440x270.jpg', 'distance': '1.3Km'}
+  };
 
-  final List<Map<String, String>> nearImages = [
-    {
-      'url':
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqnd6F2UFBRVjttiUs76sBNYGXubdyGS3_kJ5vwlrz99f0ssH8ccR6KHIqphrjxchXokY&usqp=CAU'
-    },
-    {
-      'url':
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHhnJkwV_wAxEDZtMVRkZ_41gr19uie5pwDwoC9m9m-xHSdKipCjtPOLErdwYlpy4B6fE&usqp=CAU'
-    },
-    {
-      'url': 'https://content.jdmagicbox.com/comp/bhubaneshwar/b6/0674px674.x674.140715100143.q8b6/catalogue/maa-adishakti-dry-cleaner-dumduma-bhubaneshwar-dry-cleaners-47wtrls.jpg'
-    },
-    {
-      'url':
-      'https://content3.jdmagicbox.com/comp/kolhapur/q6/0231px231.x231.150811191638.a7q6/catalogue/students-laundry-station-road-kolhapur-dry-cleaners-8wap5.jpg?clr='
-    },
-    {
-      'url':
-      'https://content.jdmagicbox.com/comp/bhopal/n4/0755px755.x755.170605134621.e6n4/catalogue/deepak-drycleaners-tulsi-nagar-bhopal-dry-cleaners-073hnrn4wn-250.jpg?clr='
-    },
-  ];
+  Map<String, Map<String, String>> nearVendors= {
+    'DhobiLite': {'imageUrl': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqnd6F2UFBRVjttiUs76sBNYGXubdyGS3_kJ5vwlrz99f0ssH8ccR6KHIqphrjxchXokY&usqp=CAU', 'distance': '0.5Km'},
+    'Royal Laundry': {'imageUrl': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHhnJkwV_wAxEDZtMVRkZ_41gr19uie5pwDwoC9m9m-xHSdKipCjtPOLErdwYlpy4B6fE&usqp=CAU', 'distance': '0.6Km'},
+    'Dry Cleaner': {'imageUrl': 'https://content.jdmagicbox.com/comp/bhubaneshwar/b6/0674px674.x674.140715100143.q8b6/catalogue/maa-adishakti-dry-cleaner-dumduma-bhubaneshwar-dry-cleaners-47wtrls.jpg', 'distance': '0.8Km'}
+  };
 
-  final List<Map<String, String>> recommendedVImages = [
-    {
-      'url':
-      'https://www.dhobilite.com/images-v2/blog/process-folowed-in-laundry.webp'
-    },
-    {
-      'url':
-      'https://media.istockphoto.com/id/459292777/photo/laundry-service.jpg?s=612x612&w=0&k=20&c=V-fCS_ZhDA8_sqySt4-twQhovKdDrB9b71WBE_M6k1Q='
-    },
-    {
-      'url': 'https://soji.us/wp-content/uploads/2022/12/Professional-Laundry-Services.jpg'
-    },
-    {
-      'url':
-      'https://www.laundryfirst.sg/images/post/featured-image/8e0b3b3f526bfc0e2a71f60402d6b1c4d7e9136a5fd8b99c4767a633e2ac2c7dbf11e716.jpg'
-    },
-    {
-      'url':
-      'https://rjkool.com/wp-content/uploads/2021/09/laundry-services.jpg'
-    },
-  ];
+  Map<String, Map<String, String>> recommendedVendors = {
+    'Quick Clean': {'imageUrl': 'https://spotlesswasche.com/wp-content/uploads/2021/05/Team-Small-Compress.webp', 'distance': '1.5Km'},
+    'WashX': {'imageUrl': 'https://fabricspa.com/assets/images/fstory.jpg', 'distance': '1.6Km'},
+    'WashMart:': {'imageUrl': 'https://lh5.googleusercontent.com/p/AF1QipOJp1Dqv-_sVTfc9hW5HylI_HIx7K9-J-guZhAc=w519-h240-k-no', 'distance': '1.3Km'}
+  };
 
-  final List<Map<String, String>> averagePriceImages = [
-    {
-      'url':
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvrpdxz4rW_dAnnc9wun0BG7MBFFW3wxRXXFX79rKrsPoFi1SwsBbvgrcOoJuNvnUbaA0&usqp=CAU'
-    },
-    {
-      'url':
-      'https://i.pinimg.com/474x/d2/63/6b/d2636b0241f780ede164db2d462cb3bf.jpg'
-    },
-    {
-      'url': 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/laundry-service-price-list-design-template-394da5c4081c9d4a9160ca4ad05f7812_screen.jpg?ts=1705300306'
-    },
-    {
-      'url':
-      'https://images.jdmagicbox.com/comp/delhi/q1/011pxx11.xx11.220915153544.a8q1/catalogue/dryclean-zone-ghaziabad-city-ghaziabad-6irb9dutlo.jpg'
-    },
-    {
-      'url':
-      'https://marketplace.canva.com/EAFzNOeeFZM/1/0/900w/canva-blue-and-white-illustrative-laundry-price-list-bcDPcdGMsrU.jpg'
-    },
-  ];
+  Map<String, Map<String, String>> averagePriceVendors = {
+    'Wassup': {'imageUrl': 'https://assets-global.website-files.com/61e2f1842c4110255682b147/61f7c13f7ed6c03ab4218633_60803c1d2283c690f497f2c7_laundry220110903.jpeg', 'distance': '1.5Km'},
+    'LaundroKart': {'imageUrl': 'https://images.squarespace-cdn.com/content/v1/5a0a0b89aeb625c125bb2e1e/1676708862452-HFMO4WQ43HS6I55XQ3KV/unnamed.jpg', 'distance': '1.6Km'},
+    'Launderette': {'imageUrl': 'https://static.wixstatic.com/media/2bd1a7_972bf6cc65ba4573bdfe0575a9376998~mv2.jpg/v1/fit/w_2500,h_1330,al_c/2bd1a7_972bf6cc65ba4573bdfe0575a9376998~mv2.jpg', 'distance': '1.3Km'}
+  };
+
+  Map<String, Map<String, String>> filteredVendors() {
+    if (selectedContainerIndex == 0) {
+      return topRatingVendors;
+    } else if (selectedContainerIndex == 1) {
+      return premiumVendors;
+    } else if (selectedContainerIndex == 2){
+      return nearVendors;
+    }
+    else if (selectedContainerIndex == 3) {
+        return recommendedVendors;
+      }
+    else {
+      return averagePriceVendors;
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
-
-
-
-    List<List<Map<String, String>>> imageLists = [
-      topRatingImages,
-      premiumImages,
-      nearImages,
-      recommendedVImages,
-      averagePriceImages
-    ];
-
     return Scaffold(
       body: Stack(
         children: [
-          buildPage(0, imageLists[selectedContainerIndex]),
+          buildPage(0),
 
           if (_selectedIndex == 1) const YourOrdersPage(),
           if (_selectedIndex == 2) const NotificationsPage(),
@@ -181,62 +108,19 @@ class _HomePageState extends State<HomePage> {
           if (_selectedIndex == 4) const WalletPage(),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _selectedIndex,
-        onTap: (index) {
+
+      bottomNavigationBar: BottomNavigation(
+        selectedIndex: _selectedIndex,
+        onItemTapped: (index) {
           setState(() {
             _selectedIndex = index;
           });
         },
-        items: [
-          BottomNavigationBarItem(
-            icon: Image.asset(
-              "assets/images/home.png",
-              width: mQuery.size.width * 0.075,
-              color: _selectedIndex == 0 ? const Color(0xff29b2fe) : Colors.black,
-            ),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset(
-              "assets/images/drawer-images/shopping-bag.png",
-              width: mQuery.size.width * 0.075,
-              color: _selectedIndex == 1 ? const Color(0xff29b2fe) : Colors.black,
-            ),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset(
-              "assets/images/drawer-images/bell.png",
-              width: mQuery.size.width * 0.075,
-              color: _selectedIndex == 2 ? const Color(0xff29b2fe) : Colors.black,
-            ),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset(
-              "assets/images/drawer-images/heart.png",
-              width: mQuery.size.width * 0.075,
-              color: _selectedIndex == 3 ? const Color(0xff29b2fe) : Colors.black,
-            ),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset(
-              "assets/images/drawer-images/wallet.png",
-              width: mQuery.size.width * 0.075,
-              color: _selectedIndex == 4 ? const Color(0xff29b2fe) : Colors.black,
-            ),
-            label: "",
-          ),
-        ],
       ),
     );
   }
 
-  Widget buildPage(int index, List<Map<String, String>> images) {
+  Widget buildPage(int index) {
     var mQuery = MediaQuery.of(context);
 
 
@@ -257,7 +141,7 @@ class _HomePageState extends State<HomePage> {
       } else if (b['text'] == 'Wash & Iron') {
         return 1;
       } else if (a['text'] == 'Stream Iron' || a['text'] == 'Dry Clean') {
-        return -1; // "Stream Iron" and "Dry Clean" will appear before other items
+        return -1;
       } else if (b['text'] == 'Stream Iron' || b['text'] == 'Dry Clean') {
         return 1;
       } else {
@@ -275,14 +159,13 @@ class _HomePageState extends State<HomePage> {
     }
 
 
-
     return Scaffold(
       body: Container(
         color: const Color(0xfff3fbff),
         child: Column(
           children: [
             Container(
-              padding: const EdgeInsets.only(top: 32, bottom: 25),
+              padding: const EdgeInsets.only(top: 32, bottom: 22),
               width: double.infinity,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -308,7 +191,7 @@ class _HomePageState extends State<HomePage> {
                               },
                               icon: Icon(
                                 Icons.menu,
-                                size: mQuery.size.width * 0.1,
+                                size: mQuery.size.width * 0.09,
                               ),
                               color: Colors.white,
                             );
@@ -316,7 +199,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         SvgPicture.asset(
                           "assets/images/mainlogo.svg",
-                          width: mQuery.size.width * 0.33,
+                          width: mQuery.size.width * 0.3,
                         ),
                         Expanded(child: SizedBox()),
                         GestureDetector(
@@ -332,7 +215,7 @@ class _HomePageState extends State<HomePage> {
                           },
                           child: const ProfilePicture(
                             name: "",
-                            radius: 18,
+                            radius: 16,
                             fontsize: 10,
                             img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwKKzV4oKveaDEmBr38LXuMWTho1d1-mjOOcjau6XJ1A&s",
                           ),
@@ -392,7 +275,7 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: 'SatoshiBold',
-                            fontSize: mQuery.size.height * 0.025,
+                            fontSize: mQuery.size.height * 0.022,
                           ),
                         ),
                         Expanded(child: SizedBox()),
@@ -416,7 +299,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(height: mQuery.size.height * 0.02),
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 16),
-                    height: mQuery.size.height * 0.06,
+                    height: mQuery.size.height * 0.055,
                     padding: const EdgeInsets.only(left: 16),
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -429,12 +312,13 @@ class _HomePageState extends State<HomePage> {
                         border: InputBorder.none,
                         hintText: "Search",
                         hintStyle: TextStyle(
-                          fontSize: mQuery.size.height * 0.0215,
+                          fontSize: mQuery.size.height * 0.02,
                           color: Colors.grey.shade600,
                           fontFamily: 'SatoshiMedium',
                         ),
-                        suffixIcon: const Icon(Icons.search,
-                          color: Colors.black54,),
+                        suffixIcon: Icon(Icons.search,
+                          color: Colors.black54,
+                        size: mQuery.size.height*0.028,),
                       ),
                     ),
                   ),
@@ -448,8 +332,7 @@ class _HomePageState extends State<HomePage> {
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 1,
+                      crossAxisCount: 3,
                       mainAxisSpacing: 20,
                     ),
                     itemBuilder: (BuildContext context, int index) {
@@ -469,10 +352,12 @@ class _HomePageState extends State<HomePage> {
                           }
                         },
                         child: Container(
-                          margin: EdgeInsets.symmetric(horizontal: 12),
-                          padding: EdgeInsets.only(top: mQuery.size.height * 0.046),
+                          margin: EdgeInsets.only(
+                              left: 12,right: 12,bottom: 20
+                          ),
+                          padding: EdgeInsets.only(top: mQuery.size.height * 0.02), // Adjust width as needed
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(12),
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
@@ -487,14 +372,14 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Image.asset(
                                 item["image"],
-                                width: 78,
-                                height: 78,
+                                width: mQuery.size.width * 0.15, // Adjust image width
+                                height: mQuery.size.height * 0.07, // Adjust image height
                               ),
-                              SizedBox(height: mQuery.size.height * 0.017),
+                              SizedBox(height: mQuery.size.height * 0.006),
                               Text(
                                 item["text"],
                                 style: TextStyle(
-                                    fontSize: mQuery.size.height * 0.02,
+                                    fontSize: mQuery.size.height * 0.014,
                                     fontFamily: 'SatoshiBold'
                                 ),
                               ),
@@ -505,12 +390,12 @@ class _HomePageState extends State<HomePage> {
                     },
                     itemCount: filteredAndSortedGridItems.length,
                   ),
-                  SizedBox(height: mQuery.size.height * 0.032),
+                  SizedBox(height: mQuery.size.height*0.016),
 
 
                   CarouselSlider(
                     options: CarouselOptions(
-                      height: mQuery.size.height * 0.2,
+                      height: mQuery.size.height * 0.16,
                       viewportFraction: 0.935,
                       initialPage: 0,
                       enableInfiniteScroll: true,
@@ -527,7 +412,6 @@ class _HomePageState extends State<HomePage> {
                         builder: (BuildContext context) {
                           return Stack(
                             children: [
-                              // Image
                               Container(
                                 width: mQuery.size.width * 0.935,
                                 decoration: BoxDecoration(
@@ -547,14 +431,14 @@ class _HomePageState extends State<HomePage> {
                                   height: mQuery.size.height * 0.035,
                                   width: mQuery.size.width*0.3,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(6),
-                                    color: Color(0xff29b2fe)
+                                      borderRadius: BorderRadius.circular(6),
+                                      color: Color(0xff29b2fe)
                                   ),
                                   child: Center(
                                     child: Text("Know More",style: TextStyle(
-                                      color: Colors.white,
-                                      fontFamily: 'SatoshiBold',
-                                      fontSize: mQuery.size.height*0.016
+                                        color: Colors.white,
+                                        fontFamily: 'SatoshiBold',
+                                        fontSize: mQuery.size.height*0.016
                                     ),),
                                   ),
                                 ),
@@ -595,41 +479,129 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(height: mQuery.size.height*0.03,),
 
-
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 12),
-                      child: Row(
-                        children: images
-                            .map((image) => Padding(
-                          padding:  EdgeInsets.only(
-                              right: mQuery.size.width*0.035
-                          ),
-                          child: GestureDetector(
-                            onTap: ()
-                            {
-                              Navigator.push(context, MaterialPageRoute(builder: (context){
-                                return VendorDetailsPage();
-                              }));
-                            },
-                            child: Container(
-                              width: mQuery.size.width * 0.22,
-                              height: mQuery.size.height * 0.1,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                      image['url']!),
-                                  fit: BoxFit.cover,
-                                ),),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12),
+                  child: Row(
+                    children: List.generate(filteredVendors().length, (index) {
+                      String companyName = filteredVendors().keys.elementAt(index);
+                      var imageUrl = filteredVendors().values.elementAt(index)['imageUrl'];
+                      var distance = filteredVendors().values.elementAt(index)['distance'];
+                      return Padding(
+                        padding: EdgeInsets.only(right: mQuery.size.width * 0.035),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return ChooseVendorPage();
+                            }));
+                          },
+                          child: Container(
+                            width: mQuery.size.width * 0.36,
+                            height: mQuery.size.height * 0.18,
+                            padding: EdgeInsets.symmetric(horizontal: mQuery.size.width * 0.035),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 0,
+                                  blurRadius: 7,
+                                  offset: Offset(0, 0),
+                                ),
+                              ],
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: mQuery.size.height * 0.006),
+                                  Container(
+                                    width: double.infinity,
+                                    height: mQuery.size.height * 0.06,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage(imageUrl!),
+                                        fit: BoxFit.fill,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                  ),
+                                  SizedBox(height: mQuery.size.height * 0.01),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        distance!,
+                                        style: TextStyle(fontFamily: 'SatoshiMedium', fontSize: mQuery.size.height * 0.014),
+                                      ),
+                                      Expanded(child: SizedBox()),
+                                      Container(
+                                        width: mQuery.size.width * 0.12,
+                                        height: mQuery.size.height * 0.02,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(6),
+                                          color: Color(0xff80cc33),
+                                        ),
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                Icon(Icons.star, color: Colors.white, size: mQuery.size.width * 0.036),
+                                                SizedBox(width: mQuery.size.width * 0.01),
+                                                Text(
+                                                  "4.5", // You can replace this with dynamic rating
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: mQuery.size.height * 0.0125,
+                                                    fontFamily: 'SatoshiMedium',
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: mQuery.size.height * 0.01),
+                                  Text(
+                                    companyName,
+                                    style: TextStyle(
+                                      fontSize: mQuery.size.height * 0.014,
+                                      fontFamily: 'SatoshiMedium',
+                                    ),
+                                  ),
+                                  SizedBox(height: mQuery.size.height * 0.01),
+                                  Container(
+                                    width: double.infinity,
+                                    height: mQuery.size.height * 0.03,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xff29b2fe),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        "View Details",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontFamily: 'SatoshiMedium',
+                                          fontSize: mQuery.size.height * 0.013,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ),)
-                            .toList(),
-                      ),
-                    ),
+                        ),
+                      );
+                    }),
                   ),
+                ),),
                   SizedBox(height: mQuery.size.height*0.02,)
                 ],
               ),
@@ -640,7 +612,6 @@ class _HomePageState extends State<HomePage> {
       drawer: const MyDrawer(),
     );
   }
-
 
 
   Widget buildCategoryContainer(String title, int index) {
@@ -654,7 +625,7 @@ class _HomePageState extends State<HomePage> {
       },
       child: Container(
         width: mQuery.size.width * 0.4,
-        height: mQuery.size.height * 0.04,
+        height: mQuery.size.height * 0.036,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           color: selectedContainerIndex == index ? Color(0xffededed) : Colors.white,
@@ -665,11 +636,15 @@ class _HomePageState extends State<HomePage> {
           child: Text(
             title,
             style: TextStyle(
-                fontSize: mQuery.size.height * 0.014,
+                fontSize: mQuery.size.height * 0.013,
                 fontFamily: 'SatoshiMedium'),
           ),
         ),
       ),
     );
   }
+
 }
+
+
+

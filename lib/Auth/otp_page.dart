@@ -176,7 +176,7 @@ class _OTPPageState extends State<OTPPage> {
                               child: Text(
                                 "Verify",
                                 style: TextStyle(
-                                    fontSize: mQuery.size.height*0.023,
+                                    fontSize: mQuery.size.height*0.02,
                                     color: Colors.white,
                                     fontFamily: 'SatoshiBold'),
                               ),

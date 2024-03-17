@@ -101,19 +101,19 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
 
 
   List<Map<String, dynamic>> itemList = [
-    {"name": "Shirts", "price": "₹ 10 PER KG"},
-    {"name": "Blouse Designer", "price": "₹ 30 PER KG"},
-    {"name": "Lehenga Suit (Heavy)", "price": "₹ 180 PER KG"},
-    {"name": "Evening Dress (Heavy Work)", "price": "₹ 190 PER KG"},
-    {"name": "Night Suit", "price": "₹ 45 PER KG"},
-    {"name": "Waistcoat", "price": "₹ 50 PER KG"},
-    {"name": "Short", "price": "₹ 25 PER KG"},
-    {"name": "Skirt", "price": "₹ 25 PER KG"},
-    {"name": "Swimming Costume", "price": "₹ 30 PER KG"},
-    {"name": "Inner wear", "price": "₹ 15 PER KG"},
-    {"name": "Socks/Stocking", "price": "₹ 10 PER KG"},
-    {"name": "Frock", "price": "₹ 35 PER KG"},
-    {"name": "Jump Suits", "price": "₹ 50 PER KG"},
+    {"name": "Shirts", "price": "₹ 10 PER PIECE"},
+    {"name": "Blouse Designer", "price": "₹ 30 PER PIECE"},
+    {"name": "Lehenga Suit (Heavy)", "price": "₹ 180 PER PIECE"},
+    {"name": "Evening Dress (Heavy Work)", "price": "₹ 190 PER PIECE"},
+    {"name": "Night Suit", "price": "₹ 45 PER PIECE"},
+    {"name": "Waistcoat", "price": "₹ 50 PER PIECE"},
+    {"name": "Short", "price": "₹ 25 PER PIECE"},
+    {"name": "Skirt", "price": "₹ 25 PER PIECE"},
+    {"name": "Swimming Costume", "price": "₹ 30 PER PIECE"},
+    {"name": "Inner wear", "price": "₹ 15 PER PIECE"},
+    {"name": "Socks/Stocking", "price": "₹ 10 PER PIECE"},
+    {"name": "Frock", "price": "₹ 35 PER PIECE"},
+    {"name": "Jump Suits", "price": "₹ 50 PER PIECE"},
   ];
 
   Map<String, double> prices = {
@@ -570,7 +570,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
         List<String> dates = ["25 June", "26 June", "27 June"];
         List<String> times = ["10am - 12pm", "02pm - 04pm", "06pm - 08pm"];
 
-        List<String> dates2 = ["25 June", "28 June", "29 June"];
+        List<String> dates2 = ["26 June", "28 June", "29 June"];
         List<String> times2 = ["10am - 12pm", "02pm - 04pm", "06pm - 08pm"];
 
 
@@ -947,7 +947,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                               ),
                                               Container(
                                                 width: double.infinity,
-                                                height: mQuery.size.height * 0.1,
+                                                height: mQuery.size.height * 0.12,
                                                 padding: EdgeInsets.symmetric(horizontal: 12),
                                                 decoration: BoxDecoration(
                                                     color: Color(0xffebf7ed)),
@@ -1791,7 +1791,7 @@ class _QuantityWisePageState extends State<QuantityWisePage> {
                                         ],
                                       ),
                                       Expanded(child: SizedBox()),
-                                      Text("View Cart", style: TextStyle(
+                                      Text("Continue", style: TextStyle(
                                             color: Colors.white,
                                           fontSize: mQuery.size.height*0.024,
                                           fontFamily: 'SatoshiMedium'),

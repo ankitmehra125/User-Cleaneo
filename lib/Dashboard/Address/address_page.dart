@@ -257,7 +257,7 @@ class _AddressPageState extends State<AddressPage> {
                         child: Center(
                           child: Text("Save Address",
                            style: TextStyle(
-                             fontSize: mQuery.size.height*0.022,
+                             fontSize: mQuery.size.height*0.02,
                              color: Colors.white,
                                fontFamily: 'SatoshiBold'
                            ),),

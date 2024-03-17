@@ -273,7 +273,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             ),
                             child: Center(
                               child: Text("Sign Up",style: TextStyle(
-                                fontSize: mQuery.size.height*0.023,
+                                fontSize: mQuery.size.height*0.02,
                                 color: Colors.white,
                                 fontFamily: 'SatoshiBold',
                               ),),
