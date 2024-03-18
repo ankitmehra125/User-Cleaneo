@@ -543,25 +543,27 @@ class _HomePageState extends State<HomePage> {
                                           borderRadius: BorderRadius.circular(6),
                                           color: Color(0xff80cc33),
                                         ),
-                                        child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              children: [
-                                                Icon(Icons.star, color: Colors.white, size: mQuery.size.width * 0.036),
-                                                SizedBox(width: mQuery.size.width * 0.01),
-                                                Text(
-                                                  "4.5", // You can replace this with dynamic rating
-                                                  style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: mQuery.size.height * 0.0125,
-                                                    fontFamily: 'SatoshiMedium',
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                          ],
+                                        child: SingleChildScrollView(
+                                          child: Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                children: [
+                                                  Icon(Icons.star, color: Colors.white, size: mQuery.size.width * 0.036),
+                                                  SizedBox(width: mQuery.size.width * 0.01),
+                                                  Text(
+                                                    "4.5", // You can replace this with dynamic rating
+                                                    style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: mQuery.size.height * 0.012,
+                                                      fontFamily: 'SatoshiMedium',
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ],
