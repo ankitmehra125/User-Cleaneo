@@ -1,15 +1,16 @@
-
+import 'package:cleaneo_user_app/Auth/otp_page.dart';
 import 'package:cleaneo_user_app/Auth/signup_page.dart';
 import 'package:cleaneo_user_app/Auth/welcome_page.dart';
-import 'package:cleaneo_user_app/Auth/otp_page.dart';
+import 'package:cleaneo_user_app/pages/map_page.dart';
+import 'package:country_code_picker/country_code_picker.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import 'package:country_code_picker/country_code_picker.dart';
-import 'package:email_auth/email_auth.dart';
+
 
 class LoginPage extends StatefulWidget {
+
   const LoginPage({Key? key}) : super(key: key);
 
   @override

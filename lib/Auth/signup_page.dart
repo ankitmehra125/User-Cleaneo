@@ -8,7 +8,9 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 
 
+
 class SignUpPage extends StatefulWidget {
+
   const
   SignUpPage({Key? key}) : super(key: key);
 

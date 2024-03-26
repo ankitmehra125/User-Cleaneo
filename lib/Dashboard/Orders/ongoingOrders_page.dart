@@ -1,3 +1,4 @@
+import 'package:cleaneo_user_app/Dashboard/Orders/trackOrder_page.dart';
 import 'package:cleaneo_user_app/Welcome/TS_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
@@ -228,11 +229,19 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                                     ),),
                                   ),
                                 ),
-                                Text("Track Order",style: TextStyle(
-                                    color: Color(0xff29b2fe),
-                                    fontSize: mQuery.size.height*0.017,
-                                    fontFamily: 'SatoshiRegular'
-                                ),)
+                                GestureDetector(
+                                  onTap: ()
+                                  {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                                      return TrackOrderPage();
+                                    }));
+                                  },
+                                  child: Text("Track Order",style: TextStyle(
+                                      color: Color(0xff29b2fe),
+                                      fontSize: mQuery.size.height*0.017,
+                                      fontFamily: 'SatoshiRegular'
+                                  ),),
+                                )
                               ],
                             )
                           ],
@@ -444,11 +453,19 @@ class _OngoingOrdersPageState extends State<OngoingOrdersPage> {
                                      ),),
                                    ),
                                  ),
-                                 Text("Track Order",style: TextStyle(
-                                     color: Color(0xff29b2fe),
-                                     fontSize: mQuery.size.height*0.017,
-                                     fontFamily: 'SatoshiRegular'
-                                 ),)
+                                 GestureDetector(
+                                   onTap: ()
+                                   {
+                                     Navigator.push(context, MaterialPageRoute(builder: (context){
+                                       return TrackOrderPage();
+                                     }));
+                                   },
+                                   child: Text("Track Order",style: TextStyle(
+                                       color: Color(0xff29b2fe),
+                                       fontSize: mQuery.size.height*0.017,
+                                       fontFamily: 'SatoshiRegular'
+                                   ),),
+                                 )
                                ],
                              )
                            ],

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1053746743603",
+    "project_id": "cleaneo-userapp",
+    "storage_bucket": "cleaneo-userapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053746743603:android:04d432ad171b5595205646",
+        "android_client_info": {
+          "package_name": "com.example.cleaneo_user_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCojbcHiDFqjhWYWjtamxfgNpjExBg27ds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

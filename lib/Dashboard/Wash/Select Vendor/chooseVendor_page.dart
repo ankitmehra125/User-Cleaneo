@@ -108,27 +108,7 @@ class _ChooseVendorPageState extends State<ChooseVendorPage> {
                             Expanded(
                               child: Column(
                                 children: [
-                                  Container(
-                                    margin: EdgeInsets.only(
-                                        right: mQuery.size.width*0.66
-                                    ),
-                                    height: mQuery.size.height * 0.04,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(6),
-                                      border: Border.all(color: Color(0xff29b2fe)),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        "Show All",
-                                        style: TextStyle(
-                                          color: Color(0xff29b2fe),
-                                          fontSize: mQuery.size.height * 0.017,
-                                          fontFamily: 'SatoshiBold',
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(height: mQuery.size.height*0.036,)
+                                  
                                 ],
                               ),
                             ),

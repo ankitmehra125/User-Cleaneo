@@ -1,11 +1,14 @@
+import 'dart:math';
+
+import 'package:cleaneo_user_app/Auth/login_page.dart';
+import 'package:cleaneo_user_app/Auth/signup_page.dart';
+import 'package:cleaneo_user_app/pages/map_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
-import 'package:cleaneo_user_app/Auth/login_page.dart';
-import 'package:cleaneo_user_app/Help/help_page.dart';
-import 'package:cleaneo_user_app/Dashboard/home_page.dart';
-import 'package:cleaneo_user_app/pages/map_page.dart';
 
 class OTPPage extends StatefulWidget {
+
   const OTPPage({Key? key}) : super(key: key);
 
   @override
@@ -13,6 +16,8 @@ class OTPPage extends StatefulWidget {
 }
 
 class _OTPPageState extends State<OTPPage> {
+  TextEditingController otpController = TextEditingController();
+
   late List<TextEditingController> controllers;
   late List<FocusNode> focusNodes;
   int focusedIndex = -1;
@@ -131,6 +136,7 @@ class _OTPPageState extends State<OTPPage> {
                         ),
                         SizedBox(height: mQuery.size.height * 0.04),
                         Pinput(
+                          controller: otpController,
                           length: 4,
                           defaultPinTheme: defaultPinTheme,
                         ),
@@ -160,11 +166,10 @@ class _OTPPageState extends State<OTPPage> {
                         ),
                         SizedBox(height: mQuery.size.height * 0.35),
                         GestureDetector(
-                          onTap: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                                  return MapPage();
-                                }));
+                          onTap: ()  {
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return MapPage();
+                            }));
                           },
                           child: Container(
                             width: double.infinity,
@@ -197,11 +202,14 @@ class _OTPPageState extends State<OTPPage> {
 }
 
 class OTPBox extends StatelessWidget {
-  final TextEditingController controller;
+  final TextEditingController otpController;
   final FocusNode focusNode;
   final bool isFocused;
 
-  OTPBox({required this.controller, required this.focusNode, required this.isFocused});
+  OTPBox(
+      {required this.otpController,
+      required this.focusNode,
+      required this.isFocused});
 
   @override
   Widget build(BuildContext context) {
@@ -213,7 +221,7 @@ class OTPBox extends StatelessWidget {
         style: TextStyle(
           fontSize: 30
         ),
-        controller: controller,
+        controller: otpController,
         focusNode: focusNode,
         textAlign: TextAlign.center,
         keyboardType: TextInputType.number,
